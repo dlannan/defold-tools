@@ -13,13 +13,14 @@ local function makeMesh( goname, indices, verts, uvs, normals )
 	local res = go.get(goname, "vertices")
 	local iverts = #indices
 
-	local meshbuf = buffer.create(iverts,{
-		{ name = hash("position"), type=buffer.VALUE_TYPE_FLOAT32, count = 3 },
-		{ name = hash("normal"), type=buffer.VALUE_TYPE_FLOAT32, count = 3 },
-		{ name = hash("texcoord0"), type=buffer.VALUE_TYPE_FLOAT32, count = 2 },
-		--{ name = hash("color0"), type=buffer.VALUE_TYPE_FLOAT32, count = 4 }
-	})
-
+	local meshdata = {}
+	-- positions are required (should assert or something)
+	tinsert(meshdata, { name = hash("position"), type=buffer.VALUE_TYPE_FLOAT32, count = 3 } )
+	if(normals) then tinsert(meshdata, { name = hash("normal"), type=buffer.VALUE_TYPE_FLOAT32, count = 3 } ) end
+	if(uvs) then tinsert(meshdata, { name = hash("texcoord0"), type=buffer.VALUE_TYPE_FLOAT32, count = 2 } ) end
+	--{ name = hash("color0"), type=buffer.VALUE_TYPE_FLOAT32, count = 4 }
+	
+	local meshbuf = buffer.create(iverts, meshdata)
 	-- get the position stream and write the vertices
 	local vertBuffer = buffer.get_stream(meshbuf, "position")
 	local uvBuffer = buffer.get_stream(meshbuf, "texcoord0")
@@ -37,12 +38,15 @@ local function makeMesh( goname, indices, verts, uvs, normals )
 		vertBuffer[vc] = verts[vi*3+1]
 		vertBuffer[vc+1] = verts[vi*3+2]
 		vertBuffer[vc+2] = verts[vi*3+3]
-		normBuffer[nc] = normals[vi*3+1]
-		normBuffer[nc+1] = normals[vi*3+2]
-		normBuffer[nc+2] = normals[vi*3+3]
-		uvBuffer[uc] = uvs[vi*2+1]
-		uvBuffer[uc+1] = uvs[vi*2+2]
-
+		if(normals) then 
+			normBuffer[nc] = normals[vi*3+1]
+			normBuffer[nc+1] = normals[vi*3+2]
+			normBuffer[nc+2] = normals[vi*3+3]
+		end 
+		if(uvs) then 
+			uvBuffer[uc] = uvs[vi*2+1]
+			uvBuffer[uc+1] = uvs[vi*2+2]
+		end
 		vc = vc + 3
 		nc = nc + 3
 		uc = uc + 2
@@ -69,6 +73,24 @@ function geom:New(goname, sz)
 	local props = {}
 	props[goname] = { }
 end
+
+------------------------------------------------------------------------------------------------------------
+
+function geom:GenerateGltf( goname, gltfobject )
+
+	local gltfmesh 	= geom:New(goname)
+	geom:New(goname, 1.0)
+	tinsert(self.meshes, goname)
+
+-- 	local indices	= { 0, 1, 2, 0, 2, 3 }
+-- 	local verts		= { -sx + offx, 0.0, sy + offy, sx + offx, 0.0, sy + offy, sx + offx, 0.0, -sy + offy, -sx + offx, 0.0, -sy + offy }
+-- 	local uvs		= { 0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult }
+-- 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
+-- 
+	makeMesh( goname, gltf.indices, gltf.verts, gltf.uvs, gltf.normals )
+end
+
+------------------------------------------------------------------------------------------------------------
 
 function geom:GenerateCube(goname, sz, d )
 

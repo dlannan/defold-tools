@@ -865,7 +865,7 @@ static int LoadModel(lua_State* L)
 {
   // The number of expected items to be on the Lua stack
   // once this struct goes out of scope
-  DM_LUA_STACK_CHECK(L, 0);
+  DM_LUA_STACK_CHECK(L, 1);
 
   char *fname = (char*)luaL_checkstring(L, 1);
   
@@ -908,8 +908,100 @@ static int LoadModel(lua_State* L)
     return 0;
   }
 
-  Dump(model);
-  return 0;
+  // This is the main table being returned  
+  lua_newtable( L );
+
+  lua_pushstring( L, "meshes" );   
+  lua_newtable( L );            
+    
+  for (size_t i = 0; i < model.meshes.size(); i++) {
+            
+    lua_pushnumber( L, i+1 );   
+    lua_newtable( L );            
+
+    lua_pushstring( L, "name" );
+    lua_pushstring( L, model.meshes[i].name.c_str());  
+    lua_settable( L, -3 );
+
+    lua_pushstring( L, "attribs" );   
+    lua_newtable( L );            
+                   
+    for( int j = 0; j < model.meshes[i].primitives.size(); j++ ) {
+          
+      const std::map<std::string, int> &m = model.meshes[i].primitives[j].attributes;
+      std::map<std::string, int>::const_iterator it(m.begin());
+      std::map<std::string, int>::const_iterator itEnd(m.end());
+      for (; it != itEnd; it++) {
+        lua_pushstring( L, it->first.c_str() );  
+        lua_pushnumber( L, it->second );  
+        lua_settable( L, -3 );
+      }      
+    }
+
+    lua_settable( L, -3 );
+        
+    lua_settable( L, -3 );
+
+  }
+
+  lua_settable( L, -3 );
+
+  lua_pushstring( L, "bufferviews" );   
+  lua_newtable( L );            
+  for (size_t i = 0; i < model.bufferViews.size(); i++) {
+
+    lua_pushnumber( L, i + 1 );   
+    lua_newtable( L );            
+          
+    const tinygltf::BufferView &bufferView = model.bufferViews[i];
+
+    lua_pushstring( L, "name" );  
+    lua_pushstring( L, bufferView.name.c_str() );  
+    lua_settable( L, -3 );
+
+    lua_pushstring( L, "buffer" );  
+    lua_pushnumber( L, bufferView.buffer + 1 );  
+    lua_settable( L, -3 );
+
+    lua_pushstring( L, "byteLength" );  
+    lua_pushnumber( L, bufferView.byteLength );  
+    lua_settable( L, -3 );
+
+    lua_pushstring( L, "byteOffset" );  
+    lua_pushnumber( L, bufferView.byteOffset );  
+    lua_settable( L, -3 );
+
+    lua_pushstring( L, "byteStride" );  
+    lua_pushnumber( L, bufferView.byteStride );  
+    lua_settable( L, -3 );
+
+    lua_settable( L, -3 );
+  }
+  lua_settable( L, -3 );
+
+  lua_pushstring( L, "buffers" );   
+  lua_newtable( L );            
+      
+  for (size_t i = 0; i < model.buffers.size(); i++) {
+    const tinygltf::Buffer &buffer = model.buffers[i];
+
+    lua_pushnumber( L, i + 1 );   
+    lua_newtable( L );            
+
+    lua_pushstring( L, "name" );  
+    lua_pushstring( L, buffer.name.c_str() );  
+    lua_settable( L, -3 );
+
+    lua_pushstring( L, "byteLength" );  
+    lua_pushnumber( L, buffer.data.size() );  
+    lua_settable( L, -3 );
+
+    lua_settable( L, -3 );
+  }
+  lua_settable( L, -3 );
+     
+  //Dump(model);
+  return 1;
 }
 
 // Functions exposed to Lua

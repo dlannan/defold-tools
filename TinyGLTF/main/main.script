@@ -1,10 +1,5 @@
 
 
-local function loadmodel( fname ) 
-
-	tinygltf_extension.loadmodel( fname )
-end
-
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("@render:", "use_camera_projection")
@@ -30,8 +25,6 @@ function init(self)
 	self.sun_height = 0.0
 	self.cloud_cover = 0.5
 	self.angle = 0.0
-
-	loadmodel("assets/models/Cube/Cube.gltf")
 end
 
 function update(self)

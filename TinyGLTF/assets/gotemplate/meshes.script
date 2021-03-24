@@ -1,10 +1,10 @@
 local geom = require("assets.gotemplate.scripted_geom")
 local sx = 0
 function init(self)
-	-- No factory resources are loaded when the factory’s parent
-	-- collection is loaded. Calling create without having called
-	-- load will create the resources synchronously.
 
+	local gltfobj = tinygltf_extension.loadmodel( "assets/models/Cube/Cube.gltf" )
+	pprint(gltfobj)
+	
 	for i=0, 5 do 
 		local pos = vmath.vector3(sx, 0, 0)
 		self.go_id = factory.create("/fmesh#factory", pos)
