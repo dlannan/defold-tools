@@ -7,9 +7,17 @@
 local tinsert 	= table.insert 
 local tremove 	= table.remove
 
+
 ------------------------------------------------------------------------------------------------------------
 
-local function makeMesh( goname, indices, verts, uvs, normals )
+local geom = {
+
+	meshes 		= {},
+}
+------------------------------------------------------------------------------------------------------------
+
+function geom:makeMesh( goname, indices, verts, uvs, normals )
+	
 	local res = go.get(goname, "vertices")
 	local iverts = #indices
 
@@ -22,9 +30,12 @@ local function makeMesh( goname, indices, verts, uvs, normals )
 	
 	local meshbuf = buffer.create(iverts, meshdata)
 	-- get the position stream and write the vertices
+	local uvBuffer 		= nil 
+	local normBuffer 	= nil
+	
 	local vertBuffer = buffer.get_stream(meshbuf, "position")
-	local uvBuffer = buffer.get_stream(meshbuf, "texcoord0")
-	local normBuffer = buffer.get_stream(meshbuf, "normal")
+	if(uvs) then uvBuffer = buffer.get_stream(meshbuf, "texcoord0") end 
+	if(normals) then normBuffer = buffer.get_stream(meshbuf, "normal") end 
 
 	-- Iterate all indexes (referenced verts) 
 	-- All verts are expected to be 6 verts per face. 3 verts per triangle
@@ -58,11 +69,6 @@ end
 
 ------------------------------------------------------------------------------------------------------------
 
-local geom = {
-
-	meshes = {},
-}
-
 function geom:New(goname, sz)
 
 	-- TODO: Sort this out
@@ -72,22 +78,6 @@ function geom:New(goname, sz)
 
 	local props = {}
 	props[goname] = { }
-end
-
-------------------------------------------------------------------------------------------------------------
-
-function geom:GenerateGltf( goname, gltfobject )
-
-	local gltfmesh 	= geom:New(goname)
-	geom:New(goname, 1.0)
-	tinsert(self.meshes, goname)
-
--- 	local indices	= { 0, 1, 2, 0, 2, 3 }
--- 	local verts		= { -sx + offx, 0.0, sy + offy, sx + offx, 0.0, sy + offy, sx + offx, 0.0, -sy + offy, -sx + offx, 0.0, -sy + offy }
--- 	local uvs		= { 0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult }
--- 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
--- 
-	makeMesh( goname, gltf.indices, gltf.verts, gltf.uvs, gltf.normals )
 end
 
 ------------------------------------------------------------------------------------------------------------

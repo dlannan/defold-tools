@@ -1,16 +1,12 @@
-local geom = require("assets.gotemplate.scripted_geom")
+local gltf = require("assets.gotemplate.gltfloader")
 local sx = 0
-function init(self)
 
-	local gltfobj = tinygltf_extension.loadmodel( "assets/models/Cube/Cube.gltf" )
-	pprint(gltfobj)
-	
-	for i=0, 5 do 
+function init(self)
+		
+	for i=0, 0 do 
 		local pos = vmath.vector3(sx, 0, 0)
-		self.go_id = factory.create("/fmesh#factory", pos)
-		local url = msg.url(nil, self.go_id, "temp")
-		print("URL:", url)
-		geom:GenerateCube(url, 1, 1)
+		local mobj = gltf:load("assets/models/Cube/Cube.gltf", "/fmesh#factory", "temp")
+		-- geom:GenerateCube(url, 1, 1)
 		sx = sx + 2
 	end 
 end
