@@ -22,8 +22,6 @@ collection_instances {
 scale_along_z: 0
 embedded_instances {
   id: "main"
-  children: "objs"
-  children: "sky"
   data: "components {\n"
   "  id: \"main\"\n"
   "  component: \"/main/main.script\"\n"
@@ -31,21 +29,6 @@ embedded_instances {
   "    x: 0.0\n"
   "    y: 0.0\n"
   "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "components {\n"
-  "  id: \"sphere\"\n"
-  "  component: \"/assets/models/sphere.model\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 1.0\n"
-  "    z: -6.0\n"
   "  }\n"
   "  rotation {\n"
   "    x: 0.0\n"
@@ -111,76 +94,6 @@ embedded_instances {
     x: 1.0
     y: 1.0
     z: 1.0
-  }
-}
-embedded_instances {
-  id: "objs"
-  data: "components {\n"
-  "  id: \"cube\"\n"
-  "  component: \"/assets/models/cube.model\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "components {\n"
-  "  id: \"quad\"\n"
-  "  component: \"/assets/models/quad.model\"\n"
-  "  position {\n"
-  "    x: 3.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "sky"
-  data: ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 5.0
-    y: 5.0
-    z: 5.0
   }
 }
 embedded_instances {
