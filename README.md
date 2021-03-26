@@ -5,6 +5,7 @@ A suite of tools for use with Defold
 ## GLTF Loader
 This loader uses TinyGLTF to load in models at runtime. 
 HTML is probably not going to work, but others should be fine. 
+
 Missing:
 - No texture loading or shader loading yet. 
 - No anim
