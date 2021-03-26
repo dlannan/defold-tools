@@ -1,12 +1,21 @@
 local gltf = require("assets.gotemplate.gltfloader")
 local sx = 0
 
+local files = {
+	"assets/models/Cube/Cube.gltf",
+	"assets/models/GearboxAssy/glTF/GearboxAssy.gltf",
+	"assets/models/Duck/glTF/Duck.gltf",
+	"assets/models/Suzanne/glTF/Suzanne.gltf",
+}
+
 function init(self)
 		
-	for i=0, 0 do 
+	for i=0, 3 do 
 		local pos = vmath.vector3(sx, 0, 0)
-		local mobj = gltf:load("assets/models/Cube/Cube.gltf", "/fmesh#factory", "temp")
-		-- geom:GenerateCube(url, 1, 1)
+		local fname = files[i + 1]
+		print(fname)
+		local mobj = gltf:load(fname, "/fmesh#factory", "temp")
+		go.set_position(pos, mobj)
 		sx = sx + 2
 	end 
 end

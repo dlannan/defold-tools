@@ -421,7 +421,7 @@ static void parseNodes( lua_State *L, tinygltf::Model &model)
 
     tableKVStr(L, "name", node.name.c_str());
     tableKVInt(L, "camera", node.camera+1);
-    tableKVInt(L, "mesh", node.mesh+1);
+    if(node.mesh > -1) tableKVInt(L, "mesh", node.mesh+1);
     if (!node.rotation.empty()) {
       tableNew(L, "rotation");
       tableKVDouble(L, "x", node.rotation[0]);
@@ -511,7 +511,7 @@ static int LoadModel(lua_State* L)
 
   if (!ret) {
     printf("Failed to parse glTF\n");
-    return 0;
+    return 1;
   }
 
   // This is the main table being returned  

@@ -17,8 +17,9 @@ local geom = {
 ------------------------------------------------------------------------------------------------------------
 
 function geom:makeMesh( goname, indices, verts, uvs, normals )
-	
-	local res = go.get(goname, "vertices")
+
+	local mesh = resource.load("/assets/gotemplate/temp.mesh")
+	local res = go.get(mesh, "vertices")
 	local iverts = #indices
 
 	local meshdata = {}
@@ -65,6 +66,7 @@ function geom:makeMesh( goname, indices, verts, uvs, normals )
 
 	-- set the buffer with the vertices on the mesh
 	resource.set_buffer(res, meshbuf)
+	go.set(goname, "vertices", mesh)
 end
 
 ------------------------------------------------------------------------------------------------------------

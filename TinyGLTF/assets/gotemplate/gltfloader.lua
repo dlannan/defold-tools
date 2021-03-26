@@ -55,7 +55,9 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, nidx, n )
 		local gltf = {}
 		
 		-- Get indices from accessor 
-		local prim = gltfobj.meshes[thisnode.mesh].primitives[1]
+		local prims = gltfobj.meshes[thisnode.mesh].primitives
+		if(prims == nil) then print("No Primitives?"); return end 
+		local prim = prims[1]
 		local acc_idx = prim.indices
 		local accessor = gltfobj.accessors[acc_idx]
 
@@ -103,6 +105,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, nidx, n )
 		-- 	local uvs		= { 0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult }
 		-- 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
 		geom:makeMesh( goname, gltf.indices, gltf.verts, gltf.uvs, gltf.normals )
+		print("Geometry: ", goname)
 	end
 	
 end	
@@ -118,7 +121,6 @@ function gltfloader:load( fname, ofactory, meshname )
 	-- Parent mesh
 	local pobj = factory.create(ofactory)
 	local goname = msg.url(nil, pobj, meshname)
-	print("URL:", goname)
 	
 	local gltfobj = tinygltf_extension.loadmodel( fname )
 	-- pprint(gltfobj)
@@ -136,6 +138,7 @@ function gltfloader:load( fname, ofactory, meshname )
 			self:makeNodeMeshes( gltfobj, goname, pobj, ni, n)
 		end 
 	end
+	return pobj
 end
 
 
