@@ -24,6 +24,7 @@ local geom = require("assets.gotemplate.scripted_geom")
 
 local gltfloader = {
 	curr_factory 	= nil,
+	temp_meshes 	= {},
 }
 
 ------------------------------------------------------------------------------------------------------------
@@ -44,7 +45,30 @@ end
 
 ------------------------------------------------------------------------------------------------------------
 
-function gltfloader:makeNodeMeshes( gltfobj, goname, parent, nidx, n )
+function gltfloader:setpool( meshpoolpath, nummeshes )
+
+	-- Make a list of valid meshes
+	for i=1, nummeshes do 
+		local mpath = meshpoolpath..string.format("%03d", i)..".mesh"
+		tinsert(gltfloader.temp_meshes, { path=mpath, used=false, go=nil } )
+	end
+end 
+
+------------------------------------------------------------------------------------------------------------
+-- Get a free temp mesh, nil if none available
+function gltfloader:getfreetemp()
+	for k,v in pairs(gltfloader.temp_meshes) do 
+		if(v.used == false) then 
+			v.used = true 
+			return v 
+		end 
+	end 
+	return nil
+end
+
+------------------------------------------------------------------------------------------------------------
+
+function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 	-- Each node can have a mesh reference. If so, get the mesh data and make one, set its parent to the
 	--  parent node mesh
@@ -77,7 +101,8 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, nidx, n )
 		end
 				
 		-- Get position accessor
-		bv = gltfobj.bufferviews[prim.attribs["POSITION"]]
+		local aidx = gltfobj.accessors[prim.attribs["POSITION"]]
+		bv = gltfobj.bufferviews[aidx.bufferView]
 		buffer = gltfobj.buffers[bv.buffer]
 		
 		-- Get positions (or verts) 
@@ -85,7 +110,8 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, nidx, n )
 		getBufferData( gltf.verts, bv, buffer )
 
 		-- Get uvs accessor
-		bv = gltfobj.bufferviews[prim.attribs["TEXCOORD_0"]]
+		aidx = gltfobj.accessors[prim.attribs["TEXCOORD_0"]]
+		bv = gltfobj.bufferviews[aidx.bufferView]
 		buffer = gltfobj.buffers[bv.buffer]
 
 		-- Get positions (or verts) 
@@ -93,7 +119,8 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, nidx, n )
 		getBufferData( gltf.uvs, bv, buffer )
 		
 		-- Get normals accessor
-		bv = gltfobj.bufferviews[prim.attribs["NORMAL"]]
+		aidx = gltfobj.accessors[prim.attribs["NORMAL"]]
+		bv = gltfobj.bufferviews[aidx.bufferView]
 		buffer = gltfobj.buffers[bv.buffer]
 
 		-- Get positions (or verts) 
@@ -106,6 +133,18 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, nidx, n )
 		-- 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
 		geom:makeMesh( goname, gltf.indices, gltf.verts, gltf.uvs, gltf.normals )
 		print("Geometry: ", goname)
+
+	-- No mesh.. try children
+	else
+
+		if(thisnode.children) then 
+			for k,v in pairs(thisnode.children) do 
+				local child = gltfobj.nodes[v]
+				if(child.mesh) then 
+					self:makeNodeMeshes( gltfobj, goname, pobj, v)
+				end
+			end 
+		end
 	end
 	
 end	
@@ -116,14 +155,13 @@ end
 -- ofactory is the url for the factory for creating meshes. 
 --     At the moment, it needs quite a specific setup. This will change.
 
-function gltfloader:load( fname, ofactory, meshname )
+function gltfloader:load( fname, pobj, meshname )
 
 	-- Parent mesh
-	local pobj = factory.create(ofactory)
-	local goname = msg.url(nil, pobj, meshname)
-	
+	local goname = msg.url(nil, pobj, meshname)	
+
 	local gltfobj = tinygltf_extension.loadmodel( fname )
-	-- pprint(gltfobj)
+	--pprint(gltfobj.nodes)
 		
 	local gltfmesh 	= geom:New(goname)
 	geom:New(goname, 1.0)
@@ -135,10 +173,9 @@ function gltfloader:load( fname, ofactory, meshname )
 
 		-- Go through the scenes nodes - this is recursive. nodes->children->children..
 		for ni, n in pairs(v.nodes) do
-			self:makeNodeMeshes( gltfobj, goname, pobj, ni, n)
+			self:makeNodeMeshes( gltfobj, goname, pobj, n)
 		end 
 	end
-	return pobj
 end
 
 

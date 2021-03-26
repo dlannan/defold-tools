@@ -1,21 +1,77 @@
 local gltf = require("assets.gotemplate.gltfloader")
-local sx = 0
 
 local files = {
 	"assets/models/Cube/Cube.gltf",
-	"assets/models/GearboxAssy/glTF/GearboxAssy.gltf",
-	"assets/models/Duck/glTF/Duck.gltf",
 	"assets/models/Suzanne/glTF/Suzanne.gltf",
+	"assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf",
+	"assets/models/GearboxAssy/glTF/GearboxAssy.gltf",
 }
 
-function init(self)
+function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
+
+	local fh = io.open(meshfile, "r")
+	local mdata = fh:read("*a")
+	fh:close()
+
+	local fh = io.open(bufferfile, "r")
+	local bdata = fh:read("*a")
+	fh:close()
 		
-	for i=0, 3 do 
-		local pos = vmath.vector3(sx, 0, 0)
+	for i=1, count do 
+	
+		local mpath = tempbasepath..string.format("%03d", i)..".mesh"
+		local bpath = tempbasepath..string.format("%03d", i)..".buffer"
+		local bext = string.format("%03d", i)..".buffer"
+		local newmdata = string.gsub(mdata, bufferfile, tempbasepath..bext)
+		
+		local fh = io.open(mpath, "w")
+		fh:write(newmdata)
+		fh:close()
+		local fh = io.open(bpath, "w")
+		fh:write(bdata)
+		fh:close()		
+	end 
+end
+
+function maketempgos( gofile, replacemesh, tempbasepath, count )
+
+	local fh = io.open(gofile, "r")
+	local data = fh:read("*a")
+	fh:close()
+	
+	for i=1, count do 
+
+		local goext = string.format("%03d", i)..".go"
+		local mext = string.format("%03d", i)..".mesh"
+		
+		local mpath = tempbasepath..goext
+		local newdata = string.gsub(data, replacemesh, "temp"..mext)
+		local fh = io.open(mpath, "w")
+		fh:write(newdata)
+		fh:close()
+	end 
+end
+
+
+function init(self)
+
+	-- Use this to make some temp meshes, which will be used for the gltf loader
+	-- maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
+	--			"assets/gotemplate/meshpool/temp", 10)
+	-- Use this to make matching go's for the meshes.
+	-- maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
+	
+	gltf:setpool("/assets/gotemplate/meshpool/temp", 10)
+	local sx = -3
+	
+	for i=0, 2 do 
+		local pos = vmath.vector3(sx, 2, 0)
 		local fname = files[i + 1]
 		print(fname)
-		local mobj = gltf:load(fname, "/fmesh#factory", "temp")
-		go.set_position(pos, mobj)
+		local goname = "/temp"..string.format("%03d", i+1)
+		print(goname)
+		gltf:load(fname, goname, "temp")
+		go.set_position(pos, goname)
 		sx = sx + 2
 	end 
 end

@@ -18,6 +18,7 @@ function init(self)
 -- 
 -- 	model.set_constant("/objs#cube", "light", self.light)
 -- 	model.set_constant("/objs#quad", "light", self.light)
+	self.fmeshA = go.get_rotation("/fmesh")
 
 	self.luminance = 1.0
 	self.cloud_level = 300.0
@@ -32,6 +33,8 @@ function update(self)
 	local rad_angle = math.rad(self.angle)
 	local rot_angle = vmath.quat_rotation_y(rad_angle)		
 	local rotx_angle = vmath.quat_rotation_y(rad_angle)
+
+	go.set_rotation(self.fmeshA * rot_angle, "/fmesh")
 	--go.set_rotation(self.cubeA * rot_angle, "/gogen#genmesh")
 	--go.set_rotation(self.planeA * rotx_angle, "/ground#genmesh")
 	self.angle = self.angle + 1.0
@@ -50,22 +53,6 @@ function on_input(self, action_id, action)
 	self.camerapos = go.get_position("/camera")
 end
 
-function on_message(self, message_id, message)
-
-	if(message_id == hash("luminance")) then 
-		self.luminance = message.value
-	end
-	if(message_id == hash("cloud_level")) then 
-		self.cloud_level = message.value
-	end
-	if(message_id == hash("time_speed")) then 
-		self.time_speed = message.value
-	end
-	if(message_id == hash("sun_height")) then 
-		self.sun_height = message.value
-	end	
-	if(message_id == hash("cloud_cover")) then 
-		self.cloud_cover = message.value
-	end		
+function on_message(self, message_id, message)	
 end
 

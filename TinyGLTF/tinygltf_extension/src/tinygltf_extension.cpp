@@ -448,15 +448,15 @@ static void parseNodes( lua_State *L, tinygltf::Model &model)
 
     if (!node.matrix.empty()) {
       tableNew(L, "matrix");
-      for (size_t i = 0; i < node.matrix.size(); i++) {
-        tableKIntVDouble(L, i+1, node.matrix[i]);
+      for (size_t j = 0; j < node.matrix.size(); j++) {
+        tableKIntVDouble(L, j+1, node.matrix[j]);
       }
       tableClose(L); // matrix
     }
 
     tableNew(L, "children");
-    for (size_t i = 0; i < node.children.size(); i++) {
-      tableKIntVInt(L, i+1, node.children[i] + 1);
+    for (size_t j = 0; j < node.children.size(); j++) {
+      tableKIntVInt(L, j+1, node.children[j] + 1);
     }
     tableClose(L);
     
