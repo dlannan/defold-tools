@@ -19,7 +19,7 @@ debuggable = 0
 
 [project]
 dependencies = 
-title = Tiny GLTF
+title = glTF Lua Loader
 bundle_resources = 
 custom_resources = assets
 
@@ -34,7 +34,4 @@ bundle_identifier = com.defold.example.basic3d
 
 [shader]
 output_spirv = 0
-
-[library]
-include_dirs = tinygltf_extension
 
