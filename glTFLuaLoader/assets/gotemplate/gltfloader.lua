@@ -57,11 +57,9 @@ local function loadgltf( fname )
 
 	local basepath = fname:match("(.*/)")
 	print(basepath)
-	
-	local fh = io.open( fname, "r" )
-	assert(fh)
-	local gltfdata = fh:read("*a")
-	fh:close()
+
+	-- Note: This can be replaced with io.open if needed.
+	local gltfdata, error = sys.load_resource(fname)	
 	local gltfobj = jsonloader.parse( gltfdata )
 	--pprint(gltfobj)
 
@@ -69,12 +67,11 @@ local function loadgltf( fname )
 	for k,v in pairs(gltfobj.buffers) do 
 
 		if(v.uri) then 
-			local fh = io.open(basepath..v.uri, "rb")
-			if(fh) then 
-				local data = fh:read(v.byteLength)
+			-- local fh = io.open(basepath..v.uri, "rb")
+			local data, error = sys.load_resource(basepath..v.uri)	
+			if(data) then 
 				v.data = ffi.new("unsigned char[?]", v.byteLength)
 				ffi.copy(v.data, data)
-				fh:close()
 			else 
 				print("Error: Cannot load gltf binary file ["..basepath..v.uri.."]") 
 			end

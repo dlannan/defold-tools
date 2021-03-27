@@ -1,10 +1,10 @@
 local gltf = require("assets.gotemplate.gltfloader")
 
 local files = {
-	"assets/models/Cube/Cube.gltf",
-	"assets/models/Suzanne/glTF/Suzanne.gltf",
-	"assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf",
-	"assets/models/Lantern/glTF/Lantern.gltf",
+	"/assets/models/Cube/Cube.gltf",
+	"/assets/models/Suzanne/glTF/Suzanne.gltf",
+	"/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf",
+	"/assets/models/Lantern/glTF/Lantern.gltf",
 }
 
 function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
