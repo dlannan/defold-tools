@@ -131,6 +131,12 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 			local materialid = prim.material
 			local mat = gltfobj.materials[ materialid + 1 ]
 			--pprint(mat)
+			local pbrmetallicrough = mat.pbrMetallicRoughness 
+			if (pbrmetallicrough) then 
+				local bcolor = pbrmetallicrough.baseColorTexture.index
+				local res = gltfobj.images[bcolor + 1]
+				gltfloader:loadimages( gltfobj, goname, bcolor + 1 )
+			end
 		end 
 		
 		local acc_idx = prim.indices
@@ -203,11 +209,12 @@ end
 ------------------------------------------------------------------------------------------------------------
 -- Load images: This is horribly slow at the moment. Will improve.
 
-function gltfloader:loadimages( gltfobj, pobj, goname )
+function gltfloader:loadimages( gltfobj, goname, idx )
 	
 	-- Load in any images 
-	for k,v in pairs(gltfobj.images) do 
-
+	--for k,v in pairs(gltfobj.images) do 
+	local v = gltfobj.images[idx]
+	
 		print(gltfobj.basepath..v.uri)
 		v.res, err = image.load(sys.load_resource(gltfobj.basepath..v.uri))
 		if(err) then print("[Image Load Error]: "..v.uri.." #:"..err) end 
@@ -242,10 +249,14 @@ function gltfloader:loadimages( gltfobj, pobj, goname )
 			v.res.num_mip_maps=1
 
 			local resource_path = go.get(goname, "texture0")
+			-- Store the resource path so it can be used later 
+			v.res.resource_path = resource_path
+			v.res.image_buffer = buff 
+
 			resource.set_texture( resource_path, v.res, buff )
 			msg.post( goname, hash("mesh_texture") )
 		end
-	end
+	--end
 end
 
 
@@ -272,7 +283,7 @@ function gltfloader:load( fname, pobj, meshname )
 	geom:New(goname, 1.0)
 	tinsert(geom.meshes, goname)
 
-	gltfloader:loadimages( gltfobj, pobj, goname )	
+	--gltfloader:loadimages( gltfobj, pobj, goname )	
 	
 	-- Go throught the scenes (we will only really care about the first one initially)
 	for k,v in pairs(gltfobj.scenes) do
