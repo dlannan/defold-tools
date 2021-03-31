@@ -201,6 +201,55 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 end	
 
 ------------------------------------------------------------------------------------------------------------
+-- Load images: This is horribly slow at the moment. Will improve.
+
+function gltfloader:loadimages( gltfobj, pobj, goname )
+	
+	-- Load in any images 
+	for k,v in pairs(gltfobj.images) do 
+
+		print(gltfobj.basepath..v.uri)
+		v.res, err = image.load(sys.load_resource(gltfobj.basepath..v.uri))
+		if(err) then print("[Image Load Error]: "..v.uri.." #:"..err) end 
+
+		-- TODO: This goes into image loader
+		pprint(v.res)
+		if(v.res.buffer ~= "") then
+			rgbcount = 3
+			if(v.res.type == "rgba") then v.res.format = resource.TEXTURE_FORMAT_RGBA; rgbcount = 4 end
+			if(v.res.type == "rgb") then v.res.format = resource.TEXTURE_FORMAT_RGB; rgbcount = 3 end
+
+			local buff = buffer.create(v.res.width * v.res.height, { 
+				{	name=hash(v.res.type), type=buffer.VALUE_TYPE_UINT8, count=rgbcount } 
+			})
+			local stm = buffer.get_stream(buff, hash(v.res.type))
+			pprint(stm)
+			for idx = 1, v.res.width * v.res.height * rgbcount do 
+				stm[idx] = string.byte(v.res.buffer, idx )
+			end
+			-- 			for y=1,v.res.height do
+			-- 				for x=1,v.res.width do
+			-- 					local index = (y-1) * v.res.width * rgbcount + (x-1) * rgbcount + 1
+			-- 
+			-- 					stm[(index + 0)] = string.byte(v.res.buffer, index + 0 )
+			-- 					stm[(index + 1)] = string.byte(v.res.buffer, index + 1 )
+			-- 					stm[(index + 2)] = string.byte(v.res.buffer, index + 2 )
+			-- 					if(rgbcount == 4) then stm[(index + 3)] = string.byte(v.res.buffer, index + 3 ) end
+			-- 				end
+			-- 			end
+			-- 			
+			v.res.type=resource.TEXTURE_TYPE_2D	
+			v.res.num_mip_maps=1
+
+			local resource_path = go.get(goname, "texture0")
+			resource.set_texture( resource_path, v.res, buff )
+			msg.post( goname, hash("mesh_texture") )
+		end
+	end
+end
+
+
+------------------------------------------------------------------------------------------------------------
 -- goname is needed as the parent or as the single mesh (if its known)
 -- fname is the filename for the gltf model
 -- ofactory is the url for the factory for creating meshes. 
@@ -223,47 +272,7 @@ function gltfloader:load( fname, pobj, meshname )
 	geom:New(goname, 1.0)
 	tinsert(geom.meshes, goname)
 
-	-- Load in any images 
-	for k,v in pairs(gltfobj.images) do 
-
-		print(gltfobj.basepath..v.uri)
-		v.res, err = image.load(sys.load_resource(gltfobj.basepath..v.uri))
-		if(err) then print("[Image Load Error]: "..v.uri.." #:"..err) end 
-
-		-- TODO: This goes into image loader
-		pprint(v.res)
-		if(v.res.buffer ~= "") then
-			rgbcount = 3
-			if(v.res.type == "rgba") then v.res.format = resource.TEXTURE_FORMAT_RGBA; rgbcount = 4 end
-			if(v.res.type == "rgb") then v.res.format = resource.TEXTURE_FORMAT_RGB; rgbcount = 3 end
-					
-			local buff = buffer.create(v.res.width * v.res.height, { 
-				{	name=hash(v.res.type), type=buffer.VALUE_TYPE_UINT8, count=rgbcount } 
-			})
-			local stm = buffer.get_stream(buff, hash(v.res.type))
-			pprint(stm)
-			for idx = 1, v.res.width * v.res.height * rgbcount do 
-				stm[idx] = string.byte(v.res.buffer, idx )
-			end
--- 			for y=1,v.res.height do
--- 				for x=1,v.res.width do
--- 					local index = (y-1) * v.res.width * rgbcount + (x-1) * rgbcount + 1
--- 
--- 					stm[(index + 0)] = string.byte(v.res.buffer, index + 0 )
--- 					stm[(index + 1)] = string.byte(v.res.buffer, index + 1 )
--- 					stm[(index + 2)] = string.byte(v.res.buffer, index + 2 )
--- 					if(rgbcount == 4) then stm[(index + 3)] = string.byte(v.res.buffer, index + 3 ) end
--- 				end
--- 			end
--- 			
-			v.res.type=resource.TEXTURE_TYPE_2D	
-			v.res.num_mip_maps=1
-			
-			local resource_path = go.get(goname, "texture0")
-			resource.set_texture( resource_path, v.res, buff )
-			msg.post( goname, hash("mesh_texture") )
-		end
-	end
+	gltfloader:loadimages( gltfobj, pobj, goname )	
 	
 	-- Go throught the scenes (we will only really care about the first one initially)
 	for k,v in pairs(gltfobj.scenes) do

@@ -68,8 +68,8 @@ end
 function init(self)
 
 	-- Use this to make some temp meshes, which will be used for the gltf loader
-	maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
-				"assets/gotemplate/meshpool/temp", 10)
+	-- maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
+	--			"assets/gotemplate/meshpool/temp", 10)
 	-- Use this to make matching go's for the meshes.
 	--maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
 	
