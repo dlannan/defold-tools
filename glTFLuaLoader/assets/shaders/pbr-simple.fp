@@ -79,7 +79,7 @@ void main()
 
 	float fLightSourceFresnelTerm = computeFresnelTerm(0.5, vNormalisedLocalSurfaceToViewerDirection, vNormalisedLocalSurfaceNormal) ;
 
-	vec3 rgbAlbedo = texture(albedoMap, vuvCoord0).rgb ;
+	vec3 rgbAlbedo = texture(albedoMap, vuvCoord0).rgb;
 
 	vec3 rgbFragment = rgbAlbedo * (1.0 - fMetalness);
 
@@ -99,10 +99,10 @@ void main()
 		rgbSpecular = min(vec3(1.0), rgbSpecular) ; // conservation of energy
 	}
 	rgbFragment += rgbSpecular ;
-	rgbFragment *= fLightIntensity ;
+	rgbFragment *= fLightIntensity * 1.5 ;
 	rgbFragment += rgbReflection ;
 
-	gl_FragColor.rgb = rgbFragment ;
+	gl_FragColor.rgb = rgbFragment;
 	gl_FragColor.a = 1.0 ; // TODO : Worry about materials which allow transparency!
 }
 
