@@ -16,14 +16,27 @@ function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
 	local fh = io.open(bufferfile, "r")
 	local bdata = fh:read("*a")
 	fh:close()
+
+	local tmpimgpath = "assets/images/green.png"
+	local fhi = io.open(tmpimgpath, "r")
+	local tmpimg = fhi:read("*a")
+	fhi:close()	
 		
 	for i=1, count do 
 	
 		local mpath = tempbasepath..string.format("%03d", i)..".mesh"
 		local bpath = tempbasepath..string.format("%03d", i)..".buffer"
 		local bext = string.format("%03d", i)..".buffer"
-		local newmdata = string.gsub(mdata, bufferfile, tempbasepath..bext)
+
+		local iext = string.format("%03d", i)..".png"
+		local tpath = tempbasepath..iext
 		
+		local newmdata = string.gsub(mdata, "assets/images/green.png", tpath)		
+		newmdata = string.gsub(newmdata, bufferfile, tempbasepath..bext)
+
+		local fh = io.open(tpath, "w")
+		fh:write(tmpimg)
+		fh:close()
 		local fh = io.open(mpath, "w")
 		fh:write(newmdata)
 		fh:close()
@@ -38,14 +51,13 @@ function maketempgos( gofile, replacemesh, tempbasepath, count )
 	local fh = io.open(gofile, "r")
 	local data = fh:read("*a")
 	fh:close()
-	
+
 	for i=1, count do 
 
 		local goext = string.format("%03d", i)..".go"
-		local mext = string.format("%03d", i)..".mesh"
-		
+		local mext = string.format("%03d", i)..".mesh"				
 		local mpath = tempbasepath..goext
-		local newdata = string.gsub(data, replacemesh, "temp"..mext)
+		newdata = string.gsub(newdata, replacemesh, "temp"..mext)
 		local fh = io.open(mpath, "w")
 		fh:write(newdata)
 		fh:close()
@@ -56,15 +68,15 @@ end
 function init(self)
 
 	-- Use this to make some temp meshes, which will be used for the gltf loader
-	-- maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
-	--			"assets/gotemplate/meshpool/temp", 10)
+	maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
+				"assets/gotemplate/meshpool/temp", 10)
 	-- Use this to make matching go's for the meshes.
-	-- maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
+	--maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
 	
 	gltf:setpool("/assets/gotemplate/meshpool/temp", 10)
 	local sx = -3
 	
-	for i=0, 3 do 
+	for i=0, #files-1 do 
 		local pos = vmath.vector3(sx, 2, 0)
 		local fname = files[i + 1]
 		print(fname)

@@ -1,0 +1,47 @@
+
+-- Handle for a mesh resource
+go.property("mesh_texture", resource.texture(""))
+
+function init(self)
+	self.mesh_texture = nil
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+
+	pprint("Got message", message_id, message)
+	
+	-- Only apply model texture on a message. Otherwise its invalid
+	if(message_id == hash("mesh_texture")) then 
+		go.set("temp", "texture0", self.mesh_texture)
+	end 
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

@@ -1,6 +1,6 @@
 material: "/builtins/materials/model.material"
 vertices: "/assets/gotemplate/meshpool/temp006.buffer"
-textures: "/assets/images/green.png"
+textures: "/assets/gotemplate/meshpool/temp006.png"
 primitive_type: PRIMITIVE_TRIANGLES
 position_stream: "position"
 normal_stream: "normal"

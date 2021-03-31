@@ -61,6 +61,7 @@ local function loadgltf( fname )
 	-- Note: This can be replaced with io.open if needed.
 	local gltfdata, error = sys.load_resource(fname)	
 	local gltfobj = jsonloader.parse( gltfdata )
+	gltfobj.basepath = basepath
 	--pprint(gltfobj)
 
 	-- load buffers 
@@ -117,9 +118,21 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		local gltf = {}
 		
 		-- Get indices from accessor 
-		local prims = gltfobj.meshes[thisnode.mesh + 1].primitives
+		local thismesh = gltfobj.meshes[thisnode.mesh + 1]
+		local prims = thismesh.primitives	
+		
 		if(prims == nil) then print("No Primitives?"); return end 
+			
 		local prim = prims[1]
+
+		-- If it has a material, load it, and set the material 
+		if(prim.material) then 
+
+			local materialid = prim.material
+			local mat = gltfobj.materials[ materialid + 1 ]
+			--pprint(mat)
+		end 
+		
 		local acc_idx = prim.indices
 		local accessor = gltfobj.accessors[acc_idx + 1]
 
@@ -193,11 +206,16 @@ end
 -- ofactory is the url for the factory for creating meshes. 
 --     At the moment, it needs quite a specific setup. This will change.
 
+-- NOTE: All gltf files can only load a single mesh at the moment. Looking into how to generate a mesh 
+--       hierarchy. Might be a complicated problem. Considering single buffered meshes with redundant verts.
+
 function gltfloader:load( fname, pobj, meshname )
 
 	-- Parent mesh
 	local goname = msg.url(nil, pobj, meshname)	
-
+	local goscript = pobj.."#script"
+	pprint(goscript)
+	
 	-- local gltfobj = tinygltf_extension.loadmodel( fname )
 	local gltfobj = loadgltf( fname )
 		
@@ -205,6 +223,48 @@ function gltfloader:load( fname, pobj, meshname )
 	geom:New(goname, 1.0)
 	tinsert(geom.meshes, goname)
 
+	-- Load in any images 
+	for k,v in pairs(gltfobj.images) do 
+
+		print(gltfobj.basepath..v.uri)
+		v.res, err = image.load(sys.load_resource(gltfobj.basepath..v.uri))
+		if(err) then print("[Image Load Error]: "..v.uri.." #:"..err) end 
+
+		-- TODO: This goes into image loader
+		pprint(v.res)
+		if(v.res.buffer ~= "") then
+			rgbcount = 3
+			if(v.res.type == "rgba") then v.res.format = resource.TEXTURE_FORMAT_RGBA; rgbcount = 4 end
+			if(v.res.type == "rgb") then v.res.format = resource.TEXTURE_FORMAT_RGB; rgbcount = 3 end
+					
+			local buff = buffer.create(v.res.width * v.res.height, { 
+				{	name=hash(v.res.type), type=buffer.VALUE_TYPE_UINT8, count=rgbcount } 
+			})
+			local stm = buffer.get_stream(buff, hash(v.res.type))
+			pprint(stm)
+			for idx = 1, v.res.width * v.res.height * rgbcount do 
+				stm[idx] = string.byte(v.res.buffer, idx )
+			end
+-- 			for y=1,v.res.height do
+-- 				for x=1,v.res.width do
+-- 					local index = (y-1) * v.res.width * rgbcount + (x-1) * rgbcount + 1
+-- 
+-- 					stm[(index + 0)] = string.byte(v.res.buffer, index + 0 )
+-- 					stm[(index + 1)] = string.byte(v.res.buffer, index + 1 )
+-- 					stm[(index + 2)] = string.byte(v.res.buffer, index + 2 )
+-- 					if(rgbcount == 4) then stm[(index + 3)] = string.byte(v.res.buffer, index + 3 ) end
+-- 				end
+-- 			end
+-- 			
+			v.res.type=resource.TEXTURE_TYPE_2D	
+			v.res.num_mip_maps=1
+			
+			local resource_path = go.get(goname, "texture0")
+			resource.set_texture( resource_path, v.res, buff )
+			msg.post( goname, hash("mesh_texture") )
+		end
+	end
+	
 	-- Go throught the scenes (we will only really care about the first one initially)
 	for k,v in pairs(gltfobj.scenes) do
 		if k > 1 then break end
