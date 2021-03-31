@@ -7,6 +7,13 @@ local files = {
 	"/assets/models/Lantern/glTF/Lantern.gltf",
 }
 
+function makefile( fpath, fdata )
+
+	local fh = io.open(fpath, "w")
+	fh:write(fdata)
+	fh:close()
+end
+
 function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
 
 	local fh = io.open(meshfile, "r")
@@ -17,7 +24,7 @@ function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
 	local bdata = fh:read("*a")
 	fh:close()
 
-	local tmpimgpath = "assets/images/green.png"
+	local tmpimgpath = "assets/images/temp.png"
 	local fhi = io.open(tmpimgpath, "r")
 	local tmpimg = fhi:read("*a")
 	fhi:close()	
@@ -28,21 +35,20 @@ function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
 		local bpath = tempbasepath..string.format("%03d", i)..".buffer"
 		local bext = string.format("%03d", i)..".buffer"
 
-		local iext = string.format("%03d", i)..".png"
-		local tpath = tempbasepath..iext
-		
-		local newmdata = string.gsub(mdata, "assets/images/green.png", tpath)		
+		local tapath = tempbasepath..string.format("%03dA", i)..".png"
+		local newmdata = string.gsub(mdata, [[textures: ("")]], "textures: \"/"..tapath.."\"",1)		
+		local trpath = tempbasepath..string.format("%03dR", i)..".png"
+		newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..trpath.."\"",1)		
+		-- local tmpath = tempbasepath..string.format("%03dM", i)..".png"
+		-- newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..tmpath.."\"",1)		
 		newmdata = string.gsub(newmdata, bufferfile, tempbasepath..bext)
 
-		local fh = io.open(tpath, "w")
-		fh:write(tmpimg)
-		fh:close()
-		local fh = io.open(mpath, "w")
-		fh:write(newmdata)
-		fh:close()
-		local fh = io.open(bpath, "w")
-		fh:write(bdata)
-		fh:close()		
+		makefile( tapath, tmpimg )
+		makefile( trpath, tmpimg )
+		-- makefile( tmpath, tmpimg )
+		
+		makefile( mpath, newmdata )
+		makefile( bpath, bdata )
 	end 
 end
 
@@ -57,7 +63,7 @@ function maketempgos( gofile, replacemesh, tempbasepath, count )
 		local goext = string.format("%03d", i)..".go"
 		local mext = string.format("%03d", i)..".mesh"				
 		local mpath = tempbasepath..goext
-		newdata = string.gsub(newdata, replacemesh, "temp"..mext)
+		newdata = string.gsub(data, replacemesh, "temp"..mext)
 		local fh = io.open(mpath, "w")
 		fh:write(newdata)
 		fh:close()
@@ -68,8 +74,8 @@ end
 function init(self)
 
 	-- Use this to make some temp meshes, which will be used for the gltf loader
-	-- maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
-	--			"assets/gotemplate/meshpool/temp", 10)
+	maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
+				"assets/gotemplate/meshpool/temp", 10)
 	-- Use this to make matching go's for the meshes.
 	--maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
 	

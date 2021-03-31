@@ -1,3 +1,5 @@
+local gltf = require("main.gltf") 
+
 --
 -- projection that centers content with maintained aspect ratio and optional zoom
 --
@@ -53,6 +55,7 @@ function init(self)
     self.near = -1
     self.far = 1
     self.projection_fn = stretch_projection
+    gltf.init(self)
 end
 
 function update(self)
@@ -83,6 +86,9 @@ function update(self)
     render.enable_state(render.STATE_DEPTH_TEST)
     render.set_depth_mask(true)
     render.draw(self.model_pred)
+
+    -- Render pbrs individually.. rather than batched.
+    gltf.update(self)
 
     -- debug rendering
     --
@@ -123,4 +129,6 @@ function on_message(self, message_id, message)
         self.far = message.far or 1
         self.projection_fn = fixed_fit_projection
     end
+
+    gltf.on_message(self, message_id, message)
 end

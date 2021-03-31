@@ -133,9 +133,17 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 			--pprint(mat)
 			local pbrmetallicrough = mat.pbrMetallicRoughness 
 			if (pbrmetallicrough) then 
-				local bcolor = pbrmetallicrough.baseColorTexture.index
-				local res = gltfobj.images[bcolor + 1]
-				gltfloader:loadimages( gltfobj, goname, bcolor + 1 )
+				if(pbrmetallicrough.baseColorTexture) then 
+					local bcolor = pbrmetallicrough.baseColorTexture.index
+					local res = gltfobj.images[bcolor + 1]
+					gltfloader:loadimages( gltfobj, goname, bcolor + 1, 0 )
+				end 
+
+				if(pbrmetallicrough.metallicRoughnessTexture) then 
+					local bcolor = pbrmetallicrough.metallicRoughnessTexture.index
+					local res = gltfobj.images[bcolor + 1]
+					gltfloader:loadimages( gltfobj, goname, bcolor + 1, 1 )
+				end
 			end
 		end 
 		
@@ -209,8 +217,9 @@ end
 ------------------------------------------------------------------------------------------------------------
 -- Load images: This is horribly slow at the moment. Will improve.
 
-function gltfloader:loadimages( gltfobj, goname, idx )
-	
+function gltfloader:loadimages( gltfobj, goname, idx, tid )
+
+	tid = tid or 0
 	-- Load in any images 
 	--for k,v in pairs(gltfobj.images) do 
 	local v = gltfobj.images[idx]
@@ -234,26 +243,18 @@ function gltfloader:loadimages( gltfobj, goname, idx )
 			for idx = 1, v.res.width * v.res.height * rgbcount do 
 				stm[idx] = string.byte(v.res.buffer, idx )
 			end
-			-- 			for y=1,v.res.height do
-			-- 				for x=1,v.res.width do
-			-- 					local index = (y-1) * v.res.width * rgbcount + (x-1) * rgbcount + 1
-			-- 
-			-- 					stm[(index + 0)] = string.byte(v.res.buffer, index + 0 )
-			-- 					stm[(index + 1)] = string.byte(v.res.buffer, index + 1 )
-			-- 					stm[(index + 2)] = string.byte(v.res.buffer, index + 2 )
-			-- 					if(rgbcount == 4) then stm[(index + 3)] = string.byte(v.res.buffer, index + 3 ) end
-			-- 				end
-			-- 			end
-			-- 			
 			v.res.type=resource.TEXTURE_TYPE_2D	
 			v.res.num_mip_maps=1
 
-			local resource_path = go.get(goname, "texture0")
+			local resource_path = go.get(goname, "texture"..tid)
+
 			-- Store the resource path so it can be used later 
 			v.res.resource_path = resource_path
 			v.res.image_buffer = buff 
 
 			resource.set_texture( resource_path, v.res, buff )
+			go.set(goname, "texture"..tid, resource_path)
+						
 			msg.post( goname, hash("mesh_texture") )
 		end
 	--end

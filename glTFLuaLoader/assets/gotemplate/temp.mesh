@@ -1,6 +1,8 @@
-material: "/builtins/materials/model.material"
+material: "/assets/shaders/pbr-simple.material"
 vertices: "/assets/gotemplate/temp.buffer"
-textures: "/assets/images/green.png"
+textures: ""
+textures: ""
+textures: ""
 primitive_type: PRIMITIVE_TRIANGLES
 position_stream: "position"
 normal_stream: "normal"
