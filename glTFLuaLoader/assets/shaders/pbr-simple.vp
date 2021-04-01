@@ -14,6 +14,9 @@ uniform mediump mat4 mtx_proj;
 uniform mediump mat4 mtx_normal;
 uniform mediump vec4 light;
 
+// Original work by Martia A Saunders
+// https://dominium.maksw.com/articles/physically-based-rendering-pbr/pbr-part-one/
+
 // attribute vec3 aVertexTangent;
 
 varying vec3 vvLocalSurfaceNormal ;
@@ -25,7 +28,7 @@ varying vec2 vuvCoord0 ;
 void main()
 {
 	vec4 p = mtx_worldview * vec4(position.xyz, 1.0);
-	vec3 vViewModelPosition = vec3(mtx_view * vec4(0, 0, 0, 1.0));
+	vec3 vViewModelPosition = normalize(mtx_view * vec4(0.0, 0.0, 1.0, 0.0)).xyz;
 	vvLocalSurfaceToViewerDirection = normalize(vViewModelPosition - p.xyz) ;
 
 	vec3 vLightModelPosition = vec3(mtx_view * vec4(light.xyz, 1.0));

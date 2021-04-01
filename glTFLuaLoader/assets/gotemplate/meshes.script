@@ -80,7 +80,8 @@ function init(self)
 	--maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
 	
 	gltf:setpool("/assets/gotemplate/meshpool/temp", 10)
-	local sx = -3
+	local width = (#files - 1) * 2.0
+	local sx = -(width/2)
 	
 	for i=0, #files-1 do 
 		local pos = vmath.vector3(sx, 2, 0)
