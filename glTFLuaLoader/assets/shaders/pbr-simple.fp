@@ -35,7 +35,7 @@ float computeGGXDistribution(vec3 vSurfaceNormal, vec3 vSurfaceToLightDirection,
 	float fNormalDotLight = clamp(dot(vSurfaceNormal, vSurfaceToLightDirection), 0.0, 1.0) ;
 	float fNormalDotLightSquared = fNormalDotLight * fNormalDotLight ;
 	float fRoughnessSquared = fRoughness * fRoughness ;
-	float fDen = fNormalDotLightSquared * fRoughnessSquared + (1 - fNormalDotLightSquared);
+	float fDen = fNormalDotLightSquared * fRoughnessSquared + (1.0 - fNormalDotLightSquared);
 
 	return clamp((chiGGX(fNormalDotLight) * fRoughnessSquared) / (cpi * fDen * fDen), 0.0, 1.0);
 }
@@ -52,7 +52,9 @@ float computeGGXPartialGeometryTerm(vec3 vSurfaceToViewerDirection, vec3 vSurfac
 
 void main()
 {
-	vec3 vNormalisedLocalSurfaceNormal = normalize(vvLocalSurfaceNormal) ;
+	vec3 mappedNormal = normalize(texture(normalMap, vuvCoord0).rgb * 2.0 - vec3(1.0));  
+	vec3 vNormalisedLocalSurfaceNormal = normalize(vvLocalSurfaceNormal + mappedNormal) ;
+	
 	vec3 vNormalisedLocalSurfaceToLightDirection = normalize(vvLocalSurfaceToLightDirection) ;
 	vec3 vNormalisedLocalReflectedSurfaceToViewerDirection = normalize(vvLocalReflectedSurfaceToViewerDirection) ;
 	vec3 vNormalisedLocalSurfaceToViewerDirection = normalize(vvLocalSurfaceToViewerDirection) ;

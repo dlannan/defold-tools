@@ -46,13 +46,13 @@ function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
 		local bext = string.format("%03d", i)..".buffer"
 
 		local tapath = tempbasepath..string.format("%03dA", i)..".png"
-		local newmdata = string.gsub(mdata, [[textures: ("")]], "textures: \"/"..tapath.."\"",1)		
+		local newmdata = string.gsub(mdata, [[textures: ("/assets/images/temp.png")]], "textures: \"/"..tapath.."\"",1)		
 		local trpath = tempbasepath..string.format("%03dR", i)..".png"
-		newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..trpath.."\"",1)		
+		newmdata = string.gsub(newmdata, [[textures: ("/assets/images/temp.png")]], "textures: \"/"..trpath.."\"",1)		
 		local tmpath = tempbasepath..string.format("%03dE", i)..".png"
-		newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..tmpath.."\"",1)		
+		newmdata = string.gsub(newmdata, [[textures: ("/assets/images/temp.png")]], "textures: \"/"..tmpath.."\"",1)		
 		local nmpath = tempbasepath..string.format("%03dN", i)..".png"
-		newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..nmpath.."\"",1)		
+		newmdata = string.gsub(newmdata, [[textures: ("/assets/images/temp.png")]], "textures: \"/"..nmpath.."\"",1)		
 		
 		newmdata = string.gsub(newmdata, bufferfile, tempbasepath..bext)
 
@@ -88,8 +88,8 @@ end
 function init(self)
 
 	-- Use this to make some temp meshes, which will be used for the gltf loader
-	maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
-			"assets/gotemplate/meshpool/temp", 10)
+	-- maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
+	--		"assets/gotemplate/meshpool/temp", 10)
 	-- Use this to make matching go's for the meshes.
 	--maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
 	

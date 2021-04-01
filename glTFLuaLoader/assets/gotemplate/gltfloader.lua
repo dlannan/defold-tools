@@ -1,7 +1,6 @@
 ------------------------------------------------------------------------------------------------------------
 
 local tinsert = table.insert
-local ffi 	= package.preload.ffi()
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -40,8 +39,7 @@ local function loadgltf( fname )
 			-- local fh = io.open(basepath..v.uri, "rb")
 			local data, error = sys.load_resource(basepath..v.uri)	
 			if(data) then 
-				v.data = data --ffi.new("unsigned char[?]", v.byteLength)
-				-- ffi.copy(v.data, data)
+				v.data = data
 			else 
 				print("Error: Cannot load gltf binary file ["..basepath..v.uri.."]") 
 			end

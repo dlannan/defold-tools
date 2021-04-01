@@ -1,9 +1,9 @@
 material: "/assets/shaders/pbr-simple.material"
 vertices: "/assets/gotemplate/temp.buffer"
-textures: ""
-textures: ""
-textures: ""
-textures: ""
+textures: "/assets/images/temp.png"
+textures: "/assets/images/temp.png"
+textures: "/assets/images/temp.png"
+textures: "/assets/images/temp.png"
 primitive_type: PRIMITIVE_TRIANGLES
 position_stream: "position"
 normal_stream: "normal"
