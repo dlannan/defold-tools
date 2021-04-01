@@ -4,22 +4,22 @@ local tinsert = table.insert
 local ffi 	= package.preload.ffi()
 
 ffi.cdef[[
+union floatData {
+	struct data {
+		unsigned char a;
+		unsigned char b;
+		unsigned char c;
+		unsigned char d;
+	} data;
+	float f;
+};
 
-	union floatData {
-		struct data {
-			unsigned char a;
-			unsigned char b;
-			unsigned char c;
-			unsigned char d;
-		} data;
-		float f;
-	};
+void SetWorkingBuffer(unsigned char *workingbuffer);
 ]]
-
 ------------------------------------------------------------------------------------------------------------
 
 local geom = require("assets.gotemplate.scripted_geom")
-local jsonloader = require("assets.gotemplate.json_loader")
+-- local jsonloader = require("assets.gotemplate.json_loader")
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -60,7 +60,8 @@ local function loadgltf( fname )
 
 	-- Note: This can be replaced with io.open if needed.
 	local gltfdata, error = sys.load_resource(fname)	
-	local gltfobj = jsonloader.parse( gltfdata )
+	-- local gltfobj = jsonloader.parse( gltfdata )
+	local gltfobj = json.decode( gltfdata )
 	gltfobj.basepath = basepath
 	--pprint(gltfobj)
 
@@ -71,8 +72,8 @@ local function loadgltf( fname )
 			-- local fh = io.open(basepath..v.uri, "rb")
 			local data, error = sys.load_resource(basepath..v.uri)	
 			if(data) then 
-				v.data = ffi.new("unsigned char[?]", v.byteLength)
-				ffi.copy(v.data, data)
+				v.data = data --ffi.new("unsigned char[?]", v.byteLength)
+				-- ffi.copy(v.data, data)
 			else 
 				print("Error: Cannot load gltf binary file ["..basepath..v.uri.."]") 
 			end
@@ -152,19 +153,19 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 		local bv = gltfobj.bufferViews[accessor.bufferView + 1]
 		local byteoff = accessor.byteOffset -- Not sure what to do with this just yet 
-
 		local buffer = gltfobj.buffers[bv.buffer+1]
 
 		-- Indices specific - this is default dataset for gltf (I think)
 		gltf.indices = {}
-		local bc = 0
-		while( bc < bv.byteLength ) do 
-			local bcl = bc + bv.byteOffset
-			local index = bit.bor(bit.lshift(buffer.data[bcl+1], 8), buffer.data[bcl])
-			tinsert( gltf.indices, index)
-			bc = bc + 2
-		end
-				
+		-- local bc = 0
+		-- while( bc < bv.byteLength ) do 
+		-- 	local bcl = bc + bv.byteOffset
+		-- 	local index = bit.bor(bit.lshift(buffer.data[bcl+1], 8), buffer.data[bcl])
+		-- 	tinsert( gltf.indices, index)
+		-- 	bc = bc + 2
+		-- end
+		myextension.setbufferintsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.indices)
+
 		-- Get position accessor
 		local aidx = gltfobj.accessors[prim.attributes["POSITION"] + 1]
 		bv = gltfobj.bufferViews[aidx.bufferView + 1]
@@ -172,8 +173,9 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		
 		-- Get positions (or verts) 
 		gltf.verts = {}
-		getBufferData( gltf.verts, bv, buffer )
-
+		-- getBufferData( gltf.verts, bv, buffer )
+		myextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.verts)
+		
 		-- Get uvs accessor
 		aidx = gltfobj.accessors[prim.attributes["TEXCOORD_0"] + 1]
 		bv = gltfobj.bufferViews[aidx.bufferView + 1]
@@ -181,8 +183,9 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 		-- Get positions (or verts) 
 		gltf.uvs = {}
-		getBufferData( gltf.uvs, bv, buffer )
-		
+		-- getBufferData( gltf.uvs, bv, buffer )
+		myextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.uvs)
+				
 		-- Get normals accessor
 		aidx = gltfobj.accessors[prim.attributes["NORMAL"] + 1]
 		bv = gltfobj.bufferViews[aidx.bufferView + 1]
@@ -190,7 +193,8 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 		-- Get positions (or verts) 
 		gltf.normals = {}
-		getBufferData( gltf.normals, bv, buffer )
+		-- getBufferData( gltf.normals, bv, buffer )
+		myextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.normals)
 		
 		-- 	local indices	= { 0, 1, 2, 0, 2, 3 }
 		-- 	local verts		= { -sx + offx, 0.0, sy + offy, sx + offx, 0.0, sy + offy, sx + offx, 0.0, -sy + offy, -sx + offx, 0.0, -sy + offy }

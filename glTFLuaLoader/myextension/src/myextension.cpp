@@ -5,6 +5,119 @@
 
 // include the Defold SDK
 #include <dmsdk/sdk.h>
+#include <stdlib.h>
+
+static int SetBufferIntsFromTable(lua_State* L)
+{
+    DM_LUA_STACK_CHECK(L, 0);
+    size_t offset = luaL_checknumber(L, 1);
+    size_t length = luaL_checknumber(L, 2);
+    const unsigned char *data = (unsigned char *)luaL_checkstring(L, 3);
+    luaL_checktype(L, 4, LUA_TTABLE);
+
+    
+    // Now we have the data, cast it to the union and write back out.
+    int idx = 1;
+    for( int i=0; i<length; i+=sizeof(unsigned short))
+    {
+        unsigned int val = ((unsigned int)data[i+1+offset] << 8) | ((unsigned int)data[i+offset]);
+        //printf("%d\n", val);
+        lua_pushnumber(L, val);  /* value */
+        lua_rawseti(L, 4, idx++);  /* set table at key `i' */
+    }
+
+    return 0;
+}
+
+static int SetBufferFloatsFromTable(lua_State* L)
+{
+    DM_LUA_STACK_CHECK(L, 0);
+    size_t offset = luaL_checknumber(L, 1);
+    size_t length = luaL_checknumber(L, 2);
+    const char *data = luaL_checkstring(L, 3);
+    luaL_checktype(L, 4, LUA_TTABLE);
+    
+    // Now we have the data, cast it to the union and write back out.
+    int idx = 1;
+    for( int i=0; i<length; i+= sizeof(float))
+    {
+        float val = *(float *)(data + i + offset);
+        //printf("%f\n", val);
+        lua_pushnumber(L, val);  /* value */
+        lua_rawseti(L, 4, idx++);  /* set table at key `i' */
+    }
+
+    return 0;
+}
+
+static void GetTableNumbersInt( lua_State * L, int tblidx, int *data )
+{
+    // Iterate indices and set float buffer with correct lookups
+    lua_pushnil(L);
+    size_t idx = 0;
+    // Build a number array matching the buffer. They are all assumed to be type float (for the time being)
+    while( lua_next( L, tblidx ) != 0) {
+        data[idx++] = (int)lua_tonumber( L, -1 );
+        lua_pop( L, 1 );
+    }
+}
+
+static void GetTableNumbersFloat( lua_State * L, int tblidx, float *data )
+{
+    // Iterate indices and set float buffer with correct lookups
+    lua_pushnil(L);
+    size_t idx = 0;
+    // Build a number array matching the buffer. They are all assumed to be type float (for the time being)
+    while( lua_next( L, tblidx ) != 0) {
+        data[idx++] = lua_tonumber( L, -1 );
+        lua_pop( L, 1 );
+    }
+}
+
+static int SetBufferBytesFromTable(lua_State* L)
+{
+    DM_LUA_STACK_CHECK(L, 0);
+    dmScript::LuaHBuffer *buffer = dmScript::CheckBuffer(L, 1);
+    const char *streamname = luaL_checkstring(L, 2);
+    luaL_checktype(L, 3, LUA_TTABLE);
+    luaL_checktype(L, 4, LUA_TTABLE);
+
+    float* bytes = 0x0;
+    uint32_t count = 0;
+    uint32_t components = 0;
+    uint32_t stride = 0;
+    dmBuffer::Result r = dmBuffer::GetStream(buffer->m_Buffer, dmHashString64(streamname), (void**)&bytes, &count, &components, &stride);
+
+    if(components == 0 || count == 0) return 0;
+
+    // This is very rudimentary.. will make nice later (maybe)    
+    size_t indiceslen = lua_objlen(L, 3);
+    int * idata = (int *)calloc(indiceslen, sizeof(int));    
+    GetTableNumbersInt(L, 3, idata);
+
+    size_t floatslen = lua_objlen(L, 4);
+    float *floatdata = (float *)calloc(floatslen, sizeof(float));    
+    GetTableNumbersFloat(L, 4, floatdata);
+
+    if (r == dmBuffer::RESULT_OK) {
+        for (int i = 0; i < count; ++i)
+        {
+            for (int c = 0; c < components; ++c)
+            {
+                bytes[c] = floatdata[idata[i] * components + c];
+            }
+            bytes += stride;
+        }
+    } else {
+        // handle error
+    }
+    
+    free(floatdata);
+    free(idata);
+    r = dmBuffer::ValidateBuffer(buffer->m_Buffer);
+    return 0;
+}
+
 
 static int SetBufferBytes(lua_State* L)
 {
@@ -68,6 +181,9 @@ static const luaL_reg Module_methods[] =
 {
     {"reverse", Reverse},
     {"setbufferbytes", SetBufferBytes},
+    {"setbufferbytesfromtable", SetBufferBytesFromTable},
+    {"setbufferfloatsfromtable", SetBufferFloatsFromTable},
+    {"setbufferintsfromtable", SetBufferIntsFromTable},
     {0, 0}
 };
 

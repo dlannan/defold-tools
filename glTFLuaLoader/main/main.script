@@ -57,3 +57,7 @@ end
 function on_message(self, message_id, message)	
 end
 
+function on_reload(self)
+	-- Toggle the visual profiler on hot reload.
+	profiler.enable_ui(true)
+end

@@ -30,44 +30,14 @@ function geom:makeMesh( goname, indices, verts, uvs, normals )
 	--{ name = hash("color0"), type=buffer.VALUE_TYPE_FLOAT32, count = 4 }
 	
 	local meshbuf = buffer.create(iverts, meshdata)
-	-- get the position stream and write the vertices
-	local uvBuffer 		= nil 
-	local normBuffer 	= nil
-	
-	local vertBuffer = buffer.get_stream(meshbuf, "position")
-	if(uvs) then uvBuffer = buffer.get_stream(meshbuf, "texcoord0") end 
-	if(normals) then normBuffer = buffer.get_stream(meshbuf, "normal") end 
 
-	-- Iterate all indexes (referenced verts) 
-	-- All verts are expected to be 6 verts per face. 3 verts per triangle
-	-- Each indexed vert has a respective xyz triplet, and uv (will add norma)
-	local vc = 1
-	local uc = 1
-	local nc = 1
-	
-	for idx = 1, iverts do  
-		local vi = indices[idx]	
-		-- print(vi, idx, #verts, iverts)
-		vertBuffer[vc] = verts[vi*3+1]
-		vertBuffer[vc+1] = verts[vi*3+2]
-		vertBuffer[vc+2] = verts[vi*3+3]
-		if(normals) then 
-			normBuffer[nc] = normals[vi*3+1]
-			normBuffer[nc+1] = normals[vi*3+2]
-			normBuffer[nc+2] = normals[vi*3+3]
-		end 
-		if(uvs) then 
-			uvBuffer[uc] = uvs[vi*2+1]
-			uvBuffer[uc+1] = uvs[vi*2+2]
-		end
-		vc = vc + 3
-		nc = nc + 3
-		uc = uc + 2
-	end 
-
+	myextension.setbufferbytesfromtable( meshbuf, "position", indices, verts )
+	if(normals) then myextension.setbufferbytesfromtable( meshbuf, "normal", indices, normals ) end
+	if(uvs) then myextension.setbufferbytesfromtable( meshbuf, "texcoord0", indices, uvs ) end 
+		
 	-- set the buffer with the vertices on the mesh
 	resource.set_buffer(res, meshbuf)
---	go.set(goname, "vertices", mesh)
+	--	go.set(goname, "vertices", mesh)
 end
 
 ------------------------------------------------------------------------------------------------------------
