@@ -239,10 +239,11 @@ function gltfloader:loadimages( gltfobj, goname, idx, tid )
 				{	name=hash(v.res.type), type=buffer.VALUE_TYPE_UINT8, count=rgbcount } 
 			})
 			local stm = buffer.get_stream(buff, hash(v.res.type))
-			pprint(stm)
-			for idx = 1, v.res.width * v.res.height * rgbcount do 
-				stm[idx] = string.byte(v.res.buffer, idx )
-			end
+			-- for idx = 1, v.res.width * v.res.height * rgbcount do 
+			-- 	stm[idx] = string.byte(v.res.buffer, idx )
+			-- end
+			myextension.setbufferbytes( buff, v.res.type, v.res.buffer )
+			
 			v.res.type=resource.TEXTURE_TYPE_2D	
 			v.res.num_mip_maps=1
 
