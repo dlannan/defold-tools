@@ -1,7 +1,7 @@
 // myextension.cpp
 // Extension lib defines
-#define LIB_NAME "MyExtension"
-#define MODULE_NAME "myextension"
+#define LIB_NAME "glTFExtension"
+#define MODULE_NAME "gltfextension"
 
 // include the Defold SDK
 #include <dmsdk/sdk.h>
@@ -198,13 +198,13 @@ static void LuaInit(lua_State* L)
     assert(top == lua_gettop(L));
 }
 
-dmExtension::Result AppInitializeMyExtension(dmExtension::AppParams* params)
+dmExtension::Result AppInitializeglTFExtension(dmExtension::AppParams* params)
 {
-    dmLogInfo("AppInitializeMyExtension\n");
+    dmLogInfo("AppInitializeglTFExtension\n");
     return dmExtension::RESULT_OK;
 }
 
-dmExtension::Result InitializeMyExtension(dmExtension::Params* params)
+dmExtension::Result InitializeglTFExtension(dmExtension::Params* params)
 {
     // Init Lua
     LuaInit(params->m_L);
@@ -212,42 +212,42 @@ dmExtension::Result InitializeMyExtension(dmExtension::Params* params)
     return dmExtension::RESULT_OK;
 }
 
-dmExtension::Result AppFinalizeMyExtension(dmExtension::AppParams* params)
+dmExtension::Result AppFinalizeglTFExtension(dmExtension::AppParams* params)
 {
-    dmLogInfo("AppFinalizeMyExtension\n");
+    dmLogInfo("AppFinalizeglTFExtension\n");
     return dmExtension::RESULT_OK;
 }
 
-dmExtension::Result FinalizeMyExtension(dmExtension::Params* params)
+dmExtension::Result FinalizeglTFExtension(dmExtension::Params* params)
 {
-    dmLogInfo("FinalizeMyExtension\n");
+    dmLogInfo("FinalizeglTFExtension\n");
     return dmExtension::RESULT_OK;
 }
 
-dmExtension::Result OnUpdateMyExtension(dmExtension::Params* params)
+dmExtension::Result OnUpdateglTFExtension(dmExtension::Params* params)
 {
-    // dmLogInfo("OnUpdateMyExtension\n");
+    // dmLogInfo("OnUpdateglTFExtension\n");
     return dmExtension::RESULT_OK;
 }
 
-void OnEventMyExtension(dmExtension::Params* params, const dmExtension::Event* event)
+void OnEventglTFExtension(dmExtension::Params* params, const dmExtension::Event* event)
 {
     switch(event->m_Event)
     {
         case dmExtension::EVENT_ID_ACTIVATEAPP:
-            dmLogInfo("OnEventMyExtension - EVENT_ID_ACTIVATEAPP\n");
+            dmLogInfo("OnEventglTFExtension - EVENT_ID_ACTIVATEAPP\n");
             break;
         case dmExtension::EVENT_ID_DEACTIVATEAPP:
-            dmLogInfo("OnEventMyExtension - EVENT_ID_DEACTIVATEAPP\n");
+            dmLogInfo("OnEventglTFExtension - EVENT_ID_DEACTIVATEAPP\n");
             break;
         case dmExtension::EVENT_ID_ICONIFYAPP:
-            dmLogInfo("OnEventMyExtension - EVENT_ID_ICONIFYAPP\n");
+            dmLogInfo("OnEventglTFExtension - EVENT_ID_ICONIFYAPP\n");
             break;
         case dmExtension::EVENT_ID_DEICONIFYAPP:
-            dmLogInfo("OnEventMyExtension - EVENT_ID_DEICONIFYAPP\n");
+            dmLogInfo("OnEventglTFExtension - EVENT_ID_DEICONIFYAPP\n");
             break;
         default:
-            dmLogWarning("OnEventMyExtension - Unknown event id\n");
+            dmLogWarning("OnEventglTFExtension - Unknown event id\n");
             break;
     }
 }
@@ -256,6 +256,6 @@ void OnEventMyExtension(dmExtension::Params* params, const dmExtension::Event* e
 //
 // DM_DECLARE_EXTENSION(symbol, name, app_init, app_final, init, update, on_event, final)
 
-// MyExtension is the C++ symbol that holds all relevant extension data.
+// glTFExtension is the C++ symbol that holds all relevant extension data.
 // It must match the name field in the `ext.manifest`
-DM_DECLARE_EXTENSION(MyExtension, LIB_NAME, AppInitializeMyExtension, AppFinalizeMyExtension, InitializeMyExtension, OnUpdateMyExtension, OnEventMyExtension, FinalizeMyExtension)
+DM_DECLARE_EXTENSION(glTFExtension, LIB_NAME, AppInitializeglTFExtension, AppFinalizeglTFExtension, InitializeglTFExtension, OnUpdateglTFExtension, OnEventglTFExtension, FinalizeglTFExtension)

@@ -31,9 +31,9 @@ function geom:makeMesh( goname, indices, verts, uvs, normals )
 	
 	local meshbuf = buffer.create(iverts, meshdata)
 
-	myextension.setbufferbytesfromtable( meshbuf, "position", indices, verts )
-	if(normals) then myextension.setbufferbytesfromtable( meshbuf, "normal", indices, normals ) end
-	if(uvs) then myextension.setbufferbytesfromtable( meshbuf, "texcoord0", indices, uvs ) end 
+	gltfextension.setbufferbytesfromtable( meshbuf, "position", indices, verts )
+	if(normals) then gltfextension.setbufferbytesfromtable( meshbuf, "normal", indices, normals ) end
+	if(uvs) then gltfextension.setbufferbytesfromtable( meshbuf, "texcoord0", indices, uvs ) end 
 		
 	-- set the buffer with the vertices on the mesh
 	resource.set_buffer(res, meshbuf)

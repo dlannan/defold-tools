@@ -134,7 +134,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 		gltf.indices = {}
 		-- Indices specific - this is default dataset for gltf (I think)
-		myextension.setbufferintsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.indices)
+		gltfextension.setbufferintsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.indices)
 
 		-- Get position accessor
 		local aidx = gltfobj.accessors[prim.attributes["POSITION"] + 1]
@@ -144,7 +144,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		-- Get positions (or verts) 
 		gltf.verts = {}
 		-- getBufferData( gltf.verts, bv, buffer )
-		myextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.verts)
+		gltfextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.verts)
 		
 		-- Get uvs accessor
 		aidx = gltfobj.accessors[prim.attributes["TEXCOORD_0"] + 1]
@@ -154,7 +154,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		-- Get positions (or verts) 
 		gltf.uvs = {}
 		-- getBufferData( gltf.uvs, bv, buffer )
-		myextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.uvs)
+		gltfextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.uvs)
 				
 		-- Get normals accessor
 		aidx = gltfobj.accessors[prim.attributes["NORMAL"] + 1]
@@ -164,7 +164,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		-- Get positions (or verts) 
 		gltf.normals = {}
 		-- getBufferData( gltf.normals, bv, buffer )
-		myextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.normals)
+		gltfextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.normals)
 		
 		-- 	local indices	= { 0, 1, 2, 0, 2, 3 }
 		-- 	local verts		= { -sx + offx, 0.0, sy + offy, sx + offx, 0.0, sy + offy, sx + offx, 0.0, -sy + offy, -sx + offx, 0.0, -sy + offy }
@@ -216,7 +216,7 @@ function gltfloader:loadimages( gltfobj, goname, idx, tid )
 			-- for idx = 1, v.res.width * v.res.height * rgbcount do 
 			-- 	stm[idx] = string.byte(v.res.buffer, idx )
 			-- end
-			myextension.setbufferbytes( buff, v.res.type, v.res.buffer )
+			gltfextension.setbufferbytes( buff, v.res.type, v.res.buffer )
 			
 			v.res.type=resource.TEXTURE_TYPE_2D	
 			v.res.num_mip_maps=1
