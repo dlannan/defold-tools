@@ -3,6 +3,7 @@ vertices: "/assets/gotemplate/temp.buffer"
 textures: ""
 textures: ""
 textures: ""
+textures: ""
 primitive_type: PRIMITIVE_TRIANGLES
 position_stream: "position"
 normal_stream: "normal"

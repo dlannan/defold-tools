@@ -3,19 +3,6 @@
 local tinsert = table.insert
 local ffi 	= package.preload.ffi()
 
-ffi.cdef[[
-union floatData {
-	struct data {
-		unsigned char a;
-		unsigned char b;
-		unsigned char c;
-		unsigned char d;
-	} data;
-	float f;
-};
-
-void SetWorkingBuffer(unsigned char *workingbuffer);
-]]
 ------------------------------------------------------------------------------------------------------------
 
 local geom = require("assets.gotemplate.scripted_geom")
@@ -27,25 +14,6 @@ local gltfloader = {
 	curr_factory 	= nil,
 	temp_meshes 	= {},
 }
-
-------------------------------------------------------------------------------------------------------------
-local tfloat = ffi.new("union floatData")
-
-local function getBufferData( data, bv, buffer )
-
-	--print(bv.byteLength, bv.byteOffset)
-	local bc = 0
-	local offset = bv.byteOffset or 0
-	while( bc < bv.byteLength ) do 
-		local bcl = bc + offset
-		tfloat.data.a = buffer.data[bcl]
-		tfloat.data.b = buffer.data[bcl+1]
-		tfloat.data.c = buffer.data[bcl+2]
-		tfloat.data.d = buffer.data[bcl+3]
-		tinsert( data, tonumber(tfloat.f) )
-		bc = bc + 4  -- This needs to be checked for type float etc
-	end
-end
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -146,6 +114,18 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 					gltfloader:loadimages( gltfobj, goname, bcolor + 1, 1 )
 				end
 			end
+			local pbremissive = mat.emissiveTexture
+			if(pbremissive) then 
+				local bcolor = pbremissive.index
+				local res = gltfobj.images[bcolor + 1]
+				gltfloader:loadimages( gltfobj, goname, bcolor + 1, 2 )
+			end
+			local pbrnormal = mat.normalTexture
+			if(pbrnormal) then  
+				local bcolor = pbrnormal.index
+				local res = gltfobj.images[bcolor + 1]
+				gltfloader:loadimages( gltfobj, goname, bcolor + 1, 3 )
+			end
 		end 
 		
 		local acc_idx = prim.indices
@@ -155,15 +135,8 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		local byteoff = accessor.byteOffset -- Not sure what to do with this just yet 
 		local buffer = gltfobj.buffers[bv.buffer+1]
 
-		-- Indices specific - this is default dataset for gltf (I think)
 		gltf.indices = {}
-		-- local bc = 0
-		-- while( bc < bv.byteLength ) do 
-		-- 	local bcl = bc + bv.byteOffset
-		-- 	local index = bit.bor(bit.lshift(buffer.data[bcl+1], 8), buffer.data[bcl])
-		-- 	tinsert( gltf.indices, index)
-		-- 	bc = bc + 2
-		-- end
+		-- Indices specific - this is default dataset for gltf (I think)
 		myextension.setbufferintsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.indices)
 
 		-- Get position accessor

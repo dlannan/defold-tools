@@ -28,7 +28,17 @@ function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
 	local fhi = io.open(tmpimgpath, "r")
 	local tmpimg = fhi:read("*a")
 	fhi:close()	
-		
+
+	local tmpimgpathblack = "assets/images/tempBlack.png"
+	local fhi = io.open(tmpimgpathblack, "r")
+	local tmpimgblack = fhi:read("*a")
+	fhi:close()	
+
+	local tmpimgpathnorm = "assets/images/tempNormal.png"
+	local fhi = io.open(tmpimgpathnorm, "r")
+	local tmpimgnorm = fhi:read("*a")
+	fhi:close()	
+	
 	for i=1, count do 
 	
 		local mpath = tempbasepath..string.format("%03d", i)..".mesh"
@@ -39,13 +49,17 @@ function maketempmeshses( meshfile, bufferfile, tempbasepath, count )
 		local newmdata = string.gsub(mdata, [[textures: ("")]], "textures: \"/"..tapath.."\"",1)		
 		local trpath = tempbasepath..string.format("%03dR", i)..".png"
 		newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..trpath.."\"",1)		
-		-- local tmpath = tempbasepath..string.format("%03dM", i)..".png"
-		-- newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..tmpath.."\"",1)		
+		local tmpath = tempbasepath..string.format("%03dE", i)..".png"
+		newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..tmpath.."\"",1)		
+		local nmpath = tempbasepath..string.format("%03dN", i)..".png"
+		newmdata = string.gsub(newmdata, [[textures: ("")]], "textures: \"/"..nmpath.."\"",1)		
+		
 		newmdata = string.gsub(newmdata, bufferfile, tempbasepath..bext)
 
 		makefile( tapath, tmpimg )
 		makefile( trpath, tmpimg )
-		-- makefile( tmpath, tmpimg )
+		makefile( tmpath, tmpimgblack )
+		makefile( nmpath, tmpimgnorm )
 		
 		makefile( mpath, newmdata )
 		makefile( bpath, bdata )
@@ -75,7 +89,7 @@ function init(self)
 
 	-- Use this to make some temp meshes, which will be used for the gltf loader
 	maketempmeshses("assets/gotemplate/temp.mesh", "assets/gotemplate/temp.buffer",
-				"assets/gotemplate/meshpool/temp", 10)
+			"assets/gotemplate/meshpool/temp", 10)
 	-- Use this to make matching go's for the meshes.
 	--maketempgos("assets/gotemplate/temp.go", "/assets/gotemplate/temp.mesh", "assets/gotemplate/meshpool/temp", 10)
 	

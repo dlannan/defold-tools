@@ -71,14 +71,21 @@ samplers {
   filter_mag: FILTER_MODE_MAG_NEAREST
 }
 samplers {
-  name: "metalnessMap"
+  name: "roughnessMap"
   wrap_u: WRAP_MODE_REPEAT
   wrap_v: WRAP_MODE_REPEAT
   filter_min: FILTER_MODE_MIN_NEAREST
   filter_mag: FILTER_MODE_MAG_NEAREST
 }
 samplers {
-  name: "roughnessMap"
+  name: "emissiveMap"
+  wrap_u: WRAP_MODE_REPEAT
+  wrap_v: WRAP_MODE_REPEAT
+  filter_min: FILTER_MODE_MIN_NEAREST
+  filter_mag: FILTER_MODE_MAG_NEAREST
+}
+samplers {
+  name: "normalMap"
   wrap_u: WRAP_MODE_REPEAT
   wrap_v: WRAP_MODE_REPEAT
   filter_min: FILTER_MODE_MIN_NEAREST

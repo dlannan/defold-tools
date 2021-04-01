@@ -2,9 +2,10 @@
 // https://dominium.maksw.com/articles/physically-based-rendering-pbr/pbr-part-one/
 
 // uniform samplerCube cubeMap ;
-//uniform sampler2D metalnessMap ;
+uniform sampler2D emissiveMap ;
 uniform sampler2D roughnessMap;
 uniform sampler2D albedoMap ;
+uniform sampler2D normalMap ;
 
 varying vec3 vvLocalSurfaceNormal ;
 varying vec3 vvLocalSurfaceToLightDirection;
@@ -70,6 +71,7 @@ void main()
 	float fLightSourceFresnelTerm = computeFresnelTerm(0.5, vNormalisedLocalSurfaceToViewerDirection, vNormalisedLocalSurfaceNormal) ;
 
 	vec3 rgbAlbedo = texture(albedoMap, vuvCoord0).rgb;
+	vec3 rgbEmissive = texture(emissiveMap, vuvCoord0).rgb;
 
 	vec3 rgbFragment = rgbAlbedo * (1.0 - fMetalness);
 
@@ -91,6 +93,7 @@ void main()
 	rgbFragment += rgbSpecular ;
 	rgbFragment *= fLightIntensity * 1.5 ;
 	rgbFragment += rgbReflection ;
+	rgbFragment += rgbEmissive ;
 
 	gl_FragColor.rgb = rgbFragment;
 	gl_FragColor.a = 1.0 ; // TODO : Worry about materials which allow transparency!
