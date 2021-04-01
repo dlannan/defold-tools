@@ -4,8 +4,7 @@ local tinsert = table.insert
 
 ------------------------------------------------------------------------------------------------------------
 
-local geom = require("assets.gotemplate.scripted_geom")
--- local jsonloader = require("assets.gotemplate.json_loader")
+local geom = require("gltfloader.geometry-utils")
 
 ------------------------------------------------------------------------------------------------------------
 

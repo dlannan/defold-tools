@@ -310,7 +310,7 @@ embedded_instances {
   children: "temp010"
   data: "components {\n"
   "  id: \"script\"\n"
-  "  component: \"/assets/gotemplate/meshes.script\"\n"
+  "  component: \"/gltfloader/mesh-utils.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
