@@ -1,10 +1,10 @@
 local gltf = require("gltfloader.gltfloader")
 
 local files = {
---	"/assets/models/Cube/Cube.gltf",
---	"/assets/models/Suzanne/glTF/Suzanne.gltf",
-	"/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf",
---	"/assets/models/Lantern/glTF/Lantern.gltf",
+-- 	"/assets/models/Cube/Cube.gltf",
+-- 	"/assets/models/Suzanne/glTF/Suzanne.gltf",
+ 	"/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf",
+-- 	"/assets/models/Lantern/glTF/Lantern.gltf",
 -- "/assets/private/ALPINIST/ALPINIST_HI_Body.gltf",
 -- "/assets/private/ALPINIST/ALPINIST_HI_Wheel.gltf",
 }
