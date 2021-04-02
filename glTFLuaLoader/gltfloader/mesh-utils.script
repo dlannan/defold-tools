@@ -6,7 +6,7 @@ local files = {
 	"/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf",
 --	"/assets/models/Lantern/glTF/Lantern.gltf",
 -- "/assets/private/ALPINIST/ALPINIST_HI_Body.gltf",
---"/assets/models/ALPINIST/ALPINIST_HI_Wheel.gltf",
+-- "/assets/private/ALPINIST/ALPINIST_HI_Wheel.gltf",
 }
 
 function makefile( fpath, fdata )
