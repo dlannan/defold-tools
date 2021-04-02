@@ -26,6 +26,10 @@ function init(self)
 	self.sun_height = 0.0
 	self.cloud_cover = 0.5
 	self.angle = 0.0
+
+	-- Toggle the visual profiler on hot reload.
+	self.profile = false
+	profiler.enable_ui(self.profile)
 end
 
 function update(self)
@@ -52,9 +56,27 @@ function on_input(self, action_id, action)
 	model.set_constant("/temp004#temp", "light", self.light)
 	
 	self.camerapos = go.get_position("/camera")
+
+	-- Check some keys - 1, 2, 3 for profiling
+	if(action.released) then 
+	if action_id == hash("zero") then
+		self.profile = not self.profile
+		profiler.enable_ui(self.profile)
+	end 
+	if action_id == hash("one") then
+		profiler.set_ui_mode(profiler.MODE_RUN)
+	end 
+	if action_id == hash("two") then
+		profiler.set_ui_mode(profiler.MODE_PAUSE)
+	end
+	if action_id == hash("three") then
+		profiler.set_ui_mode(profiler.MODE_RECORD)
+	end
+	end
 end
 
 function on_message(self, message_id, message)	
+	
 end
 
 function on_reload(self)
