@@ -11,4 +11,8 @@ This a glTF only loader (no glb support - yet). The loader is limited in scope a
 
 Platforms tested and working: Linux, Windows, Android and HTML. 
 
+![alt text](media/screenshots/2021-04-02_15-49.png)
+
+![alt text](media/screenshots/2021-04-02_15-51.png)
+
 
