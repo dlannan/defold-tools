@@ -1,30 +1,30 @@
 components {
-	id: "temp"
-	component: "temp008.mesh"
-	position {
-		x: 0.0
-		y: 0.0
-		z: 0.0
-	}
-	rotation {
-		x: 0.0
-		y: 0.0
-		z: 0.0
-		w: 1.0
-	}
+  id: "temp"
+  component: "/assets/gotemplate/meshpool/temp008.mesh"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
 }
 components {
-	id: "script"
-	component: "temp008.script"
-	position {
-		x: 0.0
-		y: 0.0
-		z: 0.0
-	}
-	rotation {
-		x: 0.0
-		y: 0.0
-		z: 0.0
-		w: 1.0
-	}
+  id: "script"
+  component: "/assets/gotemplate/meshpool/temp008.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
 }
