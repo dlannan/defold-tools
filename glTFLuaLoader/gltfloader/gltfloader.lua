@@ -17,12 +17,12 @@ local gltfloader = {
 
 local function loadgltf( fname )
 
+	print(fname)
 	-- Check for gltf - only support this at the moment. 
 	local valid = string.match(fname, ".*%.gltf$")
 	assert(valid)
 
 	local basepath = fname:match("(.*/)")
-	print(basepath)
 
 	-- Note: This can be replaced with io.open if needed.
 	local gltfdata, error = sys.load_resource(fname)	
@@ -144,7 +144,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		-- Get positions (or verts) 
 		gltf.verts = {}
 		-- getBufferData( gltf.verts, bv, buffer )
-		gltfextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.verts)
+		gltfextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength, buffer.data, gltf.verts)
 		
 		-- Get uvs accessor
 		aidx = gltfobj.accessors[prim.attributes["TEXCOORD_0"] + 1]
@@ -250,7 +250,6 @@ function gltfloader:load( fname, pobj, meshname )
 	-- Parent mesh
 	local goname = msg.url(nil, pobj, meshname)	
 	local goscript = pobj.."#script"
-	pprint(goscript)
 	
 	-- local gltfobj = tinygltf_extension.loadmodel( fname )
 	local gltfobj = loadgltf( fname )
