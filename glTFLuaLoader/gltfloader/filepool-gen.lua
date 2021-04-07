@@ -63,6 +63,10 @@ components {
 		w: 1.0
 	}
 }
+GO_FILE_SCRIPT
+]]
+
+local gofiledatascript = [[
 components {
 	id: "script"
 	component: "SCRIPT_FILE_PATH"
@@ -96,6 +100,21 @@ normal_stream: "normal"
 
 ------------------------------------------------------------------------------------------------------------
 
+local scriptfiledataupdate = [[
+function update(self, dt)
+end
+]]
+
+local scriptfiledatamsg = [[
+function on_message(self, message_id, message, sender)
+end
+]]
+
+local scriptfiledatainput = [[
+function on_input(self, action_id, action)
+end
+]]
+
 local scriptfiledata = [[
 function init(self)
 end
@@ -103,14 +122,11 @@ end
 function final(self)
 end
 
-function update(self, dt)
-end
+UPDATE_FUNC
 
-function on_message(self, message_id, message, sender)
-end
+MESSAGE_FUNC
 
-function on_input(self, action_id, action)
-end
+INPUT_FUNC 
 
 function on_reload(self)
 end
@@ -211,12 +227,18 @@ local function makepoolfiles( count )
 		-- Write out a buffer file
 		makefile( bpath, bufferfiledata )
 
-		-- Write out a script file 
-		makefile( spath, scriptfiledata )
+		-- Write out a script file -- option for adding/removing update		
+		local newsdata = string.gsub(scriptfiledata, "UPDATE_FUNC", "", 1)		
+		newsdata = string.gsub(newsdata, "MESSAGE_FUNC", "", 1)		
+		newsdata = string.gsub(newsdata, "INPUT_FUNC", "", 1)		
+		makefile( spath, newsdata )
 
 		-- Build a gameobject file 
 		local newgdata = string.gsub(gdata, "MESH_FILE_PATH", string.format("temp%03d", i)..".mesh", 1)		
-		newgdata = string.gsub(newgdata, "SCRIPT_FILE_PATH", string.format("temp%03d", i)..".script", 1)		
+
+		-- Insert script here if needed
+		newgdata = string.gsub(newgdata, "GO_FILE_SCRIPT", "", 1)
+		newgdata = string.gsub(newgdata, "SCRIPT_FILE_PATH", string.format("temp%03d", i)..".script", 1)
 						
 		-- Write out the game object file
 		makefile( gpath, newgdata )

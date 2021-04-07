@@ -31,23 +31,17 @@ function geom:makeMesh( goname, indices, verts, uvs, normals )
 	
 	local meshbuf = buffer.create(iverts, meshdata)
 
-	gltfextension.setbufferbytesfromtable( meshbuf, "position", indices, verts )
-	if(normals) then gltfextension.setbufferbytesfromtable( meshbuf, "normal", indices, normals ) end
-	if(uvs) then gltfextension.setbufferbytesfromtable( meshbuf, "texcoord0", indices, uvs ) end 
+	geomextension.setbufferbytesfromtable( meshbuf, "position", indices, verts )
+	if(normals) then geomextension.setbufferbytesfromtable( meshbuf, "normal", indices, normals ) end
+	if(uvs) then geomextension.setbufferbytesfromtable( meshbuf, "texcoord0", indices, uvs ) end 
 		
 	-- set the buffer with the vertices on the mesh
 	resource.set_buffer(res, meshbuf)
-	--	go.set(goname, "vertices", mesh)
 end
 
 ------------------------------------------------------------------------------------------------------------
 
 function geom:New(goname, sz)
-
-	-- TODO: Sort this out
--- 	go.set(goname, "position", vmath.vector3(0, 0, 0))
--- 	go.set(goname, "rotation", vmath.quat_rotation_z(math.pi / 2))
--- 	go.set(goname, "scale", sz)
 
 	local props = {}
 	props[goname] = { }
@@ -164,16 +158,16 @@ function geom:GenerateCube(goname, sz, d )
 		end
 	end
 
-	makeMesh( goname, indices, verts, uvs, normals )
+	geom:makeMesh( goname, indices, verts, uvs, normals )
 end
 
 ------------------------------------------------------------------------------------------------------------
 
 function geom:GeneratePlane( goname, sx, sy, uvMult, offx, offy )
 
-	if offx     == nil then offx = 0 end
-	if offy     == nil then offy = 0 end
-	if uvMult   == nil then uvMult = 1.0 end
+	offx     = offx or 0
+	offy     = offy or 0
+	uvMult   = uvMult or 1.0
 	local plane 	= geom:New(goname)
 	geom:New(goname, 1.0)
 	tinsert(self.meshes, goname)
@@ -183,7 +177,7 @@ function geom:GeneratePlane( goname, sx, sy, uvMult, offx, offy )
 	local uvs		= { 0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult }
 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
 
-	makeMesh( goname, indices, verts, uvs, normals )
+	geom:makeMesh( goname, indices, verts, uvs, normals )
 end
 
 

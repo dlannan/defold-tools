@@ -5,6 +5,7 @@ local tinsert = table.insert
 ------------------------------------------------------------------------------------------------------------
 
 local geom = require("gltfloader.geometry-utils")
+local imageutils = require("gltfloader.image-utils")
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -17,7 +18,7 @@ local gltfloader = {
 
 local function loadgltf( fname )
 
-	print(fname)
+	--print(fname)
 	-- Check for gltf - only support this at the moment. 
 	local valid = string.match(fname, ".*%.gltf$")
 	assert(valid)
@@ -134,7 +135,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 		gltf.indices = {}
 		-- Indices specific - this is default dataset for gltf (I think)
-		gltfextension.setbufferintsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.indices)
+		geomextension.setbufferintsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.indices)
 
 		-- Get position accessor
 		local aidx = gltfobj.accessors[prim.attributes["POSITION"] + 1]
@@ -144,7 +145,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		-- Get positions (or verts) 
 		gltf.verts = {}
 		-- getBufferData( gltf.verts, bv, buffer )
-		gltfextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength, buffer.data, gltf.verts)
+		geomextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength, buffer.data, gltf.verts)
 		
 		-- Get uvs accessor
 		aidx = gltfobj.accessors[prim.attributes["TEXCOORD_0"] + 1]
@@ -154,7 +155,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		-- Get positions (or verts) 
 		gltf.uvs = {}
 		-- getBufferData( gltf.uvs, bv, buffer )
-		gltfextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.uvs)
+		geomextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.uvs)
 				
 		-- Get normals accessor
 		aidx = gltfobj.accessors[prim.attributes["NORMAL"] + 1]
@@ -164,14 +165,14 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 		-- Get positions (or verts) 
 		gltf.normals = {}
 		-- getBufferData( gltf.normals, bv, buffer )
-		gltfextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.normals)
+		geomextension.setbufferfloatsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.normals)
 		
 		-- 	local indices	= { 0, 1, 2, 0, 2, 3 }
 		-- 	local verts		= { -sx + offx, 0.0, sy + offy, sx + offx, 0.0, sy + offy, sx + offx, 0.0, -sy + offy, -sx + offx, 0.0, -sy + offy }
 		-- 	local uvs		= { 0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult }
 		-- 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
 		geom:makeMesh( goname, gltf.indices, gltf.verts, gltf.uvs, gltf.normals )
-		print("Geometry: ", goname)
+		--print("Geometry: ", goname)
 
 	-- No mesh.. try children
 	else
@@ -197,41 +198,7 @@ function gltfloader:loadimages( gltfobj, goname, idx, tid )
 	-- Load in any images 
 	--for k,v in pairs(gltfobj.images) do 
 	local v = gltfobj.images[idx]
-	
-		print(gltfobj.basepath..v.uri)
-		v.res, err = image.load(sys.load_resource(gltfobj.basepath..v.uri))
-		if(err) then print("[Image Load Error]: "..v.uri.." #:"..err) end 
-
-		-- TODO: This goes into image loader
-		pprint(v.res)
-		if(v.res.buffer ~= "") then
-			rgbcount = 3
-			if(v.res.type == "rgba") then v.res.format = resource.TEXTURE_FORMAT_RGBA; rgbcount = 4 end
-			if(v.res.type == "rgb") then v.res.format = resource.TEXTURE_FORMAT_RGB; rgbcount = 3 end
-
-			local buff = buffer.create(v.res.width * v.res.height, { 
-				{	name=hash(v.res.type), type=buffer.VALUE_TYPE_UINT8, count=rgbcount } 
-			})
-			local stm = buffer.get_stream(buff, hash(v.res.type))
-			-- for idx = 1, v.res.width * v.res.height * rgbcount do 
-			-- 	stm[idx] = string.byte(v.res.buffer, idx )
-			-- end
-			gltfextension.setbufferbytes( buff, v.res.type, v.res.buffer )
-			
-			v.res.type=resource.TEXTURE_TYPE_2D	
-			v.res.num_mip_maps=1
-
-			local resource_path = go.get(goname, "texture"..tid)
-
-			-- Store the resource path so it can be used later 
-			v.res.resource_path = resource_path
-			v.res.image_buffer = buff 
-
-			resource.set_texture( resource_path, v.res, buff )
-			go.set(goname, "texture"..tid, resource_path)
-						
-			msg.post( goname, hash("mesh_texture") )
-		end
+	imageutils.loadimage(goname, gltfobj.basepath..v.uri, tid )
 	--end
 end
 
