@@ -1,0 +1,9 @@
+material: "/assets/shaders/pbr-simple.material"
+vertices: "/assets/gotemplate/meshpool/temp031.buffer"
+textures: "/assets/gotemplate/meshpool/temp031A.png"
+textures: "/assets/gotemplate/meshpool/temp031R.png"
+textures: "/assets/gotemplate/meshpool/temp031E.png"
+textures: "/assets/gotemplate/meshpool/temp031N.png"
+primitive_type: PRIMITIVE_TRIANGLES
+position_stream: "position"
+normal_stream: "normal"

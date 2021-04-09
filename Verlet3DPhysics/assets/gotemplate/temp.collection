@@ -1,0 +1,2001 @@
+name: "default"
+instances {
+	id: "temp001"
+	prototype: "/assets/gotemplate/meshpool/temp001.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp002"
+	prototype: "/assets/gotemplate/meshpool/temp002.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp003"
+	prototype: "/assets/gotemplate/meshpool/temp003.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp004"
+	prototype: "/assets/gotemplate/meshpool/temp004.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp005"
+	prototype: "/assets/gotemplate/meshpool/temp005.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp006"
+	prototype: "/assets/gotemplate/meshpool/temp006.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp007"
+	prototype: "/assets/gotemplate/meshpool/temp007.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp008"
+	prototype: "/assets/gotemplate/meshpool/temp008.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp009"
+	prototype: "/assets/gotemplate/meshpool/temp009.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp010"
+	prototype: "/assets/gotemplate/meshpool/temp010.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp011"
+	prototype: "/assets/gotemplate/meshpool/temp011.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp012"
+	prototype: "/assets/gotemplate/meshpool/temp012.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp013"
+	prototype: "/assets/gotemplate/meshpool/temp013.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp014"
+	prototype: "/assets/gotemplate/meshpool/temp014.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp015"
+	prototype: "/assets/gotemplate/meshpool/temp015.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp016"
+	prototype: "/assets/gotemplate/meshpool/temp016.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp017"
+	prototype: "/assets/gotemplate/meshpool/temp017.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp018"
+	prototype: "/assets/gotemplate/meshpool/temp018.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp019"
+	prototype: "/assets/gotemplate/meshpool/temp019.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp020"
+	prototype: "/assets/gotemplate/meshpool/temp020.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp021"
+	prototype: "/assets/gotemplate/meshpool/temp021.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp022"
+	prototype: "/assets/gotemplate/meshpool/temp022.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp023"
+	prototype: "/assets/gotemplate/meshpool/temp023.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp024"
+	prototype: "/assets/gotemplate/meshpool/temp024.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp025"
+	prototype: "/assets/gotemplate/meshpool/temp025.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp026"
+	prototype: "/assets/gotemplate/meshpool/temp026.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp027"
+	prototype: "/assets/gotemplate/meshpool/temp027.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp028"
+	prototype: "/assets/gotemplate/meshpool/temp028.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp029"
+	prototype: "/assets/gotemplate/meshpool/temp029.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp030"
+	prototype: "/assets/gotemplate/meshpool/temp030.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp031"
+	prototype: "/assets/gotemplate/meshpool/temp031.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp032"
+	prototype: "/assets/gotemplate/meshpool/temp032.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp033"
+	prototype: "/assets/gotemplate/meshpool/temp033.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp034"
+	prototype: "/assets/gotemplate/meshpool/temp034.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp035"
+	prototype: "/assets/gotemplate/meshpool/temp035.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp036"
+	prototype: "/assets/gotemplate/meshpool/temp036.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp037"
+	prototype: "/assets/gotemplate/meshpool/temp037.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp038"
+	prototype: "/assets/gotemplate/meshpool/temp038.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp039"
+	prototype: "/assets/gotemplate/meshpool/temp039.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp040"
+	prototype: "/assets/gotemplate/meshpool/temp040.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp041"
+	prototype: "/assets/gotemplate/meshpool/temp041.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp042"
+	prototype: "/assets/gotemplate/meshpool/temp042.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp043"
+	prototype: "/assets/gotemplate/meshpool/temp043.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp044"
+	prototype: "/assets/gotemplate/meshpool/temp044.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp045"
+	prototype: "/assets/gotemplate/meshpool/temp045.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp046"
+	prototype: "/assets/gotemplate/meshpool/temp046.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp047"
+	prototype: "/assets/gotemplate/meshpool/temp047.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp048"
+	prototype: "/assets/gotemplate/meshpool/temp048.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp049"
+	prototype: "/assets/gotemplate/meshpool/temp049.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp050"
+	prototype: "/assets/gotemplate/meshpool/temp050.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp051"
+	prototype: "/assets/gotemplate/meshpool/temp051.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp052"
+	prototype: "/assets/gotemplate/meshpool/temp052.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp053"
+	prototype: "/assets/gotemplate/meshpool/temp053.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp054"
+	prototype: "/assets/gotemplate/meshpool/temp054.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp055"
+	prototype: "/assets/gotemplate/meshpool/temp055.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp056"
+	prototype: "/assets/gotemplate/meshpool/temp056.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp057"
+	prototype: "/assets/gotemplate/meshpool/temp057.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp058"
+	prototype: "/assets/gotemplate/meshpool/temp058.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp059"
+	prototype: "/assets/gotemplate/meshpool/temp059.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp060"
+	prototype: "/assets/gotemplate/meshpool/temp060.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp061"
+	prototype: "/assets/gotemplate/meshpool/temp061.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp062"
+	prototype: "/assets/gotemplate/meshpool/temp062.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp063"
+	prototype: "/assets/gotemplate/meshpool/temp063.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp064"
+	prototype: "/assets/gotemplate/meshpool/temp064.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp065"
+	prototype: "/assets/gotemplate/meshpool/temp065.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp066"
+	prototype: "/assets/gotemplate/meshpool/temp066.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp067"
+	prototype: "/assets/gotemplate/meshpool/temp067.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp068"
+	prototype: "/assets/gotemplate/meshpool/temp068.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp069"
+	prototype: "/assets/gotemplate/meshpool/temp069.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp070"
+	prototype: "/assets/gotemplate/meshpool/temp070.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp071"
+	prototype: "/assets/gotemplate/meshpool/temp071.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp072"
+	prototype: "/assets/gotemplate/meshpool/temp072.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp073"
+	prototype: "/assets/gotemplate/meshpool/temp073.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp074"
+	prototype: "/assets/gotemplate/meshpool/temp074.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp075"
+	prototype: "/assets/gotemplate/meshpool/temp075.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp076"
+	prototype: "/assets/gotemplate/meshpool/temp076.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp077"
+	prototype: "/assets/gotemplate/meshpool/temp077.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp078"
+	prototype: "/assets/gotemplate/meshpool/temp078.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp079"
+	prototype: "/assets/gotemplate/meshpool/temp079.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp080"
+	prototype: "/assets/gotemplate/meshpool/temp080.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp081"
+	prototype: "/assets/gotemplate/meshpool/temp081.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp082"
+	prototype: "/assets/gotemplate/meshpool/temp082.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp083"
+	prototype: "/assets/gotemplate/meshpool/temp083.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp084"
+	prototype: "/assets/gotemplate/meshpool/temp084.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp085"
+	prototype: "/assets/gotemplate/meshpool/temp085.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp086"
+	prototype: "/assets/gotemplate/meshpool/temp086.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp087"
+	prototype: "/assets/gotemplate/meshpool/temp087.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp088"
+	prototype: "/assets/gotemplate/meshpool/temp088.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp089"
+	prototype: "/assets/gotemplate/meshpool/temp089.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp090"
+	prototype: "/assets/gotemplate/meshpool/temp090.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp091"
+	prototype: "/assets/gotemplate/meshpool/temp091.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp092"
+	prototype: "/assets/gotemplate/meshpool/temp092.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp093"
+	prototype: "/assets/gotemplate/meshpool/temp093.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp094"
+	prototype: "/assets/gotemplate/meshpool/temp094.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp095"
+	prototype: "/assets/gotemplate/meshpool/temp095.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp096"
+	prototype: "/assets/gotemplate/meshpool/temp096.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp097"
+	prototype: "/assets/gotemplate/meshpool/temp097.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp098"
+	prototype: "/assets/gotemplate/meshpool/temp098.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp099"
+	prototype: "/assets/gotemplate/meshpool/temp099.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp100"
+	prototype: "/assets/gotemplate/meshpool/temp100.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}

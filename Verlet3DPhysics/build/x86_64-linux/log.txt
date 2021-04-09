@@ -1,0 +1,14 @@
+clang++ -DDLIB_LOG_DOMAIN="GEOMEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/geomextension/include -Iupload/  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/geomextension/src/myextension.cpp -c -o build/myextension.cpp_0.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+upload/geomextension/src/myextension.cpp:210:14: warning: unused variable 'size' [-Wunused-variable]
+    uint32_t size = 0;
+             ^
+1 warning generated.
+
+llvm-ar rcs /tmp/job576146090636605174/build/libGeomExtension_1.a build/myextension.cpp_0.o 
+
+clang++ -DDLIB_LOG_DOMAIN="ENGINE_MAIN" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden   -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  build/main.cpp -c -o build/main_tmp2.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ build/main_tmp2.o  -o build/dmengine  -L/tmp/job576146090636605174/build  -L/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//lib/x86_64-linux -L/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//ext/lib/x86_64-linux  -Wl,-Bstatic -Wl,--start-group -lengine -lengine_service -lmbedtls -lzip -lwebviewext -lprofilerext -lfacebookext -liapext -lpushext -liacext -lrecord -lgameobject -lddf -lresource -lgamesys -lgraphics -lgraphics_transcoder_uastc -lbasis_transcoder -lphysics -lBulletDynamics -lBulletCollision -lLinearMath -lBox2D -lrender -lscript -lluajit-5.1 -lextension -lhid -linput -lparticle -lrig -ldlib -ldmglfw -lgui -lcrashext -lliveupdate -lsound -ltremolo -lvpx -lcares   -lGeomExtension_1  -Wl,--end-group -Wl,-Bdynamic -Wl,-rpath=$ORIGIN,--enable-new-dtags  -lopenal -lXext -lX11 -lXi -lGL -lGLU -lpthread -lm -ldl 
+

@@ -1,0 +1,40 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+render = /main/main.renderc
+
+[script]
+shared_state = 1
+
+[display]
+width = 960
+height = 640
+
+[android]
+input_method = HiddenInputField
+package = com.defold.example.basic3d
+
+[project]
+dependencies = 
+title = VerletPhysics
+custom_resources = assets
+
+[physics]
+type = 3D
+
+[osx]
+bundle_identifier = com.defold.example.basic3d
+
+[ios]
+bundle_identifier = com.defold.example.basic3d
+
+[render]
+clear_color_red = 2.0
+clear_color_green = 2.0
+clear_color_blue = 50.0
+
+[mesh]
+max_count = 1500
+
+[resource]
+max_resources = 4096
+

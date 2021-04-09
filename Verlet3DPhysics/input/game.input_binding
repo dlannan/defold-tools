@@ -1,0 +1,36 @@
+key_trigger {
+  input: KEY_1
+  action: "one"
+}
+key_trigger {
+  input: KEY_2
+  action: "two"
+}
+key_trigger {
+  input: KEY_3
+  action: "three"
+}
+key_trigger {
+  input: KEY_0
+  action: "zero"
+}
+key_trigger {
+  input: KEY_A
+  action: "cameraleft"
+}
+key_trigger {
+  input: KEY_D
+  action: "cameraright"
+}
+key_trigger {
+  input: KEY_W
+  action: "camerafwd"
+}
+key_trigger {
+  input: KEY_S
+  action: "camerabck"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_1
+  action: "touch"
+}

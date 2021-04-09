@@ -1,0 +1,173 @@
+
+tinsert 	= table.insert
+
+-- --------------------------------------------------------------------------------------------------------
+
+local mpool 		= require("gltfloader.meshpool")
+local geom 			= require("gltfloader.geometry-utils")
+local imageutils 	= require("gltfloader.image-utils")
+local gltf 			= require("gltfloader.gltfloader")
+
+local camdrive		= require("utils.camera-drive")
+
+local groundsize 	= 100
+local pdatasize		= groundsize
+
+local physics 		= require("vehicle.verlet-physics")
+
+-- --------------------------------------------------------------------------------------------------------
+
+function loadground(self) 
+
+	self.ground = mpool.gettemp( "ground" )
+	geom:GeneratePlane( self.ground.."#temp", groundsize, groundsize, groundsize )
+	imageutils.loadimage( self.ground.."#temp", "/assets/images/green.png", 0 )
+		
+	local pos = vmath.vector3(0, 0, 0)
+	go.set_position(pos, self.ground)
+end
+
+-- --------------------------------------------------------------------------------------------------------
+
+function init(self)
+
+	msg.post(".", "acquire_input_focus")
+	msg.post("@render:", "use_camera_projection")
+	msg.post("camera", "acquire_camera_focus")
+
+	-- rotate the cube
+	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 6)
+	go.animate(".", "euler.x", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 9)
+	go.animate(".", "euler.y", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 12)
+		
+	-- Second param regenerates meshes and go files
+	mpool.init(100, true)
+
+	-- position directional light
+	self.light = vmath.vector4(200.0, 200.0, 0.0, 0)
+		
+	loadground(self)
+
+	physics.init()
+	camdrive.init("/camera")
+			
+	-- gltf:load("/assets/models/demo_grass01/demo_grass01.gltf", "/temp/temp006", "temp")
+	-- go.set_rotation(vmath.quat_rotation_y(3.141 * 0.5), "/temp/temp006")
+	-- 
+	self.time_speed = 0.1
+	self.angle = 0.0
+	self.fmeshA = go.get_rotation(self.carbody)
+
+	mpool.updateall( function( meshobj ) 
+		local m = go.get_world_transform(meshobj.goname)
+		model.set_constant(meshobj.goname, "light", self.light)
+	end )
+
+	-- Toggle the visual profiler on hot reload.
+	self.profile = false
+	profiler.enable_ui(self.profile)
+end
+
+-- --------------------------------------------------------------------------------------------------------
+function objhandler( objs, objcount ) 
+
+	for i=1, objcount do 
+		-- Apply obj position to a physics object
+		local box = objs[i]
+		local x = (box.vbox.V1.x + box.vbox.V2.x + box.vbox.V3.x + box.vbox.V4.x ) * 0.25
+		local y = (box.vbox.V1.y + box.vbox.V2.y + box.vbox.V3.y + box.vbox.V4.y ) * 0.25
+		local z = (box.vbox.V1.z + box.vbox.V2.z + box.vbox.V3.z + box.vbox.V4.z ) * 0.25
+		local pos = vmath.vector3( x, y, z )
+		go.set_position( pos, box.gobox )
+	end
+end 
+
+function update(self, delta)
+
+	local rad_angle = math.rad(self.angle)
+	local rot_angle = vmath.quat_rotation_y(rad_angle)		
+	local rotx_angle = vmath.quat_rotation_y(rad_angle)
+
+	--go.set_rotation(self.fmeshA * rot_angle, self.carbody)
+	--go.set_rotation(self.fmeshA * rot_angle, "/camera")
+	
+	self.angle = self.angle + 30.0 * delta
+	camdrive.update(self, delta)
+	physics.updateall( objhandler, delta )
+
+	local radA = os.clock() * self.time_speed
+	--self.light = vmath.vector4( math.cos(radA) * 200.0, math.sin(radA) * 200, 0.0, 0.0)
+end
+
+-- --------------------------------------------------------------------------------------------------------
+
+function on_input(self, action_id, action)
+
+	-- move directional light based on input
+	-- self.light.x = 10 * ((action.x - 480) / 480)
+	-- self.light.y = 10 * ((action.y - 320) / 320)
+	-- self.light.z = 5.0
+	-- 	
+	-- Check some keys - 1, 2, 3 for profiling
+	if(action.released) then 
+		if action_id == hash("zero") then
+			self.profile = not self.profile
+			profiler.enable_ui(self.profile)
+		end 
+		if action_id == hash("one") then
+			profiler.set_ui_mode(profiler.MODE_RUN)
+		end 
+		if action_id == hash("two") then
+			profiler.set_ui_mode(profiler.MODE_PAUSE)
+		end
+		if action_id == hash("three") then
+			profiler.set_ui_mode(profiler.MODE_RECORD)
+		end		
+
+		if action_id == hash("camerafwd")
+			or action_id == hash("camerabck") then
+			camdrive.speed = 0.0
+		end
+	end
+
+	if(action.pressed) then 
+		if action_id == hash("camerafwd") then
+			camdrive.speed = 12.0
+		end 
+		if action_id == hash("camerabck") then
+			camdrive.speed = -12.0
+		end 
+		if action_id == hash("cameraleft") then
+		end 
+		if action_id == hash("cameraright") then
+		end 
+	end
+
+	if action_id == hash("touch") then
+		if action.pressed then
+			self.mouse1_down = true
+		elseif action.released then
+			self.mouse1_down = nil
+		end
+	end	
+
+	if self.mouse1_down then  
+		camdrive.xangle = camdrive.xangle + action.dx * 0.001
+		camdrive.yangle = camdrive.yangle + action.dy * 0.001
+	end
+end
+
+-- --------------------------------------------------------------------------------------------------------
+
+function on_message(self, message_id, message)	
+
+end
+
+-- --------------------------------------------------------------------------------------------------------
+
+function on_reload(self)
+	-- Toggle the visual profiler on hot reload.
+	profiler.enable_ui(true)
+end
+
+-- --------------------------------------------------------------------------------------------------------
