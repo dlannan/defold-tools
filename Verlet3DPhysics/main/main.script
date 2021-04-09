@@ -35,11 +35,6 @@ function init(self)
 	msg.post("@render:", "use_camera_projection")
 	msg.post("camera", "acquire_camera_focus")
 
-	-- rotate the cube
-	go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 6)
-	go.animate(".", "euler.x", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 9)
-	go.animate(".", "euler.y", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 12)
-		
 	-- Second param regenerates meshes and go files
 	mpool.init(100, true)
 
@@ -55,8 +50,6 @@ function init(self)
 	-- go.set_rotation(vmath.quat_rotation_y(3.141 * 0.5), "/temp/temp006")
 	-- 
 	self.time_speed = 0.1
-	self.angle = 0.0
-	self.fmeshA = go.get_rotation(self.carbody)
 
 	mpool.updateall( function( meshobj ) 
 		local m = go.get_world_transform(meshobj.goname)
@@ -66,34 +59,37 @@ function init(self)
 	-- Toggle the visual profiler on hot reload.
 	self.profile = false
 	profiler.enable_ui(self.profile)
+
+	self.ts = os.clock()
 end
 
 -- --------------------------------------------------------------------------------------------------------
+local offr = math.pi * 0.25
 function objhandler( objs, objcount ) 
 
 	for i=1, objcount do 
 		-- Apply obj position to a physics object
 		local box = objs[i]
-		local x = (box.vbox.V1.x + box.vbox.V2.x + box.vbox.V3.x + box.vbox.V4.x ) * 0.25
-		local y = (box.vbox.V1.y + box.vbox.V2.y + box.vbox.V3.y + box.vbox.V4.y ) * 0.25
-		local z = (box.vbox.V1.z + box.vbox.V2.z + box.vbox.V3.z + box.vbox.V4.z ) * 0.25
-		local pos = vmath.vector3( x, y, z )
+		local vbox = box.vbox
+		local V3 = vmath.vector3(vbox.V3.x, vbox.V3.y, vbox.V3.z)		
+		local V4 = vmath.vector3(vbox.V4.x, vbox.V4.y, vbox.V4.z)
+		local vdiff = V3 - V4
+		local rotz = vmath.quat_rotation_z(math.atan2(vdiff.y, vdiff.x) - offr)
+				
+		local pos = (V3 + V4) * 0.5
 		go.set_position( pos, box.gobox )
+		go.set_rotation( rotz, box.gobox )
 	end
 end 
 
 function update(self, delta)
 
-	local rad_angle = math.rad(self.angle)
-	local rot_angle = vmath.quat_rotation_y(rad_angle)		
-	local rotx_angle = vmath.quat_rotation_y(rad_angle)
-
-	--go.set_rotation(self.fmeshA * rot_angle, self.carbody)
-	--go.set_rotation(self.fmeshA * rot_angle, "/camera")
+	local newt = os.clock()
+	local diff = newt-self.ts 
+	self.ts = newt 
 	
-	self.angle = self.angle + 30.0 * delta
-	camdrive.update(self, delta)
-	physics.updateall( objhandler, delta )
+	camdrive.update(self, diff)
+	physics.updateall( objhandler, diff)
 
 	local radA = os.clock() * self.time_speed
 	--self.light = vmath.vector4( math.cos(radA) * 200.0, math.sin(radA) * 200, 0.0, 0.0)

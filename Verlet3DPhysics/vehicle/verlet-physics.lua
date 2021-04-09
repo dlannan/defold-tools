@@ -39,7 +39,6 @@ physics.init = function()
 
         if i == 1 then 
             rootC = TConstraint.constrain(vbox.V1, rootnode)	
-            pprint(rootC)
         end
         BoxStack[i] = { vbox = vbox, gobox = box }
     end
@@ -49,9 +48,9 @@ end
 
 physics.updateall = function( objHandler, delta )
 
-    TConstraint.updateall( delta )
     TVerlet.updateall( delta )
-    
+    TConstraint.updateall( delta )
+        
     objHandler( BoxStack, 50 )
 end
 
