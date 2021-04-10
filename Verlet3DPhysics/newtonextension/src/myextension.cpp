@@ -7,10 +7,12 @@
 #include <dmsdk/sdk.h>
 #include <stdlib.h>
 #include <Newton.h>
+#include <vector>
 
 static NewtonWorld* world = NULL;
-static NewtonBody* bodies[5] = { NULL,NULL,NULL,NULL,NULL } ;
-static NewtonCollision* coll[5] = { NULL,NULL,NULL,NULL,NULL } ;
+
+static std::vector<NewtonBody* >bodies;
+static std::vector<NewtonCollision*> colls;
 
 // Define a custom data structure to store a body ID.
 struct UserData {
@@ -47,8 +49,8 @@ static int addBodies(lua_State *L) {
     // Collision shapes: sphere (our ball), and large box (our ground plane).
     NewtonCollision* cs_sphere = NewtonCreateSphere(world, 1, 0, NULL);
     NewtonCollision* cs_ground = NewtonCreateBox(world, 100, 0.1, 100, 0, NULL);
-    coll[0] = cs_sphere;
-    coll[1] = cs_ground;
+    colls.push_back(cs_sphere);
+    colls.push_back(cs_ground);
 
     // Create the bodies and assign them the collision shapes. Note that
     // we need to modify initial transform for the ball to place it a y=2.0
@@ -56,8 +58,8 @@ static int addBodies(lua_State *L) {
     tm[13] = 2.0;
     NewtonBody* sphere = NewtonCreateDynamicBody(world, cs_sphere, tm);
 
-    bodies[0] = ground;
-    bodies[1] = sphere;
+    bodies.push_back(ground);
+    bodies.push_back(sphere);
     
     // Assign non-zero mass to sphere to make it dynamic.
     NewtonBodySetMassMatrix(sphere, 1.0f, 1, 1, 1);
@@ -95,6 +97,9 @@ static int Update( lua_State *L )
 static int Close( lua_State *L )
 {
     // Clean up.
+    for(size_t i=0; i<colls.size(); i++)
+        NewtonDestroyCollision(colls[i]);
+    colls.clear();
     NewtonDestroy(world);
     return 0;
 }
@@ -144,6 +149,9 @@ dmExtension::Result AppFinalizeNewtonExtension(dmExtension::AppParams* params)
 dmExtension::Result FinalizeNewtonExtension(dmExtension::Params* params)
 {
     dmLogInfo("FinalizeNewtonExtension\n");
+    for(size_t i=0; i<colls.size(); i++)
+        NewtonDestroyCollision(colls[i]);
+    colls.clear();
     NewtonDestroy(world);    
     return dmExtension::RESULT_OK;
 }

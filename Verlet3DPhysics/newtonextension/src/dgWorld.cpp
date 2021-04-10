@@ -403,14 +403,6 @@ void dgWorld::DestroyAllBodies()
 		dgBody* const body = m_disableBodies.GetRoot()->GetKey();
 		BodyEnableSimulation(body);
 	}
-
-	dgBodyCollisionList& collList = *this;
-	dgBodyCollisionList::Iterator citer(collList);
-	for (iter.Begin(); citer; citer++) {
-		const dgCollision* collider = citer.GetNode()->GetInfo();
-		delete collider;
-	}
-	collList.RemoveAll();
 	
 	dgAssert(dgBodyMasterList::GetFirst()->GetInfo().GetBody() == m_sentinelBody);
 	for (dgBodyMasterList::dgListNode* node = me.GetFirst()->GetNext(); node;) {
