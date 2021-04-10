@@ -77,7 +77,7 @@ function TVerlet.update( V, delta )
         V.z = V.z + V.dz
 
         TVerlet.applyForces(V, delta)
-        V.colliderHandler(V, delta)        
+        V.colliderHandler(V, delta)
     else
         V.x = V.ox
         V.y = V.oy

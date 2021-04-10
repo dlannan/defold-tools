@@ -10,9 +10,9 @@ local imageutils 	= require("gltfloader.image-utils")
 
 local Gravity = .1
 
-local TBox          = require("vehicle.verlet-box")
-local TVerlet       = require("vehicle.verlet-type")
-local TConstraint   = require("vehicle.verlet-constraints")
+local TBox          = require("physics.verlet-box")
+local TVerlet       = require("physics.verlet-type")
+local TConstraint   = require("physics.verlet-constraints")
 
 local BoxStack = {}    
 --------------------------------------------------------------------------------------
@@ -68,8 +68,8 @@ end
 
 physics.updateall = function( objHandler, delta )
 
-    TVerlet.updateall( delta )
     TConstraint.updateall( delta )
+    TVerlet.updateall( delta )
         
     objHandler( BoxStack, 50 )
 end

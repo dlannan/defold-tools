@@ -1,6 +1,6 @@
 
-local Tconstraint = require("vehicle.verlet-constraints")
-local TVerlet     = require("vehicle.verlet-type")
+local Tconstraint = require("physics.verlet-constraints")
+local TVerlet     = require("physics.verlet-type")
 
 --------------------------------------------------------------------------------------
 

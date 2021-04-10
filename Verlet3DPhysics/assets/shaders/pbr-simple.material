@@ -4,8 +4,8 @@ vertex_program: "/assets/shaders/pbr-simple.vp"
 fragment_program: "/assets/shaders/pbr-simple.fp"
 vertex_space: VERTEX_SPACE_LOCAL
 vertex_constants {
-  name: "mtx_world"
-  type: CONSTANT_TYPE_WORLD
+  name: "mtx_worldview"
+  type: CONSTANT_TYPE_WORLDVIEW
   value {
     x: 0.0
     y: 0.0
@@ -46,16 +46,6 @@ vertex_constants {
 vertex_constants {
   name: "light"
   type: CONSTANT_TYPE_USER
-  value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-}
-vertex_constants {
-  name: "mtx_worldview"
-  type: CONSTANT_TYPE_WORLDVIEW
   value {
     x: 0.0
     y: 0.0

@@ -13,7 +13,7 @@ local camdrive		= require("utils.camera-drive")
 local groundsize 	= 100
 local pdatasize		= groundsize
 
-local physics 		= require("vehicle.verlet-physics")
+local physics 		= require("physics.verlet-physics")
 
 -- --------------------------------------------------------------------------------------------------------
 
@@ -103,14 +103,12 @@ function objhandler( objs, objcount )
 		local box = objs[i]
 		local vbox = box.vbox
 		-- Gets box center - simple average between two points. Only 2D check.
-		local V3 = vmath.vector3(vbox.V3.x, vbox.V3.y, vbox.V3.z)		
-		local V4 = vmath.vector3(vbox.V4.x, vbox.V4.y, vbox.V4.z)
-		local vdiff = vmath.normalize(V3 - V4)
+		local V1 = vmath.vector3(vbox.V1.x, vbox.V1.y, vbox.V1.z)		
+		local V2 = vmath.vector3(vbox.V2.x, vbox.V2.y, vbox.V2.z)
+		local vdiff = vmath.normalize(V2 - V1)
 
-		local asine = math.sin( 0.0 )
 		local rot = rotationTo(vdiff)
-				
-		local pos = (V3 + V4) * 0.5
+		local pos = (V1 + V2) * 0.5
 		go.set_position( pos, box.gobox )
 		go.set_rotation( rot, box.gobox )
 	end
