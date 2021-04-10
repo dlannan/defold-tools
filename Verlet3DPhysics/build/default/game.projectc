@@ -135,6 +135,7 @@ world_count = 4
 track_cpu = 0
 
 [project]
+bundle_exclude_resources = ref/
 compress_archive = 1
 custom_resources = assets
 title = VerletPhysics

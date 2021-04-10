@@ -36,7 +36,7 @@ function init(self)
 	msg.post("camera", "acquire_camera_focus")
 
 	-- Second param regenerates meshes and go files
-	mpool.init(100, true)
+	mpool.init(100)
 
 	-- position directional light
 	self.light = vmath.vector4(200.0, 200.0, 0.0, 0)
@@ -44,6 +44,9 @@ function init(self)
 	loadground(self)
 
 	physics.init()
+	newtonextension.create()
+	newtonextension.addsphere()
+	
 	camdrive.init("/camera")
 			
 	-- gltf:load("/assets/models/demo_grass01/demo_grass01.gltf", "/temp/temp006", "temp")
@@ -119,7 +122,8 @@ function update(self, delta)
 	local newt = os.clock()
 	local diff = newt-self.ts 
 	self.ts = newt 
-	
+
+	newtonextension.update(diff)
 	camdrive.update(self, diff)
 	physics.updateall( objhandler, diff)
 
