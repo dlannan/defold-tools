@@ -5,6 +5,16 @@ local tinsert       = table.insert
 local VerletList    = {}
 
 
+local function defaultHandler( V, delta ) 
+
+    -- Insert rigid body collision here!!
+    if V.y < 0.0 then
+        V.collided = true
+        V.y = 0.0
+        V.oy = 0.0 - (V.dy/3)
+    end
+end
+
 --------------------------------------------------------------------------------------
 
 local TVerlet = {}
@@ -25,12 +35,20 @@ function TVerlet.new()
         oz         = 0.0,
 
         ID          = 0,
-        VID         = 0, 
         active      = false,
         mass        = 0.0,
         collided    = false,
+        
+        colliderHandler = defaultHandler,
     }
     return vlet    
+end 
+
+--------------------------------------------------------------------------------------
+
+function TVerlet.applyForces( V, delta )
+
+    V.y = V.y - Gravity * delta
 end 
 
 --------------------------------------------------------------------------------------
@@ -55,25 +73,11 @@ function TVerlet.update( V, delta )
         V.oz = V.z
         
         V.x = V.x + V.dx
-        V.y = V.y + V.dy - Gravity * delta
+        V.y = V.y + V.dy 
         V.z = V.z + V.dz
-        
-        -- Insert rigid body collision here!!
-        if V.y < 0.0 then
-            V.collided = true
-            V.y = 0.0
-            V.oy = 0.0 - (V.dy/3)
-        end
 
-        -- if V.x < 0 or V.x > 640 then
-        --     if V.x<0 then
-        --         V.x = 0
-        --         V.ox = 0 + (V.dx/3)
-        --     else
-        --         V.x = 640
-        --         V.ox = 640 - (V.dx/3)
-        --     end
-        -- end
+        TVerlet.applyForces(V, delta)
+        V.colliderHandler(V, delta)        
     else
         V.x = V.ox
         V.y = V.oy
@@ -95,6 +99,8 @@ TVerlet.create = function(x,y,z,ID,active)
     V.oy        = y
     V.oz        = z
     V.active    = active 
+    V.colliderHandler = defaultHandler
+    
     tinsert(VerletList, V)
     return V
 end

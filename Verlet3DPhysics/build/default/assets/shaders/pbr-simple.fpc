@@ -1,5 +1,5 @@
 
-Á ¼ #version 140
+§!¢!#version 140
 
 
 
@@ -19,6 +19,8 @@ uniform sampler2D roughnessMap;
 uniform sampler2D albedoMap ;
 uniform sampler2D normalMap ;
 
+uniform vec4 	factors;
+
 in vec3 vvLocalSurfaceNormal ;
 in vec3 vvLocalSurfaceToLightDirection;
 in vec3 vvLocalReflectedSurfaceToViewerDirection;
@@ -104,16 +106,19 @@ void main()
 		rgbSpecular = min(vec3(1.0), rgbSpecular) ; 
 	}
 
+	float ambientFactor = factors.x;
+
 	rgbFragment += rgbSpecular ;
 	rgbFragment *= fLightIntensity;
 	rgbFragment += rgbReflection ;
 	rgbFragment += rgbEmissive ;
+	rgbFragment += rgbAlbedo * ambientFactor;
 
 	_DMENGINE_GENERATED_gl_FragColor.rgb = rgbFragment;
 	_DMENGINE_GENERATED_gl_FragColor.a = 1.0 ; 
 }
 
-œ — #version 300 es
+‚!ý #version 300 es
 precision mediump float;
 
 out vec4 _DMENGINE_GENERATED_gl_FragColor;
@@ -128,6 +133,8 @@ uniform sampler2D roughnessMap;
 uniform sampler2D albedoMap ;
 uniform sampler2D normalMap ;
 
+uniform vec4 	factors;
+
 in vec3 vvLocalSurfaceNormal ;
 in vec3 vvLocalSurfaceToLightDirection;
 in vec3 vvLocalReflectedSurfaceToViewerDirection;
@@ -213,16 +220,19 @@ void main()
 		rgbSpecular = min(vec3(1.0), rgbSpecular) ; 
 	}
 
+	float ambientFactor = factors.x;
+
 	rgbFragment += rgbSpecular ;
 	rgbFragment *= fLightIntensity;
 	rgbFragment += rgbReflection ;
 	rgbFragment += rgbEmissive ;
+	rgbFragment += rgbAlbedo * ambientFactor;
 
 	_DMENGINE_GENERATED_gl_FragColor.rgb = rgbFragment;
 	_DMENGINE_GENERATED_gl_FragColor.a = 1.0 ; 
 }
 
-ò"í"// Original work by Martia A Saunders
+Ø#Ó#// Original work by Martia A Saunders
 // https://dominium.maksw.com/articles/physically-based-rendering-pbr/pbr-part-one/
 
 // uniform samplerCube cubeMap ;
@@ -233,6 +243,8 @@ uniform sampler2D emissiveMap ;
 uniform sampler2D roughnessMap;
 uniform sampler2D albedoMap ;
 uniform sampler2D normalMap ;
+
+uniform vec4 	factors;
 
 varying vec3 vvLocalSurfaceNormal ;
 varying vec3 vvLocalSurfaceToLightDirection;
@@ -319,10 +331,13 @@ void main()
 		rgbSpecular = min(vec3(1.0), rgbSpecular) ; // conservation of energy
 	}
 
+	float ambientFactor = factors.x;
+
 	rgbFragment += rgbSpecular ;
 	rgbFragment *= fLightIntensity;
 	rgbFragment += rgbReflection ;
 	rgbFragment += rgbEmissive ;
+	rgbFragment += rgbAlbedo * ambientFactor;
 
 	gl_FragColor.rgb = rgbFragment;
 	gl_FragColor.a = 1.0 ; // TODO : Worry about materials which allow transparency!

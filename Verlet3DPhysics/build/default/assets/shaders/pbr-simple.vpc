@@ -1,5 +1,7 @@
 
-Ê	Å	#version 140
+ž
+™
+#version 140
 
 
 
@@ -40,14 +42,15 @@ out vec2 vuvCoord0 ;
 void main()
 {
 	vec4 p = vec4(position.xyz, 1.0);
-	vec3 vViewModelPosition = normalize(mtx_normal * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
+	vec3 vViewModelPosition = normalize( mtx_normal * vec4(0.0, 0.0, 0.0, 1.0) ).xyz;
 	vvLocalSurfaceToViewerDirection = normalize(vViewModelPosition - p.xyz) ;
 
-	vec3 vLightModelPosition = normalize(light.xyz - (mtx_world * p).xyz);
-	vvLocalSurfaceToLightDirection = normalize(vLightModelPosition) ;
+	vec4 worldp = mtx_worldview * p;
+	vec4 vLightModelPosition = mtx_normal * normalize(  (vec4(light.xyz, 1.0) - worldp) );
+	vvLocalSurfaceToLightDirection = normalize(vLightModelPosition.xyz) ;
 
+	vvLocalSurfaceNormal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
 	
-	vvLocalSurfaceNormal = normalize(normal) ; 
 
 	vec3 vLocalSurfaceToViewerDirection = normalize(vViewModelPosition - p.xyz) ;
 	vvLocalReflectedSurfaceToViewerDirection = normalize(reflect(vLocalSurfaceToViewerDirection, vvLocalSurfaceNormal)) ;
@@ -57,7 +60,7 @@ void main()
 	gl_Position = mtx_proj * mtx_worldview * p;
 }
 
-Œ	‡	#version 300 es
+à	Û	#version 300 es
 
 
 
@@ -92,14 +95,15 @@ out vec2 vuvCoord0 ;
 void main()
 {
 	vec4 p = vec4(position.xyz, 1.0);
-	vec3 vViewModelPosition = normalize(mtx_normal * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
+	vec3 vViewModelPosition = normalize( mtx_normal * vec4(0.0, 0.0, 0.0, 1.0) ).xyz;
 	vvLocalSurfaceToViewerDirection = normalize(vViewModelPosition - p.xyz) ;
 
-	vec3 vLightModelPosition = normalize(light.xyz - (mtx_world * p).xyz);
-	vvLocalSurfaceToLightDirection = normalize(vLightModelPosition) ;
+	vec4 worldp = mtx_worldview * p;
+	vec4 vLightModelPosition = mtx_normal * normalize(  (vec4(light.xyz, 1.0) - worldp) );
+	vvLocalSurfaceToLightDirection = normalize(vLightModelPosition.xyz) ;
 
+	vvLocalSurfaceNormal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
 	
-	vvLocalSurfaceNormal = normalize(normal) ; 
 
 	vec3 vLocalSurfaceToViewerDirection = normalize(vViewModelPosition - p.xyz) ;
 	vvLocalReflectedSurfaceToViewerDirection = normalize(reflect(vLocalSurfaceToViewerDirection, vvLocalSurfaceNormal)) ;
@@ -109,7 +113,7 @@ void main()
 	gl_Position = mtx_proj * mtx_worldview * p;
 }
 
-ÙÔ// Positions can be world or local space, since world and normal
+‘Œ// Positions can be world or local space, since world and normal
 // matrices are identity for world vertex space materials.
 // If world vertex space is selected, you can remove the
 // normal matrix multiplication for optimal performance.
@@ -144,14 +148,15 @@ varying vec2 vuvCoord0 ;
 void main()
 {
 	vec4 p = vec4(position.xyz, 1.0);
-	vec3 vViewModelPosition = normalize(mtx_normal * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
+	vec3 vViewModelPosition = normalize( mtx_normal * vec4(0.0, 0.0, 0.0, 1.0) ).xyz;
 	vvLocalSurfaceToViewerDirection = normalize(vViewModelPosition - p.xyz) ;
 
-	vec3 vLightModelPosition = normalize(light.xyz - (mtx_world * p).xyz);
-	vvLocalSurfaceToLightDirection = normalize(vLightModelPosition) ;
+	vec4 worldp = mtx_worldview * p;
+	vec4 vLightModelPosition = mtx_normal * normalize(  (vec4(light.xyz, 1.0) - worldp) );
+	vvLocalSurfaceToLightDirection = normalize(vLightModelPosition.xyz) ;
 
-	//vvLocalSurfaceNormal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
-	vvLocalSurfaceNormal = normalize(normal) ; // use the actual normal from the actual geometry
+	vvLocalSurfaceNormal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
+	//vvLocalSurfaceNormal = normalize(normal) ; // use the actual normal from the actual geometry
 
 	vec3 vLocalSurfaceToViewerDirection = normalize(vViewModelPosition - p.xyz) ;
 	vvLocalReflectedSurfaceToViewerDirection = normalize(reflect(vLocalSurfaceToViewerDirection, vvLocalSurfaceNormal)) ;

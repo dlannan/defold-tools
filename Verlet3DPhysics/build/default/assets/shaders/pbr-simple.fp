@@ -7,6 +7,8 @@ uniform sampler2D roughnessMap;
 uniform sampler2D albedoMap ;
 uniform sampler2D normalMap ;
 
+uniform vec4 	factors;
+
 varying vec3 vvLocalSurfaceNormal ;
 varying vec3 vvLocalSurfaceToLightDirection;
 varying vec3 vvLocalReflectedSurfaceToViewerDirection;
@@ -92,10 +94,13 @@ void main()
 		rgbSpecular = min(vec3(1.0), rgbSpecular) ; // conservation of energy
 	}
 
+	float ambientFactor = factors.x;
+
 	rgbFragment += rgbSpecular ;
 	rgbFragment *= fLightIntensity;
 	rgbFragment += rgbReflection ;
 	rgbFragment += rgbEmissive ;
+	rgbFragment += rgbAlbedo * ambientFactor;
 
 	gl_FragColor.rgb = rgbFragment;
 	gl_FragColor.a = 1.0 ; // TODO : Worry about materials which allow transparency!

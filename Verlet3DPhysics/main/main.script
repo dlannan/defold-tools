@@ -21,7 +21,7 @@ function loadground(self)
 
 	self.ground = mpool.gettemp( "ground" )
 	geom:GeneratePlane( self.ground.."#temp", groundsize, groundsize, groundsize )
-	imageutils.loadimage( self.ground.."#temp", "/assets/images/green.png", 0 )
+	imageutils.loadimage( self.ground.."#temp", "/assets/images/tempGrey.png", 0 )
 		
 	local pos = vmath.vector3(0, 0, 0)
 	go.set_position(pos, self.ground)
@@ -63,6 +63,37 @@ function init(self)
 	self.ts = os.clock()
 end
 
+-- Make a quaternion from a view vector with UP as the axis rotation.
+local function rotationTo( vec )
+
+	local out = vmath.quat()
+	local left = vmath.vector3(1,0,0)
+	local up  = vmath.vector3(0,1,0)
+	
+	local dot = vmath.dot(vec, up)
+	if (dot < -0.999999) then 
+		local tmp = vmath.cross(up, vec)
+		if (vmath.length(tmp) < 0.000001) then	tmp = vec3.cross(left, vec) end
+		tmp = vmath.normalize(tmp)
+		out = vmath.quat_axis_angle(tmp, math.pi)
+	else
+		if (dot > 0.999999) then 
+			out.x = 0
+			out.y = 0
+			out.z = 0
+			out.w = 1
+		else 
+			local tmp = vmath.cross(vec, up)
+			out.x = tmp.x
+			out.y = tmp.y
+			out.z = tmp.z
+			out.w = 1 + dot;
+			out = vmath.normalize(out)
+		end 
+	end
+	return out
+end 
+
 -- --------------------------------------------------------------------------------------------------------
 local offr = math.pi * 0.25
 function objhandler( objs, objcount ) 
@@ -71,14 +102,17 @@ function objhandler( objs, objcount )
 		-- Apply obj position to a physics object
 		local box = objs[i]
 		local vbox = box.vbox
+		-- Gets box center - simple average between two points. Only 2D check.
 		local V3 = vmath.vector3(vbox.V3.x, vbox.V3.y, vbox.V3.z)		
 		local V4 = vmath.vector3(vbox.V4.x, vbox.V4.y, vbox.V4.z)
-		local vdiff = V3 - V4
-		local rotz = vmath.quat_rotation_z(math.atan2(vdiff.y, vdiff.x) - offr)
+		local vdiff = vmath.normalize(V3 - V4)
+
+		local asine = math.sin( 0.0 )
+		local rot = rotationTo(vdiff)
 				
 		local pos = (V3 + V4) * 0.5
 		go.set_position( pos, box.gobox )
-		go.set_rotation( rotz, box.gobox )
+		go.set_rotation( rot, box.gobox )
 	end
 end 
 
