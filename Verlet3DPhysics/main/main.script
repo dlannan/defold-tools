@@ -21,7 +21,7 @@ function loadground(self)
 
 	self.ground = mpool.gettemp( "ground" )
 	geom:GeneratePlane( self.ground.."#temp", groundsize, groundsize, groundsize )
-	imageutils.loadimage( self.ground.."#temp", "/assets/images/tempGrey.png", 0 )
+	imageutils.loadimage( self.ground.."#temp", "/assets/images/brown.png", 0 )
 		
 	local pos = vmath.vector3(0, 0, 0)
 	go.set_position(pos, self.ground)

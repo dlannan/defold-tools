@@ -183,103 +183,117 @@ end
 
 ------------------------------------------------------------------------------------------------------------
 -- 
--- function geom:GenerateSphere( sz, d, inverted )
--- 
--- 	if inverted == nil then inverted = 1.0 end
--- 	local sphere 	= byt3dMesh:New()
--- 
--- 	local verts 	= {}
--- 	local indices 	= {} 
--- 	local uvs 		= {}
--- 
--- 	local vcount    = 1
--- 	local ucount    = 1
--- 	local icount    = 1
--- 	local index     = 1
--- 
--- 	-- Start with a cube. Then for number x/y sizes iterate each side of the cube
--- 	-- For each side of the cube cal vert trace back to center of cube, then recalc vert based on radius.
--- 	-- Collect verts in order, making triangles along the way
--- 	function spherevec( vec )
--- 		local newvec = { vec[1], vec[2], vec[3], 0.0 }
--- 		local nvec = VecNormalize( newvec )
--- 		return { nvec[1] * sz, nvec[2] * sz, nvec[3] * sz, vec[4], vec[5], vec[6] }
--- 	end
--- 
--- 	local targets = {  
--- 		[1] = function( a, b ) return spherevec( { a, -sz, b, -1, 0.25, 0.333 } ); end,
--- 		[2] = function( a, b ) return spherevec( { a, b, -sz, 1, 0.0, 0.333 } ); end,
--- 		[3] = function( a, b ) return spherevec( { a, b, sz, -1, 0.25, 0.333 } ); end,
--- 		[4] = function( a, b ) return spherevec( { -sz, b, a, -1, 0.25, 0.333 } ); end,
--- 		[5] = function( a, b ) return spherevec( { sz, b, a, 1, 0.0, 0.333 } ); end,
--- 		[6] = function( a, b ) return spherevec( { a, sz, b, 1, 0.0, 0.333 } ); end
--- 	}
--- 
--- 	local startuvs = {
--- 		[1] = { 0.25, 0.666 },		-- Ground
--- 		[2] = { 0.25, 0.333 },		-- Front
--- 		[3] = { 0.75, 0.333 },		-- Back
--- 		[4] = { 0.0, 0.333 },		-- Left
--- 		[5] = { 0.5, 0.333 },		-- Right
--- 		[6] = { 0.25, 0.0 }			-- Sky
--- 	}
--- 
--- 	local stepsize = sz * 2 / d
--- 	for key, func in ipairs(targets) do
--- 
--- 		local uv1 = startuvs[key][1]
--- 		local vstep = 1.0 / d
--- 
--- 		local amult = 1.0 / ( 2.005 * sz * 4.0 )
--- 		local bmult = 1.0 / ( 2.005 * sz * 3.0 )
--- 
--- 		for a = -sz, sz-stepsize, stepsize do
--- 
--- 			local uv2 = startuvs[key][2]
--- 			for b = -sz, sz-stepsize, stepsize do
--- 				local toggle = 1
--- 
--- 				local v = func(a, b)
--- 				indices[index]  = icount+v[4] * inverted ; index = index + 1
--- 				verts[vcount]   = v[1]; vcount = vcount + 1
--- 				verts[vcount]   = v[2]; vcount = vcount + 1
--- 				verts[vcount]   = v[3]; vcount = vcount + 1
--- 				uvs[ucount]     = uv1 + v[5] + v[4] * (a + sz) * amult; ucount = ucount + 1
--- 				uvs[ucount]     = uv2 + v[6] - (b + sz) * bmult; ucount = ucount + 1
--- 
--- 				local x = func(a+stepsize, b)
--- 				indices[index]  = icount ; index = index + 1
--- 				verts[vcount]   = x[1]; vcount = vcount + 1
--- 				verts[vcount]   = x[2]; vcount = vcount + 1
--- 				verts[vcount]   = x[3]; vcount = vcount + 1
--- 				uvs[ucount]     = uv1 + x[5] + x[4] * (a + sz + stepsize) * amult; ucount = ucount + 1
--- 				uvs[ucount]     = uv2 + x[6] - (b + sz) * bmult; ucount = ucount + 1
--- 
--- 				local w = func(a, b+stepsize)
--- 				indices[index]  = icount-v[4] * inverted ; index = index + 1
--- 				verts[vcount]   = w[1]; vcount = vcount + 1
--- 				verts[vcount]   = w[2]; vcount = vcount + 1
--- 				verts[vcount]   = w[3]; vcount = vcount + 1
--- 				uvs[ucount]     = uv1 + w[5] + w[4] * (a + sz) * amult; ucount = ucount + 1
--- 				uvs[ucount]     = uv2 + w[6] - (b + sz + stepsize) * bmult; ucount = ucount + 1
--- 
--- 				local y = func(a+stepsize,b+stepsize)
--- 				verts[vcount]   = y[1]; vcount = vcount + 1
--- 				verts[vcount]   = y[2]; vcount = vcount + 1
--- 				verts[vcount]   = y[3]; vcount = vcount + 1
--- 				uvs[ucount]     = uv1 + y[5] + y[4] * (a + sz + stepsize) * amult; ucount = ucount + 1
--- 				uvs[ucount]     = uv2 + y[6] - (b + sz + stepsize) * bmult; ucount = ucount + 1
--- 
--- 				indices[index]  = icount+2-(1-v[4] * inverted) ; index = index + 1
--- 				indices[index]  = icount+1-v[4] * inverted ; index = index + 1
--- 
--- 				-- Build the extra tri from previous verts and one new one.
--- 				indices[index]  = icount+1 ; index = index + 1
--- 				icount = icount + 4
--- 			end
--- 		end
--- 	end
--- 
+function geom:GenerateSphere( goname, sz, d, inverted )
+
+	if inverted == nil then inverted = 1.0 end
+	geom:New(goname, 1.0)
+	tinsert(self.meshes, goname)
+
+	local verts 	= {}
+	local indices 	= {} 
+	local uvs 		= {}
+	local normals 	= {}
+
+	local vcount    = 1
+	local ncount    = 1
+	local ucount    = 1
+	local icount    = 1
+	local index     = 1
+
+	-- Start with a cube. Then for number x/y sizes iterate each side of the cube
+	-- For each side of the cube cal vert trace back to center of cube, then recalc vert based on radius.
+	-- Collect verts in order, making triangles along the way
+	function spherevec( vec )		
+		local nvec = vmath.normalize( vmath.vector3( vec[1], vec[2], vec[3] ) )
+		return { nvec.x * sz, nvec.y * sz, nvec.z * sz, vec[4], vec[5], vec[6] }
+	end
+
+	local targets = {  
+		[1] = function( a, b ) return spherevec( { a, -sz, b, -1, 0.25, 0.333 } ); end,
+		[2] = function( a, b ) return spherevec( { a, b, -sz, 1, 0.0, 0.333 } ); end,
+		[3] = function( a, b ) return spherevec( { a, b, sz, -1, 0.25, 0.333 } ); end,
+		[4] = function( a, b ) return spherevec( { -sz, b, a, -1, 0.25, 0.333 } ); end,
+		[5] = function( a, b ) return spherevec( { sz, b, a, 1, 0.0, 0.333 } ); end,
+		[6] = function( a, b ) return spherevec( { a, sz, b, 1, 0.0, 0.333 } ); end
+	}
+
+	local startuvs = {
+		[1] = { 0.25, 0.666 },		-- Ground
+		[2] = { 0.25, 0.333 },		-- Front
+		[3] = { 0.75, 0.333 },		-- Back
+		[4] = { 0.0, 0.333 },		-- Left
+		[5] = { 0.5, 0.333 },		-- Right
+		[6] = { 0.25, 0.0 }			-- Sky
+	}
+
+	local stepsize = sz * 2 / d
+	for key, func in ipairs(targets) do
+
+		local uv1 = startuvs[key][1]
+		local vstep = 1.0 / d
+
+		local amult = 1.0 / ( 2.005 * sz * 4.0 )
+		local bmult = 1.0 / ( 2.005 * sz * 3.0 )
+
+		for a = -sz, sz-stepsize, stepsize do
+
+			local uv2 = startuvs[key][2]
+			for b = -sz, sz-stepsize, stepsize do
+				local toggle = 1
+
+				local v = func(a, b)
+				indices[index]  = icount+v[4] * inverted ; index = index + 1
+				verts[vcount]   = v[1]; vcount = vcount + 1
+				verts[vcount]   = v[2]; vcount = vcount + 1
+				verts[vcount]   = v[3]; vcount = vcount + 1
+				normals[ncount]   = v[1]; ncount = ncount + 1
+				normals[ncount]   = v[2]; ncount = ncount + 1
+				normals[ncount]   = v[3]; ncount = ncount + 1
+				uvs[ucount]     = uv1 + v[5] + v[4] * (a + sz) * amult; ucount = ucount + 1
+				uvs[ucount]     = uv2 + v[6] - (b + sz) * bmult; ucount = ucount + 1
+
+				local x = func(a+stepsize, b)
+				indices[index]  = icount ; index = index + 1
+				verts[vcount]   = x[1]; vcount = vcount + 1
+				verts[vcount]   = x[2]; vcount = vcount + 1
+				verts[vcount]   = x[3]; vcount = vcount + 1
+				normals[ncount]   = x[1]; ncount = ncount + 1
+				normals[ncount]   = x[2]; ncount = ncount + 1
+				normals[ncount]   = x[3]; ncount = ncount + 1
+				uvs[ucount]     = uv1 + x[5] + x[4] * (a + sz + stepsize) * amult; ucount = ucount + 1
+				uvs[ucount]     = uv2 + x[6] - (b + sz) * bmult; ucount = ucount + 1
+
+				local w = func(a, b+stepsize)
+				indices[index]  = icount-v[4] * inverted ; index = index + 1
+				verts[vcount]   = w[1]; vcount = vcount + 1
+				verts[vcount]   = w[2]; vcount = vcount + 1
+				verts[vcount]   = w[3]; vcount = vcount + 1
+				normals[ncount]   = w[1]; ncount = ncount + 1
+				normals[ncount]   = w[2]; ncount = ncount + 1
+				normals[ncount]   = w[3]; ncount = ncount + 1
+				uvs[ucount]     = uv1 + w[5] + w[4] * (a + sz) * amult; ucount = ucount + 1
+				uvs[ucount]     = uv2 + w[6] - (b + sz + stepsize) * bmult; ucount = ucount + 1
+
+				local y = func(a+stepsize,b+stepsize)
+				verts[vcount]   = y[1]; vcount = vcount + 1
+				verts[vcount]   = y[2]; vcount = vcount + 1
+				verts[vcount]   = y[3]; vcount = vcount + 1
+				normals[ncount]   = y[1]; ncount = ncount + 1
+				normals[ncount]   = y[2]; ncount = ncount + 1
+				normals[ncount]   = y[3]; ncount = ncount + 1
+				uvs[ucount]     = uv1 + y[5] + y[4] * (a + sz + stepsize) * amult; ucount = ucount + 1
+				uvs[ucount]     = uv2 + y[6] - (b + sz + stepsize) * bmult; ucount = ucount + 1
+
+				indices[index]  = icount+2-(1-v[4] * inverted) ; index = index + 1
+				indices[index]  = icount+1-v[4] * inverted ; index = index + 1
+
+				-- Build the extra tri from previous verts and one new one.
+				indices[index]  = icount+1 ; index = index + 1
+				icount = icount + 4
+			end
+		end
+	end
+
 -- 	sphere.ibuffers[1] = byt3dIBuffer:New()
 -- 
 -- 	sphere.ibuffers[1].vertBuffer 		= ffi.new("float["..(vcount-1).."]", verts)
@@ -290,13 +304,9 @@ end
 -- 	gSphereCount = gSphereCount + 1;    
 -- 	self.node:AddBlock(sphere, name, "byt3dMesh")
 -- 
--- 	self.boundMax = { sz, sz, sz, 0.0 }
--- 	self.boundMin = { -sz, -sz, -sz, 0.0 }
--- 	self.boundCtr[1] = (self.boundMax[1] - self.boundMin[1]) * 0.5 + self.boundMin[1]
--- 	self.boundCtr[2] = (self.boundMax[2] - self.boundMin[2]) * 0.5 + self.boundMin[2]
--- 	self.boundCtr[3] = (self.boundMax[3] - self.boundMin[3]) * 0.5 + self.boundMin[3]
--- end
--- 
+	geom:makeMesh( goname, indices, verts, uvs, normals )
+end
+
 -- ------------------------------------------------------------------------------------------------------------
 -- 
 -- function geom:GeneratePyramid(sz)
