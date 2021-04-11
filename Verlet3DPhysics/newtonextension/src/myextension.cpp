@@ -113,34 +113,33 @@ static int Create( lua_State *L )
 
 static int SetTableVector( lua_State *L, dFloat *data, const char *name )
 {
-    lua_pushstring(L, name);
-    //lua_newtable(L);
+    lua_pushstring(L, name); 
+    lua_newtable(L);
 
-    //lua_pushstring(L, "x");
-    lua_pushnumber(L, 1);
-    //lua_settable(L, -3);
-
-//     lua_pushstring(L, "y");
-//     lua_pushnumber(L, data[1]);
-//     lua_settable(L, -3);
-// 
-//     lua_pushstring(L, "z");
-//     lua_pushnumber(L, data[2]);
-//     lua_settable(L, -3);
-// 
-//     lua_pushstring(L, "w");
-//     lua_pushnumber(L, data[3]);
-//     lua_settable(L, -3);
- 
+    lua_pushnumber(L, 1); 
+    lua_pushnumber(L, data[0]);
     lua_settable(L, -3);
-}    
+    lua_pushnumber(L, 2); 
+    lua_pushnumber(L, data[1]);
+    lua_settable(L, -3);
+    lua_pushnumber(L, 3); 
+    lua_pushnumber(L, data[2]);
+    lua_settable(L, -3);
+    lua_pushnumber(L, 4); 
+    lua_pushnumber(L, data[3]);
+    lua_settable(L, -3);
+
+    lua_settable(L, -3);
+   
+    return 0;
+}
 
 static int Update( lua_State *L )
 {
     double timestep = luaL_checknumber(L, 1);
     NewtonUpdate(world, (float)timestep);
 
-    lua_newtable(L); 
+    lua_newtable(L);
     
     for(size_t i = 0; i<bodies.size(); i++)
     {        
@@ -152,14 +151,12 @@ static int Update( lua_State *L )
 
         dFloat pos[4] = {0.0f, 0.0f, 0.0f, 0.0f};
         NewtonBodyGetPosition(body, pos);
-        lua_pushnumber(L, i+1);
 
-        // pos and rot tables
+        lua_pushnumber(L, i+1); 
         lua_newtable(L);
-
+        
         SetTableVector(L, pos, "pos");
-//        SetTableVector(L, rot, "rot");
-
+        SetTableVector(L, rot, "rot");
         lua_settable(L, -3);
     }
 
