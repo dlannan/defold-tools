@@ -132,6 +132,7 @@ function update(self, delta)
 
 	-- Update returns all the current bodies position and rotation info. { { pos = { x,y,z }, rot = { x, y, z, w } }
 	local bodies = newtonextension.update(diff)
+	pprint(bodies[1])
 	camdrive.update(self, diff)
 	physics.updateall( objhandler, diff)
 

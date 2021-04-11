@@ -17,7 +17,7 @@ package = com.defold.example.basic3d
 dependencies = 
 title = VerletPhysics
 custom_resources = assets
-bundle_exclude_resources = ref/
+bundle_exclude_resources = 
 
 [physics]
 type = 3D

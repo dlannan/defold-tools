@@ -113,19 +113,26 @@ static int Create( lua_State *L )
 
 static int SetTableVector( lua_State *L, dFloat *data, const char *name )
 {
-    // pos
-    lua_createtable(L, 4, 0);
+    lua_pushstring(L, name);
+    //lua_newtable(L);
 
-    lua_pushnumber(L, data[0]);
-    lua_setfield(L, -2, "x");
-    lua_pushnumber(L, data[0]);
-    lua_setfield(L, -2, "y");
-    lua_pushnumber(L, data[0]);
-    lua_setfield(L, -2, "z");
-    lua_pushnumber(L, data[0]);
-    lua_setfield(L, -2, "w");
+    //lua_pushstring(L, "x");
+    lua_pushnumber(L, 1);
+    //lua_settable(L, -3);
 
-    lua_setfield(L, -3, name);
+//     lua_pushstring(L, "y");
+//     lua_pushnumber(L, data[1]);
+//     lua_settable(L, -3);
+// 
+//     lua_pushstring(L, "z");
+//     lua_pushnumber(L, data[2]);
+//     lua_settable(L, -3);
+// 
+//     lua_pushstring(L, "w");
+//     lua_pushnumber(L, data[3]);
+//     lua_settable(L, -3);
+ 
+    lua_settable(L, -3);
 }    
 
 static int Update( lua_State *L )
@@ -133,29 +140,29 @@ static int Update( lua_State *L )
     double timestep = luaL_checknumber(L, 1);
     NewtonUpdate(world, (float)timestep);
 
-    lua_createtable(L, bodies.size(), 0);
+    lua_newtable(L); 
     
     for(size_t i = 0; i<bodies.size(); i++)
-    {
-        lua_pushnumber(L, i+1);
-        
+    {        
         NewtonBody *body = bodies[i];
+
         // After update, build the table and set all the pos and quats.
-        dFloat rot[4];
+        dFloat rot[4] = {0.0f, 0.0f, 0.0f, 0.0f};
         NewtonBodyGetRotation(body, rot);
 
-        dFloat pos[4];
+        dFloat pos[4] = {0.0f, 0.0f, 0.0f, 0.0f};
         NewtonBodyGetPosition(body, pos);
+        lua_pushnumber(L, i+1);
 
         // pos and rot tables
-        lua_createtable(L, 2, 0);
-        SetTableVector(L, pos, "pos");
-        SetTableVector(L, rot, "rot");
+        lua_newtable(L);
 
-        lua_settable(L, -3);        
+        SetTableVector(L, pos, "pos");
+//        SetTableVector(L, rot, "rot");
+
+        lua_settable(L, -3);
     }
 
-    lua_settable(L, -3);
     return 1;
 }
 
