@@ -37,6 +37,55 @@ void cb_applyForce(const NewtonBody* const body, dFloat timestep, int threadInde
 }
 
 
+static int addCollisionSphere( lua_State * L ) {
+
+    double radii = lua_tonumber(L, 1);
+    // Collision shapes: sphere (our ball), and large box (our ground plane).
+    NewtonCollision* cs_sphere = NewtonCreateSphere(world, radii, 0, NULL);
+    colls.push_back( cs_sphere );
+    lua_pushnumber(L, colls.size()-1);
+    return 1;
+}
+
+static int addCollisionPlane( lua_State * L ) {
+
+    double width = lua_tonumber(L, 1);
+    double depth = lua_tonumber(L, 2);
+    // Collision shapes: sphere (our ball), and large box (our ground plane).
+    NewtonCollision* cs_ground = NewtonCreateBox(world, width, 0.1, depth, 0, NULL);
+    colls.push_back( cs_ground );
+    lua_pushnumber(L, colls.size() - 1);
+    return 1;
+}
+
+static int addBody( lua_State *L ) {
+
+    // Neutral transform matrix.
+    float	tm[16] = {
+        1.0f, 0.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f, 0.0f,
+        0.0f, 0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 0.0f, 1.0f
+    };
+
+    int idx = lua_tonumber(L, 1);
+    double x = lua_tonumber(L, 2);
+    double y = lua_tonumber(L, 3);
+    double z = lua_tonumber(L, 4);
+
+    tm[12] = x; tm[13] = y; tm[14] = z;
+    NewtonBody *body = NewtonCreateDynamicBody(world, colls[idx], tm);
+    bodies.push_back(body);
+    NewtonBodySetForceAndTorqueCallback(body, cb_applyForce);
+
+    UserData *myData = new UserData[2];
+    myData[0].bodyID = bodies.size()-1;
+    NewtonBodySetUserData(body, (void *)&myData[0]);
+    
+    lua_pushnumber(L, bodies.size() - 1);
+    return 1;
+}
+
 static int addBodies(lua_State *L) {
     // Neutral transform matrix.
     float	tm[16] = {
@@ -111,7 +160,10 @@ static const luaL_reg Module_methods[] =
     {"create", Create}, 
     {"update", Update}, 
     {"close", Close},
-    {"addsphere", addBodies},
+    {"addbodies", addBodies},
+    {"addcollisionplane", addCollisionPlane },
+    {"addcollisionsphere", addCollisionSphere },
+    {"addbody", addBody },
     {0, 0}
 };
 
