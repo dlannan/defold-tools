@@ -29,6 +29,22 @@ end
 
 -- --------------------------------------------------------------------------------------------------------
 
+function updateBodyObjects( self, bodies )
+
+	local b1 = bodies[self.bodysphere1+1]
+	if(b1) then 
+		go.set_rotation( vmath.quat(b1.rot.x,b1.rot.y,b1.rot.z,b1.rot.w), self.bsphere1)
+		go.set_position( vmath.vector3(b1.pos.x,b1.pos.y,b1.pos.z), self.bsphere1)
+	end
+	local b2 = bodies[self.bodysphere2+1]
+	if(b2) then 
+		go.set_rotation( vmath.quat(b2.rot.x,b2.rot.y,b2.rot.z,b2.rot.w), self.bsphere2)
+		go.set_position( vmath.vector3(b2.pos.x,b2.pos.y,b2.pos.z), self.bsphere2)	
+	end
+end
+
+-- --------------------------------------------------------------------------------------------------------
+
 function init(self)
 
 	msg.post(".", "acquire_input_focus")
@@ -51,7 +67,15 @@ function init(self)
 	self.bodyground = newtonextension.addbody(self.collplane, 0,0,0, 0)  -- infinite mass is 0
 	self.bodysphere1 = newtonextension.addbody(self.collsphere, 0.01,10,0, 2)
 	self.bodysphere2 = newtonextension.addbody(self.collsphere, 0,20,0, 1)
-				
+
+	self.bsphere1 =  mpool.gettemp( "bodysphere1" )
+	geom:GenerateSphere( self.bsphere1.."#temp", 1, 6)
+	imageutils.loadimage( self.bsphere1.."#temp", "/assets/images/green.png", 0 )
+
+	self.bsphere2 = mpool.gettemp( "bodysphere2" )
+	geom:GenerateSphere( self.bsphere2.."#temp", 1, 6 )
+	imageutils.loadimage( self.bsphere2.."#temp", "/assets/images/green.png", 0 )
+
 	camdrive.init("/camera")
 			
 	-- gltf:load("/assets/models/demo_grass01/demo_grass01.gltf", "/temp/temp006", "temp")
@@ -71,6 +95,7 @@ function init(self)
 	self.ts = os.clock()
 end
 
+-- --------------------------------------------------------------------------------------------------------
 -- Make a quaternion from a view vector with UP as the axis rotation.
 local function rotationTo( vec )
 
@@ -123,16 +148,18 @@ function objhandler( objs, objcount )
 end 
 
 -- --------------------------------------------------------------------------------------------------------
-
+local NEWTON_MIN_TIMESTEP 	= 0.016
 function update(self, delta)
 
 	local newt = os.clock()
 	local diff = newt-self.ts 
 	self.ts = newt 
-
+	
 	-- Update returns all the current bodies position and rotation info. { { pos = { x,y,z }, rot = { x, y, z, w } }
-	local bodies = newtonextension.update(diff)
-	pprint(bodies[1])
+	-- This forces a minimum of 60Hz physics - this may be too quick.
+	local bodies = newtonextension.update(math.max(0.016, diff))
+	updateBodyObjects( self, bodies )
+	
 	camdrive.update(self, diff)
 	physics.updateall( objhandler, diff)
 

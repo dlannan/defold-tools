@@ -28,7 +28,7 @@ void cb_applyForce(const NewtonBody* const body, dFloat timestep, int threadInde
 //    NewtonBodyGetPosition(body, pos);
 
     // Apply force.
-    dFloat force[3] = {0, -1.0, 0};
+    dFloat force[3] = {0, -9.8, 0};
     NewtonBodySetForce(body, force);
 
     // Print info to terminal.
@@ -116,16 +116,16 @@ static int SetTableVector( lua_State *L, dFloat *data, const char *name )
     lua_pushstring(L, name); 
     lua_newtable(L);
 
-    lua_pushnumber(L, 1); 
+    lua_pushstring(L, "x"); 
     lua_pushnumber(L, data[0]);
     lua_settable(L, -3);
-    lua_pushnumber(L, 2); 
+    lua_pushstring(L, "y"); 
     lua_pushnumber(L, data[1]);
     lua_settable(L, -3);
-    lua_pushnumber(L, 3); 
+    lua_pushstring(L, "z"); 
     lua_pushnumber(L, data[2]);
     lua_settable(L, -3);
-    lua_pushnumber(L, 4); 
+    lua_pushstring(L, "w"); 
     lua_pushnumber(L, data[3]);
     lua_settable(L, -3);
 
