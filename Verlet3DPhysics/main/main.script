@@ -45,8 +45,13 @@ function init(self)
 
 	physics.init()
 	newtonextension.create()
-	--newtonextension.addbodies()
-	
+	self.collground = newtonextension.addcollisionplane(100, 100)
+	self.collsphere = newtonextension.addcollisionsphere(1)
+
+	self.bodyground = newtonextension.addbody(self.collplane, 0,0,0, 0)  -- infinite mass is 0
+	self.bodysphere1 = newtonextension.addbody(self.collsphere, 0.01,10,0, 2)
+	self.bodysphere2 = newtonextension.addbody(self.collsphere, 0,20,0, 1)
+				
 	camdrive.init("/camera")
 			
 	-- gltf:load("/assets/models/demo_grass01/demo_grass01.gltf", "/temp/temp006", "temp")
@@ -117,13 +122,16 @@ function objhandler( objs, objcount )
 	end
 end 
 
+-- --------------------------------------------------------------------------------------------------------
+
 function update(self, delta)
 
 	local newt = os.clock()
 	local diff = newt-self.ts 
 	self.ts = newt 
 
-	newtonextension.update(diff)
+	-- Update returns all the current bodies position and rotation info. { { pos = { x,y,z }, rot = { x, y, z, w } }
+	local bodies = newtonextension.update(diff)
 	camdrive.update(self, diff)
 	physics.updateall( objhandler, diff)
 

@@ -23,17 +23,17 @@ struct UserData {
 void cb_applyForce(const NewtonBody* const body, dFloat timestep, int threadIndex)
 {
     // Fetch user data and body position.
-    UserData *mydata = (UserData*)NewtonBodyGetUserData(body);
-    dFloat pos[4];
-    NewtonBodyGetPosition(body, pos);
+//    UserData *mydata = (UserData*)NewtonBodyGetUserData(body);
+//    dFloat pos[4];
+//    NewtonBodyGetPosition(body, pos);
 
     // Apply force.
     dFloat force[3] = {0, -1.0, 0};
     NewtonBodySetForce(body, force);
 
     // Print info to terminal.
-    printf("BodyID=%d, Sleep=%d, %.2f, %.2f, %.2f\n",
-    mydata->bodyID, NewtonBodyGetSleepState(body), pos[0], pos[1], pos[2]);
+//    printf("BodyID=%d, Sleep=%d, %.2f, %.2f, %.2f\n",
+//    mydata->bodyID, NewtonBodyGetSleepState(body), pos[0], pos[1], pos[2]);
 }
 
 
@@ -58,6 +58,17 @@ static int addCollisionPlane( lua_State * L ) {
     return 1;
 }
 
+static int addCollisionCube( lua_State * L ) {
+
+    double sx = lua_tonumber(L, 1);
+    double sy = lua_tonumber(L, 2);
+    double sz = lua_tonumber(L, 3);
+    NewtonCollision* cs_ground = NewtonCreateBox(world, sx, sy, sz, 0, NULL);
+    colls.push_back( cs_ground );
+    lua_pushnumber(L, colls.size() - 1);
+    return 1;
+}
+
 static int addBody( lua_State *L ) {
 
     // Neutral transform matrix.
@@ -72,58 +83,22 @@ static int addBody( lua_State *L ) {
     double x = lua_tonumber(L, 2);
     double y = lua_tonumber(L, 3);
     double z = lua_tonumber(L, 4);
+    double mass = lua_tonumber(L, 5);
 
     tm[12] = x; tm[13] = y; tm[14] = z;
     NewtonBody *body = NewtonCreateDynamicBody(world, colls[idx], tm);
     bodies.push_back(body);
     NewtonBodySetForceAndTorqueCallback(body, cb_applyForce);
 
+    // Assign non-zero mass to sphere to make it dynamic.
+    NewtonBodySetMassMatrix(body, mass, 1, 1, 1);
+    
     UserData *myData = new UserData[2];
     myData[0].bodyID = bodies.size()-1;
     NewtonBodySetUserData(body, (void *)&myData[0]);
     
     lua_pushnumber(L, bodies.size() - 1);
     return 1;
-}
-
-static int addBodies(lua_State *L) {
-    // Neutral transform matrix.
-    float	tm[16] = {
-        1.0f, 0.0f, 0.0f, 0.0f,
-        0.0f, 1.0f, 0.0f, 0.0f,
-        0.0f, 0.0f, 1.0f, 0.0f,
-        0.0f, 0.0f, 0.0f, 1.0f
-    };
-
-    // Collision shapes: sphere (our ball), and large box (our ground plane).
-    NewtonCollision* cs_sphere = NewtonCreateSphere(world, 1, 0, NULL);
-    NewtonCollision* cs_ground = NewtonCreateBox(world, 100, 0.1, 100, 0, NULL);
-    colls.push_back(cs_sphere);
-    colls.push_back(cs_ground);
-
-    // Create the bodies and assign them the collision shapes. Note that
-    // we need to modify initial transform for the ball to place it a y=2.0
-    NewtonBody* ground = NewtonCreateDynamicBody(world, cs_ground, tm);
-    tm[13] = 2.0;
-    NewtonBody* sphere = NewtonCreateDynamicBody(world, cs_sphere, tm);
-
-    bodies.push_back(ground);
-    bodies.push_back(sphere);
-    
-    // Assign non-zero mass to sphere to make it dynamic.
-    NewtonBodySetMassMatrix(sphere, 1.0f, 1, 1, 1);
-
-    // Install the callbacks to track the body positions.
-    NewtonBodySetForceAndTorqueCallback(sphere, cb_applyForce);
-    NewtonBodySetForceAndTorqueCallback(ground, cb_applyForce);
-
-    // Attach our custom data structure to the bodies.
-    UserData *myData = new UserData[2];
-    myData[0].bodyID = 0;
-    myData[1].bodyID = 1;
-    NewtonBodySetUserData(sphere, (void *)&myData[0]);
-    NewtonBodySetUserData(ground, (void *)&myData[1]);
-    return 0;
 }
 
 static int Create( lua_State *L )
@@ -136,11 +111,52 @@ static int Create( lua_State *L )
     return 0;
 }
 
+static int SetTableVector( lua_State *L, dFloat *data, const char *name )
+{
+    // pos
+    lua_createtable(L, 4, 0);
+
+    lua_pushnumber(L, data[0]);
+    lua_setfield(L, -2, "x");
+    lua_pushnumber(L, data[0]);
+    lua_setfield(L, -2, "y");
+    lua_pushnumber(L, data[0]);
+    lua_setfield(L, -2, "z");
+    lua_pushnumber(L, data[0]);
+    lua_setfield(L, -2, "w");
+
+    lua_setfield(L, -3, name);
+}    
+
 static int Update( lua_State *L )
 {
     double timestep = luaL_checknumber(L, 1);
     NewtonUpdate(world, (float)timestep);
-    return 0;
+
+    lua_createtable(L, bodies.size(), 0);
+    
+    for(size_t i = 0; i<bodies.size(); i++)
+    {
+        lua_pushnumber(L, i+1);
+        
+        NewtonBody *body = bodies[i];
+        // After update, build the table and set all the pos and quats.
+        dFloat rot[4];
+        NewtonBodyGetRotation(body, rot);
+
+        dFloat pos[4];
+        NewtonBodyGetPosition(body, pos);
+
+        // pos and rot tables
+        lua_createtable(L, 2, 0);
+        SetTableVector(L, pos, "pos");
+        SetTableVector(L, rot, "rot");
+
+        lua_settable(L, -3);        
+    }
+
+    lua_settable(L, -3);
+    return 1;
 }
 
 static int Close( lua_State *L )
@@ -160,8 +176,8 @@ static const luaL_reg Module_methods[] =
     {"create", Create}, 
     {"update", Update}, 
     {"close", Close},
-    {"addbodies", addBodies},
     {"addcollisionplane", addCollisionPlane },
+    {"addcollisioncube", addCollisionCube },
     {"addcollisionsphere", addCollisionSphere },
     {"addbody", addBody },
     {0, 0}
