@@ -1,0 +1,19 @@
+
+ìç#version 140
+#ifndef GL_ES
+#define lowp
+#define mediump
+#define highp
+#endif
+
+out vec4 _DMENGINE_GENERATED_gl_FragColor;
+
+in mediump vec2 var_texcoord0;
+in lowp vec4 var_face_color;
+
+uniform lowp sampler2D texture_sampler;
+
+void main()
+{
+    _DMENGINE_GENERATED_gl_FragColor = texture(texture_sampler, var_texcoord0.xy) * var_face_color * var_face_color.a;
+}

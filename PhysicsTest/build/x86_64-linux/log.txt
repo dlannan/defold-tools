@@ -1,0 +1,936 @@
+clang++ -DDLIB_LOG_DOMAIN="GEOMEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/geomextension/include -Iupload/ -Iupload/newtonextension/include/  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/geomextension/src/myextension.cpp -c -o build/myextension.cpp_0.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+upload/geomextension/src/myextension.cpp:210:14: warning: unused variable 'size' [-Wunused-variable]
+    uint32_t size = 0;
+             ^
+1 warning generated.
+
+llvm-ar rcs /tmp/job7006586509148054977/build/libGeomExtension_1.a build/myextension.cpp_0.o 
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dBaseHierarchy.cpp -c -o build/dBaseHierarchy.cpp_2.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dBezierSpline.cpp -c -o build/dBezierSpline.cpp_3.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dClassInfo.cpp -c -o build/dClassInfo.cpp_4.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dContainersAlloc.cpp -c -o build/dContainersAlloc.cpp_5.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+upload/newtonextension/src/dContainersAlloc.cpp:26:9: warning: unknown pragma ignored [-Wunknown-pragmas]
+#pragma warning (disable: 4100) //warning C4100: 'lpReserved' : unreferenced formal parameter
+        ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dContainersStdAfx.cpp -c -o build/dContainersStdAfx.cpp_6.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCRC.cpp -c -o build/dCRC.cpp_7.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomAlloc.cpp -c -o build/dCustomAlloc.cpp_8.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomBallAndSocket.cpp -c -o build/dCustomBallAndSocket.cpp_9.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomCorkScrew.cpp -c -o build/dCustomCorkScrew.cpp_10.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDoubleHinge.cpp -c -o build/dCustomDoubleHinge.cpp_11.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDoubleHingeActuator.cpp -c -o build/dCustomDoubleHingeActuator.cpp_12.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDryRollingFriction.cpp -c -o build/dCustomDryRollingFriction.cpp_13.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomFixDistance.cpp -c -o build/dCustomFixDistance.cpp_14.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomGear.cpp -c -o build/dCustomGear.cpp_15.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomHinge.cpp -c -o build/dCustomHinge.cpp_16.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomHingeActuator.cpp -c -o build/dCustomHingeActuator.cpp_17.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomJoint.cpp -c -o build/dCustomJoint.cpp_18.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomJointLibraryStdAfx.cpp -c -o build/dCustomJointLibraryStdAfx.cpp_19.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomKinematicController.cpp -c -o build/dCustomKinematicController.cpp_20.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+upload/newtonextension/src/dCustomKinematicController.cpp:132:11: warning: enumeration value 'm_linear' not handled in switch [-Wswitch]
+                switch (m_controlMode)
+                        ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomListener.cpp -c -o build/dCustomListener.cpp_21.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomMotor.cpp -c -o build/dCustomMotor.cpp_22.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomPathFollow.cpp -c -o build/dCustomPathFollow.cpp_23.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomPlane.cpp -c -o build/dCustomPlane.cpp_24.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+upload/newtonextension/src/dCustomPlane.cpp:41:35: warning: expression result unused [-Wunused-value]
+        m_enableControlRotation ? true : false;
+                                         ^~~~~
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomPulley.cpp -c -o build/dCustomPulley.cpp_25.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomRackAndPinion.cpp -c -o build/dCustomRackAndPinion.cpp_26.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomSixdof.cpp -c -o build/dCustomSixdof.cpp_27.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomSlider.cpp -c -o build/dCustomSlider.cpp_28.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomSliderActuator.cpp -c -o build/dCustomSliderActuator.cpp_29.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomSlidingContact.cpp -c -o build/dCustomSlidingContact.cpp_30.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomTriggerManager.cpp -c -o build/dCustomTriggerManager.cpp_31.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomUpVector.cpp -c -o build/dCustomUpVector.cpp_32.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomWheel.cpp -c -o build/dCustomWheel.cpp_33.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dg.cpp -c -o build/dg.cpp_34.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgAABBPolygonSoup.cpp -c -o build/dgAABBPolygonSoup.cpp_35.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBallConstraint.cpp -c -o build/dgBallConstraint.cpp_36.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBallConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBilateralConstraint.cpp -c -o build/dgBilateralConstraint.cpp_37.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBilateralConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBody.cpp -c -o build/dgBody.cpp_38.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBody.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBodyMasterList.cpp -c -o build/dgBodyMasterList.cpp_39.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBodyMasterList.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBroadPhase.cpp -c -o build/dgBroadPhase.cpp_40.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBroadPhase.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBroadPhaseAggregate.cpp -c -o build/dgBroadPhaseAggregate.cpp_41.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBroadPhaseAggregate.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBroadPhaseMixed.cpp -c -o build/dgBroadPhaseMixed.cpp_42.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBroadPhaseMixed.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBroadPhaseSegregated.cpp -c -o build/dgBroadPhaseSegregated.cpp_43.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgBroadPhaseSegregated.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollision.cpp -c -o build/dgCollision.cpp_44.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollision.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionBox.cpp -c -o build/dgCollisionBox.cpp_45.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionBox.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionBVH.cpp -c -o build/dgCollisionBVH.cpp_46.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionBVH.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionCapsule.cpp -c -o build/dgCollisionCapsule.cpp_47.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionCapsule.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionChamferCylinder.cpp -c -o build/dgCollisionChamferCylinder.cpp_48.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionCompound.cpp -c -o build/dgCollisionCompound.cpp_49.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionCompound.cpp:23:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2367:51: warning: expression does not compute the number of elements in this array; element type is 'dgCollisionCompound::dgNodePairs', not 'dgCollisionCompound::dgNodeBase *' [-Wsizeof-array-div]
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                   ~~~~~~~~~  ^
+upload/newtonextension/include/dgTypes.h:162:31: note: expanded from macro 'dgAssert'
+                        #define dgAssert(x) assert(x)
+                                                   ^
+/usr/include/assert.h:89:5: note: expanded from macro 'assert'
+  ((expr)                                                               \
+    ^~~~
+upload/newtonextension/src/dgCollisionCompound.cpp:2218:14: note: array 'stackPool' declared here
+        dgNodePairs stackPool[4 * DG_COMPOUND_STACK_DEPTH];
+                    ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2367:51: note: place parentheses around the 'sizeof(dgCollisionCompound::dgNodeBase *)' expression to silence this warning
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                              ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2373:51: warning: expression does not compute the number of elements in this array; element type is 'dgCollisionCompound::dgNodePairs', not 'dgCollisionCompound::dgNodeBase *' [-Wsizeof-array-div]
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                   ~~~~~~~~~  ^
+upload/newtonextension/include/dgTypes.h:162:31: note: expanded from macro 'dgAssert'
+                        #define dgAssert(x) assert(x)
+                                                   ^
+/usr/include/assert.h:89:5: note: expanded from macro 'assert'
+  ((expr)                                                               \
+    ^~~~
+upload/newtonextension/src/dgCollisionCompound.cpp:2218:14: note: array 'stackPool' declared here
+        dgNodePairs stackPool[4 * DG_COMPOUND_STACK_DEPTH];
+                    ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2373:51: note: place parentheses around the 'sizeof(dgCollisionCompound::dgNodeBase *)' expression to silence this warning
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                              ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2979:51: warning: expression does not compute the number of elements in this array; element type is 'dgCollisionCompound::dgNodePairs', not 'dgCollisionCompound::dgNodeBase *' [-Wsizeof-array-div]
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                   ~~~~~~~~~  ^
+upload/newtonextension/include/dgTypes.h:162:31: note: expanded from macro 'dgAssert'
+                        #define dgAssert(x) assert(x)
+                                                   ^
+/usr/include/assert.h:89:5: note: expanded from macro 'assert'
+  ((expr)                                                               \
+    ^~~~
+upload/newtonextension/src/dgCollisionCompound.cpp:2792:14: note: array 'stackPool' declared here
+        dgNodePairs stackPool[4 * DG_COMPOUND_STACK_DEPTH];
+                    ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2979:51: note: place parentheses around the 'sizeof(dgCollisionCompound::dgNodeBase *)' expression to silence this warning
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                              ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2985:51: warning: expression does not compute the number of elements in this array; element type is 'dgCollisionCompound::dgNodePairs', not 'dgCollisionCompound::dgNodeBase *' [-Wsizeof-array-div]
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                   ~~~~~~~~~  ^
+upload/newtonextension/include/dgTypes.h:162:31: note: expanded from macro 'dgAssert'
+                        #define dgAssert(x) assert(x)
+                                                   ^
+/usr/include/assert.h:89:5: note: expanded from macro 'assert'
+  ((expr)                                                               \
+    ^~~~
+upload/newtonextension/src/dgCollisionCompound.cpp:2792:14: note: array 'stackPool' declared here
+        dgNodePairs stackPool[4 * DG_COMPOUND_STACK_DEPTH];
+                    ^
+upload/newtonextension/src/dgCollisionCompound.cpp:2985:51: note: place parentheses around the 'sizeof(dgCollisionCompound::dgNodeBase *)' expression to silence this warning
+                                dgAssert (stack < dgInt32 (sizeof (stackPool) / sizeof (dgNodeBase*)));
+                                                                              ^
+5 warnings generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionCompoundFractured.cpp -c -o build/dgCollisionCompoundFractured.cpp_50.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionCompoundFractured.cpp:23:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionCone.cpp -c -o build/dgCollisionCone.cpp_51.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionConvex.cpp -c -o build/dgCollisionConvex.cpp_52.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionConvex.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionConvexHull.cpp -c -o build/dgCollisionConvexHull.cpp_53.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionConvexPolygon.cpp -c -o build/dgCollisionConvexPolygon.cpp_54.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionConvexPolygon.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionCylinder.cpp -c -o build/dgCollisionCylinder.cpp_55.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionCylinder.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionDeformableMesh.cpp -c -o build/dgCollisionDeformableMesh.cpp_56.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionDeformableMesh.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionDeformableSolidMesh.cpp -c -o build/dgCollisionDeformableSolidMesh.cpp_57.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionDeformableSolidMesh.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionHeightField.cpp -c -o build/dgCollisionHeightField.cpp_58.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionHeightField.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionIncompressibleParticles.cpp -c -o build/dgCollisionIncompressibleParticles.cpp_59.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionIncompressibleParticles.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionInstance.cpp -c -o build/dgCollisionInstance.cpp_60.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionInstance.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionLumpedMassParticles.cpp -c -o build/dgCollisionLumpedMassParticles.cpp_61.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionLumpedMassParticles.cpp:23:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionMassSpringDamperSystem.cpp -c -o build/dgCollisionMassSpringDamperSystem.cpp_62.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionMassSpringDamperSystem.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionMesh.cpp -c -o build/dgCollisionMesh.cpp_63.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionMesh.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionNull.cpp -c -o build/dgCollisionNull.cpp_64.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionScene.cpp -c -o build/dgCollisionScene.cpp_65.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionScene.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionSphere.cpp -c -o build/dgCollisionSphere.cpp_66.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionSphere.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionUserMesh.cpp -c -o build/dgCollisionUserMesh.cpp_67.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCollisionUserMesh.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgConstraint.cpp -c -o build/dgConstraint.cpp_68.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgContact.cpp -c -o build/dgContact.cpp_69.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgContact.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgContactSolver.cpp -c -o build/dgContactSolver.cpp_70.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgContactSolver.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgConvexHull3d.cpp -c -o build/dgConvexHull3d.cpp_71.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgConvexHull4d.cpp -c -o build/dgConvexHull4d.cpp_72.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCorkscrewConstraint.cpp -c -o build/dgCorkscrewConstraint.cpp_73.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgCorkscrewConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCRC.cpp -c -o build/dgCRC.cpp_74.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgDebug.cpp -c -o build/dgDebug.cpp_75.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgDelaunayTetrahedralization.cpp -c -o build/dgDelaunayTetrahedralization.cpp_76.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgDynamicBody.cpp -c -o build/dgDynamicBody.cpp_77.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgDynamicBody.cpp:23:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgGeneralMatrix.cpp -c -o build/dgGeneralMatrix.cpp_78.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgGeneralVector.cpp -c -o build/dgGeneralVector.cpp_79.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgGoogol.cpp -c -o build/dgGoogol.cpp_80.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgHingeConstraint.cpp -c -o build/dgHingeConstraint.cpp_81.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgHingeConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgIntersections.cpp -c -o build/dgIntersections.cpp_82.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgKinematicBody.cpp -c -o build/dgKinematicBody.cpp_83.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMatrix.cpp -c -o build/dgMatrix.cpp_84.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMemory.cpp -c -o build/dgMemory.cpp_85.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect1.cpp -c -o build/dgMeshEffect1.cpp_86.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgMeshEffect1.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+upload/newtonextension/src/dgMeshEffect1.cpp:1756:9: warning: local variable 'sphere' will be copied despite being returned by name [-Wreturn-std-move]
+        return sphere;
+               ^~~~~~
+upload/newtonextension/src/dgMeshEffect1.cpp:1756:9: note: call 'std::move' explicitly to avoid copying
+        return sphere;
+               ^~~~~~
+               std::move(sphere)
+2 warnings generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect2.cpp -c -o build/dgMeshEffect2.cpp_87.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgMeshEffect2.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect3.cpp -c -o build/dgMeshEffect3.cpp_88.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgMeshEffect3.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect4.cpp -c -o build/dgMeshEffect4.cpp_89.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgMeshEffect4.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect5.cpp -c -o build/dgMeshEffect5.cpp_90.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgMeshEffect5.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect6.cpp -c -o build/dgMeshEffect6.cpp_91.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgMeshEffect6.cpp:37:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMutexThread.cpp -c -o build/dgMutexThread.cpp_92.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgNarrowPhaseCollision.cpp -c -o build/dgNarrowPhaseCollision.cpp_93.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgNarrowPhaseCollision.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+upload/newtonextension/src/dgNarrowPhaseCollision.cpp:540:23: warning: unused function 'CompareContact' [-Wunused-function]
+static inline dgInt32 CompareContact (const dgContactPoint* const contactA, const dgContactPoint* const contactB, void* dommy)
+                      ^
+2 warnings generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgNode.cpp -c -o build/dgNode.cpp_94.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgObb.cpp -c -o build/dgObb.cpp_95.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgPolygonSoupBuilder.cpp -c -o build/dgPolygonSoupBuilder.cpp_96.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgPolygonSoupDatabase.cpp -c -o build/dgPolygonSoupDatabase.cpp_97.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgPolyhedra.cpp -c -o build/dgPolyhedra.cpp_98.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgPolyhedraMassProperties.cpp -c -o build/dgPolyhedraMassProperties.cpp_99.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgProfiler.cpp -c -o build/dgProfiler.cpp_100.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgQuaternion.cpp -c -o build/dgQuaternion.cpp_101.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgRandom.cpp -c -o build/dgRandom.cpp_102.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgRef.cpp -c -o build/dgRef.cpp_103.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgRefCounter.cpp -c -o build/dgRefCounter.cpp_104.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgSkeletonContainer.cpp -c -o build/dgSkeletonContainer.cpp_105.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgSkeletonContainer.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgSlidingConstraint.cpp -c -o build/dgSlidingConstraint.cpp_106.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgSlidingConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgSmallDeterminant.cpp -c -o build/dgSmallDeterminant.cpp_107.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgThread.cpp -c -o build/dgThread.cpp_108.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgThreadHive.cpp -c -o build/dgThreadHive.cpp_109.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgTree.cpp -c -o build/dgTree.cpp_110.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgTypes.cpp -c -o build/dgTypes.cpp_111.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgUniversalConstraint.cpp -c -o build/dgUniversalConstraint.cpp_112.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgUniversalConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgUpVectorConstraint.cpp -c -o build/dgUpVectorConstraint.cpp_113.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgUpVectorConstraint.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgUserConstraint.cpp -c -o build/dgUserConstraint.cpp_114.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgUserConstraint.cpp:23:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgWorld.cpp -c -o build/dgWorld.cpp_115.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgWorld.cpp:23:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgWorldDynamicsParallelSolver.cpp -c -o build/dgWorldDynamicsParallelSolver.cpp_116.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgWorldDynamicsParallelSolver.cpp:25:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgWorldDynamicsSimpleSolver.cpp -c -o build/dgWorldDynamicsSimpleSolver.cpp_117.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgWorldDynamicsSimpleSolver.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgWorldDynamicUpdate.cpp -c -o build/dgWorldDynamicUpdate.cpp_118.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgWorldDynamicUpdate.cpp:25:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgWorldPlugins.cpp -c -o build/dgWorldPlugins.cpp_119.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dgWorldPlugins.cpp:23:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dLinearAlgebra.cpp -c -o build/dLinearAlgebra.cpp_120.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dMaterialPairManager.cpp -c -o build/dMaterialPairManager.cpp_121.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dMathDefines.cpp -c -o build/dMathDefines.cpp_122.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dMatrix.cpp -c -o build/dMatrix.cpp_123.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewton.cpp -c -o build/dNewton.cpp_124.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonActuatorJoints.cpp -c -o build/dNewtonActuatorJoints.cpp_125.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonAlloc.cpp -c -o build/dNewtonAlloc.cpp_126.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonBody.cpp -c -o build/dNewtonBody.cpp_127.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonCollision.cpp -c -o build/dNewtonCollision.cpp_128.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonDynamicBody.cpp -c -o build/dNewtonDynamicBody.cpp_129.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonJoint.cpp -c -o build/dNewtonJoint.cpp_130.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonKinematicBody.cpp -c -o build/dNewtonKinematicBody.cpp_131.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonMaterial.cpp -c -o build/dNewtonMaterial.cpp_132.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonMesh.cpp -c -o build/dNewtonMesh.cpp_133.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonPlayerManager.cpp -c -o build/dNewtonPlayerManager.cpp_134.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonRayCast.cpp -c -o build/dNewtonRayCast.cpp_135.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonScopeBuffer.cpp -c -o build/dNewtonScopeBuffer.cpp_136.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonTransformLerp.cpp -c -o build/dNewtonTransformLerp.cpp_137.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonTriggerManager.cpp -c -o build/dNewtonTriggerManager.cpp_138.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/dNewtonTriggerManager.cpp:26:
+upload/newtonextension/include/dNewtonTriggerManager.h:56:27: warning: 'dNewtonTriggerManager::OnEnter' hides overloaded virtual function [-Woverloaded-virtual]
+        CNEWTON_API virtual void OnEnter(const dCustomTriggerController* const me, NewtonBody* const guess) const {};
+                                 ^
+upload/newtonextension/include/dCustomTriggerManager.h:82:15: note: hidden overloaded virtual function 'dCustomTriggerManager::OnEnter' declared here: different number of parameters (3 vs 2)
+        virtual void OnEnter (const dCustomTriggerController* const me, dFloat timestep, NewtonBody* const guess) const {}
+                     ^
+In file included from upload/newtonextension/src/dNewtonTriggerManager.cpp:26:
+upload/newtonextension/include/dNewtonTriggerManager.h:57:27: warning: 'dNewtonTriggerManager::OnExit' hides overloaded virtual function [-Woverloaded-virtual]
+        CNEWTON_API virtual void OnExit(const dCustomTriggerController* const me, NewtonBody* const guess) const {};
+                                 ^
+upload/newtonextension/include/dCustomTriggerManager.h:83:15: note: hidden overloaded virtual function 'dCustomTriggerManager::OnExit' declared here: different number of parameters (3 vs 2)
+        virtual void OnExit (const dCustomTriggerController* const me, dFloat timestep, NewtonBody* const guess) const {}
+                     ^
+In file included from upload/newtonextension/src/dNewtonTriggerManager.cpp:26:
+upload/newtonextension/include/dNewtonTriggerManager.h:58:27: warning: 'dNewtonTriggerManager::WhileIn' hides overloaded virtual function [-Woverloaded-virtual]
+        CNEWTON_API virtual void WhileIn (const dCustomTriggerController* const trigger, NewtonBody* const guess) const;
+                                 ^
+upload/newtonextension/include/dCustomTriggerManager.h:84:15: note: hidden overloaded virtual function 'dCustomTriggerManager::WhileIn' declared here: different number of parameters (3 vs 2)
+        virtual void WhileIn (const dCustomTriggerController* const me, dFloat timestep, NewtonBody* const guess) const {}
+                     ^
+3 warnings generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dQuaternion.cpp -c -o build/dQuaternion.cpp_139.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dRefCounter.cpp -c -o build/dRefCounter.cpp_140.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dStdAfxMath.cpp -c -o build/dStdAfxMath.cpp_141.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dStdAfxNewton.cpp -c -o build/dStdAfxNewton.cpp_142.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dString.cpp -c -o build/dString.cpp_143.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dTree.cpp -c -o build/dTree.cpp_144.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dVector.cpp -c -o build/dVector.cpp_145.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/myextension.cpp -c -o build/myextension.cpp_146.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/Newton.cpp -c -o build/Newton.cpp_147.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/Newton.cpp:22:
+In file included from upload/newtonextension/include/NewtonStdAfx.h:31:
+In file included from upload/newtonextension/include/dgPhysics.h:27:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  upload/newtonextension/src/NewtonClass.cpp -c -o build/NewtonClass.cpp_148.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+In file included from upload/newtonextension/src/NewtonClass.cpp:22:
+In file included from upload/newtonextension/include/NewtonStdAfx.h:31:
+In file included from upload/newtonextension/include/dgPhysics.h:27:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^
+1 warning generated.
+
+llvm-ar rcs /tmp/job7006586509148054977/build/libNewtonExtension_3.a build/dBaseHierarchy.cpp_2.o build/dBezierSpline.cpp_3.o build/dClassInfo.cpp_4.o build/dContainersAlloc.cpp_5.o build/dContainersStdAfx.cpp_6.o build/dCRC.cpp_7.o build/dCustomAlloc.cpp_8.o build/dCustomBallAndSocket.cpp_9.o build/dCustomCorkScrew.cpp_10.o build/dCustomDoubleHinge.cpp_11.o build/dCustomDoubleHingeActuator.cpp_12.o build/dCustomDryRollingFriction.cpp_13.o build/dCustomFixDistance.cpp_14.o build/dCustomGear.cpp_15.o build/dCustomHinge.cpp_16.o build/dCustomHingeActuator.cpp_17.o build/dCustomJoint.cpp_18.o build/dCustomJointLibraryStdAfx.cpp_19.o build/dCustomKinematicController.cpp_20.o build/dCustomListener.cpp_21.o build/dCustomMotor.cpp_22.o build/dCustomPathFollow.cpp_23.o build/dCustomPlane.cpp_24.o build/dCustomPulley.cpp_25.o build/dCustomRackAndPinion.cpp_26.o build/dCustomSixdof.cpp_27.o build/dCustomSlider.cpp_28.o build/dCustomSliderActuator.cpp_29.o build/dCustomSlidingContact.cpp_30.o build/dCustomTriggerManager.cpp_31.o build/dCustomUpVector.cpp_32.o build/dCustomWheel.cpp_33.o build/dg.cpp_34.o build/dgAABBPolygonSoup.cpp_35.o build/dgBallConstraint.cpp_36.o build/dgBilateralConstraint.cpp_37.o build/dgBody.cpp_38.o build/dgBodyMasterList.cpp_39.o build/dgBroadPhase.cpp_40.o build/dgBroadPhaseAggregate.cpp_41.o build/dgBroadPhaseMixed.cpp_42.o build/dgBroadPhaseSegregated.cpp_43.o build/dgCollision.cpp_44.o build/dgCollisionBox.cpp_45.o build/dgCollisionBVH.cpp_46.o build/dgCollisionCapsule.cpp_47.o build/dgCollisionChamferCylinder.cpp_48.o build/dgCollisionCompound.cpp_49.o build/dgCollisionCompoundFractured.cpp_50.o build/dgCollisionCone.cpp_51.o build/dgCollisionConvex.cpp_52.o build/dgCollisionConvexHull.cpp_53.o build/dgCollisionConvexPolygon.cpp_54.o build/dgCollisionCylinder.cpp_55.o build/dgCollisionDeformableMesh.cpp_56.o build/dgCollisionDeformableSolidMesh.cpp_57.o build/dgCollisionHeightField.cpp_58.o build/dgCollisionIncompressibleParticles.cpp_59.o build/dgCollisionInstance.cpp_60.o build/dgCollisionLumpedMassParticles.cpp_61.o build/dgCollisionMassSpringDamperSystem.cpp_62.o build/dgCollisionMesh.cpp_63.o build/dgCollisionNull.cpp_64.o build/dgCollisionScene.cpp_65.o build/dgCollisionSphere.cpp_66.o build/dgCollisionUserMesh.cpp_67.o build/dgConstraint.cpp_68.o build/dgContact.cpp_69.o build/dgContactSolver.cpp_70.o build/dgConvexHull3d.cpp_71.o build/dgConvexHull4d.cpp_72.o build/dgCorkscrewConstraint.cpp_73.o build/dgCRC.cpp_74.o build/dgDebug.cpp_75.o build/dgDelaunayTetrahedralization.cpp_76.o build/dgDynamicBody.cpp_77.o build/dgGeneralMatrix.cpp_78.o build/dgGeneralVector.cpp_79.o build/dgGoogol.cpp_80.o build/dgHingeConstraint.cpp_81.o build/dgIntersections.cpp_82.o build/dgKinematicBody.cpp_83.o build/dgMatrix.cpp_84.o build/dgMemory.cpp_85.o build/dgMeshEffect1.cpp_86.o build/dgMeshEffect2.cpp_87.o build/dgMeshEffect3.cpp_88.o build/dgMeshEffect4.cpp_89.o build/dgMeshEffect5.cpp_90.o build/dgMeshEffect6.cpp_91.o build/dgMutexThread.cpp_92.o build/dgNarrowPhaseCollision.cpp_93.o build/dgNode.cpp_94.o build/dgObb.cpp_95.o build/dgPolygonSoupBuilder.cpp_96.o build/dgPolygonSoupDatabase.cpp_97.o build/dgPolyhedra.cpp_98.o build/dgPolyhedraMassProperties.cpp_99.o build/dgProfiler.cpp_100.o build/dgQuaternion.cpp_101.o build/dgRandom.cpp_102.o build/dgRef.cpp_103.o build/dgRefCounter.cpp_104.o build/dgSkeletonContainer.cpp_105.o build/dgSlidingConstraint.cpp_106.o build/dgSmallDeterminant.cpp_107.o build/dgThread.cpp_108.o build/dgThreadHive.cpp_109.o build/dgTree.cpp_110.o build/dgTypes.cpp_111.o build/dgUniversalConstraint.cpp_112.o build/dgUpVectorConstraint.cpp_113.o build/dgUserConstraint.cpp_114.o build/dgWorld.cpp_115.o build/dgWorldDynamicsParallelSolver.cpp_116.o build/dgWorldDynamicsSimpleSolver.cpp_117.o build/dgWorldDynamicUpdate.cpp_118.o build/dgWorldPlugins.cpp_119.o build/dLinearAlgebra.cpp_120.o build/dMaterialPairManager.cpp_121.o build/dMathDefines.cpp_122.o build/dMatrix.cpp_123.o build/dNewton.cpp_124.o build/dNewtonActuatorJoints.cpp_125.o build/dNewtonAlloc.cpp_126.o build/dNewtonBody.cpp_127.o build/dNewtonCollision.cpp_128.o build/dNewtonDynamicBody.cpp_129.o build/dNewtonJoint.cpp_130.o build/dNewtonKinematicBody.cpp_131.o build/dNewtonMaterial.cpp_132.o build/dNewtonMesh.cpp_133.o build/dNewtonPlayerManager.cpp_134.o build/dNewtonRayCast.cpp_135.o build/dNewtonScopeBuffer.cpp_136.o build/dNewtonTransformLerp.cpp_137.o build/dNewtonTriggerManager.cpp_138.o build/dQuaternion.cpp_139.o build/dRefCounter.cpp_140.o build/dStdAfxMath.cpp_141.o build/dStdAfxNewton.cpp_142.o build/dString.cpp_143.o build/dTree.cpp_144.o build/dVector.cpp_145.o build/myextension.cpp_146.o build/Newton.cpp_147.o build/NewtonClass.cpp_148.o 
+
+clang++ -DDLIB_LOG_DOMAIN="ENGINE_MAIN" -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS -DLUA_BYTECODE_ENABLE_64 -DDM_RELEASE  -ffloat-store -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden   -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//sdk/include -I/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//include/x86_64-linux  build/main.cpp -c -o build/main_tmp4.o
+clang-10: warning: optimization flag '-ffloat-store' is not supported [-Wignored-optimization-argument]
+
+clang++ build/main_tmp4.o  -o build/dmengine  -L/tmp/job7006586509148054977/build  -L/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//lib/x86_64-linux -L/var/extender/sdk/ff5b94e432eb58dabdb8e367bed9acc5e99e129b/defoldsdk//ext/lib/x86_64-linux  -Wl,-Bstatic -Wl,--start-group -lmbedtls -lzip -lwebviewext -lfacebookext -liapext -lpushext -liacext -lgameobject -lddf -lresource -lgamesys -lgraphics -lgraphics_transcoder_uastc -lbasis_transcoder -lphysics -lBulletDynamics -lBulletCollision -lLinearMath -lBox2D -lrender -lscript -lluajit-5.1 -lextension -lhid -linput -lparticle -lrig -ldlib -ldmglfw -lgui -lcrashext -lliveupdate -lsound -ltremolo -lcares  -lengine_release -lengine_service_null -lprofilerext_null -lrecord_null  -lNewtonExtension_3 -lGeomExtension_1  -Wl,--end-group -Wl,-Bdynamic -Wl,-rpath=$ORIGIN,--enable-new-dtags  -lopenal -lXext -lX11 -lXi -lGL -lGLU -lpthread -lm -ldl 
+

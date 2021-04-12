@@ -1,0 +1,1 @@
+com.defold.example.basic3d:drawable/icon = 0x7f010000
