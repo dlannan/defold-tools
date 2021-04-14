@@ -100,7 +100,7 @@ PF_WINE                 = "disabled"
 -- Platform Darwin - Includes OSX, and IOS
 dockerdata = string.gsub(dockerdata, "# Darwin", [[# Darwin
 PF_DARWIN="]]..PF_DARWIN..[["
-if [ "$PF_DARWIN" = "enabled" ]; then 
+if [ $PF_DARWIN = "enabled" ]; then 
 ]] )
 -- End darwin tag 
 dockerdata = string.gsub(dockerdata, "(#\n# EMSCRIPTEN)",[[
@@ -112,7 +112,7 @@ fi
 -- Platform Emscripten - be able to select version inclusions
 dockerdata = string.gsub(dockerdata, "## Emscripten 1.38.12", [[## Emscripten 1.38.12
 PF_EMSCRIPTEN_1_38_12="]]..PF_EMSCRIPTEN_1_38_12..[["
-if [ "$PF_EMSCRIPTEN_1_38_12" == "enabled" ]; then 
+if [ $PF_EMSCRIPTEN_1_38_12 = "enabled" ]; then 
 ]] )
 
 dockerdata = string.gsub(dockerdata, "## Emscripten 1.39.16 %(from version 1.2.170%)", [[fi
@@ -120,7 +120,7 @@ dockerdata = string.gsub(dockerdata, "## Emscripten 1.39.16 %(from version 1.2.1
 
 ## Emscripten 1.39.16 (from version 1.2.170)
 PF_EMSCRIPTEN_1_39_16="]]..PF_EMSCRIPTEN_1_39_16..[["
-if [ "$PF_EMSCRIPTEN_1_39_16" == "enabled" ]; then 
+if [ $PF_EMSCRIPTEN_1_39_16 = "enabled" ]; then 
 ]] )
     
 dockerdata = string.gsub(dockerdata, "## Emscripten 2.0.11 %(from version 1.2.178%)", [[fi
@@ -128,7 +128,7 @@ dockerdata = string.gsub(dockerdata, "## Emscripten 2.0.11 %(from version 1.2.17
 
 ## Emscripten 2.0.11 (from version 1.2.178)
 PF_EMSCRIPTEN_2_0_11="]]..PF_EMSCRIPTEN_2_0_11..[["
-if [ "$PF_EMSCRIPTEN_2_0_11" == "enabled" ]; then ]] )
+if [ $PF_EMSCRIPTEN_2_0_11 = "enabled" ]; then ]] )
 
 dockerdata = string.gsub(dockerdata, "# We use the same temp directory for both versions.",[[fi
 # END PF_EMSCRIPTEN_2_0_11
@@ -142,14 +142,14 @@ dockerdata = string.gsub(dockerdata, "(#\n# Windows\n#)", [[
 %1
 
 PF_WINDOWS="]]..PF_WINDOWS..[["
-if [ "$PF_WINDOWS" = "enabled" ]; then ]] )
+if [ $PF_WINDOWS = "enabled" ]; then ]] )
 
 -- Platform Android
 dockerdata = string.gsub(dockerdata, "(#\n# Android SDK/NDK\n)", [[fi
 # END PF_WINDOWS
 
 PF_ANDROID="]]..PF_ANDROID..[["
-if [ "$PF_ANDROID" = "enabled" ]; then
+if [ $PF_ANDROID = "enabled" ]; then
 
 %1]] )
 
@@ -158,7 +158,7 @@ dockerdata = string.gsub(dockerdata, "(#\n# Switch SDK\n)", [[fi
 # END PF_ANDROID 
 
 PF_SWITCH="]]..PF_SWITCH..[["
-if [ "$PF_SWITCH" = "enabled" ]; then 
+if [ $PF_SWITCH = "enabled" ]; then 
 
 %1]] )
 
@@ -167,7 +167,7 @@ dockerdata = string.gsub(dockerdata, "(#\n# Wine\n)", [[fi
 # END PF_SWITCH 
 
 PF_WINE="]]..PF_WINE..[["
-if [ "$PF_SWITCH" = "enabled" ]; then 
+if [ $PF_WINE = "enabled" ]; then 
 
 %1]] )
 
