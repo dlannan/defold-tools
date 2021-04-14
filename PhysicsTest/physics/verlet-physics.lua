@@ -27,12 +27,12 @@ physics.init = function()
     
     -- Random box test
     local rnode = mpool.gettemp( "rootnode1" )
-    geom:GenerateCube( rnode.."#temp", 1, 1 )
+    geom:GeneratePyramid( rnode.."#temp", 2 )
     imageutils.loadimage( rnode.."#temp", "/assets/images/green.png", 0 )
     go.set_position( vmath.vector3(rootnode1.x, rootnode1.y, 0), rnode )
 
     rnode = mpool.gettemp( "rootnode2" )
-    geom:GenerateCube( rnode.."#temp", 1, 1 )
+    geom:GenerateBlock( rnode.."#temp", 1,2,3 )
     imageutils.loadimage( rnode.."#temp", "/assets/images/green.png", 0 )
     go.set_position( vmath.vector3(rootnode2.x, rootnode2.y, 0), rnode )
             
