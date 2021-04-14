@@ -5,8 +5,12 @@
 --Almost guaranteed to not work with many Docker files, but hey, it works for us
 ------------------------------------------------------------------------------
 
-local HOME_DIRECTORY='/home/dlannan/dev/defold-extender/extender'
-local CONVERT_HOME_DIRECTORY=1
+local DM_PACKAGES_URL           = "http://localhost:8000"
+local HOME_DIRECTORY            ='/home/dlannan/dev/defold-extender/extender'
+local CONVERT_HOME_DIRECTORY    = 1
+
+local MS_VISUAL_STUDIO_VER      = "14.28.29910"
+local WINDOWS_SDK_10_VERSION    = "10.0.18362.0"
 
 local INPUT="Dockerfile"
 local OUTPUT="Dockerfile.sh"
@@ -32,6 +36,16 @@ print(res)
 local dockerdata = ""
 for line in io.lines(OUTPUT) do dockerdata = dockerdata..line.."\n" end
 ------------------------------------------------------------------------------
+
+dockerdata = [[
+DM_PACKAGES_URL="]]..DM_PACKAGES_URL..[["
+]]..dockerdata
+
+-- Add extender user if doesnt exist
+dockerdata = string.gsub(dockerdata, "# Add extender user", [[
+# Add extender user
+id -u extender &>/dev/null || useradd extender
+]] )
 
 --  Convert FROM, MAINTAINER, VOLUME to comments
 dockerdata = string.gsub(dockerdata, "FROM ", "# FROM ")
@@ -92,6 +106,7 @@ PF_EMSCRIPTEN_1_38_12   = "disabled"
 PF_EMSCRIPTEN_1_39_16   = "disabled"
 PF_EMSCRIPTEN_2_0_11    = "enabled"
 PF_WINDOWS              = "enabled"
+PF_WINDOWS_8_1_SDK      = "disabled"
 PF_ANDROID              = "enabled"
 PF_SWITCH               = "disabled"
 PF_WINE                 = "disabled"
@@ -135,7 +150,21 @@ dockerdata = string.gsub(dockerdata, "# We use the same temp directory for both 
 
 # We use the same temp directory for both versions.]] )
 
+dockerdata = string.gsub(dockerdata, "# We replace it with a folder of our own(.+)update%-alternatives", [[
+# We replace it with a folder of our own
+
+# REMOVED TEMP FOLDER NAME REPLACEMENT - TBD
+
+update-alternatives]] )
+
 -- Platform Windows 
+dockerdata = string.gsub(dockerdata, "PLATFORMSDK_WIN32=$PLATFORMSDK_DIR/Win32([^\n]+)", 
+            [[PLATFORMSDK_WIN32=$PLATFORMSDK_DIR/Win32]] )
+dockerdata = string.gsub(dockerdata, "WINDOWS_SDK_10_VERSION=([^\n]+)",
+            [[WINDOWS_SDK_10_VERSION="]]..WINDOWS_SDK_10_VERSION..[["]] )
+dockerdata = string.gsub(dockerdata, "WINDOWS_MSVC_2019_VERSION=([^\n]+)",
+            [[WINDOWS_MSVC_2019_VERSION="]]..MS_VISUAL_STUDIO_VER..[["]] )
+
 dockerdata = string.gsub(dockerdata, "ENV \\", "")
 
 dockerdata = string.gsub(dockerdata, "(#\n# Windows\n#)", [[
@@ -143,6 +172,19 @@ dockerdata = string.gsub(dockerdata, "(#\n# Windows\n#)", [[
 
 PF_WINDOWS="]]..PF_WINDOWS..[["
 if [ $PF_WINDOWS = "enabled" ]; then ]] )
+
+dockerdata = string.gsub(dockerdata, "(echo \"WIN32 8.1 %+ 10 SDK\" && \\)",[[
+PF_WINDOWS_8_1_SDK="]]..PF_WINDOWS_8_1_SDK..[["
+if [ $PF_WINDOWS_8_1_SDK = "enabled" ]; then 
+
+%1]] )
+
+dockerdata = string.gsub(dockerdata, "# no real need to have 3 versions but older build%.yml refer to these.",[[
+
+fi
+# END PF_WINDOWS_8_1_SDK 
+
+# no real need to have 3 versions but older build.yml refer to these.]])
 
 -- Platform Android
 dockerdata = string.gsub(dockerdata, "(#\n# Android SDK/NDK\n)", [[fi
