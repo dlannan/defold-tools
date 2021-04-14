@@ -47,6 +47,13 @@ dockerdata = string.gsub(dockerdata, "# Add extender user", [[
 id -u extender &>/dev/null || useradd extender
 ]] )
 
+-- Fix LANG setup 
+dockerdata = string.gsub(dockerdata, "ENV LANG=en_US%.UTF%-8 \\", "export LANG=en_US.UTF-8")
+dockerdata = string.gsub(dockerdata, "    LANGUAGE=en_US:en \\", "export LANGUAGE=en_US:en")
+dockerdata = string.gsub(dockerdata, "    LC_ALL=en_US%.UTF%-8", "export LC_ALL=en_US.UTF-8")
+
+------------------------------------------------------------------------------
+
 --  Convert FROM, MAINTAINER, VOLUME to comments
 dockerdata = string.gsub(dockerdata, "FROM ", "# FROM ")
 --sed -i "s/^FROM\s/# FROM /g" $OUTPUT
@@ -78,7 +85,7 @@ dockerdata = string.gsub(dockerdata, "mkdir %-p %-p", "mkdir -p")
 -- sed -i "s/^$HOME_DIRECTORY/~/g" $OUTPUT
 
 -- Convert ENVs into EXPORTs
-dockerdata = string.gsub(dockerdata, "ENV ([_%w]+)[%s=]+([^\n]+)", "export %1=%2")
+dockerdata = string.gsub(dockerdata, "ENV%s([^%s]+)[ =]+([%w%p]+)", "export %1=%2")
 --sed -r 's/^ENV\s([_,A-Z,0-9]*)\s*([a-z]*)/export \1=\2/g' -i $OUTPUT
 
 -- Convert VARIABLES into bash varaibles
@@ -143,7 +150,10 @@ dockerdata = string.gsub(dockerdata, "## Emscripten 2.0.11 %(from version 1.2.17
 
 ## Emscripten 2.0.11 (from version 1.2.178)
 PF_EMSCRIPTEN_2_0_11="]]..PF_EMSCRIPTEN_2_0_11..[["
-if [ $PF_EMSCRIPTEN_2_0_11 = "enabled" ]; then ]] )
+if [ $PF_EMSCRIPTEN_2_0_11 = "enabled" ]; then 
+
+update-alternatives --set python3 /usr/bin/python3.9
+]] )
 
 dockerdata = string.gsub(dockerdata, "# We use the same temp directory for both versions.",[[fi
 # END PF_EMSCRIPTEN_2_0_11
