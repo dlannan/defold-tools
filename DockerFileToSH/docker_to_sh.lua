@@ -179,12 +179,12 @@ if [ $PF_WINDOWS_8_1_SDK = "enabled" ]; then
 
 %1]] )
 
-dockerdata = string.gsub(dockerdata, "# no real need to have 3 versions but older build%.yml refer to these.",[[
+dockerdata = string.gsub(dockerdata, "ln %-s /usr/local/bin/clang /usr/local/bin/x86_64%-pc%-win32%-clang",[[
 
 fi
 # END PF_WINDOWS_8_1_SDK 
 
-# no real need to have 3 versions but older build.yml refer to these.]])
+ln -s /usr/local/bin/clang /usr/local/bin/x86_64-pc-win32-clang]])
 
 -- Platform Android
 dockerdata = string.gsub(dockerdata, "(#\n# Android SDK/NDK\n)", [[fi
