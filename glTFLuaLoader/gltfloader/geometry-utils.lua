@@ -294,86 +294,61 @@ function geom:GenerateSphere( goname, sz, d, inverted )
 		end
 	end
 
--- 	sphere.ibuffers[1] = byt3dIBuffer:New()
--- 
--- 	sphere.ibuffers[1].vertBuffer 		= ffi.new("float["..(vcount-1).."]", verts)
--- 	sphere.ibuffers[1].indexBuffer 		= ffi.new("unsigned short["..(index-1).."]", indices)
--- 	sphere.ibuffers[1].texCoordBuffer 	= ffi.new("float["..(ucount-1).."]", uvs)
--- 
--- 	local name = string.format("Dynamic Mesh Sphere(%02d)", gSphereCount)
--- 	gSphereCount = gSphereCount + 1;    
--- 	self.node:AddBlock(sphere, name, "byt3dMesh")
--- 
 	geom:makeMesh( goname, indices, verts, uvs, normals )
 end
 
 -- ------------------------------------------------------------------------------------------------------------
 -- 
--- function geom:GeneratePyramid(sz)
--- 
--- 	local newmodel 	= geom:New()
--- 	local pyramid 	= byt3dMesh:New()
--- 
--- 	local verts = 
--- 	{   
--- 		-sz, 0.0, -sz,  -sz, 0.0, sz,  sz, 0.0, sz,   sz, 0.0, -sz,
--- 		0.0, sz, 0.0
--- 	}
--- 
--- 	local indices = 
--- 	{
--- 		0, 2, 1, 2, 3, 0,      -- // Base
--- 		0, 4, 3,  0, 1, 4,  1, 2, 4, 2, 3, 4,  -- // Front Left Back Right
--- 	}
--- 
--- 	pyramid.ibuffers[1] = byt3dIBuffer:New()
--- 
--- 	pyramid.ibuffers[1].vertBuffer 		= verts
--- 	pyramid.ibuffers[1].indexBuffer 	= indices
--- 
--- 	newmodel.node:AddBlock(pyramid, nil, "byt3dMesh")
--- 	newmodel.boundMax = { sz, sz, sz, 0.0 }
--- 	newmodel.boundMin = { -sz, 0.0, -sz, 0.0 }
--- 	newmodel.boundCtr[1] = (newmodel.boundMax[1] - newmodel.boundMin[1]) * 0.5 + newmodel.boundMin[1]
--- 	newmodel.boundCtr[2] = (newmodel.boundMax[2] - newmodel.boundMin[2]) * 0.5 + newmodel.boundMin[2]
--- 	newmodel.boundCtr[3] = (newmodel.boundMax[3] - newmodel.boundMin[3]) * 0.5 + newmodel.boundMin[3]
--- 
--- 	return newmodel
--- end
--- 
+function geom:GeneratePyramid(goname, sz)
+
+	geom:New(goname, 1.0)
+	tinsert(self.meshes, goname)
+
+	local verts 	= {   
+		-sz, 0.0, -sz,  -sz, 0.0, sz,  sz, 0.0, sz,   sz, 0.0, -sz,
+		0.0, sz, 0.0 
+	}
+
+	local uvs 		= { 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.5, 0.5 }
+	local normals 	= {
+		-.707, 0.0, -.707, -.707, 0.0, .707,  .707, 0.0, .707, .707, 0.0, -.707, 
+		0.0, 1.0, 0.0
+	}
+
+	local indices 	= {
+		0, 2, 1, 2, 0, 3,      					-- // Base
+		0, 4, 3,  0, 1, 4,  1, 2, 4, 2, 3, 4,  	-- // Front Left Back Right
+	}
+
+	geom:makeMesh( goname, indices, verts, uvs, normals )
+end
 
 -- ------------------------------------------------------------------------------------------------------------
 -- 
--- function geom:GenerateBlock( sx, sy, sz, uvMult )
--- 
--- 	if uvMult   == nil then uvMult = 1.0 end
--- 	local plane 	= byt3dMesh:New()
--- 
--- 	local indices	= ffi.new("unsigned short[36]", 0, 1, 2,  2, 3, 0,  6, 5, 7,  7, 5, 4,
--- 	4, 0, 7,  0, 3, 7,  5, 6, 1,  1, 6, 2,
--- 	0, 4, 5,  0, 5, 1,  2, 7, 3,  2, 6, 7 )
--- 	local verts		= ffi.new( "float[24]", -sx, sy, -sz,   sx, sy, -sz,    sx, -sy, -sz,   -sx, -sy, -sz,
--- 	-sx, sy, sz,    sx, sy, sz,     sx, -sy, sz,    -sx, -sy, sz )
--- 	local uvs		= ffi.new( "float[16]", 0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult,
--- 	uvMult, uvMult, 0.0, 0.0, 0.0, uvMult, uvMult, 0.0)
--- 
--- 	plane.ibuffers[1] = byt3dIBuffer:New()
--- 	plane.ibuffers[1].vertBuffer 		= verts
--- 	plane.ibuffers[1].indexBuffer 		= indices
--- 	plane.ibuffers[1].texCoordBuffer 	= uvs
--- 
--- 	local name = string.format("Dynamic Mesh Block(%02d)", gPlaneCount)
--- 	io.write("New Plane: ", name, "\n")
--- 	gPlaneCount = gPlaneCount + 1;
--- 
--- 	self.node:AddBlock(plane, name, "byt3dMesh")
--- 	self.boundMax = { sx, sy, sz, 0.0 }
--- 	self.boundMin = { -sx, -sy, -sz, 0.0 }
--- 	self.boundCtr[1] = (self.boundMax[1] - self.boundMin[1]) * 0.5 + self.boundMin[1]
--- 	self.boundCtr[2] = (self.boundMax[2] - self.boundMin[2]) * 0.5 + self.boundMin[2]
--- 	self.boundCtr[3] = (self.boundMax[3] - self.boundMin[3]) * 0.5 + self.boundMin[3]
--- end
--- 
+function geom:GenerateBlock( goname, sx, sy, sz, uvMult )
+
+	if uvMult   == nil then uvMult = 1.0 end
+	geom:New(goname, 1.0)
+	tinsert(self.meshes, goname)
+
+	local normals 	= {}
+	local indices	= { 
+		0, 1, 2,  2, 3, 0,  6, 5, 7,  7, 5, 4,
+		4, 0, 7,  0, 3, 7,  5, 6, 1,  1, 6, 2,
+		0, 4, 5,  0, 5, 1,  2, 7, 3,  2, 6, 7 
+	}
+	local verts		= { 
+		-sx, sy, -sz,   sx, sy, -sz,    sx, -sy, -sz,   -sx, -sy, -sz,
+		-sx, sy, sz,    sx, sy, sz,     sx, -sy, sz,    -sx, -sy, sz 
+	}
+	local uvs		= { 
+		0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult,
+		uvMult, uvMult, 0.0, 0.0, 0.0, uvMult, uvMult, 0.0 
+	}
+
+	geom:makeMesh( goname, indices, verts, uvs, normals )
+end
+
 -- ------------------------------------------------------------------------------------------------------------
 -- 
 
