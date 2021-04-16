@@ -61,13 +61,13 @@ end
 
 -- --------------------------------------------------------------------------------------------------------
 -- Allocates a temp go slot for external mesh use. Returns goname
-function gettemp( name )
+function gettemp( name, filepath )
 
 	if(meshpool.currentindex > meshpool.maxindex) then print("No More Meshes!"); return nil end
 	local goname = "/temp/temp"..string.format("%03d", meshpool.currentindex)
 	meshpool.currentindex = meshpool.currentindex + 1
 
-	meshpool.files[name] = { name = name, goname = goname, fpath = "", priority = 0 } 
+	meshpool.files[name] = { name = name, goname = goname, fpath = filepath or "", priority = 0 } 
 	meshpool.mapped[goname] = meshpool.files[name]
 	return goname 
 end

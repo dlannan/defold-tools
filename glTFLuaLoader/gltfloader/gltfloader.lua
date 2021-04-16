@@ -91,22 +91,18 @@ end
 
 ------------------------------------------------------------------------------------------------------------
 
-function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n, child )
+function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 	-- Each node can have a mesh reference. If so, get the mesh data and make one, set its parent to the
 	--  parent node mesh
-	local thisnode = gltfobj.nodes[n] 
-	print("Name:", thisnode.name, parent)
-	if(thisnode.mesh) then 
-
-		local gochild = parent 
-		local gochildname = goname 
-		if(child) then 
-			local gomeshname  = "node"..string.format("%04d", n)
-			gochild = mpool.gettemp( gomeshname )
-			gochildname = gochild.."#temp"
-		end
+	local gomeshname  = "node"..string.format("%04d", n)
+	local gochild = mpool.gettemp( gomeshname )
+	local gochildname = gochild.."#temp"
 	
+	local thisnode = gltfobj.nodes[n] 
+	print("Name:", thisnode.name, parent)	
+	if(thisnode.mesh) then 
+		
 		-- Temp.. 
 		local gltf = {}
 		
@@ -200,26 +196,19 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n, child )
 		-- 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
 		geom:makeMesh( gochildname, gltf.indices, gltf.verts, gltf.uvs, gltf.normals )
 
-		local trans = thisnode["translation"]
-		if(trans) then 
-			go.set_position(vmath.vector3(trans[1], trans[2], -trans[3]), gochildname)
-		end
-		
-		if(child) then 
-			print("Geometry: ", parent, gochild)
-
-			-- Parent this mesh to the incoming node 
-			go.set_parent(go.get_id(gochild), parent)
-		end 
-
 	-- No mesh.. try children
-	else
-		if(thisnode.children) then 
-			for k,v in pairs(thisnode.children) do 
-				local child = gltfobj.nodes[v + 1]
-				self:makeNodeMeshes( gltfobj, goname, parent, v + 1, true)
-			end 
-		end
+	end 
+
+	local trans = thisnode["translation"]
+	if(trans) then go.set_position(vmath.vector3(trans[1], trans[2], trans[3]), gochildname) end
+	-- Parent this mesh to the incoming node 
+	go.set_parent(go.get_id(gochild), parent)
+	
+	if(thisnode.children) then 
+		for k,v in pairs(thisnode.children) do 
+			local child = gltfobj.nodes[v + 1]
+			self:makeNodeMeshes( gltfobj, gochild, gochildname, v + 1)
+		end 
 	end
 end	
 
@@ -268,9 +257,7 @@ function gltfloader:load( fname, pobj, meshname )
 		-- Go through the scenes nodes - this is recursive. nodes->children->children..
 		local childtag = nil
 		for ni, n in pairs(v.nodes) do
-			
-			--if(ni>1) then childtag = true end
-			self:makeNodeMeshes( gltfobj, goname, pobj, n + 1, true)
+			self:makeNodeMeshes( gltfobj, goname, pobj, n + 1)
 		end 
 	end
 end
@@ -280,22 +267,13 @@ end
 -- Initial pos vec3 or initial rotation quat can be provided. Otherwise will be default
 function gltfloader:addmesh( filepath, name, initpos, initrot )
 
-	if(mpool.currentindex > mpool.maxindex) then print("No More Meshes!"); return nil end
-	-- Is this new or current meshfile
-	local ismesh = mpool.files[name]
-
 	local pos = initpos or vmath.vector3(0, 0, 0)
 	local rot = initrot or vmath.quat_rotation_y(0.0)
-
-	local goname = "/temp/temp"..string.format("%03d", mpool.currentindex)
-	if(ismesh == nil) then mpool.currentindex = mpool.currentindex + 1 end 
+	local goname = mpool.gettemp( name, filepath )
 
 	gltfloader:load(filepath, goname, "temp")
 	go.set_rotation(rot, goname)
 	go.set_position(pos, goname)
-
-	mpool.files[name] = { name = name, goname = goname, fpath = filepath, priority = 0 } 
-	mpool.mapped[goname] = mpool.files[name]
 	return goname 
 end 
 

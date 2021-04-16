@@ -32,7 +32,7 @@ function init(self)
 	local pos = vmath.vector3(2, 0, 0)
 	self.mesh[3] = gltf:addmesh("/assets/models/Suzanne/glTF/Suzanne.gltf", "mesh3", pos)
 	local pos = vmath.vector3(-6, -8, 0)
-	self.mesh[4] = gltf:addmesh("/assets/models/Lantern/glTF/Lantern.gltf", "mesh4", pos)
+	--self.mesh[4] = gltf:addmesh("/assets/models/Lantern/glTF/Lantern.gltf", "mesh4", pos)
 	--self.mesh[4] = gltf:addmesh("/assets/models/characters/basicCharacter.gltf", "mesh4", pos)
 	
 	self.fmeshA = go.get_rotation(self.helmet)
@@ -47,6 +47,8 @@ function init(self)
 	-- Toggle the visual profiler on hot reload.
 	self.profile = false
 	profiler.enable_ui(self.profile)
+
+	pprint(mpool.files)
 end
 
 function update(self)
@@ -60,6 +62,12 @@ function update(self)
 	--go.set_rotation(self.cubeA * rot_angle, "/gogen#genmesh")
 	--go.set_rotation(self.planeA * rotx_angle, "/ground#genmesh")
 	self.angle = self.angle + 1.0
+
+	mpool.updateall( function( meshobj ) 
+		local m = go.get_world_transform(meshobj.goname)
+		model.set_constant(meshobj.goname, "light", self.light)
+	end )
+
 end
 
 function on_input(self, action_id, action)
@@ -68,10 +76,6 @@ function on_input(self, action_id, action)
 	self.light.x = 10 * ((action.x - 480) / 480)
 	self.light.y = 10 * ((action.y - 320) / 320)
 	self.light.z = 5.0
-
-	for k,v in ipairs(self.mesh) do 
-		model.set_constant(v, "light", self.light)
-	end
 	
 	self.camerapos = go.get_position("/camera")
 
