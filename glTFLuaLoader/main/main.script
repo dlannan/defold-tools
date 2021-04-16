@@ -1,5 +1,6 @@
 
 local mpool = require("gltfloader.meshpool")
+local gltf = require("gltfloader.gltfloader")
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -21,17 +22,18 @@ function init(self)
 -- 	model.set_constant("/objs#quad", "light", self.light)
 
 	-- Second param regenerates meshes and go files
-	mpool.init(10, true)
+	mpool.init(20, true)
 	self.mesh = {}
 
 	local pos = vmath.vector3(0, 0, 0)
-	self.mesh[1] = mpool.addmesh("/assets/models/Cube/Cube.gltf", "mesh1", pos)
+	self.mesh[1] = gltf:addmesh("/assets/models/Cube/Cube.gltf", "mesh1", pos)
 	local pos = vmath.vector3(-2, 0, 0)
-	self.mesh[2] = mpool.addmesh("/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf", "mesh2", pos)
+	self.mesh[2] = gltf:addmesh("/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf", "mesh2", pos)
 	local pos = vmath.vector3(2, 0, 0)
-	self.mesh[3] = mpool.addmesh("/assets/models/Suzanne/glTF/Suzanne.gltf", "mesh3", pos)
-	local pos = vmath.vector3(-4, 0, 0)
-	self.mesh[4] = mpool.addmesh("/assets/models/Lantern/glTF/Lantern.gltf", "mesh4", pos)
+	self.mesh[3] = gltf:addmesh("/assets/models/Suzanne/glTF/Suzanne.gltf", "mesh3", pos)
+	local pos = vmath.vector3(-6, -8, 0)
+	self.mesh[4] = gltf:addmesh("/assets/models/Lantern/glTF/Lantern.gltf", "mesh4", pos)
+	--self.mesh[4] = gltf:addmesh("/assets/models/characters/basicCharacter.gltf", "mesh4", pos)
 	
 	self.fmeshA = go.get_rotation(self.helmet)
 		
@@ -54,6 +56,7 @@ function update(self)
 	local rotx_angle = vmath.quat_rotation_y(rad_angle)
 
 	go.set_rotation(self.fmeshA * rot_angle, self.mesh[2])
+	go.set_rotation(self.fmeshA * rot_angle, self.mesh[4])
 	--go.set_rotation(self.cubeA * rot_angle, "/gogen#genmesh")
 	--go.set_rotation(self.planeA * rotx_angle, "/ground#genmesh")
 	self.angle = self.angle + 1.0

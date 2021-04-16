@@ -7,6 +7,8 @@ uniform sampler2D roughnessMap;
 uniform sampler2D albedoMap ;
 uniform sampler2D normalMap ;
 
+uniform vec4 params;
+
 varying vec3 vvLocalSurfaceNormal ;
 varying vec3 vvLocalSurfaceToLightDirection;
 varying vec3 vvLocalReflectedSurfaceToViewerDirection;
@@ -53,8 +55,8 @@ float computeGGXPartialGeometryTerm(vec3 vSurfaceToViewerDirection, vec3 vSurfac
 void main()
 {
 	vec3 mappedNormal = normalize(texture(normalMap, vuvCoord0).rgb * 2.0 - vec3(1.0));  
-	vec3 vNormalisedLocalSurfaceNormal = normalize(vvLocalSurfaceNormal + mappedNormal) ;
-	
+	vec3 vNormalisedLocalSurfaceNormal = normalize(vvLocalSurfaceNormal + mappedNormal * 0.4) ;
+
 	vec3 vNormalisedLocalSurfaceToLightDirection = normalize(vvLocalSurfaceToLightDirection) ;
 	vec3 vNormalisedLocalReflectedSurfaceToViewerDirection = normalize(vvLocalReflectedSurfaceToViewerDirection) ;
 	vec3 vNormalisedLocalSurfaceToViewerDirection = normalize(vvLocalSurfaceToViewerDirection) ;
@@ -85,19 +87,19 @@ void main()
 	rgbReflection = min(rgbReflection, rgbSourceReflection) ; // conservation of energy
 
 	vec3 rgbSpecular = vec3(0.0) ;
-
 	if (fLightIntensity > 0.0)
 	{
 		rgbSpecular = vec3(1.0) ;
 		rgbSpecular *= microFacetContribution * fLightSourceFresnelTerm ;
 		rgbSpecular = min(vec3(1.0), rgbSpecular) ; // conservation of energy
 	}
+
+	float ambientLevel = fLightIntensity * (1.0 - params.x) + params.x;
 	rgbFragment += rgbSpecular ;
-	rgbFragment *= fLightIntensity * 1.5 ;
+	rgbFragment *= ambientLevel;
 	rgbFragment += rgbReflection ;
 	rgbFragment += rgbEmissive ;
 
 	gl_FragColor.rgb = rgbFragment;
 	gl_FragColor.a = 1.0 ; // TODO : Worry about materials which allow transparency!
 }
-

@@ -199,3 +199,203 @@ instances {
 		z: 1.0
 	}
 }
+instances {
+	id: "temp011"
+	prototype: "/assets/gotemplate/meshpool/temp011.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp012"
+	prototype: "/assets/gotemplate/meshpool/temp012.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp013"
+	prototype: "/assets/gotemplate/meshpool/temp013.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp014"
+	prototype: "/assets/gotemplate/meshpool/temp014.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp015"
+	prototype: "/assets/gotemplate/meshpool/temp015.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp016"
+	prototype: "/assets/gotemplate/meshpool/temp016.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp017"
+	prototype: "/assets/gotemplate/meshpool/temp017.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp018"
+	prototype: "/assets/gotemplate/meshpool/temp018.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp019"
+	prototype: "/assets/gotemplate/meshpool/temp019.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}
+instances {
+	id: "temp020"
+	prototype: "/assets/gotemplate/meshpool/temp020.go"
+	position {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+	}
+	rotation {
+		x: 0.0
+		y: 0.0
+		z: 0.0
+		w: 1.0
+	}
+	scale3 {
+		x: 1.0
+		y: 1.0
+		z: 1.0
+	}
+}

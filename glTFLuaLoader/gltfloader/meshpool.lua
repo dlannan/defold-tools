@@ -3,7 +3,6 @@ local tinsert = table.insert
 
 -- --------------------------------------------------------------------------------------------------------
 
-local gltf = require("gltfloader.gltfloader")
 local fpgen = require("gltfloader.filepool-gen")
 
 -- --------------------------------------------------------------------------------------------------------
@@ -26,12 +25,6 @@ local meshpool = {
 -- A priority system will be added to allow gameobjects to "take over" less used gameobjects.
 
 meshpool.files = {
-	-- helmet = { name = "helmet", goname = "/temp/temp001", fpath = "/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf", priority = 0 },
-	-- car = { name = "helmet", goname = "/temp/temp001", fpath = "/assets/models/ALPINIST/ALPINIST_HI_Body.gltf", priority = 0 },
-
-	-- 	"/assets/models/Cube/Cube.gltf",
-	-- 	"/assets/models/Suzanne/glTF/Suzanne.gltf",
-	-- 	"/assets/models/Lantern/glTF/Lantern.gltf",
 }
 
 -- --------------------------------------------------------------------------------------------------------
@@ -53,37 +46,8 @@ function init( count, regenerate )
 	-- Should add a return check for success
 	if(regenerate) then fpgen.makecollection("assets/gotemplate/temp.collection", count) end
 	meshpool.maxindex = count
-	meshpool.currentindex = #meshpool.files + 1
-	
-	-- If there are files already set (as above) then add automatically 
-	for k, v in pairs(meshpool.files) do 
-		addmesh( v.fpath, v.name )
-	end
+	meshpool.currentindex = 1
 end
-
--- --------------------------------------------------------------------------------------------------------
--- Uses a tempobject within the pool, assigns a goname to the mapping (must be unique). 
--- Initial pos vec3 or initial rotation quat can be provided. Otherwise will be default
-function addmesh( filepath, name, initpos, initrot )
-
-	if(meshpool.currentindex > meshpool.maxindex) then print("No More Meshes!"); return nil end
-	-- Is this new or current meshfile
-	local ismesh = meshpool.files[name]
-	
-	local pos = initpos or vmath.vector3(0, 0, 0)
-	local rot = initrot or vmath.quat_rotation_y(0.0)
-	
-	local goname = "/temp/temp"..string.format("%03d", meshpool.currentindex)
-	if(ismesh == nil) then meshpool.currentindex = meshpool.currentindex + 1 end 
-
-	gltf:load(filepath, goname, "temp")
-	go.set_rotation(rot, goname)
-	go.set_position(pos, goname)
-
-	meshpool.files[name] = { name = name, goname = goname, fpath = filepath, priority = 0 } 
-	meshpool.mapped[goname] = meshpool.files[name]
-	return goname 
-end 
 
 -- --------------------------------------------------------------------------------------------------------
 -- TODO: Add object manipulation routines and shader controls. Also updaters, message handlers and controllers.

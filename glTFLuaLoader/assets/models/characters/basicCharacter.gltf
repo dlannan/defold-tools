@@ -1,0 +1,589 @@
+{
+  "accessors": [
+    {
+      "name": "Body1_1_positions",
+      "componentType": 5126,
+      "count": 24,
+      "min": [
+        -2.0021700859069824,
+        6,
+        -1
+      ],
+      "max": [
+        2.0021700859069824,
+        12,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 0
+    },
+    {
+      "name": "Body1_1_normals",
+      "componentType": 5126,
+      "count": 24,
+      "min": [
+        -0.9999979734420776,
+        -1,
+        -1
+      ],
+      "max": [
+        0.9999979734420776,
+        1,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 2112
+    },
+    {
+      "name": "Body1_1_texcoords",
+      "componentType": 5126,
+      "count": 24,
+      "min": [
+        0.39485999941825867,
+        0.3251290023326874
+      ],
+      "max": [
+        0.8203849792480469,
+        0.6797329783439636
+      ],
+      "type": "VEC2",
+      "bufferView": 1,
+      "byteOffset": 0
+    },
+    {
+      "name": "Body1_1_0_indices",
+      "componentType": 5123,
+      "count": 36,
+      "min": [
+        0
+      ],
+      "max": [
+        23
+      ],
+      "type": "SCALAR",
+      "bufferView": 2,
+      "byteOffset": 0
+    },
+    {
+      "name": "Head1_1_positions",
+      "componentType": 5126,
+      "count": 24,
+      "min": [
+        -2,
+        12,
+        -2
+      ],
+      "max": [
+        2,
+        16,
+        2
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 288
+    },
+    {
+      "name": "Head1_1_normals",
+      "componentType": 5126,
+      "count": 24,
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 2400
+    },
+    {
+      "name": "Head1_1_texcoords",
+      "componentType": 5126,
+      "count": 24,
+      "min": [
+        0.07294359803199768,
+        0.01372699998319149
+      ],
+      "max": [
+        0.638122022151947,
+        0.43761101365089417
+      ],
+      "type": "VEC2",
+      "bufferView": 1,
+      "byteOffset": 192
+    },
+    {
+      "name": "Head1_1_0_indices",
+      "componentType": 5123,
+      "count": 36,
+      "min": [
+        0
+      ],
+      "max": [
+        23
+      ],
+      "type": "SCALAR",
+      "bufferView": 2,
+      "byteOffset": 72
+    },
+    {
+      "name": "ArmLeft1_1_positions",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        2,
+        6,
+        -1
+      ],
+      "max": [
+        4,
+        12,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 576
+    },
+    {
+      "name": "ArmLeft1_1_normals",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 2688
+    },
+    {
+      "name": "ArmLeft1_1_texcoords",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        0.6946390271186829,
+        0.02201399952173233
+      ],
+      "max": [
+        0.9722200036048889,
+        0.3689900040626526
+      ],
+      "type": "VEC2",
+      "bufferView": 1,
+      "byteOffset": 384
+    },
+    {
+      "name": "ArmLeft1_1_0_indices",
+      "componentType": 5123,
+      "count": 60,
+      "min": [
+        0
+      ],
+      "max": [
+        31
+      ],
+      "type": "SCALAR",
+      "bufferView": 2,
+      "byteOffset": 144
+    },
+    {
+      "name": "ArmRight1_1_positions",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        -4,
+        6,
+        -1
+      ],
+      "max": [
+        -2,
+        12,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 960
+    },
+    {
+      "name": "ArmRight1_1_normals",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 3072
+    },
+    {
+      "name": "ArmRight1_1_texcoords",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        0.04151130095124245,
+        0.4013890027999878
+      ],
+      "max": [
+        0.3190920054912567,
+        0.7483649849891663
+      ],
+      "type": "VEC2",
+      "bufferView": 1,
+      "byteOffset": 640
+    },
+    {
+      "name": "ArmRight1_1_0_indices",
+      "componentType": 5123,
+      "count": 60,
+      "min": [
+        0
+      ],
+      "max": [
+        31
+      ],
+      "type": "SCALAR",
+      "bufferView": 2,
+      "byteOffset": 264
+    },
+    {
+      "name": "LegLeft1_1_positions",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        9.910120046752803e-17,
+        0,
+        -1
+      ],
+      "max": [
+        2,
+        6,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 1344
+    },
+    {
+      "name": "LegLeft1_1_normals",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 3456
+    },
+    {
+      "name": "LegLeft1_1_texcoords",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        0.7005450129508972,
+        0.6227009892463684
+      ],
+      "max": [
+        0.9781259894371033,
+        0.9696770906448364
+      ],
+      "type": "VEC2",
+      "bufferView": 1,
+      "byteOffset": 896
+    },
+    {
+      "name": "LegLeft1_1_0_indices",
+      "componentType": 5123,
+      "count": 60,
+      "min": [
+        0
+      ],
+      "max": [
+        31
+      ],
+      "type": "SCALAR",
+      "bufferView": 2,
+      "byteOffset": 384
+    },
+    {
+      "name": "LegRight1_1_positions",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        -2,
+        -1.1920899822825959e-7,
+        -1
+      ],
+      "max": [
+        2.0914000503405284e-16,
+        6,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 1728
+    },
+    {
+      "name": "LegRight1_1_normals",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "type": "VEC3",
+      "bufferView": 0,
+      "byteOffset": 3840
+    },
+    {
+      "name": "LegRight1_1_texcoords",
+      "componentType": 5126,
+      "count": 32,
+      "min": [
+        0.2787509858608246,
+        0.6417350172996521
+      ],
+      "max": [
+        0.556331992149353,
+        0.988710880279541
+      ],
+      "type": "VEC2",
+      "bufferView": 1,
+      "byteOffset": 1152
+    },
+    {
+      "name": "LegRight1_1_0_indices",
+      "componentType": 5123,
+      "count": 60,
+      "min": [
+        0
+      ],
+      "max": [
+        31
+      ],
+      "type": "SCALAR",
+      "bufferView": 2,
+      "byteOffset": 504
+    }
+  ],
+  "asset": {
+    "generator": "obj2gltf",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "name": "basicCharacter",
+      "byteLength": 6256,
+      "uri": "data:application/octet-stream;base64,jiMAwAAAwEAAAIA/Obn/PwAAwEAAAIA/Obn/PwAAQEEAAIA/jiMAwAAAQEEAAIA/jiMAwAAAQEEAAIA/Obn/PwAAQEEAAIA/jiMAQAAAQEEAAIC/Obn/vwAAQEEAAIC/Obn/vwAAQEEAAIC/jiMAQAAAQEEAAIC/jiMAQAAAwEAAAIC/Obn/vwAAwEAAAIC/Obn/vwAAwEAAAIC/jiMAQAAAwEAAAIC/Obn/PwAAwEAAAIA/jiMAwAAAwEAAAIA/Obn/PwAAwEAAAIA/jiMAQAAAwEAAAIC/jiMAQAAAQEEAAIC/Obn/PwAAQEEAAIA/Obn/vwAAwEAAAIC/jiMAwAAAwEAAAIA/jiMAwAAAQEEAAIA/Obn/vwAAQEEAAIC/AAAAwAAAQEEAAABAAAAAQAAAQEEAAABAAAAAQAAAgEEAAABAAAAAwAAAgEEAAABAAAAAwAAAgEEAAABAAAAAQAAAgEEAAABAAAAAQAAAgEEAAADAAAAAwAAAgEEAAADAAAAAwAAAgEEAAADAAAAAQAAAgEEAAADAAAAAQAAAQEEAAADAAAAAwAAAQEEAAADAAAAAwAAAQEEAAADAAAAAQAAAQEEAAADAAAAAQAAAQEEAAABAAAAAwAAAQEEAAABAAAAAQAAAQEEAAABAAAAAQAAAQEEAAADAAAAAQAAAgEEAAADAAAAAQAAAgEEAAABAAAAAwAAAQEEAAADAAAAAwAAAQEEAAABAAAAAwAAAgEEAAABAAAAAwAAAgEEAAADAAAAAQAAAEEEAAIA/AACAQAAAEEEAAIA/AACAQAAAQEEAAIA/AAAAQAAAQEEAAIA/AAAAQAAAwEAAAIA/AACAQAAAwEAAAIA/AAAAQAAAQEEAAIA/AACAQAAAQEEAAIA/AACAQAAAQEEAAIC/AAAAQAAAQEEAAIC/AAAAQAAAQEEAAIC/AACAQAAAQEEAAIC/AACAQAAAEEEAAIC/AAAAQAAAEEEAAIC/AACAQAAAwEAAAIC/AAAAQAAAwEAAAIC/AACAQAAAEEEAAIA/AACAQAAAEEEAAIC/AACAQAAAQEEAAIC/AACAQAAAQEEAAIA/AACAQAAAwEAAAIA/AACAQAAAwEAAAIC/AAAAQAAAEEEAAIC/AAAAQAAAEEEAAIA/AAAAQAAAQEEAAIA/AAAAQAAAQEEAAIC/AAAAQAAAwEAAAIC/AAAAQAAAwEAAAIA/AACAQAAAwEAAAIA/AAAAQAAAwEAAAIA/AAAAQAAAwEAAAIC/AACAQAAAwEAAAIC/AACAwAAAEEEAAIA/AAAAwAAAEEEAAIA/AAAAwAAAQEEAAIA/AACAwAAAQEEAAIA/AACAwAAAwEAAAIA/AAAAwAAAwEAAAIA/AACAwAAAQEEAAIA/AAAAwAAAQEEAAIA/AAAAwAAAQEEAAIC/AACAwAAAQEEAAIC/AACAwAAAQEEAAIC/AAAAwAAAQEEAAIC/AAAAwAAAEEEAAIC/AACAwAAAEEEAAIC/AAAAwAAAwEAAAIC/AACAwAAAwEAAAIC/AAAAwAAAEEEAAIA/AAAAwAAAEEEAAIC/AAAAwAAAQEEAAIC/AAAAwAAAQEEAAIA/AAAAwAAAwEAAAIA/AAAAwAAAwEAAAIC/AACAwAAAEEEAAIC/AACAwAAAEEEAAIA/AACAwAAAQEEAAIA/AACAwAAAQEEAAIC/AACAwAAAwEAAAIC/AACAwAAAwEAAAIA/AAAAwAAAwEAAAIC/AAAAwAAAwEAAAIA/AACAwAAAwEAAAIA/AACAwAAAwEAAAIC/O/JDJgAAQEAAAIA/AAAAQAAAQEAAAIA/AAAAQAAAwEAAAIA/BoPkJAAAwEAAAIA/2iuKJgAAAAAAAIA/AAAAQAAAAAAAAIA/BoPkJAAAwEAAAIA/AAAAQAAAwEAAAIA/AAAAQAAAwEAAAIC/BoPkJAAAwEAAAIC/BoPkJAAAwEAAAIC/AAAAQAAAwEAAAIC/AAAAQAAAQEAAAIC/O/JDJgAAQEAAAIC/AAAAQAAAAAAAAIC/cYOLJgAAAAAAAIC/AAAAQAAAQEAAAIA/AAAAQAAAQEAAAIC/AAAAQAAAwEAAAIC/AAAAQAAAwEAAAIA/AAAAQAAAAAAAAIA/AAAAQAAAAAAAAIC/O/JDJgAAQEAAAIC/O/JDJgAAQEAAAIA/BoPkJAAAwEAAAIA/BoPkJAAAwEAAAIC/cYOLJgAAAAAAAIC/2iuKJgAAAAAAAIA/AAAAQAAAAAAAAIA/2iuKJgAAAAAAAIA/cYOLJgAAAAAAAIC/AAAAQAAAAAAAAIC/AAAAwAAAQEAAAIA/CYCRpgAAQEAAAIA/PB9xJQAAwEAAAIA/AAAAwAAAwEAAAIA/AAAAwAAAAAAAAIA/0/3rpgAAAAAAAIA/AAAAwAAAwEAAAIA/PB9xJQAAwEAAAIA/PB9xJQAAwEAAAIC/AAAAwAAAwEAAAIC/AAAAwAAAwEAAAIC/PB9xJQAAwEAAAIC/CYCRpgAAQEAAAIC/AAAAwAAAQEAAAIC/hiTrptf//7MAAIC/AAAAwNf//7MAAIC/CYCRpgAAQEAAAIA/CYCRpgAAQEAAAIC/PB9xJQAAwEAAAIC/PB9xJQAAwEAAAIA/0/3rpgAAAAAAAIA/hiTrptf//7MAAIC/AAAAwAAAQEAAAIC/AAAAwAAAQEAAAIA/AAAAwAAAwEAAAIA/AAAAwAAAwEAAAIC/AAAAwNf//7MAAIC/AAAAwAAAAAAAAIA/0/3rpgAAAAAAAIA/AAAAwAAAAAAAAIA/AAAAwNf//7MAAIC/hiTrptf//7MAAIC/hqoqMwAAAAAAAIA/hqoqMwAAAAAAAIA/hqoqMwAAAAAAAIA/hqoqMwAAAAAAAIA/AAAAAAAAgD/X//8zAAAAAAAAgD/X//8zAAAAAAAAgD/X//8zAAAAAAAAgD/X//8zoqqqsq6qKjIAAIC/oqqqsq6qKjIAAIC/oqqqsq6qKjIAAIC/oqqqsq6qKjIAAIC/AAAAAAAAgL/nf4CzAAAAAAAAgL/nf4CzAAAAAAAAgL/nf4CzAAAAAAAAgL/nf4Cz3v9/P4aqKrMAlg073v9/P4aqKrMAlg073v9/P4aqKrMAlg073v9/P4aqKrMAlg073v9/vwAAAAAAlg273v9/vwAAAAAAlg273v9/vwAAAAAAlg273v9/vwAAAAAAlg27AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/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MUCyPp4MNj8xQLI+SFhrPxHI1T5IWGs/MUCyPp4MNj8RyNU+ngw2PxHI1T6/SCQ/MUCyPr9IJD/Gaw4/ngw2P85P+T6eDDY/zk/5PnSyUD/Gaw4/dLJQP85P+T5IWGs/xmsOP0hYaz8RyNU+dLJQP85P+T50slA/zk/5Pp4MNj8RyNU+ngw2PxHI1T5IWGs/zk/5PkhYaz9zuI4+dLJQPzFAsj50slA/MUCyPp4MNj9zuI4+ngw2P3O4jj5IWGs/MUCyPkhYaz8RyNU+SFhrPzFAsj5IWGs/MUCyPiUcfT8RyNU+KBx9PwAAAQACAAAAAgADAAQABQAGAAQABgAHAAgACQAKAAgACgALAAwADQAOAAwADgAPABAAEQASABAAEgATABQAFQAWABQAFgAXAAAAAQACAAAAAgADAAQABQAGAAQABgAHAAgACQAKAAgACgALAAwADQAOAAwADgAPABAAEQASABAAEgATABQAFQAWABQAFgAXAAAAAQACAAAAAgADAAQAAQAAAAQABQABAAYABwAIAAYACAAJAAoACwAMAAoADAANAA0ADAAOAA0ADgAPABAAEQASABAAEgATABQAEQAQABQAFQARABYAFwAYABYAGAAZABoAFwAWABoAGwAXABwAHQAeABwAHgAfAAAAAQACAAAAAgADAAQAAQAAAAQABQABAAYABwAIAAYACAAJAAoACwAMAAoADAANAA0ADAAOAA0ADgAPABAAEQASABAAEgATABQAEQAQABQAFQARABYAFwAYABYAGAAZABoAFwAWABoAGwAXABwAHQAeABwAHgAfAAAAAQACAAAAAgADAAQAAQAAAAQABQABAAYABwAIAAYACAAJAAoACwAMAAoADAANAA0ADAAOAA0ADgAPABAAEQASABAAEgATABQAEQAQABQAFQARABYAFwAYABYAGAAZABoAFwAWABoAGwAXABwAHQAeABwAHgAfAAAAAQACAAAAAgADAAQAAQAAAAQABQABAAYABwAIAAYACAAJAAoACwAMAAoADAANAA0ADAAOAA0ADgAPABAAEQASABAAEgATABQAEQAQABQAFQARABYAFwAYABYAGAAZABoAFwAWABoAGwAXABwAHQAeABwAHgAfAA=="
+    }
+  ],
+  "bufferViews": [
+    {
+      "name": "bufferView_0",
+      "buffer": 0,
+      "byteLength": 4224,
+      "byteOffset": 0,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "name": "bufferView_1",
+      "buffer": 0,
+      "byteLength": 1408,
+      "byteOffset": 4224,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "name": "bufferView_2",
+      "buffer": 0,
+      "byteLength": 624,
+      "byteOffset": 5632,
+      "target": 34963
+    }
+  ],
+  "materials": [
+    {
+      "name": "lambert1",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4,
+          0.4,
+          0.4,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": false
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Body1_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Head1_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "ArmLeft1_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "ArmRight1_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
+          },
+          "indices": 15,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LegLeft1_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 16,
+            "NORMAL": 17,
+            "TEXCOORD_0": 18
+          },
+          "indices": 19,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "LegRight1_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 20,
+            "NORMAL": 21,
+            "TEXCOORD_0": 22
+          },
+          "indices": 23,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Body1",
+      "mesh": 0
+    },
+    {
+      "name": "Head1",
+      "mesh": 1
+    },
+    {
+      "name": "ArmLeft1",
+      "mesh": 2
+    },
+    {
+      "name": "ArmRight1",
+      "mesh": 3
+    },
+    {
+      "name": "LegLeft1",
+      "mesh": 4
+    },
+    {
+      "name": "LegRight1",
+      "mesh": 5
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ]
+}
