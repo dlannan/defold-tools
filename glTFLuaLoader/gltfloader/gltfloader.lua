@@ -47,7 +47,6 @@ local function loadgltf( fname )
 			if(ss ~= nil) then 
 				local byteData = string.sub(v.uri, se+1, -1)
 				v.data = b64.decode(byteData)
-				print("Data:", v.byteLength, #v.data) 
 			-- Its likely a file
 			else
 				-- local fh = io.open(basepath..v.uri, "rb")
@@ -100,7 +99,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 	local gochildname = gochild.."#temp"
 	
 	local thisnode = gltfobj.nodes[n] 
-	print("Name:", thisnode.name, parent)	
+	-- print("Name:", thisnode.name, parent)	
 	if(thisnode.mesh) then 
 		
 		-- Temp.. 

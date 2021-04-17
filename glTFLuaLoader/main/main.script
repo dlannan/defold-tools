@@ -31,9 +31,9 @@ function init(self)
 	self.mesh[2] = gltf:addmesh("/assets/models/DamagedHelmet/glTF/DamagedHelmet.gltf", "mesh2", pos)
 	local pos = vmath.vector3(2, 0, 0)
 	self.mesh[3] = gltf:addmesh("/assets/models/Suzanne/glTF/Suzanne.gltf", "mesh3", pos)
-	local pos = vmath.vector3(-6, -8, 0)
+	local pos = vmath.vector3(-4, 0, 0)
 	--self.mesh[4] = gltf:addmesh("/assets/models/Lantern/glTF/Lantern.gltf", "mesh4", pos)
-	--self.mesh[4] = gltf:addmesh("/assets/models/characters/basicCharacter.gltf", "mesh4", pos)
+	self.mesh[4] = gltf:addmesh("/assets/models/characters/advancedCharacter.gltf", "mesh4", pos)
 	
 	self.fmeshA = go.get_rotation(self.helmet)
 		
@@ -47,8 +47,6 @@ function init(self)
 	-- Toggle the visual profiler on hot reload.
 	self.profile = false
 	profiler.enable_ui(self.profile)
-
-	pprint(mpool.files)
 end
 
 function update(self)
