@@ -58,13 +58,14 @@ function update(self)
 	local rotx_angle = vmath.quat_rotation_y(rad_angle)
 
 	go.set_rotation(self.fmeshA * rot_angle, self.mesh[2])
+	go.set_rotation(self.fmeshA * rot_angle, self.mesh[3])
 	go.set_rotation(self.fmeshA * rot_angle, self.mesh[4])
 	--go.set_rotation(self.cubeA * rot_angle, "/gogen#genmesh")
 	--go.set_rotation(self.planeA * rotx_angle, "/ground#genmesh")
 	self.angle = self.angle + 1.0
 
 	mpool.updateall( function( meshobj ) 
-		local m = go.get_world_transform(meshobj.goname)
+		--local m = go.get_world_transform(meshobj.goname)
 		model.set_constant(meshobj.goname, "light", self.light)
 	end )
 

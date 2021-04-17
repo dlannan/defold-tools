@@ -95,7 +95,7 @@ function gltfloader:makeNodeMeshes( gltfobj, goname, parent, n )
 
 	-- Each node can have a mesh reference. If so, get the mesh data and make one, set its parent to the
 	--  parent node mesh
-	local gomeshname  = "node"..string.format("%04d", n)
+	local gomeshname  = parent.."/node"..string.format("%04d", n)
 	local gochild = mpool.gettemp( gomeshname )
 	local gochildname = gochild.."#temp"
 	
@@ -237,6 +237,11 @@ end
 
 function gltfloader:load( fname, pobj, meshname )
 
+	-- Note: Meshname is important for idenifying a mesh you want to be able to modify
+	if(pobj == nil) then 
+		pobj = mpool.gettemp( meshname )
+	end 
+	
 	-- Parent mesh
 	local goname = msg.url(nil, pobj, meshname)	
 	local goscript = pobj.."#script"
@@ -260,6 +265,8 @@ function gltfloader:load( fname, pobj, meshname )
 			self:makeNodeMeshes( gltfobj, goname, pobj, n + 1)
 		end 
 	end
+
+	return pobj
 end
 
 -- --------------------------------------------------------------------------------------------------------
@@ -271,9 +278,10 @@ function gltfloader:addmesh( filepath, name, initpos, initrot )
 	local rot = initrot or vmath.quat_rotation_y(0.0)
 	local goname = mpool.gettemp( name, filepath )
 
-	gltfloader:load(filepath, goname, "temp")
+	gltfloader:load(filepath, goname, name)
 	go.set_rotation(rot, goname)
 	go.set_position(pos, goname)
+
 	return goname 
 end 
 
