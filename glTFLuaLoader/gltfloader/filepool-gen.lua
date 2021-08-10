@@ -173,8 +173,8 @@ end
 ------------------------------------------------------------------------------------------------------------
 
 local function getfile( fpath )
-print(fpath)
-	local fh = io.open(fpath, "r")
+
+		local fh = io.open(fpath, "r")
 	assert(fh)
 	local data = fh:read("*a")
 	fh:close()

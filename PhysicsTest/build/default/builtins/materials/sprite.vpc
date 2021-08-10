@@ -1,0 +1,21 @@
+
+®©#version 140
+#ifndef GL_ES
+#define lowp
+#define mediump
+#define highp
+#endif
+
+uniform highp mat4 view_proj;
+
+
+in highp vec4 position;
+in mediump vec2 texcoord0;
+
+out mediump vec2 var_texcoord0;
+
+void main()
+{
+    gl_Position = view_proj * vec4(position.xyz, 1.0);
+    var_texcoord0 = texcoord0;
+}
