@@ -16,6 +16,7 @@ package = com.defold.example.basic3d
 [project]
 dependencies = 
 title = MagicVox
+custom_resources = assets
 
 [physics]
 type = 3D
