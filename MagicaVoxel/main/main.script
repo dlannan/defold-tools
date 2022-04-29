@@ -7,14 +7,8 @@ function init(self)
 	msg.post("@render:", "use_camera_projection")
 	msg.post("camera", "acquire_camera_focus")
 
-	-- tint the cube and the sphere
-	-- model.set_constant("/objs#cube", "tint", vmath.vector4(1,1,0,1))
-	-- 
 	-- position directional light
 	self.light = vmath.vector4(0, 10, 100.0, 0)
--- 
--- 	model.set_constant("/objs#cube", "light", self.light)
--- 	model.set_constant("/objs#quad", "light", self.light)
 
 	-- Second param regenerates meshes and go files
 	-- Only need 6 meshes - one for each side of each voxel cube. Voxel cubes are added to each mesh when loaded.
@@ -24,20 +18,14 @@ function init(self)
 
 	local pos = vmath.vector3(0, 0, 0)
 	self.mesh[1] = voxload:addmesh("/assets/voxdata/cars.vox", "mesh1", pos)
-	local pos = vmath.vector3(-2, 0, 0)
-	self.mesh[2] = voxload:addmesh("/assets/voxdata/castle.vox", "mesh2", pos)
-	local pos = vmath.vector3(2, 0, 0)
-	self.mesh[3] = voxload:addmesh("/assets/voxdata/doom.vox", "mesh3", pos)
-	local pos = vmath.vector3(-4, 0, 0)
-	self.mesh[4] = voxload:addmesh("/assets/voxdata/teapot.vox", "mesh4", pos)
-	
-	self.fmeshA = go.get_rotation(self.helmet)
-		
-	self.luminance = 1.0
-	self.cloud_level = 300.0
-	self.time_speed = 1.0
-	self.sun_height = 0.0
-	self.cloud_cover = 0.5
+	--local pos = vmath.vector3(-2, 0, 0)
+	--self.mesh[2] = voxload:addmesh("/assets/voxdata/castle.vox", "mesh2", pos)
+	-- -- local pos = vmath.vector3(2, 0, 0)
+	-- self.mesh[3] = voxload:addmesh("/assets/voxdata/doom.vox", "mesh3", pos)
+	-- local pos = vmath.vector3(-4, 0, 0)
+	-- self.mesh[4] = voxload:addmesh("/assets/voxdata/teapot.vox", "mesh4", pos)
+
+	self.fmeshA = go.get_rotation("/temp")	
 	self.angle = 0.0
 
 	-- Toggle the visual profiler on hot reload.
@@ -48,20 +36,17 @@ end
 function update(self)
 
 	local rad_angle = math.rad(self.angle)
-	local rot_angle = vmath.quat_rotation_y(rad_angle)		
+	local rotr = vmath.quat_rotation_x(math.rad(-90))		
+	local rot_angle = rotr * vmath.quat_rotation_z(rad_angle)		
 	local rotx_angle = vmath.quat_rotation_y(rad_angle)
 
-	go.set_rotation(self.fmeshA * rot_angle, self.mesh[2])
-	go.set_rotation(self.fmeshA * rot_angle, self.mesh[3])
-	go.set_rotation(self.fmeshA * rot_angle, self.mesh[4])
-	--go.set_rotation(self.cubeA * rot_angle, "/gogen#genmesh")
-	--go.set_rotation(self.planeA * rotx_angle, "/ground#genmesh")
+	go.set_rotation(self.fmeshA * rot_angle, "/temp")
 	self.angle = self.angle + 1.0
 
-	mpool.updateall( function( meshobj ) 
-		--local m = go.get_world_transform(meshobj.goname)
-		model.set_constant(meshobj.goname, "light", self.light)
-	end )
+	-- mpool.updateall( function( meshobj ) 
+	-- 	--local m = go.get_world_transform(meshobj.goname)
+	-- 	model.set_constant(meshobj.goname, "light", self.light)
+	-- end )
 
 end
 

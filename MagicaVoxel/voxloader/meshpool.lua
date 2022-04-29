@@ -65,7 +65,7 @@ function gettemp( name, filepath )
 
 	if(meshpool.currentindex > meshpool.maxindex) then print("No More Meshes!"); return nil end
 	-- TBD: This needs to be more flexible and easier to change
-	local goname = "/temp/temp"..string.format("%03d", meshpool.currentindex)
+	local goname = "/temp"..string.format("%03d", meshpool.currentindex)
 	meshpool.currentindex = meshpool.currentindex + 1
 
 	meshpool.files[name] = { name = name, goname = goname, fpath = filepath or "", priority = 0 } 

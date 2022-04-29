@@ -25,7 +25,7 @@ void main()
     var_light = mtx_view * vec4(light.xyz, 1.0);
     var_position = p;
     var_texcoord0 = texcoord0;
-    var_normal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
+    var_normal = normal;
     gl_Position = mtx_proj * p;
 }
 

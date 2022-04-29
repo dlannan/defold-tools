@@ -43,7 +43,7 @@ local function readDict( vdata )
 	for i = 1, cnt do 
 		local key = readString( vdata ) 
 		local value = readString( vdata )
-		tinsert( dict, { key = key, value = value })
+		dict[key] = value
 	end 
 	return dict
 end 
@@ -65,21 +65,26 @@ local function doChunkSize( vdata )
 	local x = vdata:unpack("i4")
 	local y = vdata:unpack("i4")
 	local z = vdata:unpack("i4")  -- gravity direction
-	print("[ SIZE ] ",x,y,z)
-	return {x,y,z}
+	local maxSize = math.max(x, y)
+	--print("[ SIZE ] ",x,y,z)
+	return {x=x,y=y,z=z}, maxSize
 end
 ------------------------------------------------------------------------------------------------------------
 
-local function doChunkXYZI( vdata )
+local function doChunkXYZI( vdata, csize, msize )
 	local numvoxels = vdata:unpack("i4")
-	print("[ VOXELS ] ", numvoxels)
+	--print("[ VOXELS ] ", numvoxels)
+	local offx = -(math.floor((csize.x + 0.5) / 2))
+	local offy = -(math.floor((csize.y + 0.5) / 2))
+	local offz = -(math.floor((csize.z + 0.5) / 2))
 	local voxels = {}
 	for i=1, numvoxels do
 		local x,y,z,i = vdata:unpack("BBBB")
-		tinsert(voxels, {x,y,z,i})
+		tinsert(voxels, { x=x+offx, y=y+offy, z=z+offz, i=i })
 		--pprint("[ XYZI ] ", z,y,z,i)
 	end 
-	return voxels
+	assert( numvoxels == #voxels )
+	return { numvoxels = numvoxels, voxels = voxels }
 end
 ------------------------------------------------------------------------------------------------------------
 
@@ -88,7 +93,7 @@ local function doChunkRGBA( vdata )
 	tinsert(colorpalette, {0,0,0,0})
 	for i=1, 255 do 
 		local r,g,b,a = vdata:unpack("BBBB")
-		tinsert(colorpalette, {r,g,b,a})
+		tinsert(colorpalette, {r=r * 0.0039125,g=g * 0.0039125,b=b * 0.0039125,a=a * 0.0039125})
 	end 
 	-- pprint("[ COLOR PAL ] ",colorpalette)
 	return colorpalette 
@@ -109,7 +114,7 @@ local function doChunknTRN( vdata )
 		local dict = readDict(vdata)
 		tinsert(frames, { dict = dict })
 	end 
-	return frames
+	return { nodeid=nodeid, childid=childid, layerid=layerid, frames=frames }
 end
 
 ------------------------------------------------------------------------------------------------------------
@@ -160,11 +165,12 @@ local function processChunks(vdata, dlen, voxobj)
 	voxobj.sizes 	= {}
 	voxobj.xyzi 	= {}
 	voxobj.palette 	= nil 
-	voxobj.groups 	= {}
+	voxobj.nodes 	= {}
 	voxobj.transforms = {}
 	voxobj.shapes 	= {} 
 	voxobj.layers 	= {} 
-
+	local currentsize = nil
+	local maxSize = 0
 
 	-- Keep reading until we have it all.
 	while( dlen - vdata.pos > 4  ) do 
@@ -174,22 +180,25 @@ local function processChunks(vdata, dlen, voxobj)
 		print(chunkid)
 		local bcontent = vdata:unpack("i4")
 		local bchildren = vdata:unpack("i4")
-		print(bcontent, bchildren)
+		--print(bcontent, bchildren)
 	
 		if(chunkid == "PACK") then 
 			doChunkPack(vdata)
 		elseif(chunkid == "MAIN") then 
 			doChunkMain(vdata)
 		elseif(chunkid == "SIZE") then 
-			tinsert( voxobj.sizes, doChunkSize(vdata) )
+			currentsize, maxSize = doChunkSize(vdata)
+			tinsert( voxobj.sizes, currentsize )
 		elseif(chunkid == "XYZI") then 
-			tinsert( voxobj.xyzi, doChunkXYZI(vdata) )
+			tinsert( voxobj.xyzi, doChunkXYZI(vdata, currentsize, maxSize) )
 		elseif(chunkid == "RGBA") then 
 			voxobj.palette = doChunkRGBA(vdata)
 		elseif(chunkid == "nTRN") then 
-			tinsert( voxobj.transforms, doChunknTRN(vdata) )
+			local tform = doChunknTRN(vdata)
+			voxobj.transforms[tform.nodeid] = tform
 		elseif(chunkid == "nGRP") then 
-			tinsert( voxobj.groups, doChunknGRP(vdata) )
+			local children = doChunknGRP(vdata)
+			for k,v in ipairs(children) do tinsert( voxobj.nodes, v ) end
 		elseif(chunkid == "nSHP") then 
 			tinsert( voxobj.shapes, doChunknSHP(vdata) )
 		elseif(chunkid == "MATL") then 
@@ -206,8 +215,18 @@ local function processChunks(vdata, dlen, voxobj)
 			print("[ EXITED ] ")
 			break
 		end
-		print("[ DLEN ] ", vdata.pos, dlen)
+		--print("[ DLEN ] ", vdata.pos, dlen)
 	end
+
+	voxobj.scenes = {
+		voxobj
+	}
+	pprint(voxobj.groups)
+end
+
+------------------------------------------------------------------------------------------------------------
+
+local function genMeshObjects( voxdata )
 end
 
 ------------------------------------------------------------------------------------------------------------
@@ -224,6 +243,10 @@ local function parsevox( voxdata )
 
 	local voxobj = {}
 	processChunks(vdata, dlen, voxobj)
+
+	-- Process voxels and make vertbuffers for each voxel.
+	-- Should create scenes, meshes etc the same as gtlfobj.
+	genMeshObjects( voxobj )
 
 	return voxobj
 end
@@ -244,6 +267,7 @@ local function loadvox( fname )
 	local voxdata, error = sys.load_resource(fname)	
 	local voxobj = parsevox( voxdata )
 	voxobj.basepath = basepath
+
 	-- pprint(voxobj)
 
 	return voxobj
@@ -273,8 +297,86 @@ function voxloader:getfreetemp()
 end
 
 ------------------------------------------------------------------------------------------------------------
+-- Vertex value based on 0,0,0 center of cube with 1 in size. 
 
-function voxloader:makeNodeMeshes( voxobj, goname, parent, n )
+local vertexPositions = {
+	-- Face 1 - Front
+	{ x = -0.5, y = 0.5, z = -0.5 },
+	{ x = 0.5, y = 0.5, z = -0.5 },
+	{ x = 0.5, y = -0.5, z = -0.5 },
+	{ x = -0.5, y = 0.5, z = -0.5 },
+	{ x = 0.5, y = -0.5, z = -0.5 },
+	{ x = -0.5, y = -0.5, z = -0.5 },
+	-- Face 2 - Left
+	{ x = -0.5, y = 0.5, z = 0.5 },
+	{ x = -0.5, y = 0.5, z = -0.5 },
+	{ x = -0.5, y = -0.5, z = -0.5 },
+	{ x = -0.5, y = 0.5, z = 0.5 },
+	{ x = -0.5, y = -0.5, z = -0.5 },
+	{ x = -0.5, y = -0.5, z = 0.5 },
+	-- Face 3 - Rear
+	{ x = 0.5, y = 0.5, z = 0.5 },
+	{ x = -0.5, y = 0.5, z = 0.5 },
+	{ x = -0.5, y = -0.5, z = 0.5 },
+	{ x = 0.5, y = 0.5, z = 0.5 },
+	{ x = -0.5, y = -0.5, z = 0.5 },
+	{ x = 0.5, y = -0.5, z = 0.5 },
+	-- Face 4 - Right
+	{ x = 0.5, y = -0.5, z = 0.5 },
+	{ x = 0.5, y = -0.5, z = -0.5 },
+	{ x = 0.5, y = 0.5, z = -0.5 },
+	{ x = 0.5, y = -0.5, z = 0.5 },
+	{ x = 0.5, y = 0.5, z = -0.5 },
+	{ x = 0.5, y = 0.5, z = 0.5 },
+	-- Face 5 - Top
+	{ x = -0.5, y = 0.5, z = -0.5 },
+	{ x = -0.5, y = 0.5, z = 0.5 },
+	{ x = 0.5, y = 0.5, z = 0.5 },
+	{ x = -0.5, y = 0.5, z = -0.5 },
+	{ x = 0.5, y = 0.5, z = 0.5 },
+	{ x = 0.5, y = 0.5, z = -0.5 },
+	-- Face 6 - Bottom
+	{ x = -0.5, y = -0.5, z = -0.5 },
+	{ x = 0.5, y = -0.5, z = -0.5 },
+	{ x = 0.5, y = -0.5, z = 0.5 },
+	{ x = -0.5, y = -0.5, z = -0.5 },
+	{ x = 0.5, y = -0.5, z = 0.5 },
+	{ x = -0.5, y = -0.5, z = 0.5 },	
+}
+
+------------------------------------------------------------------------------------------------------------
+-- All faces have same uv coords
+local uvcoords = {
+	{ x = 0.0, y = 0.0 },
+	{ x = 1.0, y = 0.0 },
+	{ x = 1.0, y = 1.0 },
+	{ x = 0.0, y = 1.0 },
+}
+------------------------------------------------------------------------------------------------------------
+-- Only 6 real normals to worry about
+local normals = {
+	{ x = 0.0, y = 0.0, z = -1.0 },	-- front
+	{ x = -1.0, y = 0.0, z = 0.0 },	-- left
+	{ x = 0.0, y = 0.0, z = 1.0 },	-- rear
+	{ x = 1.0, y = 0.0, z = 0.0 }, 	-- right
+	{ x = 0.0, y = 1.0, z = 0.0 },  -- top
+	{ x = 0.0, y = -1.0, z = 0.0 }, -- bottom
+}
+
+local function matrixToQuat( m )
+
+	local q = vmath.quat()
+	q.w= math.sqrt(1 + m.m00 + m.m11 + m.m22) /2
+	q.x = (m.m21 - m.m12)/( 4 *q.w)
+	q.y = (m.m02 - m.m20)/( 4 *q.w)
+	q.z = (m.m10 - m.m01)/( 4 *q.w)
+	return q 
+end 
+
+
+------------------------------------------------------------------------------------------------------------
+
+function voxloader:makeVoxelMeshes( voxobj, goname, parent, n )
 
 	-- Each node can have a mesh reference. If so, get the mesh data and make one, set its parent to the
 	--  parent node mesh
@@ -283,116 +385,100 @@ function voxloader:makeNodeMeshes( voxobj, goname, parent, n )
 	local gochildname = gochild.."#temp"
 	
 	local thisnode = voxobj.nodes[n] 
-	-- print("Name:", thisnode.name, parent)	
-	if(thisnode.mesh) then 
+
+	print("ID:", thisnode.id)	
+	if(thisnode.id) then 
 		
 		-- Temp.. 
-		local gltf = {}
+		local vox = {}
 		
 		-- Get indices from accessor 
-		local thismesh = voxobj.meshes[thisnode.mesh + 1]
-		local prims = thismesh.primitives	
+		local thisvox = { 
+			sizes 	= voxobj.sizes[n],
+			xyzi 	= voxobj.xyzi[n].voxels
+		}
+
+		if(thisvox.xyzi == nil) then print("No Voxels?"); return end 		
+
+		-- Material is always white and we set vertex color
+		-- voxloader:loadimages( voxobj, gochildname, 1, 0 )
+
+		vox.indices = {}
+		vox.verts 	= {}
+		vox.uvs 	= {}
+		vox.normals = {}
+		local vertoff = 0
 		
-		if(prims == nil) then print("No Primitives?"); return end 
+		-- iterate voxels in object and make indices, vertices, uvs and normals for a single voxel
+		local size = thisvox.sizes
+		for k,v in pairs(thisvox.xyzi) do 
 			
-		local prim = prims[1]
+			-- Indices are 4 quads x 6 sides. In order.
+			for i=1, 36 do
+				tinsert(vox.indices, vertoff); vertoff = vertoff + 1
+			end 
 
-		-- If it has a material, load it, and set the material 
-		if(prim.material) then 
-
-			local materialid = prim.material
-			local mat = voxobj.materials[ materialid + 1 ]
-			--pprint(mat)
-			local pbrmetallicrough = mat.pbrMetallicRoughness 
-			if (pbrmetallicrough) then 
-				if(pbrmetallicrough.baseColorTexture) then 
-					local bcolor = pbrmetallicrough.baseColorTexture.index
-					local res = voxobj.images[bcolor + 1]
-					voxloader:loadimages( voxobj, gochildname, bcolor + 1, 0 )
-				end 
-
-				if(pbrmetallicrough.metallicRoughnessTexture) then 
-					local bcolor = pbrmetallicrough.metallicRoughnessTexture.index
-					local res = voxobj.images[bcolor + 1]
-					voxloader:loadimages( voxobj, gochildname, bcolor + 1, 1 )
-				end
-			end
-			local pbremissive = mat.emissiveTexture
-			if(pbremissive) then 
-				local bcolor = pbremissive.index
-				local res = voxobj.images[bcolor + 1]
-				voxloader:loadimages( voxobj, gochildname, bcolor + 1, 2 )
-			end
-			local pbrnormal = mat.normalTexture
-			if(pbrnormal) then  
-				local bcolor = pbrnormal.index
-				local res = voxobj.images[bcolor + 1]
-				voxloader:loadimages( voxobj, gochildname, bcolor + 1, 3 )
-			end
-		end 
-		
-		local acc_idx = prim.indices
-		local accessor = voxobj.accessors[acc_idx + 1]
-
-		local bv = voxobj.bufferViews[accessor.bufferView + 1]
-		local byteoff = accessor.byteOffset -- Not sure what to do with this just yet 
-		local buffer = voxobj.buffers[bv.buffer+1]
-
-		gltf.indices = {}
-		-- Indices specific - this is default dataset for gltf (I think)
-		geomextension.setbufferintsfromtable(bv.byteOffset, bv.byteLength, buffer.data, gltf.indices)
-
-		-- Get position accessor
-		gltf.verts = {}
-		local posidx = prim.attributes["POSITION"]
-		if(posidx) then 
-			local aidx = voxobj.accessors[posidx + 1]
-			bv = voxobj.bufferViews[aidx.bufferView + 1]
-			buffer = voxobj.buffers[bv.buffer + 1]
 			-- Get positions (or verts) 
-			geomextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.verts)
+			for i=1, 36 do
+				local vert = vertexPositions[i]
+				tinsert(vox.verts, vert.x + v.x)
+				tinsert(vox.verts, vert.y + v.y)
+				tinsert(vox.verts, vert.z + v.z)
+			end 
+		
+			for i=1, 36 do
+				local idx = ((i-1) % 4) + 1
+				local uv = uvcoords[ idx ]
+				tinsert(vox.uvs, uv.x)
+				tinsert(vox.uvs, uv.y)
+			end 
+			
+			for i=1, 36 do
+				-- local norm = normals[((i-1) % 6) + 1]
+				local color = voxobj.palette[v.i+1]
+				tinsert(vox.normals, color.r)
+				tinsert(vox.normals, color.g)
+				tinsert(vox.normals, color.b)
+			end 
 		end
-		
-		-- Get uvs accessor
-		gltf.uvs = {}
-		local texidx = prim.attributes["TEXCOORD_0"]
-		if(texidx) then 
-			local aidx = voxobj.accessors[texidx + 1]
-			bv = voxobj.bufferViews[aidx.bufferView + 1]
-			buffer = voxobj.buffers[bv.buffer + 1]
-			geomextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.uvs)
-		end 
-
-		-- Get normals accessor
-		gltf.normals = {}
-		local normidx = prim.attributes["NORMAL"]
-		if(normidx) then 
-			local aidx = voxobj.accessors[normidx + 1]
-			bv = voxobj.bufferViews[aidx.bufferView + 1]
-			buffer = voxobj.buffers[bv.buffer + 1]
-			geomextension.setbufferfloatsfromtable(bv.byteOffset or 0, bv.byteLength or 0, buffer.data, gltf.normals)
-		end 
-		
-		-- 	local indices	= { 0, 1, 2, 0, 2, 3 }
-		-- 	local verts		= { -sx + offx, 0.0, sy + offy, sx + offx, 0.0, sy + offy, sx + offx, 0.0, -sy + offy, -sx + offx, 0.0, -sy + offy }
-		-- 	local uvs		= { 0.0, 0.0, uvMult, 0.0, uvMult, uvMult, 0.0, uvMult }
-		-- 	local normals	= { 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0 }
-		geom:makeMesh( gochildname, gltf.indices, gltf.verts, gltf.uvs, gltf.normals )
+	
+		local trans = voxobj.transforms[thisnode.id]
+		if(trans and trans.frames[1]) then 
+			pprint(trans)
+			local pos = { 0, 0, 0 }
+			if(trans.frames[1].dict._t) then 
+				pos = { string.match(trans.frames[1].dict._t, "(%-?%d+) (%-?%d+) (%-?%d+)") }
+				go.set_position(vmath.vector3(pos[1], pos[2], pos[3]), gochildname) 
+			end
+			if(trans.frames[1].dict._r) then 
+				local rot = string.match(trans.frames[1].dict._r, "(%d+)")
+				local m = vmath.matrix4()
+				m.m00 	= 0.0
+				m.m11 	= 0.0
+				-- m.m22 	= 0.0
+				-- m.m20 	= 1.0 
+				m.m33 	= 1.0
+				local r1idx = bit.band(rot, 3)
+				local r2idx = bit.rshift(bit.band(rot, 12), 2)
+				print(r2idx)
+				m["m0"..r1idx] = 1.0
+				m["m1"..r2idx] = 1.0
+			
+				if(bit.band(rot, 16) == 16) then m["m0"..r1idx] = -1.0 end
+				if(bit.band(rot, 32) == 32) then m["m1"..r2idx] = -1.0 end
+				if(bit.band(rot, 64) == 64) then m.m22 = -1.0 end
+				pprint(m, r1idx, r2idx)
+				go.set_rotation(matrixToQuat(m), gochildname) 
+			end
+		end
+	
+		geom:makeMesh( gochildname, vox.indices, vox.verts, vox.uvs, vox.normals )
 
 	-- No mesh.. try children
 	end 
 
-	local trans = thisnode["translation"]
-	if(trans) then go.set_position(vmath.vector3(trans[1], trans[2], trans[3]), gochildname) end
 	-- Parent this mesh to the incoming node 
-	go.set_parent(go.get_id(gochild), parent)
-	
-	if(thisnode.children) then 
-		for k,v in pairs(thisnode.children) do 
-			local child = voxobj.nodes[v + 1]
-			self:makeNodeMeshes( voxobj, gochild, gochildname, v + 1)
-		end 
-	end
+	go.set_parent(go.get_id(gochild), parent)	
 end	
 
 ------------------------------------------------------------------------------------------------------------
@@ -432,7 +518,7 @@ function voxloader:load( fname, pobj, meshname )
 	-- local voxobj = tinygltf_extension.loadmodel( fname )
 	local voxobj = loadvox( fname )
 		
-	local gltfmesh 	= geom:New(goname)
+	local voxmesh 	= geom:New(goname)
 	geom:New(goname, 1.0)
 	tinsert(geom.meshes, goname)
 
@@ -445,7 +531,7 @@ function voxloader:load( fname, pobj, meshname )
 		-- Go through the scenes nodes - this is recursive. nodes->children->children..
 		local childtag = nil
 		for ni, n in pairs(v.nodes) do
-			self:makeNodeMeshes( voxobj, goname, pobj, n + 1)
+			self:makeVoxelMeshes( voxobj, goname, pobj, ni)
 		end 
 	end
 
