@@ -182,7 +182,7 @@ end
 
 ------------------------------------------------------------------------------------------------------------
 
-local function init( tempbasepath, imagepath, materialpath )
+local function init( tempbasepath, imagepath, materialpath, rootgo )
 
 	meshgen.tempbasepath 	= tempbasepath 
 	meshgen.imagepath 		= imagepath
@@ -278,6 +278,64 @@ local function maketempcollection( collfile, numgos )
 end
 
 ------------------------------------------------------------------------------------------------------------
+
+local function addtocollection( collfile, rootid, numgos )
+	
+	-- Make the meshes and images in the mesh pool
+	makepoolfiles( numgos )
+
+	-- Build the collection file.
+	local fh = io.open( collfile, "r" )
+	local alldata = ""
+	if(fh) then 
+		local colldata = fh:read( "*a" )
+		fh:close()
+
+		local found = 0
+		for i = 1, numgos do 
+			local gname = string.format("temp%03d", i)
+			if(string.match(colldata, gname)) then found = found + 1 end
+		end 
+		if(found == numgos) then return nil end 
+
+		local s, e = string.find( colldata, [[name: "[^"]+"]])
+		print(s,e)
+		local firstline = string.sub( colldata, s, e )
+		local remain = string.sub(colldata, e+1, -1 )
+
+		-- Look for rootid and then add children.
+		local search = [[id: "]]..rootid..[["]]
+		s, e = string.find( remain, search)
+		print(s,e)
+		local firstpart = string.sub( remain, 1, e )
+		local lastpart = string.sub( remain, e+1, -1 )
+		firstpart = firstpart..'\n'
+
+		for i = 1, numgos do 
+			local gdata = gocollectiondata
+			local gpath = meshgen.tempbasepath..string.format("%03d", i)..".go"
+			local gname = string.format("temp%03d", i)
+			firstpart = firstpart..[[  children: "]]..gname..[["]]..'\n'
+
+			gdata = string.gsub(gdata, "GO_NAME", gname, 1)		
+			gdata = string.gsub(gdata, "GO_FILE_PATH", "/"..gpath, 1)		
+			firstline = firstline..'\n'
+			firstline = firstline..gdata..'\n'
+		end
+		
+		alldata = firstline..firstpart..lastpart
+		print(alldata)
+	end 
+
+	local fh = io.open( collfile, "w" )
+	if(fh) then 
+		fh:write(alldata)
+		fh:close()
+	end 
+	return true
+end
+
+------------------------------------------------------------------------------------------------------------
 -- This may be necessary later to empty or clean pool folders
 local function cleanup()
 
@@ -288,5 +346,6 @@ end
 meshgen.init 			= init 
 meshgen.cleanup 		= cleanup
 meshgen.makecollection 	= maketempcollection
+meshgen.addtocollection = addtocollection
 
 return meshgen

@@ -13,17 +13,17 @@ function init(self)
 	-- Second param regenerates meshes and go files
 	-- Only need 6 meshes - one for each side of each voxel cube. Voxel cubes are added to each mesh when loaded.
 	-- The mesh can be modified at runtime to add/remove verts from the faces.
-	mpool.init(6, true)
+	mpool.init(6, true, "main/main.collection", "temp")
 	self.mesh = {}
 
-	local pos = vmath.vector3(0, 0, 0)
+	--local pos = vmath.vector3(0, 0, 0)
 	self.mesh[1] = voxload:addmesh("/assets/voxdata/cars.vox", "mesh1", pos)
-	--local pos = vmath.vector3(-2, 0, 0)
+	local pos = vmath.vector3(-2, 0, 0)
 	--self.mesh[2] = voxload:addmesh("/assets/voxdata/castle.vox", "mesh2", pos)
-	-- -- local pos = vmath.vector3(2, 0, 0)
+	-- local pos = vmath.vector3(2, 0, 0)
 	-- self.mesh[3] = voxload:addmesh("/assets/voxdata/doom.vox", "mesh3", pos)
-	-- local pos = vmath.vector3(-4, 0, 0)
-	-- self.mesh[4] = voxload:addmesh("/assets/voxdata/teapot.vox", "mesh4", pos)
+	--local pos = vmath.vector3(-4, 0, 0)
+	--self.mesh[4] = voxload:addmesh("/assets/voxdata/teapot.vox", "mesh4", pos)
 
 	self.fmeshA = go.get_rotation("/temp")	
 	self.angle = 0.0

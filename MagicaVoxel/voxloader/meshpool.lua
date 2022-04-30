@@ -34,7 +34,7 @@ meshpool.mapped = {
 
 -- --------------------------------------------------------------------------------------------------------
 
-function init( count, regenerate )
+function init( count, regenerate, collfile, rootid )
 
 	-- THis is here because you shouldnt need to change it often - can move this out if needed.
 	fpgen.init( "assets/gotemplate/meshpool/temp", "assets/images/", "assets/shaders/" )
@@ -44,9 +44,26 @@ function init( count, regenerate )
 	
 	-- The make pool files is not needed for every run. But it keeps all the objects "clean"
 	-- Should add a return check for success
-	if(regenerate) then fpgen.makecollection("assets/gotemplate/temp.collection", count) end
+	if(regenerate) then 
+		
+		print(collfile, rootid, count)
+		local newfiles = fpgen.addtocollection(collfile, rootid, count) 
+		-- Check if the rootgo has children (if not, add them, and stop execution)
+		if(newfiles) then 
+			print("---------------------------------------------------------------------")
+			print("    Built new go files, updating main collection. Restart build.")
+			print("---------------------------------------------------------------------")
+			os.exit(1)
+		end 
+	end
 	meshpool.maxindex = count
 	meshpool.currentindex = 1
+end
+
+-- --------------------------------------------------------------------------------------------------------
+
+function setroot( rootgo, maincollection )
+
 end
 
 -- --------------------------------------------------------------------------------------------------------
