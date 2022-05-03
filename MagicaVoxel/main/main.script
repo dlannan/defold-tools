@@ -17,7 +17,7 @@ function init(self)
 	self.mesh = {}
 
 	--local pos = vmath.vector3(0, 0, 0)
-	self.mesh[1] = voxload:addmesh("/assets/voxdata/cars.vox", "mesh1", pos)
+	self.mesh[1] = voxload:addmesh("/assets/voxdata/pumpkin_dude2.vox", "mesh1", pos)
 	local pos = vmath.vector3(-2, 0, 0)
 	--self.mesh[2] = voxload:addmesh("/assets/voxdata/castle.vox", "mesh2", pos)
 	-- local pos = vmath.vector3(2, 0, 0)

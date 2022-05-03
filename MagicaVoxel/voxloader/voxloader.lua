@@ -230,19 +230,74 @@ local function genMeshObjects( voxdata )
 end
 
 ------------------------------------------------------------------------------------------------------------
+local VSID 	= 1024
+
+local MAXXSIZ = 256 -- //Default values
+local MAXYSIZ = 256
+local BUFZSIZ = 256 -- //(BUFZSIZ&7) MUST == 0
+local LIMZSIZ = 255 -- //Limited to 255 by: char ylen[?][?]
 
 local function parsevox( voxdata )
 
 	-- Iterate through the file. Stepping and converting bytes.
 	-- print(blob.backend)
-	local vdata = blob.new(voxdata)
-	assert(vdata:bytes(4) == "VOX ")
-	local ver = vdata:unpack("i4")
-	local dlen = #voxdata 
-	pprint(dlen, ver)
-
 	local voxobj = {}
-	processChunks(vdata, dlen, voxobj)
+
+	local vdata = blob.new(voxdata)
+	local dlen = #voxdata 
+	print("[ VOX DATA SIZE ] ", dlen)
+
+	vdata:mark()
+	-- Sometimes the header isnt included.
+	if(vdata:bytes(4) == "VOX ") then 
+		local ver = vdata:unpack("i4")
+		processChunks(vdata, dlen, voxobj)
+	else 
+		vdata:restore()
+		local xd = vdata:unpack("I4")
+		local yd = vdata:unpack("I4")
+		local zd = vdata:unpack("I4")
+		pprint(xd, yd, zd)
+		local xpiv = xd*0.5
+		local ypiv = yd*0.5
+		local zpiv = zd*0.5
+		pprint(xpiv, ypiv, zpiv)
+
+		voxobj.sizes = { { xd, yd, zd } }
+
+		local voxels = {}
+		
+		for x = 0, xd - 1 do
+			for y = 0, yd - 1 do 
+				local j = ((x*MAXYSIZ) + y ) * BUFZSIZ
+				for z = 0, zd - 1 do 
+					local c = vdata:unpack("B")
+					if(c ~= 255) then 
+						local idx = bit.rshift( j + z, 5 )
+						local newvox = bit.bnot( bit.lshift(1, (j + z) ) )
+						tinsert( voxels, { x = x, y = y, z = z, i = c } )
+						-- vbit[idx] = bit.band( vbit[idx] or 0, newvox ) 
+					end 
+				end 
+			end 
+		end
+
+		voxobj.xyzi = { { numvoxels = #voxels, voxels = voxels } }
+
+		local paldata = {}
+		tinsert(paldata, {r=0,g=0,b=0})
+		for i = 1, 255 do 
+			local r,g,b = vdata:unpack("BBB")
+			tinsert(paldata, {r=r * 0.0039125,g=g * 0.0039125,b=b * 0.0039125})	
+		end
+		voxobj.palette = paldata
+		pprint("[ PALETTE ] ", palette)
+
+		voxobj.nodes 	= { { id = 1 } }
+		voxobj.scenes 	= {
+			voxobj
+		}
+	end
 
 	-- Process voxels and make vertbuffers for each voxel.
 	-- Should create scenes, meshes etc the same as gtlfobj.
@@ -441,37 +496,39 @@ function voxloader:makeVoxelMeshes( voxobj, goname, parent, n )
 				tinsert(vox.normals, color.b)
 			end 
 		end
-	
-		local trans = voxobj.transforms[thisnode.id]
-		if(trans and trans.frames[1]) then 
-			pprint(trans)
-			local pos = { 0, 0, 0 }
-			if(trans.frames[1].dict._t) then 
-				pos = { string.match(trans.frames[1].dict._t, "(%-?%d+) (%-?%d+) (%-?%d+)") }
-				go.set_position(vmath.vector3(pos[1], pos[2], pos[3]), gochildname) 
+
+		if(voxobj.transforms) then 
+			local trans = voxobj.transforms[thisnode.id]
+			if(trans and trans.frames[1]) then 
+				pprint(trans)
+				local pos = { 0, 0, 0 }
+				if(trans.frames[1].dict._t) then 
+					pos = { string.match(trans.frames[1].dict._t, "(%-?%d+) (%-?%d+) (%-?%d+)") }
+					go.set_position(vmath.vector3(pos[1], pos[2], pos[3]), gochildname) 
+				end
+				if(trans.frames[1].dict._r) then 
+					local rot = string.match(trans.frames[1].dict._r, "(%d+)")
+					local m = vmath.matrix4()
+					m.m00 	= 0.0
+					m.m11 	= 0.0
+					-- m.m22 	= 0.0
+					-- m.m20 	= 1.0 
+					m.m33 	= 1.0
+					local r1idx = bit.band(rot, 3)
+					local r2idx = bit.rshift(bit.band(rot, 12), 2)
+					print(r2idx)
+					m["m0"..r1idx] = 1.0
+					m["m1"..r2idx] = 1.0
+				
+					if(bit.band(rot, 16) == 16) then m["m0"..r1idx] = -1.0 end
+					if(bit.band(rot, 32) == 32) then m["m1"..r2idx] = -1.0 end
+					if(bit.band(rot, 64) == 64) then m.m22 = -1.0 end
+					--pprint(m, r1idx, r2idx)
+					go.set_rotation(matrixToQuat(m), gochildname) 
+				end
 			end
-			if(trans.frames[1].dict._r) then 
-				local rot = string.match(trans.frames[1].dict._r, "(%d+)")
-				local m = vmath.matrix4()
-				m.m00 	= 0.0
-				m.m11 	= 0.0
-				-- m.m22 	= 0.0
-				-- m.m20 	= 1.0 
-				m.m33 	= 1.0
-				local r1idx = bit.band(rot, 3)
-				local r2idx = bit.rshift(bit.band(rot, 12), 2)
-				print(r2idx)
-				m["m0"..r1idx] = 1.0
-				m["m1"..r2idx] = 1.0
-			
-				if(bit.band(rot, 16) == 16) then m["m0"..r1idx] = -1.0 end
-				if(bit.band(rot, 32) == 32) then m["m1"..r2idx] = -1.0 end
-				if(bit.band(rot, 64) == 64) then m.m22 = -1.0 end
-				pprint(m, r1idx, r2idx)
-				go.set_rotation(matrixToQuat(m), gochildname) 
-			end
-		end
-	
+		end 
+		
 		geom:makeMesh( gochildname, vox.indices, vox.verts, vox.uvs, vox.normals )
 
 	-- No mesh.. try children
