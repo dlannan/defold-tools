@@ -275,7 +275,7 @@ local function parsevox( voxdata )
 					if(c ~= 255) then 
 						local idx = bit.rshift( j + z, 5 )
 						local newvox = bit.bnot( bit.lshift(1, (j + z) ) )
-						tinsert( voxels, { x = x, y = y, z = z, i = c } )
+						tinsert( voxels, { x = x-xpiv, y = y-ypiv, z = z-zpiv, i = c } )
 						-- vbit[idx] = bit.band( vbit[idx] or 0, newvox ) 
 					end 
 				end 
@@ -285,8 +285,8 @@ local function parsevox( voxdata )
 		voxobj.xyzi = { { numvoxels = #voxels, voxels = voxels } }
 
 		local paldata = {}
-		tinsert(paldata, {r=0,g=0,b=0})
-		for i = 1, 255 do 
+		--tinsert(paldata, {r=0,g=0,b=0})
+		for i = 1, 256 do 
 			local r,g,b = vdata:unpack("BBB")
 			tinsert(paldata, {r=r * 0.0039125,g=g * 0.0039125,b=b * 0.0039125})	
 		end
