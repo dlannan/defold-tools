@@ -9,6 +9,8 @@
 #include <Newton.h>
 #include <vector>
 
+#include <dMatrix.h>
+
 static NewtonWorld* world = NULL;
 
 static std::vector<NewtonBody* >bodies;
@@ -70,23 +72,27 @@ static void AddTableVertices( lua_State *L, int count, const double *vertices )
 {
     lua_newtable(L);
     double * vertptr = (double *)vertices;
-    int idx = 1;
-    for(int ctr = 0; ctr < count; ++ctr) {
-        if(ctr % 4 == 3) { 
-            vertptr++;
-        } else {
-            lua_pushnumber(L, idx++); 
-            lua_pushnumber(L, *vertptr++);
-            lua_rawset(L, -3);
-        }
+    int ctr = 1;
+    int step = 4;
+    for (int i=0; i<count; i += step) {
+        lua_pushnumber(L, ctr++); 
+        lua_pushnumber(L, *vertptr++);
+        lua_rawset(L, -3);
+        lua_pushnumber(L, ctr++); 
+        lua_pushnumber(L, *vertptr++);
+        lua_rawset(L, -3);
+        lua_pushnumber(L, ctr++); 
+        lua_pushnumber(L, *vertptr++);
+        lua_rawset(L, -3);
+        vertptr++;
     }
 }
 
 
-static void AddTableUVs( lua_State *L, int count, const double *uvs )
+static void AddTableUVs( lua_State *L, int count, const dFloat *uvs )
 {
     lua_newtable(L);
-    double * uvsptr = (double *)uvs;
+    dFloat * uvsptr = (dFloat *)uvs;
     for (int i=1; i<=count; ++i) {
         lua_pushnumber(L, i); 
         lua_pushnumber(L, *uvsptr++);
@@ -94,10 +100,10 @@ static void AddTableUVs( lua_State *L, int count, const double *uvs )
     }
 }
 
-static void AddTableNormals( lua_State *L, int count, const double *normals )
+static void AddTableNormals( lua_State *L, int count, const dFloat *normals )
 {
     lua_newtable(L);
-    double * normptr = (double *)normals;
+    dFloat * normptr = (dFloat *)normals;
     for (int i=1; i<=count; ++i) {
         lua_pushnumber(L, i); 
         lua_pushnumber(L, *normptr++);
@@ -276,49 +282,58 @@ static int createMeshFromCollision( lua_State *L )
     if(mesh) {
         meshes.push_back(mesh);
         lua_pushnumber(L, meshes.size() - 1);
-        // save the polygon array
+
+        NewtonMeshTriangulate(mesh);
+        NewtonMeshCalculateVertexNormals(mesh, 1.05f);
+
         int faceCount = NewtonMeshGetTotalFaceCount (mesh); 
         int indexCount = NewtonMeshGetTotalIndexCount (mesh); 
         int pointCount = NewtonMeshGetPointCount (mesh);
         int vertexStride = NewtonMeshGetVertexStrideInByte(mesh) / sizeof (dFloat);
 
+        // extract vertex data  from the newton mesh		
+        dFloat *vertices = new dFloat[3 * indexCount];
+        dFloat *normals = new dFloat[3 * indexCount];
+        dFloat *uvs = new dFloat[2 * indexCount];
+
+        memset (vertices, 0, 3 * indexCount * sizeof (dFloat));
+        memset (normals, 0, 3 * indexCount * sizeof (dFloat));
+        memset (uvs, 0, 2 * indexCount * sizeof (dFloat));
+
+        dMatrix aligmentUV(dGetIdentityMatrix());
+        NewtonMeshApplySphericalMapping(mesh, 0, &aligmentUV[0][0]);
+
         int* faceArray = new int [faceCount];
         void** indexArray = new void* [indexCount];
         int* materialIndexArray = new int [faceCount];
         int* remapedIndexArray = new int [indexCount];
-        const int *vertexIndexList = NewtonMeshGetIndexToVertexMap(mesh);
-
-        NewtonMeshGetFaces (mesh, faceArray, materialIndexArray, indexArray); 
-        NewtonMeshCalculateVertexNormals( mesh, 1.05f );
-
+                 
+//         // const int *vertexIndexList = NewtonMeshGetIndexToVertexMap(mesh);
+         NewtonMeshGetFaces (mesh, faceArray, materialIndexArray, indexArray); 
+         NewtonMeshGetUV0Channel(mesh, 2 * sizeof (dFloat), uvs);
+         NewtonMeshGetNormalChannel(mesh, 3 * sizeof (dFloat), normals);
+        
         for (int i = 0; i < indexCount; i ++) {
-    //		void* face = indexArray[i];
+
+            int fcount = faceArray[i];
+            printf("Face Count: %d\n", fcount);
+
             int index = NewtonMeshGetVertexIndex (mesh, indexArray[i]);
+                        
             remapedIndexArray[i] = index;
-        }
+         }
         
         AddTableIndices(L, indexCount, remapedIndexArray);
-        
-        int vcount = NewtonMeshGetVertexCount(mesh);
-        AddTableVertices(L, vcount * 4, NewtonMeshGetVertexArray(mesh));
+        AddTableVertices(L, NewtonMeshGetVertexCount(mesh)*4, NewtonMeshGetVertexArray(mesh));
 
-        double *uvs = NULL;
-        if (NewtonMeshHasUV0Channel(mesh)) {
-            NewtonMeshGetUV0Channel(mesh, 2 * sizeof (dFloat), (dFloat*)uvs);
-            AddTableUVs( L, pointCount*2, uvs );
-        } else {
-            printf("No UVS in mesh!!\n");
-            lua_newtable(L);
-        }
-    
-        double* normals = NULL;
-        if (NewtonMeshHasNormalChannel(mesh)) {
-            NewtonMeshGetNormalChannel(mesh, 3 * sizeof (dFloat), (dFloat*)normals);
-            AddTableNormals( L, vcount * 3, normals );
-        } else {
-            printf("No Normals in mesh!!\n");
-            lua_newtable(L);
-        }
+        AddTableUVs( L, indexCount * 2, uvs );
+        AddTableNormals( L, indexCount * 3, normals );
+
+        // Cleanup
+        // delete [] faceArray;
+        // delete [] indexArray;
+        // delete [] materialIndexArray;
+        delete [] remapedIndexArray;
 
         return 5;
     }
