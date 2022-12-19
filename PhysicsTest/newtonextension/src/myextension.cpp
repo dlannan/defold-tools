@@ -13,36 +13,122 @@ static NewtonWorld* world = NULL;
 
 static std::vector<NewtonBody* >bodies;
 static std::vector<NewtonCollision*> colls;
+static std::vector<NewtonMesh* >meshes;
 
 // Define a custom data structure to store a body ID.
 struct UserData {
     int bodyID=0;
 };
 
+enum ShapeType {
+
+    Shape_Plane           = 1,
+    Shape_Cube            ,
+    Shape_Sphere          ,
+    Shape_Cone            , 
+    Shape_Capsule         , 
+    Shape_Cylinder        ,
+    Shape_ChamferCylinder ,
+    Shape_ConvexHull      
+}; 
+
+static int SetTableVector( lua_State *L, dFloat *data, const char *name )
+{
+    lua_pushstring(L, name); 
+    lua_newtable(L);
+
+    lua_pushstring(L, "x"); 
+    lua_pushnumber(L, data[0]);
+    lua_settable(L, -3);
+    lua_pushstring(L, "y"); 
+    lua_pushnumber(L, data[1]);
+    lua_settable(L, -3);
+    lua_pushstring(L, "z"); 
+    lua_pushnumber(L, data[2]);
+    lua_settable(L, -3);
+    lua_pushstring(L, "w"); 
+    lua_pushnumber(L, data[3]);
+    lua_settable(L, -3);
+
+    lua_settable(L, -3);
+   
+    return 0;
+}
+
+static void AddTableIndices( lua_State *L, int count, int *indices )
+{
+    lua_newtable(L);
+    int * idxptr = (int *)indices;
+    for (int i=1; i<=count; ++i) {
+        lua_pushnumber(L, i); 
+        lua_pushnumber(L, *idxptr++);
+        lua_rawset(L, -3);
+    }
+}
+
+static void AddTableVertices( lua_State *L, int count, const double *vertices )
+{
+    lua_newtable(L);
+    double * vertptr = (double *)vertices;
+    int idx = 1;
+    for(int ctr = 0; ctr < count; ++ctr) {
+        if(ctr % 4 == 3) { 
+            vertptr++;
+        } else {
+            lua_pushnumber(L, idx++); 
+            lua_pushnumber(L, *vertptr++);
+            lua_rawset(L, -3);
+        }
+    }
+}
+
+
+static void AddTableUVs( lua_State *L, int count, const double *uvs )
+{
+    lua_newtable(L);
+    double * uvsptr = (double *)uvs;
+    for (int i=1; i<=count; ++i) {
+        lua_pushnumber(L, i); 
+        lua_pushnumber(L, *uvsptr++);
+        lua_rawset(L, -3);
+    }
+}
+
+static void AddTableNormals( lua_State *L, int count, const double *normals )
+{
+    lua_newtable(L);
+    double * normptr = (double *)normals;
+    for (int i=1; i<=count; ++i) {
+        lua_pushnumber(L, i); 
+        lua_pushnumber(L, *normptr++);
+        lua_rawset(L, -3);
+    }
+}
+
+
 
 void cb_applyForce(const NewtonBody* const body, dFloat timestep, int threadIndex)
 {
     // Fetch user data and body position.
-//    UserData *mydata = (UserData*)NewtonBodyGetUserData(body);
-//    dFloat pos[4];
-//    NewtonBodyGetPosition(body, pos);
+    //UserData *mydata = (UserData*)NewtonBodyGetUserData(body);
+    //dFloat pos[4];
+    //NewtonBodyGetPosition(body, pos);
 
     // Apply force.
     dFloat force[3] = {0, -9.8, 0};
     NewtonBodySetForce(body, force);
 
     // Print info to terminal.
-//    printf("BodyID=%d, Sleep=%d, %.2f, %.2f, %.2f\n",
-//    mydata->bodyID, NewtonBodyGetSleepState(body), pos[0], pos[1], pos[2]);
+    //printf("BodyID=%d, Sleep=%d, %.2f, %.2f, %.2f\n",
+    //mydata->bodyID, NewtonBodyGetSleepState(body), pos[0], pos[1], pos[2]);
 }
-
 
 static int addCollisionSphere( lua_State * L ) {
 
     double radii = lua_tonumber(L, 1);
     // Collision shapes: sphere (our ball), and large box (our ground plane).
-    NewtonCollision* cs_sphere = NewtonCreateSphere(world, radii, 0, NULL);
-    colls.push_back( cs_sphere );
+    NewtonCollision* cs_object = NewtonCreateSphere(world, radii, Shape_Sphere, NULL);
+    colls.push_back( cs_object );
     lua_pushnumber(L, colls.size()-1);
     return 1;
 }
@@ -52,8 +138,8 @@ static int addCollisionPlane( lua_State * L ) {
     double width = lua_tonumber(L, 1);
     double depth = lua_tonumber(L, 2);
     // Collision shapes: sphere (our ball), and large box (our ground plane).
-    NewtonCollision* cs_ground = NewtonCreateBox(world, width, 0.1, depth, 0, NULL);
-    colls.push_back( cs_ground );
+    NewtonCollision* cs_object = NewtonCreateBox(world, width, 0.1, depth, Shape_Plane, NULL);
+    colls.push_back( cs_object );
     lua_pushnumber(L, colls.size() - 1);
     return 1;
 }
@@ -63,10 +149,76 @@ static int addCollisionCube( lua_State * L ) {
     double sx = lua_tonumber(L, 1);
     double sy = lua_tonumber(L, 2);
     double sz = lua_tonumber(L, 3);
-    NewtonCollision* cs_ground = NewtonCreateBox(world, sx, sy, sz, 0, NULL);
-    colls.push_back( cs_ground );
+    NewtonCollision* cs_object = NewtonCreateBox(world, sx, sy, sz, Shape_Cube, NULL);
+    colls.push_back( cs_object );
     lua_pushnumber(L, colls.size() - 1);
     return 1;
+}
+
+static int addCollisionCone( lua_State * L ) {
+
+    double radius = lua_tonumber(L, 1);
+    double height = lua_tonumber(L, 2);
+    NewtonCollision* cs_object = NewtonCreateCone(world, radius, height, Shape_Cone, NULL);
+    colls.push_back( cs_object );
+    lua_pushnumber(L, colls.size() - 1);
+    return 1;
+}
+
+static int addCollisionCapsule( lua_State * L ) {
+
+    double r0 = lua_tonumber(L, 1);
+    double r1 = lua_tonumber(L, 2);
+    double height = lua_tonumber(L, 3);
+    NewtonCollision* cs_object = NewtonCreateCapsule(world, r0, r1, height, Shape_Capsule, NULL);
+    colls.push_back( cs_object );
+    lua_pushnumber(L, colls.size() - 1);
+    return 1;
+}
+
+static int addCollisionCylinder( lua_State * L ) {
+
+    double r0 = lua_tonumber(L, 1);
+    double r1 = lua_tonumber(L, 2);
+    double height = lua_tonumber(L, 3);
+    NewtonCollision* cs_object = NewtonCreateCylinder(world, r0, r1, height, Shape_Cylinder, NULL);
+    colls.push_back( cs_object );
+    lua_pushnumber(L, colls.size() - 1);
+    return 1;
+}
+
+static int addCollisionChamferCylinder( lua_State * L ) {
+
+    double radius = lua_tonumber(L, 1);
+    double height = lua_tonumber(L, 2);
+    NewtonCollision* cs_object = NewtonCreateChamferCylinder(world, radius, height,Shape_ChamferCylinder, NULL);
+    colls.push_back( cs_object );
+    lua_pushnumber(L, colls.size() - 1);
+    return 1;
+}
+
+static int addCollisionConvexHull( lua_State * L ) {
+
+    double count = lua_tonumber(L, 1);
+    int stride = lua_tonumber(L, 2);
+    double tolerance = lua_tonumber(L, 3);
+    const float *vertCloud = (float *)lua_topointer(L, 4);
+    NewtonCollision* cs_object = NewtonCreateConvexHull(world, count, vertCloud, stride, tolerance, Shape_ConvexHull, NULL);
+    colls.push_back( cs_object );
+    lua_pushnumber(L, colls.size() - 1);
+    return 1;
+}
+
+static int worldRayCast( lua_State *L ) {
+
+    const dFloat *p0= (dFloat *)lua_topointer(L, 1);
+    const dFloat *p1 = (dFloat *)lua_topointer(L, 2);
+    NewtonWorldRayFilterCallback filter_cb = *(NewtonWorldRayFilterCallback *)lua_topointer(L, 3);
+    void * const userData = (void * const)lua_topointer(L, 4);
+    NewtonWorldRayPrefilterCallback prefilter_cb = *(NewtonWorldRayPrefilterCallback *)lua_topointer(L, 5);
+        
+    NewtonWorldRayCast( world, p0, p1, filter_cb, userData, prefilter_cb, 0);
+    return 0;
 }
 
 static int addBody( lua_State *L ) {
@@ -111,27 +263,69 @@ static int Create( lua_State *L )
     return 0;
 }
 
-static int SetTableVector( lua_State *L, dFloat *data, const char *name )
+static int createMeshFromCollision( lua_State *L )
 {
-    lua_pushstring(L, name); 
-    lua_newtable(L);
+    int collindex = lua_tonumber(L, 1);
+    if(collindex < 0 || collindex > colls.size()-1) {
+        lua_pushnil(L);
+        return 1;
+    }
+    const NewtonCollision *collision = colls[collindex];
 
-    lua_pushstring(L, "x"); 
-    lua_pushnumber(L, data[0]);
-    lua_settable(L, -3);
-    lua_pushstring(L, "y"); 
-    lua_pushnumber(L, data[1]);
-    lua_settable(L, -3);
-    lua_pushstring(L, "z"); 
-    lua_pushnumber(L, data[2]);
-    lua_settable(L, -3);
-    lua_pushstring(L, "w"); 
-    lua_pushnumber(L, data[3]);
-    lua_settable(L, -3);
+    NewtonMesh *mesh = NewtonMeshCreateFromCollision( collision );
+    if(mesh) {
+        meshes.push_back(mesh);
+        lua_pushnumber(L, meshes.size() - 1);
+        // save the polygon array
+        int faceCount = NewtonMeshGetTotalFaceCount (mesh); 
+        int indexCount = NewtonMeshGetTotalIndexCount (mesh); 
+        int pointCount = NewtonMeshGetPointCount (mesh);
+        int vertexStride = NewtonMeshGetVertexStrideInByte(mesh) / sizeof (dFloat);
 
-    lua_settable(L, -3);
-   
-    return 0;
+        int* faceArray = new int [faceCount];
+        void** indexArray = new void* [indexCount];
+        int* materialIndexArray = new int [faceCount];
+        int* remapedIndexArray = new int [indexCount];
+        const int *vertexIndexList = NewtonMeshGetIndexToVertexMap(mesh);
+
+        NewtonMeshGetFaces (mesh, faceArray, materialIndexArray, indexArray); 
+        NewtonMeshCalculateVertexNormals( mesh, 1.05f );
+
+        for (int i = 0; i < indexCount; i ++) {
+    //		void* face = indexArray[i];
+            int index = NewtonMeshGetVertexIndex (mesh, indexArray[i]);
+            remapedIndexArray[i] = index;
+        }
+        
+        AddTableIndices(L, indexCount, remapedIndexArray);
+        
+        int vcount = NewtonMeshGetVertexCount(mesh);
+        AddTableVertices(L, vcount * 4, NewtonMeshGetVertexArray(mesh));
+
+        double *uvs = NULL;
+        if (NewtonMeshHasUV0Channel(mesh)) {
+            NewtonMeshGetUV0Channel(mesh, 2 * sizeof (dFloat), (dFloat*)uvs);
+            AddTableUVs( L, pointCount*2, uvs );
+        } else {
+            printf("No UVS in mesh!!\n");
+            lua_newtable(L);
+        }
+    
+        double* normals = NULL;
+        if (NewtonMeshHasNormalChannel(mesh)) {
+            NewtonMeshGetNormalChannel(mesh, 3 * sizeof (dFloat), (dFloat*)normals);
+            AddTableNormals( L, vcount * 3, normals );
+        } else {
+            printf("No Normals in mesh!!\n");
+            lua_newtable(L);
+        }
+
+        return 5;
+    }
+    else {
+        lua_pushnil(L);
+        return 1;
+    }
 }
 
 static int Update( lua_State *L )
@@ -180,10 +374,19 @@ static const luaL_reg Module_methods[] =
     {"create", Create}, 
     {"update", Update}, 
     {"close", Close},
+    
     {"addcollisionplane", addCollisionPlane },
     {"addcollisioncube", addCollisionCube },
     {"addcollisionsphere", addCollisionSphere },
+    {"addcollisioncone", addCollisionCone },
+    {"addcollisioncapsule", addCollisionCapsule },
+    {"addcollisioncylinder", addCollisionCylinder },
+    {"addcollisionchamfercylinder", addCollisionChamferCylinder },
+    {"addcollisionconvexhull", addCollisionConvexHull },
+
     {"addbody", addBody },
+
+    {"createmeshfromcollision", createMeshFromCollision },
     {0, 0}
 };
 
@@ -221,6 +424,9 @@ dmExtension::Result AppFinalizeNewtonExtension(dmExtension::AppParams* params)
 dmExtension::Result FinalizeNewtonExtension(dmExtension::Params* params)
 {
     dmLogInfo("FinalizeNewtonExtension\n");
+    for(size_t i=0; i<meshes.size(); i++)
+        NewtonMeshDestroy(meshes[i]);
+    meshes.clear();
     for(size_t i=0; i<colls.size(); i++)
         NewtonDestroyCollision(colls[i]);
     colls.clear();

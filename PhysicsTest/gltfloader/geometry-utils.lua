@@ -49,6 +49,15 @@ end
 
 ------------------------------------------------------------------------------------------------------------
 
+function geom:GenerateFromMesh(goname, verts, indices, uvs, normals )
+
+	geom:New(goname, 1.0)
+	tinsert(self.meshes, goname)
+	geom:makeMesh( goname, indices, verts, uvs, norms )
+end
+
+------------------------------------------------------------------------------------------------------------
+
 function geom:GenerateCube(goname, sz, d )
 
 	geom:New(goname, 1.0)

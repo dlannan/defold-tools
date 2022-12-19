@@ -8,23 +8,24 @@
         android:installLocation="auto">
 
     <uses-feature android:required="true" android:glEsVersion="0x00020000" />
-    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="29" />
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="31" />
     <application
         
         android:icon="@drawable/icon"
         
         android:label="VerletPhysics" android:hasCode="true"
         android:name="android.support.multidex.MultiDexApplication"
-        android:debuggable="false">
+        android:debuggable="true">
 
         <meta-data android:name="android.max_aspect" android:value="2.1" />
         <meta-data android:name="android.notch_support" android:value="true"/>
 
         <activity android:name="com.dynamo.android.DefoldActivity"
                 android:label="VerletPhysics"
-                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                 android:screenOrientation="landscape"
+                android:exported="true"
                 android:launchMode="singleTask">
             <meta-data android:name="android.app.lib_name"
                     android:value="VerletPhysics" />

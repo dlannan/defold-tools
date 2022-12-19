@@ -13,7 +13,7 @@ local camdrive		= require("utils.camera-drive")
 local groundsize 	= 100
 local pdatasize		= groundsize
 
-local physics 		= require("physics.verlet-physics")
+-- local physics 		= require("physics.verlet-physics")
 
 -- --------------------------------------------------------------------------------------------------------
 
@@ -31,16 +31,23 @@ end
 
 function updateBodyObjects( self, bodies )
 
-	local b1 = bodies[self.bodysphere1+1]
-	if(b1) then 
-		go.set_rotation( vmath.quat(b1.rot.x,b1.rot.y,b1.rot.z,b1.rot.w), self.bsphere1)
-		go.set_position( vmath.vector3(b1.pos.x,b1.pos.y,b1.pos.z), self.bsphere1)
+	for k,v in pairs(self.bodies) do
+		local body = bodies[v.index + 1]
+		if body then 
+			go.set_rotation( vmath.quat(body.rot.x,body.rot.y,body.rot.z,body.rot.w), v.geom)
+			go.set_position( vmath.vector3(body.pos.x,body.pos.y,body.pos.z), v.geom)
+		end
 	end
-	local b2 = bodies[self.bodysphere2+1]
-	if(b2) then 
-		go.set_rotation( vmath.quat(b2.rot.x,b2.rot.y,b2.rot.z,b2.rot.w), self.bsphere2)
-		go.set_position( vmath.vector3(b2.pos.x,b2.pos.y,b2.pos.z), self.bsphere2)	
-	end
+	-- local b1 = bodies[self.bodies.sphere1+1]
+	-- if(b1) then 
+	-- 	go.set_rotation( vmath.quat(b1.rot.x,b1.rot.y,b1.rot.z,b1.rot.w), self.bsphere1)
+	-- 	go.set_position( vmath.vector3(b1.pos.x,b1.pos.y,b1.pos.z), self.bsphere1)
+	-- end
+	-- local b2 = bodies[self.bodies.sphere2+1]
+	-- if(b2) then 
+	-- 	go.set_rotation( vmath.quat(b2.rot.x,b2.rot.y,b2.rot.z,b2.rot.w), self.bsphere2)
+	-- 	go.set_position( vmath.vector3(b2.pos.x,b2.pos.y,b2.pos.z), self.bsphere2)	
+	-- end
 end
 
 -- --------------------------------------------------------------------------------------------------------
@@ -59,22 +66,72 @@ function init(self)
 		
 	loadground(self)
 
-	physics.init()
+	-- physics.init()
 	newtonextension.create()
 	self.collground = newtonextension.addcollisionplane(100, 100)
 	self.collsphere = newtonextension.addcollisionsphere(1)
 
-	self.bodyground = newtonextension.addbody(self.collplane, 0,0,0, 0)  -- infinite mass is 0
-	self.bodysphere1 = newtonextension.addbody(self.collsphere, 0.01,10,0, 2)
-	self.bodysphere2 = newtonextension.addbody(self.collsphere, 0,20,0, 1)
+	self.collcube = newtonextension.addcollisioncube(0.5, 0.5, 0.5)
+	self.collcone = newtonextension.addcollisioncone(1, 2)
+	self.collcapsule = newtonextension.addcollisioncapsule(0.5, 0.5, 0.75)
+	self.collcylinder = newtonextension.addcollisioncylinder(0.5, 0.7, 1.0)
+	self.collchamfercylinder = newtonextension.addcollisionchamfercylinder(0.5, 0.6)
+	--self.collconvexhull = newtonextension.addcollisionconvexhull(24, vertcloud)
 
-	self.bsphere1 =  mpool.gettemp( "bodysphere1" )
-	geom:GenerateSphere( self.bsphere1.."#temp", 1, 6)
-	imageutils.loadimage( self.bsphere1.."#temp", "/assets/images/green.png", 0 )
+	self.bodies = {}
+	self.ground = { 
+		index = newtonextension.addbody(self.collplane, 0,0,0, 0),
+		coll = self.collplane,
+		name = "plane",
+	}  -- infinite mass is 0
+	self.bodies.sphere1 = 
+	{ 
+		index = newtonextension.addbody(self.collsphere, 0.01,10,0, 2),
+		coll = self.collsphere ,
+		name = "sphere1",
+	}
+	self.bodies.sphere2 = { 
+		index = newtonextension.addbody(self.collsphere, 0,20,0, 1),
+		coll = self.collsphere ,
+		name = "sphere2",	
+	}
 
-	self.bsphere2 = mpool.gettemp( "bodysphere2" )
-	geom:GenerateSphere( self.bsphere2.."#temp", 1, 6 )
-	imageutils.loadimage( self.bsphere2.."#temp", "/assets/images/green.png", 0 )
+	self.bodies.cube = { 
+		index = newtonextension.addbody(self.collcube, 5,20,0, 2),
+		coll = self.collcube,
+		name = "cube",
+	}
+	self.bodies.cone = { 
+		index = newtonextension.addbody(self.collcone, 4,20,0, 3) ,
+		coll = self.collcone,
+		name = "cone",
+	}
+	self.bodies.capsule = { 
+		index = newtonextension.addbody(self.collcapsule, 6,20,4, 1) ,
+		coll = self.collcapsule,
+		name = "capsule",
+	}
+	self.bodies.cylinder = { 
+		index = newtonextension.addbody(self.collcylinder, 7,20,5, 1),
+		coll = self.collcylinder,
+		name = "cylinder",
+	}
+	self.bodies.chamfercylinder = { 
+		index = newtonextension.addbody(self.collchamfercylinder, 8,20,6, 1) ,
+		coll = self.collchamfercylinder,
+		name = "chamfercylinder",
+	}
+
+	local id = 1
+	for k,v in pairs(self.bodies) do 
+		print(k)
+		id = id + 1
+		v.geom =  mpool.gettemp( v.name )
+		local mid, indices, verts, uvs, normals = newtonextension.createmeshfromcollision( v.coll )
+		v.meshname = v.geom.."#temp"
+		geom:GenerateFromMesh( v.meshname, verts, indices, uvs, normals )
+		imageutils.loadimage( v.meshname, "/assets/images/green.png", 0 )	
+	end 
 
 	camdrive.init("/camera")
 			
@@ -161,7 +218,7 @@ function update(self, delta)
 	updateBodyObjects( self, bodies )
 	
 	camdrive.update(self, diff)
-	physics.updateall( objhandler, diff)
+	-- physics.updateall( objhandler, diff)
 
 	local radA = os.clock() * self.time_speed
 	--self.light = vmath.vector4( math.cos(radA) * 200.0, math.sin(radA) * 200, 0.0, 0.0)
