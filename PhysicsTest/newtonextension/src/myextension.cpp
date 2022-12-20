@@ -276,6 +276,8 @@ static int createMeshFromCollision( lua_State *L )
         lua_pushnil(L);
         return 1;
     }
+
+    int mapping = lua_tonumber(L, 2);
     const NewtonCollision *collision = colls[collindex];
 
     NewtonMesh *mesh = NewtonMeshCreateFromCollision( collision );
@@ -301,17 +303,22 @@ static int createMeshFromCollision( lua_State *L )
         memset (uvs, 0, 2 * indexCount * sizeof (dFloat));
 
         dMatrix aligmentUV(dGetIdentityMatrix());
-        NewtonMeshApplySphericalMapping(mesh, 0, &aligmentUV[0][0]);
+        if(mapping == 1)
+            NewtonMeshApplySphericalMapping(mesh, 0, &aligmentUV[0][0]);
+        else if(mapping == 2)
+            NewtonMeshApplyCylindricalMapping(mesh, 0, 0, &aligmentUV[0][0]);
+        else
+            NewtonMeshApplyBoxMapping(mesh, 0, 0, 0, &aligmentUV[0][0]);
+       
 
         int* faceArray = new int [faceCount];
         void** indexArray = new void* [indexCount];
         int* materialIndexArray = new int [faceCount];
         int* remapedIndexArray = new int [indexCount];
                  
-//         // const int *vertexIndexList = NewtonMeshGetIndexToVertexMap(mesh);
-         NewtonMeshGetFaces (mesh, faceArray, materialIndexArray, indexArray); 
-         NewtonMeshGetUV0Channel(mesh, 2 * sizeof (dFloat), uvs);
-         NewtonMeshGetNormalChannel(mesh, 3 * sizeof (dFloat), normals);
+        NewtonMeshGetFaces (mesh, faceArray, materialIndexArray, indexArray); 
+        NewtonMeshGetUV0Channel(mesh, 2 * sizeof (dFloat), uvs);
+        NewtonMeshGetNormalChannel(mesh, 3 * sizeof (dFloat), normals);
         
         for (int i = 0; i < indexCount; i ++) {
 
@@ -330,9 +337,9 @@ static int createMeshFromCollision( lua_State *L )
         AddTableNormals( L, indexCount * 3, normals );
 
         // Cleanup
-        // delete [] faceArray;
-        // delete [] indexArray;
-        // delete [] materialIndexArray;
+        delete [] faceArray;
+        delete [] indexArray;
+        delete [] materialIndexArray;
         delete [] remapedIndexArray;
 
         return 5;

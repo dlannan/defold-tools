@@ -1,30 +1,30 @@
-aapt2 compile /tmp/job7029712380139174515/upload/packages/com.defold.android/res/drawable-xxxhdpi/icon.png -o /tmp/job7029712380139174515/build/compiledResources/com.defold.android
+aapt2 compile /tmp/job8834036043345353061/upload/packages/com.defold.android/res/drawable-xxxhdpi/icon.png -o /tmp/job8834036043345353061/build/compiledResources/com.defold.android
 
-aapt2 compile /tmp/job7029712380139174515/upload/packages/com.defold.android/res/drawable-hdpi/icon.png -o /tmp/job7029712380139174515/build/compiledResources/com.defold.android
+aapt2 compile /tmp/job8834036043345353061/upload/packages/com.defold.android/res/drawable-hdpi/icon.png -o /tmp/job8834036043345353061/build/compiledResources/com.defold.android
 
-aapt2 compile /tmp/job7029712380139174515/upload/packages/com.defold.android/res/drawable-ldpi/icon.png -o /tmp/job7029712380139174515/build/compiledResources/com.defold.android
+aapt2 compile /tmp/job8834036043345353061/upload/packages/com.defold.android/res/drawable-ldpi/icon.png -o /tmp/job8834036043345353061/build/compiledResources/com.defold.android
 
-aapt2 compile /tmp/job7029712380139174515/upload/packages/com.defold.android/res/drawable-xhdpi/icon.png -o /tmp/job7029712380139174515/build/compiledResources/com.defold.android
+aapt2 compile /tmp/job8834036043345353061/upload/packages/com.defold.android/res/drawable-xhdpi/icon.png -o /tmp/job8834036043345353061/build/compiledResources/com.defold.android
 
-aapt2 compile /tmp/job7029712380139174515/upload/packages/com.defold.android/res/drawable-xxhdpi/icon.png -o /tmp/job7029712380139174515/build/compiledResources/com.defold.android
+aapt2 compile /tmp/job8834036043345353061/upload/packages/com.defold.android/res/drawable-xxhdpi/icon.png -o /tmp/job8834036043345353061/build/compiledResources/com.defold.android
 
-aapt2 compile /tmp/job7029712380139174515/upload/packages/com.defold.android/res/drawable-mdpi/icon.png -o /tmp/job7029712380139174515/build/compiledResources/com.defold.android
+aapt2 compile /tmp/job8834036043345353061/upload/packages/com.defold.android/res/drawable-mdpi/icon.png -o /tmp/job8834036043345353061/build/compiledResources/com.defold.android
 
-aapt2 link  --proto-format --non-final-ids --auto-add-overlay --manifest /tmp/job7029712380139174515/build/AndroidManifest.xml -I /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/android.jar --java /tmp/job7029712380139174515/build/out_java -o /tmp/job7029712380139174515/build/compiledresources.apk --emit-ids /tmp/job7029712380139174515/build/resource_ids.txt -R @/tmp/job7029712380139174515/build/compiledresources.txt
+aapt2 link  --proto-format --non-final-ids --auto-add-overlay --manifest /tmp/job8834036043345353061/build/AndroidManifest.xml -I /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/android.jar --java /tmp/job8834036043345353061/build/out_java -o /tmp/job8834036043345353061/build/compiledresources.apk --emit-ids /tmp/job8834036043345353061/build/resource_ids.txt -R @/tmp/job8834036043345353061/build/compiledresources.txt
 
-javac -source 1.8 -target 1.8 -J-Xms2048m -J-Xmx2048m -classpath /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/android.jar:/tmp/job7029712380139174515/build/tmp0rjava/classes -d /tmp/job7029712380139174515/build/tmp0rjava/classes @/tmp/job7029712380139174515/build/tmp0rjava/sources.txt
+javac -source 1.8 -target 1.8 -J-Xms2048m -J-Xmx2048m -classpath /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/android.jar:/tmp/job8834036043345353061/build/tmp0rjava/classes -d /tmp/job8834036043345353061/build/tmp0rjava/classes @/tmp/job8834036043345353061/build/tmp0rjava/sources.txt
 warning: [options] bootstrap class path not set in conjunction with -source 8
 1 warning
 
-jar cf /tmp/job7029712380139174515/build/tmp0rjava/R.jar -C /tmp/job7029712380139174515/build/tmp0rjava/classes .
+jar cf /tmp/job8834036043345353061/build/tmp0rjava/R.jar -C /tmp/job8834036043345353061/build/tmp0rjava/classes .
 
-d8 --main-dex-list /tmp/job7029712380139174515/build/main_dex_list.txt --output /tmp/job7029712380139174515/build --release --lib /opt/platformsdk/android/android-sdk-linux/platforms/android-31/android.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/android-support-multidex.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/androidx-multidex.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//share/java/glfw_android.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//share/java/gamesys_android.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//share/java/sound_android.jar /tmp/job7029712380139174515/build/tmp0rjava/R.jar 
-Warning in /tmp/job7029712380139174515/build/main_dex_list.txt:
+d8 --main-dex-list /tmp/job8834036043345353061/build/main_dex_list.txt --output /tmp/job8834036043345353061/build --release --lib /opt/platformsdk/android/android-sdk-linux/platforms/android-31/android.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/android-support-multidex.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/share/java/androidx-multidex.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//share/java/glfw_android.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//share/java/gamesys_android.jar /var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//share/java/sound_android.jar /tmp/job8834036043345353061/build/tmp0rjava/R.jar 
+Warning in /tmp/job8834036043345353061/build/main_dex_list.txt:
   Unsupported usage of main-dex list. The usage of main-dex-list content for the compilation of non-DEX inputs is deprecated. See issue https://issuetracker.google.com/181858113 for context.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="GEOMEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/geomextension/include -Ibuild/geomextension/ -Iupload/ -Iupload/newtonextension/include/  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/geomextension/src/myextension.cpp -obuild/myextension.cpp_1.o
 
-aarch64-linux-android-ar rcs /tmp/job7029712380139174515/build/libGeomExtension_2.a build/myextension.cpp_1.o 
+aarch64-linux-android-ar rcs /tmp/job8834036043345353061/build/libGeomExtension_2.a build/myextension.cpp_1.o 
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dBaseHierarchy.cpp -obuild/dBaseHierarchy.cpp_3.o
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dBezierSpline.cpp -obuild/dBezierSpline.cpp_4.o
@@ -45,7 +45,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomCorkScrew.cpp -obuild/dCustomCorkScrew.cpp_11.o
-In file included from upload/newtonextension/src/dCRC.cpp:12:
+In file included from upload/newtonextension/src/dClassInfo.cpp:14:
 In file included from upload/newtonextension/include/dContainersStdAfx.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
@@ -56,7 +56,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomDoubleHinge.cpp -obuild/dCustomDoubleHinge.cpp_12.o
-In file included from upload/newtonextension/src/dBaseHierarchy.cpp:12:
+In file included from upload/newtonextension/src/dCRC.cpp:12:
 In file included from upload/newtonextension/include/dContainersStdAfx.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
@@ -67,17 +67,6 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomDoubleHingeActuator.cpp -obuild/dCustomDoubleHingeActuator.cpp_13.o
-In file included from upload/newtonextension/src/dContainersAlloc.cpp:22:
-In file included from upload/newtonextension/include/dContainersStdAfx.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomDryRollingFriction.cpp -obuild/dCustomDryRollingFriction.cpp_14.o
 In file included from upload/newtonextension/src/dCustomAlloc.cpp:22:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -89,8 +78,19 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomDryRollingFriction.cpp -obuild/dCustomDryRollingFriction.cpp_14.o
+In file included from upload/newtonextension/src/dBaseHierarchy.cpp:12:
+In file included from upload/newtonextension/include/dContainersStdAfx.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomFixDistance.cpp -obuild/dCustomFixDistance.cpp_15.o
-In file included from upload/newtonextension/src/dClassInfo.cpp:14:
+In file included from upload/newtonextension/src/dContainersAlloc.cpp:22:
 In file included from upload/newtonextension/include/dContainersStdAfx.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
@@ -101,66 +101,6 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomGear.cpp -obuild/dCustomGear.cpp_16.o
-In file included from upload/newtonextension/src/dCustomDryRollingFriction.cpp:16:
-In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomHinge.cpp -obuild/dCustomHinge.cpp_17.o
-In file included from upload/newtonextension/src/dCustomCorkScrew.cpp:16:
-In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomHingeActuator.cpp -obuild/dCustomHingeActuator.cpp_18.o
-In file included from upload/newtonextension/src/dCustomFixDistance.cpp:16:
-In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomJoint.cpp -obuild/dCustomJoint.cpp_19.o
-In file included from upload/newtonextension/src/dCustomDoubleHinge.cpp:15:
-In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomJointLibraryStdAfx.cpp -obuild/dCustomJointLibraryStdAfx.cpp_20.o
-In file included from upload/newtonextension/src/dCustomDoubleHingeActuator.cpp:16:
-In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomKinematicController.cpp -obuild/dCustomKinematicController.cpp_21.o
 In file included from upload/newtonextension/src/dCustomBallAndSocket.cpp:16:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -172,8 +112,68 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomHinge.cpp -obuild/dCustomHinge.cpp_17.o
+In file included from upload/newtonextension/src/dCustomDryRollingFriction.cpp:16:
+In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomHingeActuator.cpp -obuild/dCustomHingeActuator.cpp_18.o
+In file included from upload/newtonextension/src/dCustomCorkScrew.cpp:16:
+In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomJoint.cpp -obuild/dCustomJoint.cpp_19.o
+In file included from upload/newtonextension/src/dCustomDoubleHingeActuator.cpp:16:
+In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomJointLibraryStdAfx.cpp -obuild/dCustomJointLibraryStdAfx.cpp_20.o
+In file included from upload/newtonextension/src/dCustomFixDistance.cpp:16:
+In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomKinematicController.cpp -obuild/dCustomKinematicController.cpp_21.o
+In file included from upload/newtonextension/src/dCustomDoubleHinge.cpp:15:
+In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomListener.cpp -obuild/dCustomListener.cpp_22.o
-In file included from upload/newtonextension/src/dCustomJointLibraryStdAfx.cpp:17:
+In file included from upload/newtonextension/src/dCustomGear.cpp:13:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -185,7 +185,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomMotor.cpp -obuild/dCustomMotor.cpp_23.o
-In file included from upload/newtonextension/src/dCustomHingeActuator.cpp:22:
+In file included from upload/newtonextension/src/dCustomJointLibraryStdAfx.cpp:17:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -197,7 +197,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomPathFollow.cpp -obuild/dCustomPathFollow.cpp_24.o
-In file included from upload/newtonextension/src/dCustomGear.cpp:13:
+In file included from upload/newtonextension/src/dCustomHingeActuator.cpp:22:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -256,6 +256,18 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomSlider.cpp -obuild/dCustomSlider.cpp_29.o
+In file included from upload/newtonextension/src/dCustomPathFollow.cpp:16:
+In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomSliderActuator.cpp -obuild/dCustomSliderActuator.cpp_30.o
 In file included from upload/newtonextension/src/dCustomKinematicController.cpp:16:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -270,8 +282,8 @@ upload/newtonextension/src/dCustomKinematicController.cpp:132:11: warning: enume
                         ^
 2 warnings generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomSliderActuator.cpp -obuild/dCustomSliderActuator.cpp_30.o
-In file included from upload/newtonextension/src/dCustomPathFollow.cpp:16:
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomSlidingContact.cpp -obuild/dCustomSlidingContact.cpp_31.o
+In file included from upload/newtonextension/src/dCustomMotor.cpp:17:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -282,7 +294,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomSlidingContact.cpp -obuild/dCustomSlidingContact.cpp_31.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomTriggerManager.cpp -obuild/dCustomTriggerManager.cpp_32.o
 In file included from upload/newtonextension/src/dCustomPlane.cpp:16:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -297,20 +309,8 @@ upload/newtonextension/src/dCustomPlane.cpp:41:28: warning: expression result un
                                   ^~~~
 2 warnings generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomTriggerManager.cpp -obuild/dCustomTriggerManager.cpp_32.o
-In file included from upload/newtonextension/src/dCustomMotor.cpp:17:
-In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomUpVector.cpp -obuild/dCustomUpVector.cpp_33.o
-In file included from upload/newtonextension/src/dCustomPulley.cpp:16:
+In file included from upload/newtonextension/src/dCustomRackAndPinion.cpp:15:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -322,7 +322,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dCustomWheel.cpp -obuild/dCustomWheel.cpp_34.o
-In file included from upload/newtonextension/src/dCustomRackAndPinion.cpp:15:
+In file included from upload/newtonextension/src/dCustomPulley.cpp:16:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -345,18 +345,6 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgAABBPolygonSoup.cpp -obuild/dgAABBPolygonSoup.cpp_36.o
-In file included from upload/newtonextension/src/dCustomSlider.cpp:17:
-In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgBallConstraint.cpp -obuild/dgBallConstraint.cpp_37.o
 In file included from upload/newtonextension/src/dCustomUpVector.cpp:17:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -368,8 +356,20 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgBilateralConstraint.cpp -obuild/dgBilateralConstraint.cpp_38.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgBallConstraint.cpp -obuild/dgBallConstraint.cpp_37.o
 In file included from upload/newtonextension/src/dCustomSliderActuator.cpp:15:
+In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgBilateralConstraint.cpp -obuild/dgBilateralConstraint.cpp_38.o
+In file included from upload/newtonextension/src/dCustomSlider.cpp:17:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -393,7 +393,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgBodyMasterList.cpp -obuild/dgBodyMasterList.cpp_40.o
-In file included from upload/newtonextension/src/dCustomSixdof.cpp:14:
+In file included from upload/newtonextension/src/dCustomWheel.cpp:13:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -405,7 +405,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgBroadPhase.cpp -obuild/dgBroadPhase.cpp_41.o
-In file included from upload/newtonextension/src/dCustomWheel.cpp:13:
+In file included from upload/newtonextension/src/dCustomSixdof.cpp:14:
 In file included from upload/newtonextension/include/dCustomJointLibraryStdAfx.h:57:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -620,7 +620,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgCollisionHeightField.cpp -obuild/dgCollisionHeightField.cpp_59.o
-In file included from upload/newtonextension/src/dgCollisionCylinder.cpp:22:
+In file included from upload/newtonextension/src/dgCollisionDeformableMesh.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -632,7 +632,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgCollisionIncompressibleParticles.cpp -obuild/dgCollisionIncompressibleParticles.cpp_60.o
-In file included from upload/newtonextension/src/dgCollisionDeformableMesh.cpp:22:
+In file included from upload/newtonextension/src/dgCollisionCylinder.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -716,7 +716,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgCollisionSphere.cpp -obuild/dgCollisionSphere.cpp_67.o
-In file included from upload/newtonextension/src/dgCollisionCompoundFractured.cpp:22:
+In file included from upload/newtonextension/src/dgCollisionMassSpringDamperSystem.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -728,7 +728,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgCollisionUserMesh.cpp -obuild/dgCollisionUserMesh.cpp_68.o
-In file included from upload/newtonextension/src/dgCollisionMassSpringDamperSystem.cpp:22:
+In file included from upload/newtonextension/src/dgCollisionCompoundFractured.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -824,8 +824,9 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgDebug.cpp -obuild/dgDebug.cpp_76.o
-In file included from upload/newtonextension/src/dgCRC.cpp:22:
-In file included from upload/newtonextension/include/dgStdafx.h:25:
+In file included from upload/newtonextension/src/dgCollisionUserMesh.cpp:22:
+In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
+In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -835,9 +836,8 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgDelaunayTetrahedralization.cpp -obuild/dgDelaunayTetrahedralization.cpp_77.o
-In file included from upload/newtonextension/src/dgCollisionUserMesh.cpp:22:
-In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
-In file included from upload/newtonextension/include/dg.h:25:
+In file included from upload/newtonextension/src/dgCRC.cpp:22:
+In file included from upload/newtonextension/include/dgStdafx.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -961,6 +961,17 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgMeshEffect2.cpp -obuild/dgMeshEffect2.cpp_88.o
+In file included from upload/newtonextension/src/dgConvexHull4d.cpp:22:
+In file included from upload/newtonextension/include/dgStdafx.h:25:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgMeshEffect3.cpp -obuild/dgMeshEffect3.cpp_89.o
 In file included from upload/newtonextension/src/dgContactSolver.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
@@ -972,21 +983,10 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgMeshEffect3.cpp -obuild/dgMeshEffect3.cpp_89.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgMeshEffect4.cpp -obuild/dgMeshEffect4.cpp_90.o
 In file included from upload/newtonextension/src/dgCollisionCompound.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgMeshEffect4.cpp -obuild/dgMeshEffect4.cpp_90.o
-In file included from upload/newtonextension/src/dgConvexHull4d.cpp:22:
-In file included from upload/newtonextension/include/dgStdafx.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -1074,9 +1074,8 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgPolygonSoupDatabase.cpp -obuild/dgPolygonSoupDatabase.cpp_98.o
-In file included from upload/newtonextension/src/dgMeshEffect5.cpp:22:
-In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
-In file included from upload/newtonextension/include/dg.h:25:
+In file included from upload/newtonextension/src/dgPolygonSoupDatabase.cpp:28:
+In file included from upload/newtonextension/include/dgStdafx.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -1086,8 +1085,9 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgPolyhedra.cpp -obuild/dgPolyhedra.cpp_99.o
-In file included from upload/newtonextension/src/dgPolygonSoupDatabase.cpp:28:
-In file included from upload/newtonextension/include/dgStdafx.h:25:
+In file included from upload/newtonextension/src/dgMeshEffect5.cpp:22:
+In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
+In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -1164,8 +1164,9 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgSkeletonContainer.cpp -obuild/dgSkeletonContainer.cpp_106.o
-In file included from upload/newtonextension/src/dgRef.cpp:22:
-In file included from upload/newtonextension/include/dgStdafx.h:25:
+In file included from upload/newtonextension/src/dgMeshEffect3.cpp:22:
+In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
+In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -1175,9 +1176,8 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgSlidingConstraint.cpp -obuild/dgSlidingConstraint.cpp_107.o
-In file included from upload/newtonextension/src/dgMeshEffect3.cpp:22:
-In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
-In file included from upload/newtonextension/include/dg.h:25:
+In file included from upload/newtonextension/src/dgRef.cpp:22:
+In file included from upload/newtonextension/include/dgStdafx.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -1199,7 +1199,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgThread.cpp -obuild/dgThread.cpp_109.o
-In file included from upload/newtonextension/src/dgThread.cpp:22:
+In file included from upload/newtonextension/src/dgSmallDeterminant.cpp:22:
 In file included from upload/newtonextension/include/dgStdafx.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
@@ -1210,7 +1210,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgThreadHive.cpp -obuild/dgThreadHive.cpp_110.o
-In file included from upload/newtonextension/src/dgSmallDeterminant.cpp:22:
+In file included from upload/newtonextension/src/dgThread.cpp:22:
 In file included from upload/newtonextension/include/dgStdafx.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
@@ -1266,7 +1266,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgUserConstraint.cpp -obuild/dgUserConstraint.cpp_115.o
-In file included from upload/newtonextension/src/dgUniversalConstraint.cpp:22:
+In file included from upload/newtonextension/src/dgUpVectorConstraint.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -1278,7 +1278,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgWorld.cpp -obuild/dgWorld.cpp_116.o
-In file included from upload/newtonextension/src/dgUpVectorConstraint.cpp:22:
+In file included from upload/newtonextension/src/dgUniversalConstraint.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -1314,9 +1314,8 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgWorldDynamicUpdate.cpp -obuild/dgWorldDynamicUpdate.cpp_119.o
-In file included from upload/newtonextension/src/dgSkeletonContainer.cpp:22:
-In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
-In file included from upload/newtonextension/include/dg.h:25:
+In file included from upload/newtonextension/src/dgPolygonSoupBuilder.cpp:27:
+In file included from upload/newtonextension/include/dgStdafx.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -1326,8 +1325,9 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dgWorldPlugins.cpp -obuild/dgWorldPlugins.cpp_120.o
-In file included from upload/newtonextension/src/dgPolygonSoupBuilder.cpp:27:
-In file included from upload/newtonextension/include/dgStdafx.h:25:
+In file included from upload/newtonextension/src/dgSkeletonContainer.cpp:22:
+In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
+In file included from upload/newtonextension/include/dg.h:25:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
         #define __ANDROID__
                 ^
@@ -1388,18 +1388,6 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonAlloc.cpp -obuild/dNewtonAlloc.cpp_127.o
-In file included from upload/newtonextension/src/dNewtonActuatorJoints.cpp:22:
-In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonBody.cpp -obuild/dNewtonBody.cpp_128.o
 In file included from upload/newtonextension/src/dNewtonAlloc.cpp:22:
 In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -1411,9 +1399,19 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonCollision.cpp -obuild/dNewtonCollision.cpp_129.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonBody.cpp -obuild/dNewtonBody.cpp_128.o
+In file included from upload/newtonextension/src/dNewtonActuatorJoints.cpp:22:
+In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonDynamicBody.cpp -obuild/dNewtonDynamicBody.cpp_130.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonCollision.cpp -obuild/dNewtonCollision.cpp_129.o
 In file included from upload/newtonextension/src/dgWorldDynamicUpdate.cpp:22:
 In file included from upload/newtonextension/include/dgPhysicsStdafx.h:35:
 In file included from upload/newtonextension/include/dg.h:25:
@@ -1424,6 +1422,8 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 #define __ANDROID__ 1
         ^
 1 warning generated.
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonDynamicBody.cpp -obuild/dNewtonDynamicBody.cpp_130.o
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonJoint.cpp -obuild/dNewtonJoint.cpp_131.o
 In file included from upload/newtonextension/src/dgWorld.cpp:22:
@@ -1510,18 +1510,6 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
 1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonTransformLerp.cpp -obuild/dNewtonTransformLerp.cpp_138.o
-In file included from upload/newtonextension/src/dNewtonPlayerManager.cpp:22:
-In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonTriggerManager.cpp -obuild/dNewtonTriggerManager.cpp_139.o
 In file included from upload/newtonextension/src/dNewtonMesh.cpp:22:
 In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -1533,8 +1521,8 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dQuaternion.cpp -obuild/dQuaternion.cpp_140.o
-In file included from upload/newtonextension/src/dNewtonRayCast.cpp:22:
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dNewtonTriggerManager.cpp -obuild/dNewtonTriggerManager.cpp_139.o
+In file included from upload/newtonextension/src/dNewtonPlayerManager.cpp:22:
 In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
 In file included from upload/newtonextension/include/Newton.h:29:
 upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
@@ -1545,7 +1533,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dRefCounter.cpp -obuild/dRefCounter.cpp_141.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dQuaternion.cpp -obuild/dQuaternion.cpp_140.o
 In file included from upload/newtonextension/src/dNewtonScopeBuffer.cpp:22:
 In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -1557,9 +1545,19 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dStdAfxMath.cpp -obuild/dStdAfxMath.cpp_142.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dRefCounter.cpp -obuild/dRefCounter.cpp_141.o
+In file included from upload/newtonextension/src/dNewtonRayCast.cpp:22:
+In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dStdAfxNewton.cpp -obuild/dStdAfxNewton.cpp_143.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dStdAfxMath.cpp -obuild/dStdAfxMath.cpp_142.o
 In file included from upload/newtonextension/src/dNewtonCollision.cpp:22:
 In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -1571,30 +1569,7 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dString.cpp -obuild/dString.cpp_144.o
-In file included from upload/newtonextension/src/dRefCounter.cpp:12:
-In file included from upload/newtonextension/include/dContainersStdAfx.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dTree.cpp -obuild/dTree.cpp_145.o
-In file included from upload/newtonextension/src/dNewtonTriggerManager.cpp:22:
-In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
-In file included from upload/newtonextension/include/Newton.h:29:
-upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
-        #define __ANDROID__
-                ^
-<built-in>:394:9: note: previous definition is here
-#define __ANDROID__ 1
-        ^
-1 warning generated.
-
-aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dVector.cpp -obuild/dVector.cpp_146.o
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dStdAfxNewton.cpp -obuild/dStdAfxNewton.cpp_143.o
 In file included from upload/newtonextension/src/dNewtonTransformLerp.cpp:22:
 In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
 In file included from upload/newtonextension/include/Newton.h:29:
@@ -1606,7 +1581,32 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dString.cpp -obuild/dString.cpp_144.o
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dTree.cpp -obuild/dTree.cpp_145.o
+
+aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/dVector.cpp -obuild/dVector.cpp_146.o
+In file included from upload/newtonextension/src/dRefCounter.cpp:12:
+In file included from upload/newtonextension/include/dContainersStdAfx.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
+
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/myextension.cpp -obuild/myextension.cpp_147.o
+In file included from upload/newtonextension/src/dNewtonTriggerManager.cpp:22:
+In file included from upload/newtonextension/include/dStdAfxNewton.h:49:
+In file included from upload/newtonextension/include/Newton.h:29:
+upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro redefined [-Wmacro-redefined]
+        #define __ANDROID__
+                ^
+<built-in>:394:9: note: previous definition is here
+#define __ANDROID__ 1
+        ^
+1 warning generated.
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  upload/newtonextension/src/Newton.cpp -obuild/Newton.cpp_148.o
 
@@ -1696,9 +1696,9 @@ upload/newtonextension/include/dgTypes.h:128:10: warning: '__ANDROID__' macro re
         ^
 1 warning generated.
 
-aarch64-linux-android-ar rcs /tmp/job7029712380139174515/build/libNewtonExtension_4.a build/dBaseHierarchy.cpp_3.o build/dBezierSpline.cpp_4.o build/dClassInfo.cpp_5.o build/dContainersAlloc.cpp_6.o build/dContainersStdAfx.cpp_7.o build/dCRC.cpp_8.o build/dCustomAlloc.cpp_9.o build/dCustomBallAndSocket.cpp_10.o build/dCustomCorkScrew.cpp_11.o build/dCustomDoubleHinge.cpp_12.o build/dCustomDoubleHingeActuator.cpp_13.o build/dCustomDryRollingFriction.cpp_14.o build/dCustomFixDistance.cpp_15.o build/dCustomGear.cpp_16.o build/dCustomHinge.cpp_17.o build/dCustomHingeActuator.cpp_18.o build/dCustomJoint.cpp_19.o build/dCustomJointLibraryStdAfx.cpp_20.o build/dCustomKinematicController.cpp_21.o build/dCustomListener.cpp_22.o build/dCustomMotor.cpp_23.o build/dCustomPathFollow.cpp_24.o build/dCustomPlane.cpp_25.o build/dCustomPulley.cpp_26.o build/dCustomRackAndPinion.cpp_27.o build/dCustomSixdof.cpp_28.o build/dCustomSlider.cpp_29.o build/dCustomSliderActuator.cpp_30.o build/dCustomSlidingContact.cpp_31.o build/dCustomTriggerManager.cpp_32.o build/dCustomUpVector.cpp_33.o build/dCustomWheel.cpp_34.o build/dg.cpp_35.o build/dgAABBPolygonSoup.cpp_36.o build/dgBallConstraint.cpp_37.o build/dgBilateralConstraint.cpp_38.o build/dgBody.cpp_39.o build/dgBodyMasterList.cpp_40.o build/dgBroadPhase.cpp_41.o build/dgBroadPhaseAggregate.cpp_42.o build/dgBroadPhaseMixed.cpp_43.o build/dgBroadPhaseSegregated.cpp_44.o build/dgCollision.cpp_45.o build/dgCollisionBox.cpp_46.o build/dgCollisionBVH.cpp_47.o build/dgCollisionCapsule.cpp_48.o build/dgCollisionChamferCylinder.cpp_49.o build/dgCollisionCompound.cpp_50.o build/dgCollisionCompoundFractured.cpp_51.o build/dgCollisionCone.cpp_52.o build/dgCollisionConvex.cpp_53.o build/dgCollisionConvexHull.cpp_54.o build/dgCollisionConvexPolygon.cpp_55.o build/dgCollisionCylinder.cpp_56.o build/dgCollisionDeformableMesh.cpp_57.o build/dgCollisionDeformableSolidMesh.cpp_58.o build/dgCollisionHeightField.cpp_59.o build/dgCollisionIncompressibleParticles.cpp_60.o build/dgCollisionInstance.cpp_61.o build/dgCollisionLumpedMassParticles.cpp_62.o build/dgCollisionMassSpringDamperSystem.cpp_63.o build/dgCollisionMesh.cpp_64.o build/dgCollisionNull.cpp_65.o build/dgCollisionScene.cpp_66.o build/dgCollisionSphere.cpp_67.o build/dgCollisionUserMesh.cpp_68.o build/dgConstraint.cpp_69.o build/dgContact.cpp_70.o build/dgContactSolver.cpp_71.o build/dgConvexHull3d.cpp_72.o build/dgConvexHull4d.cpp_73.o build/dgCorkscrewConstraint.cpp_74.o build/dgCRC.cpp_75.o build/dgDebug.cpp_76.o build/dgDelaunayTetrahedralization.cpp_77.o build/dgDynamicBody.cpp_78.o build/dgGeneralMatrix.cpp_79.o build/dgGeneralVector.cpp_80.o build/dgGoogol.cpp_81.o build/dgHingeConstraint.cpp_82.o build/dgIntersections.cpp_83.o build/dgKinematicBody.cpp_84.o build/dgMatrix.cpp_85.o build/dgMemory.cpp_86.o build/dgMeshEffect1.cpp_87.o build/dgMeshEffect2.cpp_88.o build/dgMeshEffect3.cpp_89.o build/dgMeshEffect4.cpp_90.o build/dgMeshEffect5.cpp_91.o build/dgMeshEffect6.cpp_92.o build/dgMutexThread.cpp_93.o build/dgNarrowPhaseCollision.cpp_94.o build/dgNode.cpp_95.o build/dgObb.cpp_96.o build/dgPolygonSoupBuilder.cpp_97.o build/dgPolygonSoupDatabase.cpp_98.o build/dgPolyhedra.cpp_99.o build/dgPolyhedraMassProperties.cpp_100.o build/dgProfiler.cpp_101.o build/dgQuaternion.cpp_102.o build/dgRandom.cpp_103.o build/dgRef.cpp_104.o build/dgRefCounter.cpp_105.o build/dgSkeletonContainer.cpp_106.o build/dgSlidingConstraint.cpp_107.o build/dgSmallDeterminant.cpp_108.o build/dgThread.cpp_109.o build/dgThreadHive.cpp_110.o build/dgTree.cpp_111.o build/dgTypes.cpp_112.o build/dgUniversalConstraint.cpp_113.o build/dgUpVectorConstraint.cpp_114.o build/dgUserConstraint.cpp_115.o build/dgWorld.cpp_116.o build/dgWorldDynamicsParallelSolver.cpp_117.o build/dgWorldDynamicsSimpleSolver.cpp_118.o build/dgWorldDynamicUpdate.cpp_119.o build/dgWorldPlugins.cpp_120.o build/dLinearAlgebra.cpp_121.o build/dMaterialPairManager.cpp_122.o build/dMathDefines.cpp_123.o build/dMatrix.cpp_124.o build/dNewton.cpp_125.o build/dNewtonActuatorJoints.cpp_126.o build/dNewtonAlloc.cpp_127.o build/dNewtonBody.cpp_128.o build/dNewtonCollision.cpp_129.o build/dNewtonDynamicBody.cpp_130.o build/dNewtonJoint.cpp_131.o build/dNewtonKinematicBody.cpp_132.o build/dNewtonMaterial.cpp_133.o build/dNewtonMesh.cpp_134.o build/dNewtonPlayerManager.cpp_135.o build/dNewtonRayCast.cpp_136.o build/dNewtonScopeBuffer.cpp_137.o build/dNewtonTransformLerp.cpp_138.o build/dNewtonTriggerManager.cpp_139.o build/dQuaternion.cpp_140.o build/dRefCounter.cpp_141.o build/dStdAfxMath.cpp_142.o build/dStdAfxNewton.cpp_143.o build/dString.cpp_144.o build/dTree.cpp_145.o build/dVector.cpp_146.o build/myextension.cpp_147.o build/Newton.cpp_148.o build/NewtonClass.cpp_149.o 
+aarch64-linux-android-ar rcs /tmp/job8834036043345353061/build/libNewtonExtension_4.a build/dBaseHierarchy.cpp_3.o build/dBezierSpline.cpp_4.o build/dClassInfo.cpp_5.o build/dContainersAlloc.cpp_6.o build/dContainersStdAfx.cpp_7.o build/dCRC.cpp_8.o build/dCustomAlloc.cpp_9.o build/dCustomBallAndSocket.cpp_10.o build/dCustomCorkScrew.cpp_11.o build/dCustomDoubleHinge.cpp_12.o build/dCustomDoubleHingeActuator.cpp_13.o build/dCustomDryRollingFriction.cpp_14.o build/dCustomFixDistance.cpp_15.o build/dCustomGear.cpp_16.o build/dCustomHinge.cpp_17.o build/dCustomHingeActuator.cpp_18.o build/dCustomJoint.cpp_19.o build/dCustomJointLibraryStdAfx.cpp_20.o build/dCustomKinematicController.cpp_21.o build/dCustomListener.cpp_22.o build/dCustomMotor.cpp_23.o build/dCustomPathFollow.cpp_24.o build/dCustomPlane.cpp_25.o build/dCustomPulley.cpp_26.o build/dCustomRackAndPinion.cpp_27.o build/dCustomSixdof.cpp_28.o build/dCustomSlider.cpp_29.o build/dCustomSliderActuator.cpp_30.o build/dCustomSlidingContact.cpp_31.o build/dCustomTriggerManager.cpp_32.o build/dCustomUpVector.cpp_33.o build/dCustomWheel.cpp_34.o build/dg.cpp_35.o build/dgAABBPolygonSoup.cpp_36.o build/dgBallConstraint.cpp_37.o build/dgBilateralConstraint.cpp_38.o build/dgBody.cpp_39.o build/dgBodyMasterList.cpp_40.o build/dgBroadPhase.cpp_41.o build/dgBroadPhaseAggregate.cpp_42.o build/dgBroadPhaseMixed.cpp_43.o build/dgBroadPhaseSegregated.cpp_44.o build/dgCollision.cpp_45.o build/dgCollisionBox.cpp_46.o build/dgCollisionBVH.cpp_47.o build/dgCollisionCapsule.cpp_48.o build/dgCollisionChamferCylinder.cpp_49.o build/dgCollisionCompound.cpp_50.o build/dgCollisionCompoundFractured.cpp_51.o build/dgCollisionCone.cpp_52.o build/dgCollisionConvex.cpp_53.o build/dgCollisionConvexHull.cpp_54.o build/dgCollisionConvexPolygon.cpp_55.o build/dgCollisionCylinder.cpp_56.o build/dgCollisionDeformableMesh.cpp_57.o build/dgCollisionDeformableSolidMesh.cpp_58.o build/dgCollisionHeightField.cpp_59.o build/dgCollisionIncompressibleParticles.cpp_60.o build/dgCollisionInstance.cpp_61.o build/dgCollisionLumpedMassParticles.cpp_62.o build/dgCollisionMassSpringDamperSystem.cpp_63.o build/dgCollisionMesh.cpp_64.o build/dgCollisionNull.cpp_65.o build/dgCollisionScene.cpp_66.o build/dgCollisionSphere.cpp_67.o build/dgCollisionUserMesh.cpp_68.o build/dgConstraint.cpp_69.o build/dgContact.cpp_70.o build/dgContactSolver.cpp_71.o build/dgConvexHull3d.cpp_72.o build/dgConvexHull4d.cpp_73.o build/dgCorkscrewConstraint.cpp_74.o build/dgCRC.cpp_75.o build/dgDebug.cpp_76.o build/dgDelaunayTetrahedralization.cpp_77.o build/dgDynamicBody.cpp_78.o build/dgGeneralMatrix.cpp_79.o build/dgGeneralVector.cpp_80.o build/dgGoogol.cpp_81.o build/dgHingeConstraint.cpp_82.o build/dgIntersections.cpp_83.o build/dgKinematicBody.cpp_84.o build/dgMatrix.cpp_85.o build/dgMemory.cpp_86.o build/dgMeshEffect1.cpp_87.o build/dgMeshEffect2.cpp_88.o build/dgMeshEffect3.cpp_89.o build/dgMeshEffect4.cpp_90.o build/dgMeshEffect5.cpp_91.o build/dgMeshEffect6.cpp_92.o build/dgMutexThread.cpp_93.o build/dgNarrowPhaseCollision.cpp_94.o build/dgNode.cpp_95.o build/dgObb.cpp_96.o build/dgPolygonSoupBuilder.cpp_97.o build/dgPolygonSoupDatabase.cpp_98.o build/dgPolyhedra.cpp_99.o build/dgPolyhedraMassProperties.cpp_100.o build/dgProfiler.cpp_101.o build/dgQuaternion.cpp_102.o build/dgRandom.cpp_103.o build/dgRef.cpp_104.o build/dgRefCounter.cpp_105.o build/dgSkeletonContainer.cpp_106.o build/dgSlidingConstraint.cpp_107.o build/dgSmallDeterminant.cpp_108.o build/dgThread.cpp_109.o build/dgThreadHive.cpp_110.o build/dgTree.cpp_111.o build/dgTypes.cpp_112.o build/dgUniversalConstraint.cpp_113.o build/dgUpVectorConstraint.cpp_114.o build/dgUserConstraint.cpp_115.o build/dgWorld.cpp_116.o build/dgWorldDynamicsParallelSolver.cpp_117.o build/dgWorldDynamicsSimpleSolver.cpp_118.o build/dgWorldDynamicUpdate.cpp_119.o build/dgWorldPlugins.cpp_120.o build/dLinearAlgebra.cpp_121.o build/dMaterialPairManager.cpp_122.o build/dMathDefines.cpp_123.o build/dMatrix.cpp_124.o build/dNewton.cpp_125.o build/dNewtonActuatorJoints.cpp_126.o build/dNewtonAlloc.cpp_127.o build/dNewtonBody.cpp_128.o build/dNewtonCollision.cpp_129.o build/dNewtonDynamicBody.cpp_130.o build/dNewtonJoint.cpp_131.o build/dNewtonKinematicBody.cpp_132.o build/dNewtonMaterial.cpp_133.o build/dNewtonMesh.cpp_134.o build/dNewtonPlayerManager.cpp_135.o build/dNewtonRayCast.cpp_136.o build/dNewtonScopeBuffer.cpp_137.o build/dNewtonTransformLerp.cpp_138.o build/dNewtonTriggerManager.cpp_139.o build/dQuaternion.cpp_140.o build/dRefCounter.cpp_141.o build/dStdAfxMath.cpp_142.o build/dStdAfxNewton.cpp_143.o build/dString.cpp_144.o build/dTree.cpp_145.o build/dVector.cpp_146.o build/myextension.cpp_147.o build/Newton.cpp_148.o build/NewtonClass.cpp_149.o 
 
 aarch64-linux-android21-clang++ -c -O2 -g -gdwarf-2 -fpic -ffunction-sections -fstack-protector -march=armv8-a -fomit-frame-pointer -fno-strict-aliasing -funwind-tables -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -Wa,--noexecstack -DDLIB_LOG_DOMAIN="ENGINE_MAIN" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -fno-exceptions -fvisibility=hidden   -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include  -I/opt/platformsdk/android/android-ndk-r20/sources/android/native_app_glue -I/opt/platformsdk/android/android-ndk-r20/sources/android/cpufeatures  build/main.cpp -obuild/main_tmp5.o
 
-aarch64-linux-android21-clang++  -O2 -g -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -static-libstdc++ build/main_tmp5.o  -o build/libdmengine.so -Wl,-soname=libdmengine.so -DDLIB_LOG_DOMAIN="ENGINE_MAIN" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -Wl,--build-id=uuid  -Wl,--no-undefined -Wl,-z,noexecstack -landroid -fpic -z text -L/tmp/job7029712380139174515/build  -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//lib/arm64-android -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/lib/arm64-android -L/opt/platformsdk/android/android-ndk-r20/sources/cxx-stl/llvm-libc++/libs/arm64-v8a  -Wl,-Bstatic -Wl,--start-group -lc++_static  -lNewtonExtension_4 -lGeomExtension_2  -lengine -lengine_service -lmbedtls -lzip -lwebviewext -lprofile -lremotery -lprofilerext -lfacebookext -liapext -lpushext -liacext -lrecord_null -lgameobject -lddf -lresource -lgamesys -lgraphics -lgraphics_transcoder_basisu -lbasis_transcoder -lphysics -lBulletDynamics -lBulletCollision -lLinearMath -lBox2D -lrender -lscript -lluajit-5.1 -lextension -lhid -linput -lparticle -lrig -ldlib -ldmglfw -lgui -lcrashext -lsound -ltremolo -lliveupdate -lunwind  -Wl,--end-group -Wl,-Bdynamic  -lEGL -lGLESv1_CM -lGLESv2 -lOpenSLES -lm -llog -lc  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -shared
+aarch64-linux-android21-clang++  -O2 -g -isysroot=/opt/platformsdk/android/android-ndk-r20/toolchains/llvm/prebuilt/linux-x86_64/sysroot -static-libstdc++ build/main_tmp5.o  -o build/libdmengine.so -Wl,-soname=libdmengine.so -DDLIB_LOG_DOMAIN="ENGINE_MAIN" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_ANDROID -D__aarch64__ -DDM_DEBUG  -Wl,--build-id=uuid  -Wl,--no-undefined -Wl,-z,noexecstack -landroid -fpic -z text -L/tmp/job8834036043345353061/build  -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//lib/arm64-android -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/lib/arm64-android -L/opt/platformsdk/android/android-ndk-r20/sources/cxx-stl/llvm-libc++/libs/arm64-v8a  -Wl,-Bstatic -Wl,--start-group -lc++_static  -lNewtonExtension_4 -lGeomExtension_2  -lengine -lengine_service -lmbedtls -lzip -lwebviewext -lprofile -lremotery -lprofilerext -lfacebookext -liapext -lpushext -liacext -lrecord_null -lgameobject -lddf -lresource -lgamesys -lgraphics -lgraphics_transcoder_basisu -lbasis_transcoder -lphysics -lBulletDynamics -lBulletCollision -lLinearMath -lBox2D -lrender -lscript -lluajit-5.1 -lextension -lhid -linput -lparticle -lrig -ldlib -ldmglfw -lgui -lcrashext -lsound -ltremolo -lliveupdate -lunwind  -Wl,--end-group -Wl,-Bdynamic  -lEGL -lGLESv1_CM -lGLESv2 -lOpenSLES -lm -llog -lc  -Wl,--no-undefined -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -shared
 

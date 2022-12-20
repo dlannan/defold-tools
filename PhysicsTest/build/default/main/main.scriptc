@@ -1,6 +1,6 @@
 
-ªG
-”G
+óH
+ÝH
 tinsert 	= table.insert
 
 -- --------------------------------------------------------------------------------------------------------
@@ -73,10 +73,10 @@ function init(self)
 	self.collground = newtonextension.addcollisionplane(100, 100)
 	self.collsphere = newtonextension.addcollisionsphere(1)
 
-	self.collcube = newtonextension.addcollisioncube(0.5, 0.5, 0.5)
+	self.collcube = newtonextension.addcollisioncube(1.5, 1.5, 1.5)
 	self.collcone = newtonextension.addcollisioncone(1, 2)
 	self.collcapsule = newtonextension.addcollisioncapsule(0.5, 0.5, 0.75)
-	self.collcylinder = newtonextension.addcollisioncylinder(0.5, 0.7, 1.0)
+	self.collcylinder = newtonextension.addcollisioncylinder(0.7, 0.7, 2.0)
 	self.collchamfercylinder = newtonextension.addcollisionchamfercylinder(0.5, 0.6)
 	--self.collconvexhull = newtonextension.addcollisionconvexhull(24, vertcloud)
 
@@ -114,7 +114,7 @@ function init(self)
 		name = "capsule",
 	}
 	self.bodies.cylinder = { 
-		index = newtonextension.addbody(self.collcylinder, 7,20,5, 1),
+		index = newtonextension.addbody(self.collcylinder, 7, 20,5, 1),
 		coll = self.collcylinder,
 		name = "cylinder",
 	}
@@ -129,7 +129,11 @@ function init(self)
 		print(k)
 		id = id + 1
 		v.geom =  mpool.gettemp( v.name )
-		local mid, indices, verts, uvs, normals = newtonextension.createmeshfromcollision( v.coll )
+		local mapping = 1
+		if(k == "cube") then mapping = 3 end 
+		if(k == "sphere") then mapping = 1 end 
+		if(k == "cylinder" or k == "chamfercylinder" or k == "capsule" ) then mapping = 2 end 
+		local mid, indices, verts, uvs, normals = newtonextension.createmeshfromcollision( v.coll, mapping )
 		if(k == "cube") then 
 			pprint(verts)
 			pprint(indices)

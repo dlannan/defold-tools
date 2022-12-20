@@ -4,26 +4,26 @@ upload/geomextension/src/myextension.cpp:210:14: warning: unused variable 'size'
              ^
 1 warning generated.
 
-llvm-ar rcs /tmp/job5945126178259269523/build/libGeomExtension_1.a build/myextension.cpp_0.o 
+llvm-ar rcs /tmp/job11229334363370681198/build/libGeomExtension_1.a build/myextension.cpp_0.o 
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dBaseHierarchy.cpp -c -o build/dBaseHierarchy.cpp_2.o
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dBezierSpline.cpp -c -o build/dBezierSpline.cpp_3.o
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dClassInfo.cpp -c -o build/dClassInfo.cpp_4.o
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dContainersAlloc.cpp -c -o build/dContainersAlloc.cpp_5.o
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dContainersStdAfx.cpp -c -o build/dContainersStdAfx.cpp_6.o
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCRC.cpp -c -o build/dCRC.cpp_7.o
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomAlloc.cpp -c -o build/dCustomAlloc.cpp_8.o
-clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dContainersAlloc.cpp -c -o build/dContainersAlloc.cpp_5.o
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomBallAndSocket.cpp -c -o build/dCustomBallAndSocket.cpp_9.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomCorkScrew.cpp -c -o build/dCustomCorkScrew.cpp_10.o
-
-clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDoubleHinge.cpp -c -o build/dCustomDoubleHinge.cpp_11.o
-
-clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDoubleHingeActuator.cpp -c -o build/dCustomDoubleHingeActuator.cpp_12.o
 upload/newtonextension/src/dContainersAlloc.cpp:26:9: warning: unknown pragma ignored [-Wunknown-pragmas]
 #pragma warning (disable: 4100) //warning C4100: 'lpReserved' : unreferenced formal parameter
         ^
 1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDoubleHinge.cpp -c -o build/dCustomDoubleHinge.cpp_11.o
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDoubleHingeActuator.cpp -c -o build/dCustomDoubleHingeActuator.cpp_12.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dCustomDryRollingFriction.cpp -c -o build/dCustomDryRollingFriction.cpp_13.o
 
@@ -102,7 +102,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgBroadPhaseSegregated.cpp -c -o build/dgBroadPhaseSegregated.cpp_43.o
-In file included from upload/newtonextension/src/dgBodyMasterList.cpp:24:
+In file included from upload/newtonextension/src/dgBroadPhaseAggregate.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -112,7 +112,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollision.cpp -c -o build/dgCollision.cpp_44.o
-In file included from upload/newtonextension/src/dgBroadPhaseAggregate.cpp:24:
+In file included from upload/newtonextension/src/dgBodyMasterList.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -218,7 +218,7 @@ clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFO
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionDeformableMesh.cpp -c -o build/dgCollisionDeformableMesh.cpp_56.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionDeformableSolidMesh.cpp -c -o build/dgCollisionDeformableSolidMesh.cpp_57.o
-In file included from upload/newtonextension/src/dgCollisionDeformableMesh.cpp:24:
+In file included from upload/newtonextension/src/dgCollisionDeformableSolidMesh.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -228,7 +228,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionHeightField.cpp -c -o build/dgCollisionHeightField.cpp_58.o
-In file included from upload/newtonextension/src/dgCollisionDeformableSolidMesh.cpp:24:
+In file included from upload/newtonextension/src/dgCollisionDeformableMesh.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -248,7 +248,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionInstance.cpp -c -o build/dgCollisionInstance.cpp_60.o
-In file included from upload/newtonextension/src/dgCollisionIncompressibleParticles.cpp:24:
+In file included from upload/newtonextension/src/dgCollisionConvex.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -258,7 +258,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionLumpedMassParticles.cpp -c -o build/dgCollisionLumpedMassParticles.cpp_61.o
-In file included from upload/newtonextension/src/dgCollisionConvex.cpp:24:
+In file included from upload/newtonextension/src/dgCollisionIncompressibleParticles.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -302,6 +302,16 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgCollisionUserMesh.cpp -c -o build/dgCollisionUserMesh.cpp_67.o
+In file included from upload/newtonextension/src/dgCollisionMesh.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^~~~~~~~~~~~~~~~~~~~~~~
+         m_one(dgFloat32 (1.0f))
+1 warning generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgConstraint.cpp -c -o build/dgConstraint.cpp_68.o
 In file included from upload/newtonextension/src/dgCollisionLumpedMassParticles.cpp:23:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
@@ -314,16 +324,6 @@ upload/newtonextension/src/dgCollisionLumpedMassParticles.cpp:293:12: warning: v
                   ^
 2 warnings generated.
 
-clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgConstraint.cpp -c -o build/dgConstraint.cpp_68.o
-In file included from upload/newtonextension/src/dgCollisionMesh.cpp:24:
-In file included from upload/newtonextension/include/dgWorld.h:32:
-In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
-upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
-        ,m_massMatrix(allocator)
-         ^~~~~~~~~~~~~~~~~~~~~~~
-         m_one(dgFloat32 (1.0f))
-1 warning generated.
-
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgContact.cpp -c -o build/dgContact.cpp_69.o
 In file included from upload/newtonextension/src/dgCollisionMassSpringDamperSystem.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
@@ -335,7 +335,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgContactSolver.cpp -c -o build/dgContactSolver.cpp_70.o
-In file included from upload/newtonextension/src/dgConstraint.cpp:24:
+In file included from upload/newtonextension/src/dgCollisionSphere.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -345,7 +345,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgConvexHull3d.cpp -c -o build/dgConvexHull3d.cpp_71.o
-In file included from upload/newtonextension/src/dgCollisionSphere.cpp:24:
+In file included from upload/newtonextension/src/dgConstraint.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -445,7 +445,7 @@ upload/newtonextension/src/dgCollisionCompound.cpp:2985:51: note: place parenthe
 5 warnings generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgDebug.cpp -c -o build/dgDebug.cpp_75.o
-In file included from upload/newtonextension/src/dgCollisionUserMesh.cpp:24:
+In file included from upload/newtonextension/src/dgContact.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -455,7 +455,7 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgDelaunayTetrahedralization.cpp -c -o build/dgDelaunayTetrahedralization.cpp_76.o
-In file included from upload/newtonextension/src/dgContact.cpp:24:
+In file included from upload/newtonextension/src/dgCollisionUserMesh.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
 upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
@@ -499,6 +499,8 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
 1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect1.cpp -c -o build/dgMeshEffect1.cpp_86.o
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect2.cpp -c -o build/dgMeshEffect2.cpp_87.o
 In file included from upload/newtonextension/src/dgDynamicBody.cpp:23:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
@@ -507,8 +509,6 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
          ^~~~~~~~~~~~~~~~~~~~~~~
          m_one(dgFloat32 (1.0f))
 1 warning generated.
-
-clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect2.cpp -c -o build/dgMeshEffect2.cpp_87.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dgMeshEffect3.cpp -c -o build/dgMeshEffect3.cpp_88.o
 
@@ -702,8 +702,6 @@ upload/newtonextension/src/dMaterialPairManager.cpp:75:12: warning: variable 'ke
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewton.cpp -c -o build/dNewton.cpp_124.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonActuatorJoints.cpp -c -o build/dNewtonActuatorJoints.cpp_125.o
-
-clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonAlloc.cpp -c -o build/dNewtonAlloc.cpp_126.o
 In file included from upload/newtonextension/src/dgWorldDynamicUpdate.cpp:25:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
@@ -715,6 +713,8 @@ upload/newtonextension/src/dgWorldDynamicUpdate.cpp:245:10: warning: variable 'b
         dgInt32 bodyInfoCount = 0;
                 ^
 2 warnings generated.
+
+clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonAlloc.cpp -c -o build/dNewtonAlloc.cpp_126.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonBody.cpp -c -o build/dNewtonBody.cpp_127.o
 In file included from upload/newtonextension/src/dgWorld.cpp:23:
@@ -751,6 +751,14 @@ clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFO
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonScopeBuffer.cpp -c -o build/dNewtonScopeBuffer.cpp_136.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonTransformLerp.cpp -c -o build/dNewtonTransformLerp.cpp_137.o
+In file included from upload/newtonextension/src/dgWorldDynamicsSimpleSolver.cpp:24:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^~~~~~~~~~~~~~~~~~~~~~~
+         m_one(dgFloat32 (1.0f))
+1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dNewtonTriggerManager.cpp -c -o build/dNewtonTriggerManager.cpp_138.o
 
@@ -761,14 +769,6 @@ clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFO
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dStdAfxMath.cpp -c -o build/dStdAfxMath.cpp_141.o
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dStdAfxNewton.cpp -c -o build/dStdAfxNewton.cpp_142.o
-In file included from upload/newtonextension/src/dgWorldDynamicsSimpleSolver.cpp:24:
-In file included from upload/newtonextension/include/dgWorld.h:32:
-In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
-upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
-        ,m_massMatrix(allocator)
-         ^~~~~~~~~~~~~~~~~~~~~~~
-         m_one(dgFloat32 (1.0f))
-1 warning generated.
 
 clang++ -DDLIB_LOG_DOMAIN="NEWTONEXTENSION" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden  -Iupload/newtonextension/include/ -Ibuild/newtonextension/ -Iupload/ -Iupload/geomextension/include  -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  upload/newtonextension/src/dString.cpp -c -o build/dString.cpp_143.o
 
@@ -810,28 +810,6 @@ upload/newtonextension/src/dString.cpp:325:9: warning: variable 'ret' set but no
                ^
 1 warning generated.
 
-In file included from upload/newtonextension/src/NewtonClass.cpp:22:
-In file included from upload/newtonextension/include/NewtonStdAfx.h:31:
-In file included from upload/newtonextension/include/dgPhysics.h:27:
-In file included from upload/newtonextension/include/dgWorld.h:32:
-In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
-upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
-        ,m_massMatrix(allocator)
-         ^~~~~~~~~~~~~~~~~~~~~~~
-         m_one(dgFloat32 (1.0f))
-1 warning generated.
-
-upload/newtonextension/src/myextension.cpp:291:13: warning: unused variable 'pointCount' [-Wunused-variable]
-        int pointCount = NewtonMeshGetPointCount (mesh);
-            ^
-upload/newtonextension/src/myextension.cpp:292:13: warning: unused variable 'vertexStride' [-Wunused-variable]
-        int vertexStride = NewtonMeshGetVertexStrideInByte(mesh) / sizeof (dFloat);
-            ^
-upload/newtonextension/src/myextension.cpp:218:12: warning: unused function 'worldRayCast' [-Wunused-function]
-static int worldRayCast( lua_State *L ) {
-           ^
-3 warnings generated.
-
 In file included from upload/newtonextension/src/dgMeshEffect1.cpp:24:
 In file included from upload/newtonextension/include/dgWorld.h:32:
 In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
@@ -845,6 +823,28 @@ upload/newtonextension/src/dgMeshEffect1.cpp:1151:17: warning: variable 'node' s
 upload/newtonextension/src/dgMeshEffect1.cpp:2321:10: warning: variable 'layerBase' set but not used [-Wunused-but-set-variable]
         dgInt32 layerBase = 0;
                 ^
+3 warnings generated.
+
+In file included from upload/newtonextension/src/NewtonClass.cpp:22:
+In file included from upload/newtonextension/include/NewtonStdAfx.h:31:
+In file included from upload/newtonextension/include/dgPhysics.h:27:
+In file included from upload/newtonextension/include/dgWorld.h:32:
+In file included from upload/newtonextension/include/dgWorldDynamicUpdate.h:27:
+upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: field 'm_massMatrix' will be initialized after field 'm_one' [-Wreorder-ctor]
+        ,m_massMatrix(allocator)
+         ^~~~~~~~~~~~~~~~~~~~~~~
+         m_one(dgFloat32 (1.0f))
+1 warning generated.
+
+upload/newtonextension/src/myextension.cpp:293:13: warning: unused variable 'pointCount' [-Wunused-variable]
+        int pointCount = NewtonMeshGetPointCount (mesh);
+            ^
+upload/newtonextension/src/myextension.cpp:294:13: warning: unused variable 'vertexStride' [-Wunused-variable]
+        int vertexStride = NewtonMeshGetVertexStrideInByte(mesh) / sizeof (dFloat);
+            ^
+upload/newtonextension/src/myextension.cpp:218:12: warning: unused function 'worldRayCast' [-Wunused-function]
+static int worldRayCast( lua_State *L ) {
+           ^
 3 warnings generated.
 
 In file included from upload/newtonextension/src/dgWorldDynamicsParallelSolver.cpp:25:
@@ -867,11 +867,11 @@ upload/newtonextension/include/dgWorldDynamicsParallelSolver.h:314:3: warning: f
          m_one(dgFloat32 (1.0f))
 1 warning generated.
 
-llvm-ar rcs /tmp/job5945126178259269523/build/libNewtonExtension_3.a build/dBaseHierarchy.cpp_2.o build/dBezierSpline.cpp_3.o build/dClassInfo.cpp_4.o build/dContainersAlloc.cpp_5.o build/dContainersStdAfx.cpp_6.o build/dCRC.cpp_7.o build/dCustomAlloc.cpp_8.o build/dCustomBallAndSocket.cpp_9.o build/dCustomCorkScrew.cpp_10.o build/dCustomDoubleHinge.cpp_11.o build/dCustomDoubleHingeActuator.cpp_12.o build/dCustomDryRollingFriction.cpp_13.o build/dCustomFixDistance.cpp_14.o build/dCustomGear.cpp_15.o build/dCustomHinge.cpp_16.o build/dCustomHingeActuator.cpp_17.o build/dCustomJoint.cpp_18.o build/dCustomJointLibraryStdAfx.cpp_19.o build/dCustomKinematicController.cpp_20.o build/dCustomListener.cpp_21.o build/dCustomMotor.cpp_22.o build/dCustomPathFollow.cpp_23.o build/dCustomPlane.cpp_24.o build/dCustomPulley.cpp_25.o build/dCustomRackAndPinion.cpp_26.o build/dCustomSixdof.cpp_27.o build/dCustomSlider.cpp_28.o build/dCustomSliderActuator.cpp_29.o build/dCustomSlidingContact.cpp_30.o build/dCustomTriggerManager.cpp_31.o build/dCustomUpVector.cpp_32.o build/dCustomWheel.cpp_33.o build/dg.cpp_34.o build/dgAABBPolygonSoup.cpp_35.o build/dgBallConstraint.cpp_36.o build/dgBilateralConstraint.cpp_37.o build/dgBody.cpp_38.o build/dgBodyMasterList.cpp_39.o build/dgBroadPhase.cpp_40.o build/dgBroadPhaseAggregate.cpp_41.o build/dgBroadPhaseMixed.cpp_42.o build/dgBroadPhaseSegregated.cpp_43.o build/dgCollision.cpp_44.o build/dgCollisionBox.cpp_45.o build/dgCollisionBVH.cpp_46.o build/dgCollisionCapsule.cpp_47.o build/dgCollisionChamferCylinder.cpp_48.o build/dgCollisionCompound.cpp_49.o build/dgCollisionCompoundFractured.cpp_50.o build/dgCollisionCone.cpp_51.o build/dgCollisionConvex.cpp_52.o build/dgCollisionConvexHull.cpp_53.o build/dgCollisionConvexPolygon.cpp_54.o build/dgCollisionCylinder.cpp_55.o build/dgCollisionDeformableMesh.cpp_56.o build/dgCollisionDeformableSolidMesh.cpp_57.o build/dgCollisionHeightField.cpp_58.o build/dgCollisionIncompressibleParticles.cpp_59.o build/dgCollisionInstance.cpp_60.o build/dgCollisionLumpedMassParticles.cpp_61.o build/dgCollisionMassSpringDamperSystem.cpp_62.o build/dgCollisionMesh.cpp_63.o build/dgCollisionNull.cpp_64.o build/dgCollisionScene.cpp_65.o build/dgCollisionSphere.cpp_66.o build/dgCollisionUserMesh.cpp_67.o build/dgConstraint.cpp_68.o build/dgContact.cpp_69.o build/dgContactSolver.cpp_70.o build/dgConvexHull3d.cpp_71.o build/dgConvexHull4d.cpp_72.o build/dgCorkscrewConstraint.cpp_73.o build/dgCRC.cpp_74.o build/dgDebug.cpp_75.o build/dgDelaunayTetrahedralization.cpp_76.o build/dgDynamicBody.cpp_77.o build/dgGeneralMatrix.cpp_78.o build/dgGeneralVector.cpp_79.o build/dgGoogol.cpp_80.o build/dgHingeConstraint.cpp_81.o build/dgIntersections.cpp_82.o build/dgKinematicBody.cpp_83.o build/dgMatrix.cpp_84.o build/dgMemory.cpp_85.o build/dgMeshEffect1.cpp_86.o build/dgMeshEffect2.cpp_87.o build/dgMeshEffect3.cpp_88.o build/dgMeshEffect4.cpp_89.o build/dgMeshEffect5.cpp_90.o build/dgMeshEffect6.cpp_91.o build/dgMutexThread.cpp_92.o build/dgNarrowPhaseCollision.cpp_93.o build/dgNode.cpp_94.o build/dgObb.cpp_95.o build/dgPolygonSoupBuilder.cpp_96.o build/dgPolygonSoupDatabase.cpp_97.o build/dgPolyhedra.cpp_98.o build/dgPolyhedraMassProperties.cpp_99.o build/dgProfiler.cpp_100.o build/dgQuaternion.cpp_101.o build/dgRandom.cpp_102.o build/dgRef.cpp_103.o build/dgRefCounter.cpp_104.o build/dgSkeletonContainer.cpp_105.o build/dgSlidingConstraint.cpp_106.o build/dgSmallDeterminant.cpp_107.o build/dgThread.cpp_108.o build/dgThreadHive.cpp_109.o build/dgTree.cpp_110.o build/dgTypes.cpp_111.o build/dgUniversalConstraint.cpp_112.o build/dgUpVectorConstraint.cpp_113.o build/dgUserConstraint.cpp_114.o build/dgWorld.cpp_115.o build/dgWorldDynamicsParallelSolver.cpp_116.o build/dgWorldDynamicsSimpleSolver.cpp_117.o build/dgWorldDynamicUpdate.cpp_118.o build/dgWorldPlugins.cpp_119.o build/dLinearAlgebra.cpp_120.o build/dMaterialPairManager.cpp_121.o build/dMathDefines.cpp_122.o build/dMatrix.cpp_123.o build/dNewton.cpp_124.o build/dNewtonActuatorJoints.cpp_125.o build/dNewtonAlloc.cpp_126.o build/dNewtonBody.cpp_127.o build/dNewtonCollision.cpp_128.o build/dNewtonDynamicBody.cpp_129.o build/dNewtonJoint.cpp_130.o build/dNewtonKinematicBody.cpp_131.o build/dNewtonMaterial.cpp_132.o build/dNewtonMesh.cpp_133.o build/dNewtonPlayerManager.cpp_134.o build/dNewtonRayCast.cpp_135.o build/dNewtonScopeBuffer.cpp_136.o build/dNewtonTransformLerp.cpp_137.o build/dNewtonTriggerManager.cpp_138.o build/dQuaternion.cpp_139.o build/dRefCounter.cpp_140.o build/dStdAfxMath.cpp_141.o build/dStdAfxNewton.cpp_142.o build/dString.cpp_143.o build/dTree.cpp_144.o build/dVector.cpp_145.o build/myextension.cpp_146.o build/Newton.cpp_147.o build/NewtonClass.cpp_148.o 
+llvm-ar rcs /tmp/job11229334363370681198/build/libNewtonExtension_3.a build/dBaseHierarchy.cpp_2.o build/dBezierSpline.cpp_3.o build/dClassInfo.cpp_4.o build/dContainersAlloc.cpp_5.o build/dContainersStdAfx.cpp_6.o build/dCRC.cpp_7.o build/dCustomAlloc.cpp_8.o build/dCustomBallAndSocket.cpp_9.o build/dCustomCorkScrew.cpp_10.o build/dCustomDoubleHinge.cpp_11.o build/dCustomDoubleHingeActuator.cpp_12.o build/dCustomDryRollingFriction.cpp_13.o build/dCustomFixDistance.cpp_14.o build/dCustomGear.cpp_15.o build/dCustomHinge.cpp_16.o build/dCustomHingeActuator.cpp_17.o build/dCustomJoint.cpp_18.o build/dCustomJointLibraryStdAfx.cpp_19.o build/dCustomKinematicController.cpp_20.o build/dCustomListener.cpp_21.o build/dCustomMotor.cpp_22.o build/dCustomPathFollow.cpp_23.o build/dCustomPlane.cpp_24.o build/dCustomPulley.cpp_25.o build/dCustomRackAndPinion.cpp_26.o build/dCustomSixdof.cpp_27.o build/dCustomSlider.cpp_28.o build/dCustomSliderActuator.cpp_29.o build/dCustomSlidingContact.cpp_30.o build/dCustomTriggerManager.cpp_31.o build/dCustomUpVector.cpp_32.o build/dCustomWheel.cpp_33.o build/dg.cpp_34.o build/dgAABBPolygonSoup.cpp_35.o build/dgBallConstraint.cpp_36.o build/dgBilateralConstraint.cpp_37.o build/dgBody.cpp_38.o build/dgBodyMasterList.cpp_39.o build/dgBroadPhase.cpp_40.o build/dgBroadPhaseAggregate.cpp_41.o build/dgBroadPhaseMixed.cpp_42.o build/dgBroadPhaseSegregated.cpp_43.o build/dgCollision.cpp_44.o build/dgCollisionBox.cpp_45.o build/dgCollisionBVH.cpp_46.o build/dgCollisionCapsule.cpp_47.o build/dgCollisionChamferCylinder.cpp_48.o build/dgCollisionCompound.cpp_49.o build/dgCollisionCompoundFractured.cpp_50.o build/dgCollisionCone.cpp_51.o build/dgCollisionConvex.cpp_52.o build/dgCollisionConvexHull.cpp_53.o build/dgCollisionConvexPolygon.cpp_54.o build/dgCollisionCylinder.cpp_55.o build/dgCollisionDeformableMesh.cpp_56.o build/dgCollisionDeformableSolidMesh.cpp_57.o build/dgCollisionHeightField.cpp_58.o build/dgCollisionIncompressibleParticles.cpp_59.o build/dgCollisionInstance.cpp_60.o build/dgCollisionLumpedMassParticles.cpp_61.o build/dgCollisionMassSpringDamperSystem.cpp_62.o build/dgCollisionMesh.cpp_63.o build/dgCollisionNull.cpp_64.o build/dgCollisionScene.cpp_65.o build/dgCollisionSphere.cpp_66.o build/dgCollisionUserMesh.cpp_67.o build/dgConstraint.cpp_68.o build/dgContact.cpp_69.o build/dgContactSolver.cpp_70.o build/dgConvexHull3d.cpp_71.o build/dgConvexHull4d.cpp_72.o build/dgCorkscrewConstraint.cpp_73.o build/dgCRC.cpp_74.o build/dgDebug.cpp_75.o build/dgDelaunayTetrahedralization.cpp_76.o build/dgDynamicBody.cpp_77.o build/dgGeneralMatrix.cpp_78.o build/dgGeneralVector.cpp_79.o build/dgGoogol.cpp_80.o build/dgHingeConstraint.cpp_81.o build/dgIntersections.cpp_82.o build/dgKinematicBody.cpp_83.o build/dgMatrix.cpp_84.o build/dgMemory.cpp_85.o build/dgMeshEffect1.cpp_86.o build/dgMeshEffect2.cpp_87.o build/dgMeshEffect3.cpp_88.o build/dgMeshEffect4.cpp_89.o build/dgMeshEffect5.cpp_90.o build/dgMeshEffect6.cpp_91.o build/dgMutexThread.cpp_92.o build/dgNarrowPhaseCollision.cpp_93.o build/dgNode.cpp_94.o build/dgObb.cpp_95.o build/dgPolygonSoupBuilder.cpp_96.o build/dgPolygonSoupDatabase.cpp_97.o build/dgPolyhedra.cpp_98.o build/dgPolyhedraMassProperties.cpp_99.o build/dgProfiler.cpp_100.o build/dgQuaternion.cpp_101.o build/dgRandom.cpp_102.o build/dgRef.cpp_103.o build/dgRefCounter.cpp_104.o build/dgSkeletonContainer.cpp_105.o build/dgSlidingConstraint.cpp_106.o build/dgSmallDeterminant.cpp_107.o build/dgThread.cpp_108.o build/dgThreadHive.cpp_109.o build/dgTree.cpp_110.o build/dgTypes.cpp_111.o build/dgUniversalConstraint.cpp_112.o build/dgUpVectorConstraint.cpp_113.o build/dgUserConstraint.cpp_114.o build/dgWorld.cpp_115.o build/dgWorldDynamicsParallelSolver.cpp_116.o build/dgWorldDynamicsSimpleSolver.cpp_117.o build/dgWorldDynamicUpdate.cpp_118.o build/dgWorldPlugins.cpp_119.o build/dLinearAlgebra.cpp_120.o build/dMaterialPairManager.cpp_121.o build/dMathDefines.cpp_122.o build/dMatrix.cpp_123.o build/dNewton.cpp_124.o build/dNewtonActuatorJoints.cpp_125.o build/dNewtonAlloc.cpp_126.o build/dNewtonBody.cpp_127.o build/dNewtonCollision.cpp_128.o build/dNewtonDynamicBody.cpp_129.o build/dNewtonJoint.cpp_130.o build/dNewtonKinematicBody.cpp_131.o build/dNewtonMaterial.cpp_132.o build/dNewtonMesh.cpp_133.o build/dNewtonPlayerManager.cpp_134.o build/dNewtonRayCast.cpp_135.o build/dNewtonScopeBuffer.cpp_136.o build/dNewtonTransformLerp.cpp_137.o build/dNewtonTriggerManager.cpp_138.o build/dQuaternion.cpp_139.o build/dRefCounter.cpp_140.o build/dStdAfxMath.cpp_141.o build/dStdAfxNewton.cpp_142.o build/dString.cpp_143.o build/dTree.cpp_144.o build/dVector.cpp_145.o build/myextension.cpp_146.o build/Newton.cpp_147.o build/NewtonClass.cpp_148.o 
 
 clang++ -DDLIB_LOG_DOMAIN="ENGINE_MAIN" -DDDF_EXPOSE_DESCRIPTORS -DDM_PLATFORM_LINUX -D__STDC_LIMIT_MACROS  -g -O2 -D__STDC_LIMIT_MACROS -Wall -Werror=format -fno-exceptions -fPIC -fvisibility=hidden   -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//sdk/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/include -I/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//include/x86_64-linux  build/main.cpp -c -o build/main_tmp4.o
 
-clang++ build/main_tmp4.o  -o build/dmengine -g -O2  -L/tmp/job5945126178259269523/build  -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//lib/x86_64-linux -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/lib/x86_64-linux  -Wl,-Bstatic -Wl,--start-group -lengine -lengine_service -lmbedtls -lzip -lwebviewext -lprofile -lremotery -lprofilerext -lfacebookext -liapext -lpushext -liacext -lrecord -lgameobject -lddf -lresource -lgamesys -lgraphics -lgraphics_transcoder_basisu -lbasis_transcoder -lphysics -lBulletDynamics -lBulletCollision -lLinearMath -lBox2D -lrender -lscript -lluajit-5.1 -lextension -lhid -linput -lparticle -lrig -ldlib -ldmglfw -lgui -lcrashext -lliveupdate -lsound -ltremolo -lvpx   -lNewtonExtension_3 -lGeomExtension_1  -Wl,--end-group -Wl,-Bdynamic -Wl,-rpath=$ORIGIN,--enable-new-dtags  -lopenal -lXext -lX11 -lXi -lGL -lGLU -lpthread -lm -ldl 
+clang++ build/main_tmp4.o  -o build/dmengine -g -O2  -L/tmp/job11229334363370681198/build  -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//lib/x86_64-linux -L/var/extender/sdk/9c44c4a9b6cbc9d0cb66b7027b7c984bf364a568/defoldsdk//ext/lib/x86_64-linux  -Wl,-Bstatic -Wl,--start-group -lengine -lengine_service -lmbedtls -lzip -lwebviewext -lprofile -lremotery -lprofilerext -lfacebookext -liapext -lpushext -liacext -lrecord -lgameobject -lddf -lresource -lgamesys -lgraphics -lgraphics_transcoder_basisu -lbasis_transcoder -lphysics -lBulletDynamics -lBulletCollision -lLinearMath -lBox2D -lrender -lscript -lluajit-5.1 -lextension -lhid -linput -lparticle -lrig -ldlib -ldmglfw -lgui -lcrashext -lliveupdate -lsound -ltremolo -lvpx   -lNewtonExtension_3 -lGeomExtension_1  -Wl,--end-group -Wl,-Bdynamic -Wl,-rpath=$ORIGIN,--enable-new-dtags  -lopenal -lXext -lX11 -lXi -lGL -lGLU -lpthread -lm -ldl 
 
 cp build/dmengine build/dmengine_unstripped
 
